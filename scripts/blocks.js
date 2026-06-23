@@ -209,7 +209,7 @@ const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
 });
 
 //Destruction Armored Conveyor
-const DestructionArmoredConveyor = extend(Conveyor, "Destruction_Armored_Conveyor", {
+const DestructionArmoredConveyor = extend(ArmoredConveyor, "Destruction_Armored_Conveyor", {
     localizedName: "Destruction Armored Conveyor",
     health: 1000,
     speed: 0.18,
@@ -335,7 +335,9 @@ const NaExtractor = extend(GenericCrafter, "Sodium_Extractor", {
     outputItem: new ItemStack(items.sodium,1),
     outputLiquid: new LiquidStack(liquids.wasteWater,0.5),
     category: Category.crafting,
-    buildVisibility: BuildVisibility.shown
+    buildVisibility: BuildVisibility.shown,
+    ambientSound: Sounds.loopElectricHum,
+    ambientSoundVolume: 0.05
 });
 NaExtractor.consumePower(1.25);
 NaExtractor.consumeLiquid(Liquids.water,0.5333333333333333);
@@ -367,7 +369,9 @@ const SSM = extend(Separator, "Sand_Sieve_Machine", {
     requirements: ItemStack.with(Items.copper,200 , Items.lead,200 , Items.graphite,50 , Items.phaseFabric,50),
     category: Category.crafting,
     buildVisibility: BuildVisibility.shown,
-    results: ItemStack.with(items.iron,5 , items.gold,2)
+    results: ItemStack.with(items.iron,5 , items.gold,2),
+    ambientSound: Sounds.loopGrind,
+    ambientSoundVolume: 0.02
 });
 SSM.consumePower(2);
 SSM.consumeItem(Items.sand,5);
@@ -404,11 +408,13 @@ const HPHT = extend(GenericCrafter, "HPHT", {
     requirements: ItemStack.with(Items.copper,500 , items.iron,1000 , Items.silicon,600 , Items.graphite,500 , items.sodiumBattery,1000 , Items.metaglass,200),
     category: Category.crafting,
     buildVisibility: BuildVisibility.shown,
-    outputItem: new ItemStack(items.diamond,5)
+    outputItem: new ItemStack(items.diamond,5),
+    ambientSound: Sounds.loopSmelter,
+    ambientSoundVolume: 1
 });
 HPHT.consumeItem(Items.graphite, 20);
 HPHT.consumeLiquid(Liquids.slag, 0.5);
-HPHT.consumePower(1000/60);
+HPHT.consumePower(16.666666666666668);
 HPHT.buildType = () => extend(GenericCrafter.GenericCrafterBuild, HPHT, {
 	draw(){
 		Draw.rect(HPHT.region, this.x, this.y);
@@ -426,9 +432,73 @@ HPHT.buildType = () => extend(GenericCrafter.GenericCrafterBuild, HPHT, {
 		if((this.liquids.get(Liquids.slag) / HPHT.liquidCapacity) < 0.8){
 		    this.progress = 0;
 		}
-	},
+	}
 });
 
+//Electric HPHT
+const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
+    localizedName: "Electric HPHT",
+    description: "generate heat with electricity\nMore convenient than HPHT synthesizer.\nBut uses a lot of electricity.",
+    size: 3,
+    health: 1800,
+    hasPower: true,
+    hasItems: true,
+    itemCapacity: 40,
+    craftTime: 240,
+    craftEffect: Fx.smeltsmoke,
+    buildCostMultiplier: 0.3,
+    drawer: new DrawMulti(new DrawDefault(),new DrawFlame(Color.valueOf("ed655a"))),
+    ambientSound: Sounds.loopSmelter,
+    ambientSoundVolume: 0.5,
+    requirements: ItemStack.with(Items.lead,500 , Items.silicon,1000 , Items.graphite,300 , items.sodiumBattery,2000 , items.gold,650),
+    category: Category.crafting,
+    outputItem: new ItemStack(items.diamond,4),
+    buildVisibility: BuildVisibility.shown
+});
+ElectricHPHT.consumeItem(Items.graphite, 20);
+ElectricHPHT.consumePower(40);
+
+//Sodium Battery Machine
+const SodiumBatteryMachine = extend(GenericCrafter, "Sodium_Battery_Machine", {
+    localizedName: "Sodium Battery Machine",
+    size: 2,
+    hasPower: true,
+    hasItem: true,
+    hasLiquid: false,
+    itemCapacity: 10,
+    craftTime: 60,
+    craftEffect: Fx.smeltsmoke,
+    buildCostMultiplier: 0.19083969465648856,
+    drawer: new DrawMulti(new DrawDefault(),new DrawFlame(Color.valueOf("c0c0c0"))),
+    ambientSound: Sounds.loopSmelter,
+    ambientSoundVolume: 0.2,
+    requirements: ItemStack.with(Items.copper,200 , Items.lead,200 , Items.graphite,50 , items.sodium,25),
+    category: Category.crafting,
+    buildVisibility: BuildVisibility.shown,
+    outputItem: new ItemStack(items.sodiumBattery,1)
+});
+SodiumBatteryMachine.consumePower(1.6666666666666667);
+SodiumBatteryMachine.consumeItems(ItemStack.with(Items.titanium,1 , Items.coal,1 , items.sodium,1));
+
+//Iron_Melter
+const IronMelter = extend(GenericCrafter, "Iron_Melter", {
+    size: 1,
+    hasPower: true,
+    hasLiquid: true,
+    liquidCapacity: 30,
+    itemCapacity: 10,
+    craftTime: 30,
+    craftEffect: Fx.none,
+    drawers: new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(Liquids.slag), new DrawDefault()),
+    requirements: ItemStack.with(Items.copper,50 , Items.lead,50 , Items.graphite,50 , items.iron,20),
+    category: Category.crafting,
+    buildVisibility: BuildVisibility.shown,
+    outputLiquid: new LiquidStack(Liquids.slag,0.5)
+});
+IronMelter.consumePower(2);
+IronMelter.consumeItem(items.iron,1);
+
+//ArrayConverter
 function toJavaUnitArray(jsArray) {
     var javaArray = java.lang.reflect.Array.newInstance(UnitType, jsArray.length);
     for (var i = 0; i < jsArray.length; i++) {
@@ -572,6 +642,9 @@ module.exports = {
     NaExtractor: NaExtractor,
     SSM: SSM,
     HPHT: HPHT,
+    ElectricHPHT: ElectricHPHT,
+    SodiumBatteryMachine: SodiumBatteryMachine,
+    IronMelter: IronMelter,
     Factory: Factory,
     ReconstructorTo2: ReconstructorTo2,
     ReconstructorTo3: ReconstructorTo3,

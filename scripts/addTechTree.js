@@ -213,3 +213,15 @@ addTechTree(blocks.SSM,{
 addTechTree(blocks.HPHT,{
     parent: "Sand_Sieve_Machine"
 });
+
+addTechTree(blocks.ElectricHPHT,{
+    parent: "HPHT"
+});
+
+addTechTree(blocks.SodiumBatteryMachine,{
+    parent: "Sodium_Extractor"
+});
+
+addTechTree(blocks.IronMelter,{
+    parent: "melter"
+});
