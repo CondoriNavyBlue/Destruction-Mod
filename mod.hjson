@@ -2,5 +2,5 @@ name: DestructionMod
 displayName: Destruction Mod
 description: Mod being created
 author: Condori
-version: 0.34
-minGameVersion: 136.0
+version: 0.5
+minGameVersion: 157
