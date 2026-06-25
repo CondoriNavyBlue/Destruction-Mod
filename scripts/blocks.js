@@ -2397,5 +2397,8 @@ module.exports = {
     Tsunami: Tsunami,
     Fuse: Fuse,
     Ripple: Ripple,
-    Cyclone: Cyclone
+    Cyclone: Cyclone,
+    Foreshadow: Foreshadow,
+    Spectre: Spectre,
+    Meltdown: Meltdown
 };

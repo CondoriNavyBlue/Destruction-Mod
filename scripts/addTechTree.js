@@ -49,6 +49,7 @@ const items = require("items");
 const blocks = require("blocks");
 const units = require("units");
 
+//------------------------------Items------------------------------
 addTechTree(items.iron,{
     parent: "sand",
     objectives: Seq.with(new Objectives.Produce(items.iron))
@@ -74,6 +75,8 @@ addTechTree(items.sodiumBattery,{
     objectives: Seq.with(new Objectives.Produce(items.sodiumBattery))
 });
 
+//------------------------------Unit Factorys------------------------------
+
 addTechTree(blocks.Factory,{
     parent: "ground-factory"
 });
@@ -93,6 +96,8 @@ addTechTree(blocks.ReconstructorTo4,{
 addTechTree(blocks.ReconstructorTo5,{
     parent: "Destruction_Exponential_Reconstructor"
 });
+
+//------------------------------Units------------------------------
 
 const UnitTable = [
     [units.Dagger, units.Mace, units.Fortress, units.Scepter, units.Reign],
@@ -117,6 +122,8 @@ for(let i = 0; i < UnitTable.length; ++i){
         }
     }
 }
+
+//------------------------------Walls------------------------------
 
 addTechTree(blocks.SodiumWall,{
     parent: "titanium-wall"
@@ -158,9 +165,13 @@ addTechTree(blocks.DestructionWallLarge,{
     parent: "Destruction_Wall"
 });
 
+//------------------------------Cores------------------------------
+
 addTechTree(blocks.CoreDestruction,{
     parent: "core-nucleus"
 });
+
+//------------------------------Storages------------------------------
 
 addTechTree(blocks.DestructionContainer,{
     parent: "container"
@@ -170,6 +181,8 @@ addTechTree(blocks.DestructionVault,{
     parent: "Destruction_Container"
 });
 
+//------------------------------Conveyors------------------------------
+
 addTechTree(blocks.DestructionConveyor,{
     parent: "armored-conveyor"
 });
@@ -177,6 +190,8 @@ addTechTree(blocks.DestructionConveyor,{
 addTechTree(blocks.DestructionArmoredConveyor,{
     parent: "Destruction_Conveyor"
 });
+
+//------------------------------Drills------------------------------
 
 addTechTree(blocks.IronDrill,{
     parent: "pneumatic-drill"
@@ -194,6 +209,8 @@ addTechTree(blocks.DestructionDrill,{
     parent: "Diamond_Drill"
 });
 
+//------------------------------Powers------------------------------
+
 addTechTree(blocks.SodiumStorageBattery,{
     parent: "battery-large"
 });
@@ -201,6 +218,8 @@ addTechTree(blocks.SodiumStorageBattery,{
 addTechTree(blocks.SodiumStorageBatteryLarge,{
     parent: "Sodium_Storage_Battery"
 });
+
+//------------------------------Craters------------------------------
 
 addTechTree(blocks.NaExtractor,{
     parent: "graphite-press"
@@ -224,4 +243,79 @@ addTechTree(blocks.SodiumBatteryMachine,{
 
 addTechTree(blocks.IronMelter,{
     parent: "melter"
+});
+
+//------------------------------Turrets------------------------------
+
+
+addTechTree(blocks.Duo,{
+    parent: "duo"
+});
+
+addTechTree(blocks.Scatter,{
+    parent: "Destructor_Duo"
+});
+
+addTechTree(blocks.Arc,{
+    parent: "Destructor_Duo"
+});
+
+addTechTree(blocks.Hail,{
+    parent: "Destructor_Scatter"
+});
+
+addTechTree(blocks.Scorch,{
+    parent: "Destructor_Arc"
+});
+
+addTechTree(blocks.Salvo,{
+    parent: "Destructor_Hail"
+});
+
+addTechTree(blocks.Wave,{
+    parent: "Destructor_Scorch"
+});
+
+addTechTree(blocks.Lancer,{
+    parent: "Destructor_Scorch"
+});
+
+addTechTree(blocks.Swarmer,{
+    parent: "Destructor_Salvo"
+});
+
+addTechTree(blocks.Ripple,{
+    parent: "Destructor_Salvo"
+});
+
+addTechTree(blocks.Parallax,{
+    parent: "Destructor_Wave"
+});
+
+addTechTree(blocks.Tsunami,{
+    parent: "Destructor_Wave"
+});
+
+addTechTree(blocks.Meltdown,{
+    parent: "Destructor_Lancer"
+});
+
+addTechTree(blocks.Cyclone,{
+    parent: "Destructor_Swarmer"
+});
+
+addTechTree(blocks.Fuse,{
+    parent: "Destructor_Ripple"
+});
+
+addTechTree(blocks.Segment,{
+    parent: "Destructor_Parallax"
+});
+
+addTechTree(blocks.Foreshadow,{
+    parent: "Destructor_Meltdown"
+});
+
+addTechTree(blocks.Spectre,{
+    parent: "Destructor_Cyclone"
 });
