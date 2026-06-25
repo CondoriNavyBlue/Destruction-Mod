@@ -566,9 +566,8 @@ Reign.weapons.add(
             drag: -0.05,
             splashDamage: 5000,
             splashDamageRadius: 160,
-            splashDamagePierce: false,
             shootEffect: Fx.shockwave,
-            lifetime: 66,
+            lifetime: 60,
             hitShake: 10,
             hitSound: Sounds.explosionReactor,
             keepVelocity: false,
@@ -578,26 +577,26 @@ Reign.weapons.add(
                 extend(Effect, 60, 160, e => {
                     Draw.color(Color.valueOf("789aff"));
                     Lines.stroke(e.fout() * 3);
-                    var circleRad = 6 + e.finpow() * 120;
+                    let circleRad = 6 + e.finpow() * 120;
                     Lines.circle(e.x, e.y, circleRad);
                     rand.setSeed(e.id);
-                    for(var i = 0; i < 24; i++){
-                        var angle = rand.random(360);
-                        var lenRand = rand.random(0.5, 1);
+                    for(let i = 0; i < 24; i++){
+                        let angle = rand.random(360);
+                        let lenRand = rand.random(0.5, 1);
                         Lines.lineAngle(e.x, e.y, angle, e.foutpow() * 100 * rand.random(1, 0.6) + 2, e.finpow() * 140 * lenRand + 6);
                     }
                 },{}),
                 extend(Effect, 150, 150, b => {
-                    var intensity = 8;
+                    let intensity = 8;
                     Draw.color(Color.valueOf("789aff"), 0.7);
-                    for(var i = 0; i < 4; i++){
+                    for(let i = 0; i < 4; i++){
                         rand.setSeed(b.id * 2 + i);
-                        var lenScl = rand.random(0.5, 1);
-                        var fi = i;
+                        let lenScl = rand.random(0.5, 1);
+                        let fi = i;
                         b.scaled(b.lifetime * lenScl, e => {
                             Angles.randLenVectors(e.id + fi - 1, Math.floor(2.9 * intensity), 22 * intensity * e.fin(Interp.pow10Out), (x, y) => {
-                                var fout = e.fout(Interp.pow5Out) * rand.random(0.5, 1);
-                                var rad = fout * ((2 + intensity) * 2.35);
+                                let fout = e.fout(Interp.pow5Out) * rand.random(0.5, 1);
+                                let rad = fout * ((2 + intensity) * 2.35);
                                 Fill.circle(e.x + x, e.y + y, rad);
                                 Drawf.light(e.x + x, e.y + y, rad * 2.5, Color.valueOf("789aff"), 0.5);
                             });
@@ -1215,34 +1214,10 @@ Eclipse.weapons.add(
             firstShotDelay: 39
         }),
         bullet: extend(ContinuousLaserBulletType,{
-            currentLength(b){
+            applyDamage(b){
+                this.super$applyDamage(b);
+                let resultLength = this.currentLength(b);
                 let rot = b.rotation();
-
-                let baseLength = 320; 
-                let data = { length: baseLength };
-            
-                let endX = b.x + Angles.trnsx(rot, baseLength);
-                let endY = b.y + Angles.trnsy(rot, baseLength);
-
-                Vars.world.raycastEachWorld(b.x, b.y, endX, endY, (x, y) => {
-                    let tile = Vars.world.tile(x, y);
-                    if (tile != null && tile.build != null) {
-                        let blockName = tile.block().name;
-
-                        if (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall") { 
-                            let dist = b.dst(tile.build.x, tile.build.y);
-                            if (dist < data.length) {
-                                data.length = dist;
-                            }
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-
-                let resultLength = data.length;
-                this.length = resultLength;
-
                 if (this.lightningSpacing > 0) {
                     let idx = 0;
                     for (let i = 0; i <= resultLength; i += this.lightningSpacing) {
@@ -1261,6 +1236,60 @@ Eclipse.weapons.add(
                         });
                     }
                 }
+            },
+            draw(b){
+                let fout = Mathf.clamp(b.time > b.lifetime - this.fadeTime ? 1 - (b.time - (this.lifetime - this.fadeTime)) / this.fadeTime : 1);
+                let realLength = Damage.findLength(b, this.currentLength(b), this.laserAbsorb, this.pierceCap);
+                let rot = b.rotation();
+
+                for(let i = 0; i < this.colors.length; i++){
+                    Draw.color(Tmp.c1.set(this.colors[i]).mul(1 + Mathf.absin(Time.time, 1, 0.1)));
+                
+                    let colorFin = i / (this.colors.length - 1);
+                    let baseStroke = Mathf.lerp(this.strokeFrom, this.strokeTo, colorFin);
+                    let stroke = (this.width + Mathf.absin(Time.time, this.oscScl, this.oscMag)) * fout * baseStroke;
+                    let ellipseLenScl = Mathf.lerp(1 - i / (this.colors.length), 1, this.pointyScaling);
+                
+                    Lines.stroke(stroke);
+                    Lines.lineAngle(b.x, b.y, rot, Math.max(0, realLength - this.frontLength), false);
+
+                    Drawf.flameFront(b.x, b.y, this.divisions, rot + 180, this.backLength, stroke / 2);
+
+                    Tmp.v1.trnsExact(rot, Math.max(0, realLength - this.frontLength));
+                    Drawf.flameFront(b.x + Tmp.v1.x, b.y + Tmp.v1.y, this.divisions, rot, this.frontLength * ellipseLenScl, stroke / 2);
+                }
+            
+                Tmp.v1.trns(b.rotation(), realLength * 1.1);
+            
+                Drawf.light(b.x, b.y, b.x + Tmp.v1.x, b.y + Tmp.v1.y, this.lightStroke, this.lightColor, this.lightOpacity);
+                Draw.reset();
+            },
+            currentLength(b){
+                let rot = b.rotation();
+
+                let baseLength = this.length; 
+                let data = { length: baseLength };
+            
+                let endX = b.x + Angles.trnsx(rot, baseLength);
+                let endY = b.y + Angles.trnsy(rot, baseLength);
+
+                Vars.world.raycastEachWorld(b.x, b.y, endX, endY, (x, y) => {
+                    let tile = Vars.world.tile(x, y);
+                    if (tile != null && tile.build != null) {
+                        let blockName = tile.block().name;
+
+                        if (tile.build.team != b.team && (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall")) {
+                            let dist = b.dst(tile.build.x, tile.build.y);
+                            if (dist < data.length) {
+                                data.length = dist;
+                            }
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+
+                let resultLength = data.length;
 
                 return resultLength;
             },
@@ -1292,7 +1321,7 @@ Eclipse.weapons.add(
                 Lines.stroke(e.fout() * 2);
 
                 Angles.randLenVectors(e.id, 6, e.finpow() * 18, (x, y) => {
-                    var ang = Mathf.angle(x, y);
+                    let ang = Mathf.angle(x, y);
                     Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 4 + 1);
                 });
             },{}),
@@ -1568,7 +1597,7 @@ Vela.weapons.add(
                 Lines.stroke(e.fout() * 2);
 
                 Angles.randLenVectors(e.id, 6, e.finpow() * 18, (x, y) => {
-                    var ang = Mathf.angle(x, y);
+                    let ang = Mathf.angle(x, y);
                     Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 4 + 1);
                 })
             },{}),
@@ -1613,12 +1642,12 @@ Vela.weapons.add(
             },{}),
             hitEffect: extend(Effect,20, 200, e => {
                 Draw.color(Color.valueOf("ed655a"));
-                for(var i = 0; i < 2; i++){
+                for(let i = 0; i < 2; i++){
                     Draw.color(i == 0 ? Color.valueOf("ed655a") : Color.valueOf("eda096"));
-                    var m = i == 0 ? 1 : 0.5;
-                    for(var j = 0; j < 5; j++){
-                        var rot = e.rotation + Mathf.randomSeedRange(e.id + j, 50);
-                        var w = 12 * e.fout() * m;
+                    let m = i == 0 ? 1 : 0.5;
+                    for(let j = 0; j < 5; j++){
+                        let rot = e.rotation + Mathf.randomSeedRange(e.id + j, 50);
+                        let w = 12 * e.fout() * m;
                         Drawf.tri(e.x, e.y, w, (40 + Mathf.randomSeedRange(e.id + j, 40)) * m, rot);
                         Drawf.tri(e.x, e.y, w, 10 * m, rot + 180);
                     }
@@ -1637,11 +1666,11 @@ Vela.weapons.add(
             },{}),
             smokeEffect: Fx.shootBig2,
             trailEffect: extend(Effect,30, e => {
-                for(var i = 0; i < 2; i++){
+                for(let i = 0; i < 2; i++){
                     Draw.color(i == 0 ? Color.valueOf("ed655a") : Color.valueOf("eda096"));
-                    var m = i == 0 ? 1 : 0.5;
-                    var rot = e.rotation + 180;
-                    var w = 8 * e.fout() * m;
+                    let m = i == 0 ? 1 : 0.5;
+                    let rot = e.rotation + 180;
+                    let w = 8 * e.fout() * m;
                     Drawf.tri(e.x, e.y, w, (20 + Mathf.randomSeedRange(e.id, 15)) * m, rot);
                     Drawf.tri(e.x, e.y, w, 8 * m, rot + 180);
                 }
@@ -1651,11 +1680,11 @@ Vela.weapons.add(
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 4);
                 Lines.circle(e.x, e.y, 4 + e.finpow() * 20);
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 6, 80 * e.fout(), i*90 + 45);
                 }
                 Draw.color();
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 3, 30 * e.fout(), i*90 + 45);
                 }
                 Drawf.light(e.x, e.y, 150, Color.valueOf("ed655a"), 0.9 * e.fout());
@@ -1735,7 +1764,7 @@ Corvus.weapons.add(
                 if (!b) return;
             
                 let rot = b.rotation();
-                let baseLength = this.length; 
+                let baseLength = this.length;
                 let data = { length: baseLength };
             
                 let endX = b.x + Angles.trnsx(rot, baseLength);
@@ -1745,8 +1774,8 @@ Corvus.weapons.add(
                     let tile = Vars.world.tile(x, y);
                     if (tile != null && tile.build != null) {
                         let blockName = tile.block().name;
-
-                        if (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall") { 
+                        
+                        if (tile.build.team != b.team && (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall")) { 
                             let dist = b.dst(tile.build.x, tile.build.y);
                             if (dist < data.length) {
                                 data.length = dist;
@@ -1757,13 +1786,28 @@ Corvus.weapons.add(
                     return false;
                 });
 
-                let resultLength = data.length;
-                b.fdata = resultLength;
+                let resultLength = Damage.collideLaser(b, data.length, this.largeHit, this.laserAbsorb, this.pierceCap);
 
-                let defaultLength = this.length;
-                this.length = resultLength;
-                this.super$init(b);
-                this.length = defaultLength;
+                this.laserEffect.at(b.x, b.y, rot, resultLength * 0.75);
+
+                if (this.lightningSpacing > 0) {
+                    let idx = 0;
+                    for (let i = 0; i <= resultLength; i += this.lightningSpacing) {
+                        let cx = b.x + Angles.trnsx(rot, i);
+                        let cy = b.y + Angles.trnsy(rot, i);
+                        let f = idx++;
+                        Mathf.signs.forEach(s => {
+                            Time.run(f * this.lightningDelay, () => {
+                                if (b.isAdded() && b.type === this) {
+                                    Lightning.create(b, this.lightningColor,
+                                        this.lightningDamage < 0 ? this.damage : this.lightningDamage,
+                                        cx, cy, rot + 90 * s + Mathf.range(this.lightningAngleRand),
+                                        this.lightningLength + Mathf.random(this.lightningLengthRand));
+                                }
+                            });
+                        });
+                    }
+                }                
             },
             laserAbsorb: false,
             length: 532,
@@ -1790,7 +1834,7 @@ Corvus.weapons.add(
                 Lines.stroke(e.fout() * 4);
                 Lines.circle(e.x, e.y, 4 + e.fin() * 60);
                 Fill.circle(e.x, e.y, e.fout() * 20);
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 15*e.fout(), 80, i*90);
                 }
             }, {followParent: true, rotWithParent: true}),
@@ -1799,7 +1843,7 @@ Corvus.weapons.add(
                 Lines.stroke(e.fin() * 4);
                 Lines.circle(e.x, e.y, 4 + e.fout() * 100);
                 Fill.circle(e.x, e.y, e.fin() * 20);
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 7.5 + 5*e.fin(), 10+40*e.fin(), i*90+180*3*e.fout());
                 }
                 Angles.randLenVectors(e.id, 20, 40 * e.fout(), (x, y) => {
@@ -1879,7 +1923,7 @@ Corvus.weapons.add(
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 1.6);
                 Angles.randLenVectors(e.id, 18, e.finpow() * 27, e.rotation, 360, (x, y) => {
-                    var ang = Mathf.angle(x, y);
+                    let ang = Mathf.angle(x, y);
                     Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 6 + 1);
                 });
             }, {followParent: true, rotWithParent: true}),
@@ -1891,9 +1935,9 @@ Corvus.weapons.add(
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 3);
                 Lines.circle(e.x, e.y, 96);
-                var offset = Mathf.randomSeed(e.id, 360);
-                for(var i = 0; i < 10; i++){
-                    var angle = i * 360 / 10 + offset;
+                let offset = Mathf.randomSeed(e.id, 360);
+                for(let i = 0; i < 10; i++){
+                    let angle = i * 360 / 10 + offset;
                     Drawf.tri(e.x + Angles.trnsx(angle, 96), e.y + Angles.trnsy(angle, 96), 6, 30 * e.fout(), angle);
                 }
                 Fill.circle(e.x, e.y, 12 * e.fout());
@@ -2217,7 +2261,7 @@ Arkyid.stats.addPercent(
     Arkyid.DR
 );
 Arkyid.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
-var ArkyidSap = extend(SapBulletType,{
+let ArkyidSap = extend(SapBulletType,{
     sapStrength: 0.85,
     length: 80,
     damage: 110,
@@ -2884,14 +2928,14 @@ Quad.weapons.add(
             despawnEffect: extend(Effect,40, 100, e => {
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 2);
-                var circleRad = 4 + e.finpow() * 112;
+                let circleRad = 4 + e.finpow() * 112;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Color.valueOf("ed655a"));
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 8, 132 * e.fout(), i*90);
                 }
                 Draw.color();
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 4, 132/3 * e.fout(), i*90);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Color.valueOf("ed655a"), e.fout());
@@ -2932,14 +2976,14 @@ Quad.weapons.add(
             despawnEffect: extend(Effect,40, 100, e => {
                 Draw.color(Color.valueOf("789aff"));
                 Lines.stroke(e.fout() * 2);
-                var circleRad = 4 + e.finpow() * 64;
+                let circleRad = 4 + e.finpow() * 64;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Color.valueOf("789aff"));
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 8, 84 * e.fout(), i*90);
                 }
                 Draw.color();
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 4, 84/3 * e.fout(), i*90);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Color.valueOf("789aff"), e.fout());
@@ -2980,14 +3024,14 @@ Quad.weapons.add(
             despawnEffect: extend(Effect,40, 100, e => {
                 Draw.color(Pal.heal);
                 Lines.stroke(e.fout() * 2);
-                var circleRad = 4 + e.finpow() * 160;
+                let circleRad = 4 + e.finpow() * 160;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Pal.heal);
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 8, 180 * e.fout(), i*90);
                 }
                 Draw.color();
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     Drawf.tri(e.x, e.y, 4, 180/3 * e.fout(), i*90);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Pal.heal, e.fout());
@@ -3031,7 +3075,7 @@ const Oct = extend(UnitType, "Patron_Oct", {
     lightRadius: 303.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
-    DR: 0.7,
+    DR: 0.75,
     update(unit){
         unit.healthMultiplier += 1/(1-Oct.DR)-1;
     }
@@ -3550,7 +3594,7 @@ Omura.weapons.add(
             wx = unit.x + Angles.trnsx(rotation, this.x, this.y) + Angles.trnsx(weaponRotation, 0, -realRecoil),
             wy = unit.y + Angles.trnsy(rotation, this.x, this.y) + Angles.trnsy(weaponRotation, 0, -realRecoil);
             Draw.color(Color.valueOf("ed655a"));
-            for(var i = 0; i < 4; i++){
+            for(let i = 0; i < 4; i++){
                 Drawf.tri(wx, wy, 5, 15, i*90+Time.time);
             }
             Fill.circle(wx, wy, 5.5);
@@ -4279,11 +4323,11 @@ Navanax.stats.addPercent(
     Navanax.DR
 );
 Navanax.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
-var laserPos = [
+let NavanaxLaserPos = [
     {x: 21, y: -29.25}, {x: -21, y: -29.25},
     {x: 21, y: 12.5}, {x: -21, y: 12.5}
 ];
-laserPos.forEach(pos => {
+NavanaxLaserPos.forEach(pos => {
     Navanax.weapons.add(extend(Weapon, "destructionmod-Destructor_Plasma_Laser_Mount", {
         x: pos.x,
         y: pos.y,
@@ -4304,10 +4348,60 @@ laserPos.forEach(pos => {
         continuous: true,
         cooldownTime: 170,
         bullet: extend(ContinuousLaserBulletType, {
+            applyDamage(b){
+                this.super$applyDamage(b);
+                let resultLength = this.currentLength(b);
+                let rot = b.rotation();
+                if (this.lightningSpacing > 0) {
+                    let idx = 0;
+                    for (let i = 0; i <= resultLength; i += this.lightningSpacing) {
+                        let cx = b.x + Angles.trnsx(rot, i);
+                        let cy = b.y + Angles.trnsy(rot, i);
+                        let f = idx++;
+                        Mathf.signs.forEach(s => {
+                            Time.run(f * this.lightningDelay, () => {
+                                if (b.isAdded() && b.type === this) {
+                                    Lightning.create(b, this.lightningColor,
+                                        this.lightningDamage < 0 ? this.damage : this.lightningDamage,
+                                        cx, cy, rot + 90 * s + Mathf.range(this.lightningAngleRand),
+                                        this.lightningLength + Mathf.random(this.lightningLengthRand));
+                                }
+                            });
+                        });
+                    }
+                }
+            },
+            draw(b){
+                let fout = Mathf.clamp(b.time > b.lifetime - this.fadeTime ? 1 - (b.time - (this.lifetime - this.fadeTime)) / this.fadeTime : 1);
+                let realLength = Damage.findLength(b, this.currentLength(b), this.laserAbsorb, this.pierceCap);
+                let rot = b.rotation();
+
+                for(let i = 0; i < this.colors.length; i++){
+                    Draw.color(Tmp.c1.set(this.colors[i]).mul(1 + Mathf.absin(Time.time, 1, 0.1)));
+                
+                    let colorFin = i / (this.colors.length - 1);
+                    let baseStroke = Mathf.lerp(this.strokeFrom, this.strokeTo, colorFin);
+                    let stroke = (this.width + Mathf.absin(Time.time, this.oscScl, this.oscMag)) * fout * baseStroke;
+                    let ellipseLenScl = Mathf.lerp(1 - i / (this.colors.length), 1, this.pointyScaling);
+                
+                    Lines.stroke(stroke);
+                    Lines.lineAngle(b.x, b.y, rot, Math.max(0, realLength - this.frontLength), false);
+
+                    Drawf.flameFront(b.x, b.y, this.divisions, rot + 180, this.backLength, stroke / 2);
+
+                    Tmp.v1.trnsExact(rot, Math.max(0, realLength - this.frontLength));
+                    Drawf.flameFront(b.x + Tmp.v1.x, b.y + Tmp.v1.y, this.divisions, rot, this.frontLength * ellipseLenScl, stroke / 2);
+                }
+            
+                Tmp.v1.trns(b.rotation(), realLength * 1.1);
+            
+                Drawf.light(b.x, b.y, b.x + Tmp.v1.x, b.y + Tmp.v1.y, this.lightStroke, this.lightColor, this.lightOpacity);
+                Draw.reset();
+            },
             currentLength(b){
                 let rot = b.rotation();
 
-                let baseLength = 160; 
+                let baseLength = this.length; 
                 let data = { length: baseLength };
             
                 let endX = b.x + Angles.trnsx(rot, baseLength);
@@ -4318,7 +4412,7 @@ laserPos.forEach(pos => {
                     if (tile != null && tile.build != null) {
                         let blockName = tile.block().name;
 
-                        if (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall") { 
+                        if (tile.build.team != b.team && (blockName === "destructionmod-Destruction_Wall_Large" || blockName === "destructionmod-Destruction_Wall")) {
                             let dist = b.dst(tile.build.x, tile.build.y);
                             if (dist < data.length) {
                                 data.length = dist;
@@ -4330,8 +4424,9 @@ laserPos.forEach(pos => {
                 });
 
                 let resultLength = data.length;
-                this.length = resultLength;
-                return resultLength;
+
+                let fout = Mathf.clamp(b.time > b.lifetime - this.fadeTime ? 1 - (b.time - (this.lifetime - this.fadeTime)) / this.fadeTime : 1);
+                return resultLength * fout;
             },
             laserAbsorb: false,
             damage: 1600/12,
@@ -4408,7 +4503,7 @@ Navanax.weapons.add(
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 1.6);
                 Angles.randLenVectors(e.id, 18, e.finpow() * 27, e.rotation, 360, (x, y) => {
-                    var ang = Mathf.angle(x, y);
+                    let ang = Mathf.angle(x, y);
                     Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 6 + 1);
                 });
             }, { followParent: true, rotWithParent: true }),
@@ -4420,9 +4515,9 @@ Navanax.weapons.add(
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fout() * 3);
                 Lines.circle(e.x, e.y, 150);
-                var offset = Mathf.randomSeed(e.id, 360);
-                for(var i = 0; i < 10; i++){
-                    var angle = i * 360 / 10 + offset;
+                let offset = Mathf.randomSeed(e.id, 360);
+                for(let i = 0; i < 10; i++){
+                    let angle = i * 360 / 10 + offset;
                     Drawf.tri(e.x + Angles.trnsx(angle, 150), e.y + Angles.trnsy(angle, 150), 6, 50 * e.fout(), angle);
                 }
                 Fill.circle(e.x, e.y, 12 * e.fout());
@@ -4483,5 +4578,7 @@ module.exports = {
     Cyerce: Cyerce,
     Aegires: Aegires,
     Navanax: Navanax,
-    Gamma: Gamma
+    Gamma: Gamma,
+
+    Debuff: Destructed
 }
