@@ -393,7 +393,7 @@ const DestructionNode = extend(PowerNode, "Destruction_Node", {
     laserColor2: Color.valueOf("ed655a"),
     powerLayer: Layer.bullet,
     researchCostMultiplier: 1/2,
-    buildCostMultiplier: 1.4534883720930233
+    buildCostMultiplier: 1.4534883720930233/6.065408
 });
 
 //Destruction Large Node
@@ -553,7 +553,7 @@ const HPHT = extend(GenericCrafter, "HPHT", {
     researchCostMultiplier: 1/5,
     buildCostMultiplier: 6/403*8
 });
-HPHT.consumeItem(Items.graphite, 20);
+HPHT.consumeItem(Items.graphite, 10);
 HPHT.consumeLiquid(Liquids.slag, 0.5);
 HPHT.consumePower(16.666666666666668);
 HPHT.buildType = () => extend(GenericCrafter.GenericCrafterBuild, HPHT, {
@@ -585,19 +585,19 @@ const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
     hasPower: true,
     hasItems: true,
     itemCapacity: 40,
-    craftTime: 240,
+    craftTime: 300,
     craftEffect: Fx.smeltsmoke,
     drawer: new DrawMulti(new DrawDefault(),new DrawFlame(Color.valueOf("ed655a"))),
     ambientSound: Sounds.loopSmelter,
     ambientSoundVolume: 0.5,
     requirements: ItemStack.with(Items.lead,500 , Items.silicon,1000 , Items.graphite,300 , items.sodiumBattery,2000 , items.gold,650),
     category: Category.crafting,
-    outputItem: new ItemStack(items.diamond,4),
+    outputItem: new ItemStack(items.diamond,5),
     buildVisibility: BuildVisibility.shown,
     researchCostMultiplier: 1/5,
     buildCostMultiplier: 6/475*10
 });
-ElectricHPHT.consumeItem(Items.graphite, 20);
+ElectricHPHT.consumeItem(Items.graphite, 10);
 ElectricHPHT.consumePower(40);
 
 //Sodium Battery Machine
@@ -1827,7 +1827,7 @@ Ripple.ammo(
         hitEffect: new MultiEffect(Fx.flakExplosion, Fx.shockwaveSmaller),
         knockback: 0.8,
         lifetime: 410/6,
-        widht: 14,
+        width: 14,
         height: 14,
         collidesTiles: false,
         splashDamageRadius: 32,
@@ -1851,7 +1851,7 @@ Ripple.ammo(
         hitEffect: new MultiEffect(Fx.flakExplosion, Fx.shockwaveSmaller),
         knockback: 0.8,
         lifetime: 410/6,
-        widht: 15,
+        width: 15,
         height: 15,
         collidesTiles: false,
         splashDamageRadius: 32,
@@ -1873,7 +1873,7 @@ Ripple.ammo(
         hitEffect: new MultiEffect(Fx.flakExplosion, Fx.shockwaveSmaller),
         knockback: 0.8,
         lifetime: 410/4,
-        widht: 16,
+        width: 16,
         height: 16,
         collidesTiles: false,
         splashDamageRadius: 56,
@@ -1893,7 +1893,7 @@ Ripple.ammo(
         hitEffect: new MultiEffect(Fx.flakExplosion, Fx.shockwaveSmaller),
         knockback: 1,
         lifetime: 410/6.8,
-        widht: 15,
+        width: 15,
         height: 15,
         collidesTiles: false,
         splashDamageRadius: 40,
@@ -2128,7 +2128,8 @@ const Foreshadow = extend(ItemTurret, "Destructor_Foreshadow", {
     health: 10000,
     depositCooldown: 2,
     range: 600,
-    researchCostMultiplier: 1/4
+    researchCostMultiplier: 1/4,
+    buildCostMultiplier: 2.01118217288122
 });
 Foreshadow.coolant = Foreshadow.consumeCoolant(1),
 Foreshadow.consumePower(30)
@@ -2330,7 +2331,8 @@ const Spectre = extend(ItemTurret, "Destructor_Spectre", {
     shootSound: Sounds.shootSpectre,
     health: 9900,
     depositCooldown: 2,
-    researchCostMultiplier: 1/4
+    researchCostMultiplier: 1/4,
+    buildCostMultiplier: 1.2820512820512822
 });
 Spectre.coolant = Spectre.consumeCoolant(1);
 Spectre.ammo(
@@ -2474,7 +2476,8 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
     }),
     health: 12000,
     liquidCapacity: 60,
-    researchCostMultiplier: 1/4
+    researchCostMultiplier: 1/4,
+    buildingDamageMultiplier: 1.5572858731924362
 });
 Meltdown.coolant = Meltdown.consumeCoolant(0.5);
 Meltdown.consumePower(24);
