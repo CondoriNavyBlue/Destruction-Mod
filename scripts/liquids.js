@@ -1,4 +1,5 @@
 const Waste_Water = extend(Liquid, "Waste_Water",{
+    localizedName: "Waste Water",
     alwaysUnlocked: true,
     viscosity: 0,
     temperature: 0,
