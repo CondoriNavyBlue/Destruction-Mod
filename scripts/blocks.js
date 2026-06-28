@@ -69,7 +69,7 @@ const IronWall = extend(Wall, "Iron_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,8),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 2.5/4.8
+    buildCostMultiplier: 2.5/4.8
 });
 
 //Large Iron Wall
@@ -82,7 +82,7 @@ const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 2.5/4.8
+    buildCostMultiplier: 2.5/4.8
 });
 
 //Gold Wall
@@ -95,7 +95,7 @@ const GoldWall = extend(Wall, "Gold_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.gold,8),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 5/6.4
+    buildCostMultiplier: 5/6.4
 });
 
 //Large Gold Wall
@@ -108,7 +108,7 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.gold,32),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 5/6.4
+    buildCostMultiplier: 5/6.4
 });
 
 //Diamond Wall
@@ -120,7 +120,7 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,8),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 10/9.6
+    buildCostMultiplier: 10/9.6
 });
 
 //Large Diamond Wall
@@ -132,7 +132,7 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,32),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 10/9.6
+    buildCostMultiplier: 10/9.6
 });
 
 //Destruction Wall
@@ -151,7 +151,7 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,8 , items.gold,8 , items.diamond,8),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 1.0817307692307692
+    buildCostMultiplier: 1.0817307692307692
 });
 
 //Large Destruction Wall
@@ -170,7 +170,7 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32 , items.gold,32 , items.diamond,32),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 1.0817307692307692
+    buildCostMultiplier: 1.0817307692307692
 });
 
 //------------------------------Core------------------------------
@@ -188,7 +188,7 @@ const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
     requirements: ItemStack.with(Items.copper,12000 , Items.lead,12000 , Items.silicon,8000 , Items.thorium,6000 , items.iron,6000 , items.gold,5000 , items.diamond,3000),
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 135/277
+    buildCostMultiplier: 135/277
 });
 
 //------------------------------Storage------------------------------
@@ -215,7 +215,7 @@ const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
     researchCostMultiplier: 1/2,
-    //buildCostMultiplier: 0.3491010647582475099
+    buildCostMultiplier: 0.3491010647582475099
 });
 
 //------------------------------Conveyor------------------------------
@@ -229,7 +229,7 @@ const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
     category: Category.distribution,
     requirements: ItemStack.with(items.iron,1 , items.gold,1 , items.diamond,1),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 1.15740740740740733
+    buildCostMultiplier: 1.15740740740740733
 });
 
 //Destruction Armored Conveyor
@@ -241,7 +241,7 @@ const DestructionArmoredConveyor = extend(ArmoredConveyor, "Destruction_Armored_
     category: Category.distribution,
     requirements: ItemStack.with(items.iron,2 , items.gold,2 , items.diamond,1),
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 0.9036144578313252685
+    buildCostMultiplier: 0.9036144578313252685
 });
 
 //Destruction Junction
@@ -254,7 +254,7 @@ const DestructionJunction = extend(Junction, "Destruction_Junction", {
     capacity: 12,
     health: 850,
     displayedSpeed: 30,
-    //buildCostMultiplier: 0.7662835249042145303
+    buildCostMultiplier: 0.7662835249042145303
 });
 
 //Destruction Bridge
@@ -271,7 +271,7 @@ const DestructionBridge = extend(ItemBridge, "Destruction_Bridge", {
     transportTime: 2,
     hasPower: false,
     health: 770,
-    //buildCostMultiplier: 0.879765395894427982
+    buildCostMultiplier: 0.879765395894427982
 });
 
 //Destruction Phase Brindge
@@ -287,7 +287,7 @@ const DestructionPhaseBridge = extend(ItemBridge, "Destruction_Phase_Bridge", {
     pulse: true,
     hasPower: true,
     health: 900,
-    //buildCostMultiplier: 40/77
+    buildCostMultiplier: 40/77
 });
 DestructionPhaseBridge.consumePower(0.6);
 
@@ -304,7 +304,7 @@ const IronDrill = extend(Drill, "Iron_Drill", {
     drillTIme: 320,
     health: 800,
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 0.9242144177449167
+    buildCostMultiplier: 0.9242144177449167
 });
 IronDrill.consumeLiquid(Liquids.water,0.0666666666).boost();
 
@@ -323,7 +323,7 @@ const GoldDrill = extend(Drill, "Gold_Drill", {
     hasPower: true,
     liquidBoostIntensity: 1.7,
     buildVisibility: BuildVisibility.shown,
-    //buildCostMultiplier: 80/79
+    buildCostMultiplier: 80/79
 });
 GoldDrill.consumePower(1.5);
 GoldDrill.consumeLiquid(Liquids.water,0.085).boost();
@@ -347,7 +347,7 @@ const DiamondDrill = extend(Drill, "Diamond_Drill", {
     itemCapacity: 20,
     liquidCapacity: 30,
     researchCostMultiplier: 2/3,
-    //buildCostMultiplier: 1.0676916506512918
+    buildCostMultiplier: 1.0676916506512918
 });
 DiamondDrill.consumePower(3.5);
 DiamondDrill.consumeLiquid(Liquids.cryofluid,0.02).boost();
@@ -371,7 +371,7 @@ const DestructionDrill = extend(Drill, "Destruction_Drill", {
     itemCapacity: 50,
     liquidCapacity: 30,
     researchCostMultiplier: 2/3,
-    //buildCostMultiplier: 30/71
+    buildCostMultiplier: 30/71
 });
 DestructionDrill.consumePower(6);
 DestructionDrill.consumeLiquid(Liquids.slag,0.025).boost();
@@ -393,7 +393,7 @@ const DestructionNode = extend(PowerNode, "Destruction_Node", {
     laserColor2: Color.valueOf("ed655a"),
     powerLayer: Layer.bullet,
     researchCostMultiplier: 1/2,
-    //buildCostMultiplier: 1.4534883720930233
+    buildCostMultiplier: 1.4534883720930233
 });
 
 //Destruction Large Node
@@ -409,7 +409,7 @@ const DestructionLargeNode = extend(PowerNode, "Destruction_Large_Node", {
     laserColor1: Color.valueOf("eda096"),
     laserColor2: Color.valueOf("ed655a"),
     powerLayer: Layer.bullet,
-    //buildCostMultiplier: 10/39
+    buildCostMultiplier: 10/39
 });
 
 //Destruction Diamond Node
@@ -425,7 +425,7 @@ const DestructionDiamondNode = extend(PowerNode, "Destruction_Diamond_Node", {
     laserColor1: diamondAmmoBack,
     laserColor2: Color.valueOf("00526E"),
     powerLayer: Layer.bullet+1,
-    //buildCostMultiplier: 0.4478280340349306
+    buildCostMultiplier: 0.4478280340349306
 });
 
 //Sodium Storage Battery
@@ -437,7 +437,7 @@ const SodiumStorageBattery = extend(Battery, "Sodium_Storage_Battery", {
     buildVisibility: BuildVisibility.shown,
     baseExplosiveness: 2,
     researchCostMultiplier: 2/3,
-    //buildCostMultiplier: 1.0114632501685771
+    buildCostMultiplier: 1.0114632501685771
 });
 SodiumStorageBattery.consumePowerBuffered(25000);
 
@@ -450,7 +450,7 @@ const SodiumStorageBatteryLarge = extend(Battery, "Sodium_Storage_Battery_Large"
     buildVisibility: BuildVisibility.shown,
     baseExplosiveness: 8,
     researchCostMultiplier: 2/3,
-    //buildCostMultiplier: 6/35*2
+    buildCostMultiplier: 6/35*2
 });
 SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 
@@ -476,7 +476,7 @@ const NaExtractor = extend(GenericCrafter, "Sodium_Extractor", {
     ambientSound: Sounds.loopElectricHum,
     ambientSoundVolume: 0.05,
     researchCostMultiplier: 1/3,
-    //buildCostMultiplier: 9/44
+    buildCostMultiplier: 9/44
 });
 NaExtractor.consumePower(1.25);
 NaExtractor.consumeLiquid(Liquids.water,0.5333333333333333);
@@ -511,7 +511,7 @@ const SSM = extend(Separator, "Sand_Sieve_Machine", {
     ambientSound: Sounds.loopGrind,
     ambientSoundVolume: 0.02,
     researchCostMultiplier: 0.5,
-    //buildCostMultiplier: 0.5070993914807302
+    buildCostMultiplier: 0.5070993914807302
 });
 SSM.consumePower(2);
 SSM.consumeItem(Items.sand,5);
@@ -551,7 +551,7 @@ const HPHT = extend(GenericCrafter, "HPHT", {
     ambientSound: Sounds.loopSmelter,
     ambientSoundVolume: 1,
     researchCostMultiplier: 1/5,
-    //buildCostMultiplier: 6/403*8
+    buildCostMultiplier: 6/403*8
 });
 HPHT.consumeItem(Items.graphite, 20);
 HPHT.consumeLiquid(Liquids.slag, 0.5);
@@ -595,7 +595,7 @@ const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
     outputItem: new ItemStack(items.diamond,4),
     buildVisibility: BuildVisibility.shown,
     researchCostMultiplier: 1/5,
-    //buildCostMultiplier: 6/475*10
+    buildCostMultiplier: 6/475*10
 });
 ElectricHPHT.consumeItem(Items.graphite, 20);
 ElectricHPHT.consumePower(40);
@@ -618,7 +618,7 @@ const SodiumBatteryMachine = extend(GenericCrafter, "Sodium_Battery_Machine", {
     buildVisibility: BuildVisibility.shown,
     outputItem: new ItemStack(items.sodiumBattery,1),
     researchCostMultiplier: 1/3,
-    //buildCostMultiplier: 44/105
+    buildCostMultiplier: 44/105
 });
 SodiumBatteryMachine.consumePower(1.6666666666666667);
 SodiumBatteryMachine.consumeItems(ItemStack.with(Items.titanium,1 , Items.coal,1 , items.sodium,1));
@@ -638,7 +638,7 @@ const IronMelter = extend(GenericCrafter, "Iron_Melter", {
     category: Category.crafting,
     buildVisibility: BuildVisibility.shown,
     outputLiquid: new LiquidStack(Liquids.slag,0.5),
-    //buildCostMultiplier: 3/7*1.5
+    buildCostMultiplier: 3/7*1.5
 });
 IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
