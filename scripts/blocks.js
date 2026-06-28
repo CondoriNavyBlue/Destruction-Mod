@@ -2477,7 +2477,7 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
     health: 12000,
     liquidCapacity: 60,
     researchCostMultiplier: 1/4,
-    buildingDamageMultiplier: 1.5572858731924362
+    buildCostMultiplier: 1.5572858731924362
 });
 Meltdown.coolant = Meltdown.consumeCoolant(0.5);
 Meltdown.consumePower(24);
