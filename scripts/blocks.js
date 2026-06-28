@@ -69,7 +69,7 @@ const IronWall = extend(Wall, "Iron_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,8),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 2.5/4.8
+    buildCostMultiplier: 6*2.5/4.8
 });
 
 //Large Iron Wall
@@ -82,7 +82,7 @@ const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 2.5/4.8
+    buildCostMultiplier: 6*2.5/4.8
 });
 
 //Gold Wall
@@ -95,7 +95,7 @@ const GoldWall = extend(Wall, "Gold_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.gold,8),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 5/6.4
+    buildCostMultiplier: 6*5/6.4
 });
 
 //Large Gold Wall
@@ -108,7 +108,7 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.gold,32),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 5/6.4
+    buildCostMultiplier: 6*5/6.4
 });
 
 //Diamond Wall
@@ -120,7 +120,7 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,8),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 10/9.6
+    buildCostMultiplier: 6*10/9.6
 });
 
 //Large Diamond Wall
@@ -132,7 +132,7 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,32),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 10/9.6
+    buildCostMultiplier: 6*10/9.6
 });
 
 //Destruction Wall
@@ -151,7 +151,7 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,8 , items.gold,8 , items.diamond,8),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 1.0817307692307692
+    buildCostMultiplier: 6*1.0817307692307692
 });
 
 //Large Destruction Wall
@@ -170,7 +170,7 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32 , items.gold,32 , items.diamond,32),
     buildVisibility: BuildVisibility.shown,
-    buildCostMultiplier: 1.0817307692307692
+    buildCostMultiplier: 6*1.0817307692307692
 });
 
 //------------------------------Core------------------------------
