@@ -2129,7 +2129,7 @@ const Foreshadow = extend(ItemTurret, "Destructor_Foreshadow", {
     depositCooldown: 2,
     range: 600,
     researchCostMultiplier: 1/4,
-    buildCostMultiplier: 2.01118217288122
+    buildCostMultiplier: 2.01118217288121
 });
 Foreshadow.coolant = Foreshadow.consumeCoolant(1),
 Foreshadow.consumePower(30)
@@ -2209,12 +2209,13 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, Color.valueOf("ed655a"), 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 2900,
+        damage: 1350*2,
         pierceDamageFactor: 1,
         length: 640,
         hitShake: 6,
         ammoMultiplier: 1,
-        buildingDamageMultiplier: 0.2
+        buildingDamageMultiplier: 0.2,
+        armorMultiplier: 0
     }),
     items.diamond, extend(RailBulletType, {
         shootEffect: extend(Effect, 24, e => {
@@ -2299,14 +2300,15 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, diamondAmmoBack, 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 2900,
+        damage: 1350*2,
         pierceDamageFactor: 0.5,
         length: 640,
         hitShake: 6,
         ammoMultiplier: 1,
         status: units.Debuff,
         statusDuration: 200,
-        buildingDamageMultiplier: 0.2
+        buildingDamageMultiplier: 0.2,
+        armorMultiplier: 0
     })
 );
 
