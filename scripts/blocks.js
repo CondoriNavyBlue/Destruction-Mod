@@ -670,7 +670,8 @@ const Factory = extend(UnitFactory, "Destruction_Factory", {
         extend(UnitFactory.UnitPlan, units.Mono, 60*52.5, ItemStack.with(Items.silicon,30 , items.iron,20),{}),
         extend(UnitFactory.UnitPlan, units.Risso, 60*67.5, ItemStack.with(Items.silicon,30 , Items.metaglass,30 , items.iron,20),{}),
         extend(UnitFactory.UnitPlan, units.Retusa, 60*52.5, ItemStack.with(Items.silicon,20, Items.titanium,20 , items.iron,20),{})
-    )
+    ),
+    buildCostMultiplier: 3.2435939020434639
 });
 Factory.consumePower(120/60);
 
@@ -691,7 +692,8 @@ const ReconstructorTo2 = extend(Reconstructor, "Destruction_Additive_Reconstruct
         toJavaUnitArray([units.Mono, units.Poly]),
         toJavaUnitArray([units.Risso, units.Minke]),
         toJavaUnitArray([units.Retusa, units.Oxynoe])
-    )
+    ),
+    buildCostMultiplier: 3.234675723758693
 });
 ReconstructorTo2.consumePower(200/60);
 ReconstructorTo2.consumeItems(ItemStack.with(Items.silicon,50 , items.sodiumBattery,40));
@@ -713,7 +715,8 @@ const ReconstructorTo3 = extend(Reconstructor, "Destruction_Multiplicative_Recon
         toJavaUnitArray([units.Poly, units.Mega]),
         toJavaUnitArray([units.Minke, units.Bryde]),
         toJavaUnitArray([units.Oxynoe, units.Cyerce])
-    )
+    ),
+    buildCostMultiplier: 80/26.3
 });
 ReconstructorTo3.consumePower(400/60);
 ReconstructorTo3.consumeItems(ItemStack.with(Items.silicon,160 , items.sodiumBattery,80 , items.gold, 50));
@@ -736,7 +739,8 @@ const ReconstructorTo4 = extend(Reconstructor, "Destruction_Exponential_Reconstr
         toJavaUnitArray([units.Bryde, units.Sei]),
         toJavaUnitArray([units.Cyerce, units.Aegires])
     ),
-    researchCostMultiplier: 1/2
+    researchCostMultiplier: 1/2,
+    buildCostMultiplier: 4.0130987543341461
 });
 ReconstructorTo4.consumePower(900/60);
 ReconstructorTo4.consumeItems(ItemStack.with(Items.silicon,800 , Items.thorium,750 , items.sodiumBattery,600 , items.gold, 650));
@@ -760,7 +764,8 @@ const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstruc
         toJavaUnitArray([units.Sei, units.Omura]),
         toJavaUnitArray([units.Aegires, units.Navanax])
     ),
-    researchCostMultiplier: 1/2
+    researchCostMultiplier: 1/2,
+    buildCostMultiplier: 3/868*(150*7.5)
 });
 ReconstructorTo5.consumePower(3000/60);
 ReconstructorTo5.consumeItems(ItemStack.with(Items.silicon,1200 , items.sodiumBattery,1000 , items.iron,1000 , items.gold,850 , items.diamond,700));
@@ -2550,7 +2555,8 @@ const OverdriveDiamond = extend(OverdriveProjector, "Overdrive_Diamond", {
     health: 30000,
     baseColor: Color.valueOf("00ffff"),
     phaseColor: Color.valueOf("80c8ff"),
-    researchCostMultiplier: 10/55
+    researchCostMultiplier: 10/55,
+    buildCostMultiplier: 30/41
 });
 OverdriveDiamond.consumeItems(ItemStack.with(Items.phaseFabric,10 , items.diamond,10)).boost();
 OverdriveDiamond.consumePower(66);
