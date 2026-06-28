@@ -321,6 +321,7 @@ const Scepter = extend(UnitType, "Destructor_Scepter", {
     lightRadius: 101.2,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Scepter.DR)-1;
@@ -484,6 +485,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
     lightRadius: 138,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Reign.DR)-1;
@@ -978,6 +980,7 @@ const Antumbra = extend(UnitType, "Destructor_Antumbra", {
     lightRadius: 211.6,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Antumbra.DR)-1;
@@ -1076,6 +1079,7 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Eclipse.DR)-1;
@@ -1557,6 +1561,7 @@ const Vela = extend(UnitType, "Destructor_Vela", {
     lightRadius: 110.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Vela.DR)-1;
@@ -1724,6 +1729,7 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
     range: 532,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Corvus.DR)-1;
@@ -2250,6 +2256,7 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     lightRadius: 105.8,
     lightColor: Color.valueOf("0000ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Arkyid.DR)-1;
@@ -2385,6 +2392,7 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
     hovering: true,
     lightColor: Color.valueOf("0000ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Toxopid.DR)-1;
@@ -2890,6 +2898,7 @@ const Quad = extend(UnitType, "Destructor_Quad", {
     lightRadius: 165.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Quad.DR)-1;
@@ -3075,6 +3084,7 @@ const Oct = extend(UnitType, "Patron_Oct", {
     lightRadius: 303.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.75,
     update(unit){
         unit.healthMultiplier += 1/(1-Oct.DR)-1;
@@ -3377,6 +3387,7 @@ const Sei = extend(UnitType, "Destructor_Sei",{
     lightRadius: 179.4,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Sei.DR)-1;
@@ -3485,6 +3496,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Omura.DR)-1;
@@ -4217,6 +4229,7 @@ const Aegires = extend(UnitType, "Destructor_Aegires", {
     lightRadius: 202.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Aegires.DR)-1;
@@ -4312,6 +4325,7 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    researchCostMultiplier: 1/2,
     DR: 0.5,
     update(unit){
         unit.healthMultiplier += 1/(1-Navanax.DR)-1;
