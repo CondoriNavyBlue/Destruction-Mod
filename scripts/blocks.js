@@ -490,7 +490,8 @@ const SSM = extend(Separator, "Sand_Sieve_Machine", {
     buildVisibility: BuildVisibility.shown,
     results: ItemStack.with(items.iron,5 , items.gold,2),
     ambientSound: Sounds.loopGrind,
-    ambientSoundVolume: 0.02
+    ambientSoundVolume: 0.02,
+    researchCostMultiplier: 0.5
 });
 SSM.consumePower(2);
 SSM.consumeItem(Items.sand,5);
