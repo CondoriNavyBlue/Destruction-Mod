@@ -2556,7 +2556,7 @@ const OverdriveDiamond = extend(OverdriveProjector, "Overdrive_Diamond", {
     baseColor: Color.valueOf("00ffff"),
     phaseColor: Color.valueOf("80c8ff"),
     researchCostMultiplier: 10/55,
-    buildCostMultiplier: 30/41
+    buildCostMultiplier: 30/41*3.6
 });
 OverdriveDiamond.consumeItems(ItemStack.with(Items.phaseFabric,10 , items.diamond,10)).boost();
 OverdriveDiamond.consumePower(66);
