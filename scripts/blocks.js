@@ -2464,11 +2464,11 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
     range: 340,
     reload: 60,
     firingMoveFract: 0.5,
-    shootDuration: 300,
+    shootDuration: 480,
     shootSound: Sounds.shootMeltdown,
     loopSound: Sounds.beamMeltdown,
     loopSoundVolume: 2,
-    shootType: extend(ContinuousLaserBulletType, 300, {
+    shootType: extend(ContinuousLaserBulletType, 350, {
         length: 360,
         hitEffect: Fx.hitMeltdown,
         hitColor: Color.valueOf("ed655a"),
