@@ -473,7 +473,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     fuelItem: items.hdThorium,
     coolantPower: 1,
     explodeEffect: extend(Effect, 30, 500, b => {
-        let intensity = 6.8;
+        let intensity = 10;
         let baseLifetime = 25 + intensity * 11;
         b.lifetime = 50 + intensity * 65;
         Draw.color(Color.valueOf("C6738A"));
@@ -483,7 +483,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
             let lenScl = rand.random(0.4, 1);
             let fi = i;
             b.scaled(b.lifetime * lenScl, e => {
-                Angles.randLenVectors(e.id + fi -1, 20, 149.6*e.fin(Interp.pow10Out), (x, y) => {
+                Angles.randLenVectors(e.id + fi -1, 32, 200*e.fin(Interp.pow10Out), (x, y) => {
                     let fout = e.fout(Interp.pow5Out) * rand.random(0.5, 1);
                     let rad = fout * ((2 + intensity) * 2.35);
 
@@ -504,7 +504,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
             Lines.stroke((2 * e.fout()));
 
             Draw.z(Layer.effect + 0.001);
-            Angles.randLenVectors(e.id + 1, 54, 190.4*e.finpow(), (x, y, out) => {
+            Angles.randLenVectors(e.id + 1, 54, 240*e.finpow(), (x, y, out) => {
                 Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1 + out * 4 * (4 + intensity));
                 Drawf.light(e.x + x, e.y + y, (out * 4 * (3 + intensity)) * 3.5, Draw.getColor(), 0.8);
             });

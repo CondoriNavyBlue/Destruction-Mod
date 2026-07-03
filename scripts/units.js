@@ -1098,14 +1098,11 @@ Eclipse.weapons.add(
         x: 11,
         y: 27,
         rotateSpeed: 3,
-        reload: 15,
+        reload: 3,
         shootSound: Sounds.shootCyclone,
         shadow: 7,
         rotate: true,
         recoil: 0.5,
-        shoot: extend(ShootPattern, {
-            shots: 5
-        }),
         inaccuracy: 5,
         velocityRnd: -0.25,
         bullet: extend(FlakBulletType, 6.6, 144, {
@@ -1302,7 +1299,7 @@ Eclipse.weapons.add(
             lightColor: Color.valueOf("ed655a"),
             lightningColor: Color.valueOf("ed655a"),
             lightningLength: 2,
-            lightningDamage: 50,
+            lightningDamage: 60,
             lightningAngleRand: 40,
             lightningLengthRand: 10,
             lightningSpacing: 30,
