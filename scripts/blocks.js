@@ -1,3 +1,5 @@
+const rand = new Rand();
+
 const items = require('items');
 const units = require('units');
 const liquids = require("liquids");
@@ -454,6 +456,69 @@ const SodiumStorageBatteryLarge = extend(Battery, "Sodium_Storage_Battery_Large"
 });
 SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 
+//High Density Thorium Reactor
+const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
+    localizedName: "High Density Thorium Reactor",
+    explosionRadius: 30,
+    explosionDamage: 10000,
+    health: 3000,
+    itemCapacity: 20,
+    ambientSound: Sounds.loopThoriumReactor,
+    ambientSoundVolume: 0.2,
+    size: 3,
+    itemDuration: 360,
+    powerProduction: 75,
+    heating: 0.1,
+    lightColor: Color.valueOf("ed655a"),
+    fuelItem: items.hdThorium,
+    coolantPower: 1,
+    explodeEffect: extend(Effect, 30, 500, b => {
+        let intensity = 6.8;
+        let baseLifetime = 25 + intensity * 11;
+        b.lifetime = 50 + intensity * 65;
+        Draw.color(Color.valueOf("C6738A"));
+        Draw.alpha(0.7);
+        for(let i = 0; i < 4; i++){
+            rand.setSeed(b.id*2 + i);
+            let lenScl = rand.random(0.4, 1);
+            let fi = i;
+            b.scaled(b.lifetime * lenScl, e => {
+                Angles.randLenVectors(e.id + fi -1, 20, 149.6*e.fin(Interp.pow10Out), (x, y) => {
+                    let fout = e.fout(Interp.pow5Out) * rand.random(0.5, 1);
+                    let rad = fout * ((2 + intensity) * 2.35);
+
+                    Fill.circle(e.x + x, e.y + y, rad);
+                    Drawf.light(e.x + x, e.y + y, rad * 2.5, Color.valueOf("F9BF92"), 0.5);
+                });
+            });
+        }
+        b.scaled(baseLifetime, e => {
+            Draw.color();
+            e.scaled(5 + intensity * 2, i => {
+                Lines.stroke((3.1 + intensity/5) * i.fout());
+                Lines.circle(e.x, e.y, (3 + i.fin() * 14) * intensity);
+                Drawf.light(e.x, e.y, i.fin() * 14 * 2 * intensity, Color.white, 0.9 * e.fout());
+            });
+
+            Draw.color(Pal.lighterOrange, Color.valueOf("F9BF92"), e.fin());
+            Lines.stroke((2 * e.fout()));
+
+            Draw.z(Layer.effect + 0.001);
+            Angles.randLenVectors(e.id + 1, 54, 190.4*e.finpow(), (x, y, out) => {
+                Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 1 + out * 4 * (4 + intensity));
+                Drawf.light(e.x + x, e.y + y, (out * 4 * (3 + intensity)) * 3.5, Draw.getColor(), 0.8);
+            });
+        });
+    },{}),
+    category: Category.power,
+    requirements: ItemStack.with(Items.silicon,480 , Items.graphite,330 , items.iron,500 , items.gold,250 , items.sodiumBattery,300 , Items.surgeAlloy,50),
+    buildVisibility: BuildVisibility.shown,
+});
+const HDTRConsume = new ConsumeLiquid(Liquids.cryofluid, HDTReactor.heating / HDTReactor.coolantPower);
+HDTRConsume.update = false;
+HDTReactor.consume(HDTRConsume);
+HDTReactor.consumeItem(items.hdThorium);
+
 //------------------------------Crafter------------------------------
 
 //Sodium Extractor
@@ -502,6 +567,7 @@ const SSM = extend(Separator, "Sand_Sieve_Machine", {
     health: 560,
     hasPower: true,
     hasItems: true,
+    hasLiquid: false,
     itemCapacity: 30,
     craftTime: 30,
     requirements: ItemStack.with(Items.copper,200 , Items.lead,200 , Items.graphite,50 , Items.phaseFabric,50),
@@ -642,6 +708,25 @@ const IronMelter = extend(GenericCrafter, "Iron_Melter", {
 });
 IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
+
+//Thorium Cncentrator
+const ThoriumCncentrator = extend(GenericCrafter, "Thorium_Cncentrator", {
+    localizedName: "Thorium Cncentrator",
+    size: 2,
+    hasPower: true,
+    hasItem: true,
+    requirements: ItemStack.with(Items.copper,200 , Items.lead,150 , Items.graphite,100 , items.gold,50),
+    category: Category.crafting,
+    buildVisibility: BuildVisibility.shown,
+    itemCapacity: 30,
+    craftTime: 45,
+    craftEffect: Fx.smeltsmoke,
+    buildCostMultiplier: 0.25,
+    health: 1000,
+    outputItem: new ItemStack(items.hdThorium,1)
+});
+ThoriumCncentrator.consumeItem(Items.thorium,3);
+ThoriumCncentrator.consumePower(2.5);
 
 //------------------------------Unit Related------------------------------
 
@@ -2515,7 +2600,27 @@ const ForceDestruction = extend(ForceProjector, "Force_Destruction", {
         Lines.poly(e.x, e.y, 4, e.rotation + e.fin(), 360/4/2);
         Lines.poly(e.x, e.y, 4, e.rotation + e.fin(), 360/4/2);
     },{followParent: true}),
-    researchCostMultiplier: 1/5,
+    researchCostMultiplier: 1/5
+});
+const ForceShrinkEffect = extend(Effect, 20, e => {
+    Draw.color(e.color, e.fout());
+    if(Vars.renderer.animateShields){
+        Fill.poly(e.x, e.y, 4, e.rotation * e.fout(), 360/4/2);
+    }else{
+        Lines.stroke(1.5);
+        Draw.alpha(0.09);
+        Fill.poly(e.x, e.y, 4, e.rotation * e.fout(), 360/4/2);
+        Draw.alpha(1);
+        Lines.poly(e.x, e.y, 4, e.rotation * e.fout(), 360/4/2);
+    }
+},{layer: Layer.shields})
+ForceDestruction.buildType = () => extend(ForceProjector.ForceBuild, ForceDestruction, {
+    onRemoved(){
+        let radius = this.realRadius();
+        if(!this.broken && radius > 1){
+            ForceShrinkEffect.at(this.x, this.y, radius, this.team.color);
+        }
+    }
 });
 ForceDestruction.itemConsumer = ForceDestruction.consumeItem(Items.phaseFabric,5).boost();
 ForceDestruction.consumePower(6);

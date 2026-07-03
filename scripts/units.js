@@ -1,6 +1,7 @@
+const rand = new Rand();
+
 const EffectedRegenAbility = require("ability");
 const items = require('items');
-const rand = new Rand();
 
 const Destructed = extend(StatusEffect,"Destructed",{
     localizedName: "Destructed",
@@ -512,7 +513,7 @@ Reign.weapons.add(
             shots: 4,
             shotDelay: 3.2
         }),
-        bullet: extend(BasicBulletType, 14, 240, {
+        bullet: extend(BasicBulletType, 14, 300, {
             reflectable: false,
             pierce: true,
             pierceCap: 10,
@@ -522,7 +523,7 @@ Reign.weapons.add(
             shootEffect: Fx.shootBig,
             fragVelocityMin: 0.4,
             hitEffect: Fx.blastExplosion,
-            splashDamage: 120,
+            splashDamage: 180,
             splashDamageRadius: 30,
             fragBullets: 5,
             fragLifeMin: 0,
@@ -532,7 +533,7 @@ Reign.weapons.add(
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
             statusDuration: 300,
-            fragBullet: extend(BasicBulletType, 9, 66, {
+            fragBullet: extend(BasicBulletType, 9, 80, {
                 width: 10,
                 height: 10,
                 pierce: true,
@@ -540,7 +541,7 @@ Reign.weapons.add(
                 pierceCap: 5,
                 lifetime: 20,
                 hitEffect: Fx.flakExplosion,
-                splashDamage: 40,
+                splashDamage: 60,
                 splashDamageRadius: 16,
                 backColor: Pal.blastAmmoBack,
                 frontColor: Pal.blastAmmoFront
@@ -558,6 +559,7 @@ Reign.weapons.add(
         reload: 180,
         useAttackRange: false,
         bullet: extend(BasicBulletType, 1, 1000, "mine-bullet", {
+            shieldDamageMultiplier: 5,
             reflectable: false,
             width: 48,
             height: 48,
@@ -1106,13 +1108,13 @@ Eclipse.weapons.add(
         }),
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 140, {
+        bullet: extend(FlakBulletType, 6.6, 144, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 120,
+            splashDamage: 133,
             splashDamageRadius: 48,
             collidesGround: true,
-            lifetime: 40,
+            lifetime: 42,
             reflectable: false,
             status: StatusEffects.blasted,
             statusDuration: 300,
@@ -1159,14 +1161,14 @@ Eclipse.weapons.add(
         }),
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 110, {
+        bullet: extend(FlakBulletType, 6.6, 122, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 105,
+            splashDamage: 111,
             splashDamageRadius: 48,
             collidesGround: true,
             reflectable: false,
-            lifetime: 51,
+            lifetime: 53,
             status: StatusEffects.freezing,
             statusDuration: 300,
             fragBullets: 2,
@@ -1297,7 +1299,6 @@ Eclipse.weapons.add(
 
                 return resultLength;
             },
-            rangeOverride: 320,
             lightColor: Color.valueOf("ed655a"),
             lightningColor: Color.valueOf("ed655a"),
             lightningLength: 2,
@@ -1308,7 +1309,7 @@ Eclipse.weapons.add(
             lightningDelay: 0,
             laserAbsorb: false,
             damage: 3660/12,
-            length: 320,
+            length:340,
             width: 5,
             lifetime: 180,
             shootEffect: Fx.shockwave,
@@ -3058,11 +3059,11 @@ Quad.weapons.add(
 );
 Quad.abilities.add(EffectedRegenAbility(500));
 
-//Patron Oct
-const Oct = extend(UnitType, "Patron_Oct", {
-    localizedName: "Patron Oct",
-    armor: 100,
-    health: 74000,
+//Athena Oct
+const Oct = extend(UnitType, "Athena_Oct", {
+    localizedName: "Athena Oct",
+    armor: 150,
+    health: 99000,
     speed: 1,
     rotateSpeed: 1,
     accel: 0.04,
@@ -3098,7 +3099,7 @@ Oct.stats.addPercent(
 Oct.aiController = () => extend(DefenderAI, {});
 Oct.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
 Oct.abilities.add(
-    ForceFieldAbility(200,1000/60,25000,900,10,0),
+    ForceFieldAbility(200,1000/60,26000,600,10,0),
     EffectedRegenAbility(1000)
 );
 

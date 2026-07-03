@@ -34,7 +34,15 @@ const Sodium_Battery = extend(Item,"Sodium_Battery",{
     cost: 1
 });
 
-Items.serpuloItems.addAll(Sodium,Sodium_Battery,Iron,Gold,Diamond);
+const High_Density_Thorium = extend(Item, "High_Density_Thorium", {
+    localizedName: "high density thorium",
+    color: Color.valueOf("f97fb7"),
+    radioactivity: 4.5,
+    explosiveness: 0.6,
+    cost: 1.5
+})
+
+Items.serpuloItems.addAll(Sodium,Sodium_Battery,Iron,Gold,Diamond,High_Density_Thorium);
 
 module.exports = {
     iron: Iron,
@@ -42,4 +50,5 @@ module.exports = {
     diamond: Diamond,
     sodium: Sodium,
     sodiumBattery: Sodium_Battery,
+    hdThorium: High_Density_Thorium
 }
