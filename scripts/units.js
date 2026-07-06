@@ -51,7 +51,7 @@ Gamma.stats.addPercent(
     Gamma.DR
 );
 Gamma.aiController = () => extend(BuilderAI, {});
-Gamma.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Gamma.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Gamma.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Small_Mount_Weapon",{
         top: false,
@@ -102,7 +102,7 @@ Dagger.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Dagger.DR
 );
-Dagger.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Dagger.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Dagger.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Weapon",{
         reload: 20,
@@ -150,7 +150,7 @@ Mace.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Mace.DR
 );
-Mace.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Mace.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Mace.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Flamethrower", {
         top: false,
@@ -209,7 +209,7 @@ Fortress.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Fortress.DR
 );
-Fortress.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Fortress.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Fortress.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Artillery", {
         top: false,
@@ -333,7 +333,7 @@ Scepter.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Scepter.DR
 );
-Scepter.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Scepter.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Scepter.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Scepter_Weapon",{
         top: false,
@@ -497,7 +497,7 @@ Reign.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Reign.DR
 );
-Reign.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Reign.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Reign.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Reign_Weapon",{
         top: false,
@@ -650,7 +650,7 @@ Flare.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Flare.DR
 );
-Flare.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Flare.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Flare.weapons.add(
     extend(Weapon,{
         x: 0,
@@ -718,7 +718,7 @@ Horizon.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Horizon.DR
 );
-Horizon.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Horizon.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Horizon.weapons.add(
     extend(Weapon, {
         minShootVelocity: 0.8,
@@ -783,7 +783,7 @@ Zenith.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Zenith.DR
 );
-Zenith.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Zenith.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Zenith.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Zenith_Missile",{
         reload: 30,
@@ -993,7 +993,7 @@ Antumbra.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Antumbra.DR
 );
-Antumbra.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Antumbra.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Antumbra.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Super_Missile_Mount",{
         x: 22,
@@ -1092,7 +1092,7 @@ Eclipse.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Eclipse.DR
 );
-Eclipse.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Eclipse.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Eclipse.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Artillery",{
         x: 11,
@@ -1363,7 +1363,7 @@ Nova.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Nova.DR
 );
-Nova.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Nova.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Nova.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon",{
         top: false,
@@ -1413,7 +1413,7 @@ Pulsar.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Pulsar.DR
 );
-Pulsar.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Pulsar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Pulsar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Shotgun_Weapon",{
         top: false,
@@ -1492,7 +1492,7 @@ Quasar.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Quasar.DR
 );
-Quasar.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Quasar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Quasar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Beam_Weapon",{
         top: false,
@@ -1570,7 +1570,7 @@ Vela.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Vela.DR
 );
-Vela.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Vela.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Vela.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Vela_Weapon",{
         mirror: false,
@@ -1738,7 +1738,7 @@ Corvus.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Corvus.DR
 );
-Corvus.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Corvus.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Corvus.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Corvus_Weapon",{
         shootSound: Sounds.shootCorvus,
@@ -1978,7 +1978,7 @@ Crawler.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Crawler.DR
 );
-Crawler.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Crawler.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Crawler.weapons.add(
     extend(Weapon,{
         targetUnderBlocks: false,
@@ -2038,7 +2038,7 @@ Atrax.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Atrax.DR
 );
-Atrax.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Atrax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Atrax.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Atrax_Weapon", {
         top: false,
@@ -2097,7 +2097,7 @@ Spiroct.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Spiroct.DR
 );
-Spiroct.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Spiroct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Spiroct.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Spiroct_Weapon", {
         shootY: 4,
@@ -2265,7 +2265,7 @@ Arkyid.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Arkyid.DR
 );
-Arkyid.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Arkyid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 let ArkyidSap = extend(SapBulletType,{
     sapStrength: 0.85,
     length: 80,
@@ -2401,7 +2401,7 @@ Toxopid.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Toxopid.DR
 );
-Toxopid.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Toxopid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Toxopid.weapons.add(
     extend(Weapon,{
         draw(unit, mount) {
@@ -2700,7 +2700,7 @@ Mono.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Mono.DR
 );
-Mono.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 
 //Builder Poly
 const Poly = extend(UnitType, "Builder_Poly", {
@@ -2734,7 +2734,7 @@ Poly.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Poly.DR
 );
-Poly.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Poly.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Poly.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Poly_Weapon",{
         top: false,
@@ -2811,7 +2811,7 @@ Mega.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Mega.DR
 );
-Mega.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Mega.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Mega.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
         shootSound: Sounds.shootLaser,
@@ -2907,7 +2907,7 @@ Quad.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Quad.DR
 );
-Quad.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Quad.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Quad.weapons.add(
     extend(Weapon,{
         x: 0,
@@ -3094,7 +3094,7 @@ Oct.stats.addPercent(
     Oct.DR
 );
 Oct.aiController = () => extend(DefenderAI, {});
-Oct.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Oct.abilities.add(
     ForceFieldAbility(200,1000/60,26000,600,10,0),
     EffectedRegenAbility(1000)
@@ -3129,7 +3129,7 @@ Risso.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Risso.DR
 );
-Risso.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Risso.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Risso.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
         reload: 10,
@@ -3209,7 +3209,7 @@ Minke.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Minke.DR
 );
-Minke.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Minke.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Minke.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
         reload: 8,
@@ -3292,7 +3292,7 @@ Bryde.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Bryde.DR
 );
-Bryde.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Bryde.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Bryde.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Missile_Mount", {
         reload: 8,
@@ -3396,7 +3396,7 @@ Sei.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Sei.DR
 );
-Sei.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Sei.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Sei.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Bullet_Mount",{
         reload: 18,
@@ -3505,7 +3505,7 @@ Omura.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Omura.DR
 );
-Omura.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Omura.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Omura.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
         y: -18,
@@ -3776,7 +3776,7 @@ Retusa.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Retusa.DR
 );
-Retusa.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Retusa.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Retusa.weapons.add(
     extend(Weapon, "destructionmod-Repair_Beam_Weapon_Center", {
         shootSound: Sounds.shootLaser,
@@ -3920,7 +3920,7 @@ Oxynoe.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Oxynoe.DR
 );
-Oxynoe.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Oxynoe.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Oxynoe.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Plasma_Mount_Weapon", {
         reload: 5,
@@ -4011,7 +4011,7 @@ Cyerce.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Cyerce.DR
 );
-Cyerce.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Cyerce.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Cyerce.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Repair_Beam_Weapon_Center", {
         x: 11,
@@ -4238,7 +4238,7 @@ Aegires.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Aegires.DR
 );
-Aegires.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Aegires.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 Aegires.weapons.add(
     extend(PointDefenseWeapon, "destructionmod-Destructor_Point_Defense_Mount",{
         x: 12.5,
@@ -4334,7 +4334,7 @@ Navanax.stats.addPercent(
     extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
     Navanax.DR
 );
-Navanax.immunities.addAll(StatusEffects.burning, StatusEffects.melting);
+Navanax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded);
 let NavanaxLaserPos = [
     {x: 21, y: -29.25}, {x: -21, y: -29.25},
     {x: 21, y: 12.5}, {x: -21, y: 12.5}
