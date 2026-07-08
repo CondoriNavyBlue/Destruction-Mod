@@ -11,9 +11,16 @@ const Destructed = extend(StatusEffect,"Destructed",{
     reloadMultiplier: 0.6,
     color: Color.valueOf("ff0000"),
     effect: Fx.flakExplosion,
-    intervalDamage: 200,
-    intervalDamageTime: 6,
-    effectChance: 0.1
+    damage: 1000/60,
+    effectChance: 0.15,
+    update(unit, entry){
+        if(!Vars.headless && this.effect != Fx.none && Mathf.chanceDelta(this.effectChance) && !unit.inFogTo(Vars.player.team())){
+            Tmp.v1.rnd(Mathf.range(unit.type.hitSize/2));
+            this.effect.at(unit.x + Tmp.v1.x, unit.y + Tmp.v1.y, 0, this.color, this.parentizeEffect ? unit : null);
+            unit.damage(0);
+        }
+        unit.health-=1000/60*Time.delta;
+    }
 });
 
 //Destructor Gamma
