@@ -234,8 +234,10 @@ Fortress.weapons.add(
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
             statusDuration: 300,
+            hitSize: 8,
             fragBullets: 1,
             fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                hitSize: 8,
                 hitEffect: Fx.blastExplosion,
                 knockback: 0.8,
                 lifetime: 10,
@@ -251,6 +253,7 @@ Fortress.weapons.add(
                 statusDuration: 300,
                 fragBullets: 1,
                 fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                    hitSize: 8,
                     hitEffect: Fx.blastExplosion,
                     knockback: 0.8,
                     lifetime: 10,
@@ -266,6 +269,7 @@ Fortress.weapons.add(
                     statusDuration: 300,
                     fragBullets: 1,
                     fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                        hitSize: 8,
                         hitEffect: Fx.blastExplosion,
                         knockback: 0.8,
                         lifetime: 10,
@@ -281,6 +285,7 @@ Fortress.weapons.add(
                         statusDuration: 300,
                         fragBullets: 1,
                         fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                            hitSize: 8,
                             hitEffect: Fx.blastExplosion,
                             knockback: 0.8,
                             lifetime: 10,
@@ -352,6 +357,7 @@ Scepter.weapons.add(
             shotDelay: 3
         }),
         bullet: extend(BasicBulletType,9,180,{
+            hitSize: 6,
             width: 12.5,
             height: 22,
             lifetime: 32,
@@ -392,6 +398,7 @@ Scepter.weapons.add(
         inaccuracy: 6,
         velocityRnd: -0.25,
         bullet: extend(ArtilleryBulletType, 5, 80, "shell",{
+            hitSize: 6,
             hitEffect: Fx.blastExplosion,
             knockback: 0.8,
             lifetime: 56,
@@ -514,6 +521,7 @@ Reign.weapons.add(
             shotDelay: 3.2
         }),
         bullet: extend(BasicBulletType, 14, 300, {
+            hitSize: 6,
             reflectable: false,
             pierce: true,
             pierceCap: 10,
@@ -559,6 +567,7 @@ Reign.weapons.add(
         reload: 180,
         useAttackRange: false,
         bullet: extend(BasicBulletType, 1, 1000, "mine-bullet", {
+            hitSize: 18,
             shieldDamageMultiplier: 5,
             reflectable: false,
             width: 48,
@@ -1105,10 +1114,10 @@ Eclipse.weapons.add(
         recoil: 0.5,
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 144, {
+        bullet: extend(FlakBulletType, 6.6, 133, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 133,
+            splashDamage: 144,
             splashDamageRadius: 48,
             collidesGround: true,
             lifetime: 42,
@@ -1158,10 +1167,10 @@ Eclipse.weapons.add(
         }),
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 122, {
+        bullet: extend(FlakBulletType, 6.6, 111, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 111,
+            splashDamage: 122,
             splashDamageRadius: 48,
             collidesGround: true,
             reflectable: false,
@@ -1299,7 +1308,7 @@ Eclipse.weapons.add(
             lightColor: Color.valueOf("ed655a"),
             lightningColor: Color.valueOf("ed655a"),
             lightningLength: 2,
-            lightningDamage: 60,
+            lightningDamage: 100,
             lightningAngleRand: 40,
             lightningLengthRand: 10,
             lightningSpacing: 30,
@@ -1839,7 +1848,7 @@ Corvus.weapons.add(
                 Lines.circle(e.x, e.y, 4 + e.fin() * 60);
                 Fill.circle(e.x, e.y, e.fout() * 20);
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 15*e.fout(), 80, i*90);
+                    Drawf.tri(e.x, e.y, 20*e.fout(), 80, i*90);
                 }
             }, {followParent: true, rotWithParent: true}),
             chargeEffect: extend(Effect, 80, 100, e => {
@@ -1848,7 +1857,7 @@ Corvus.weapons.add(
                 Lines.circle(e.x, e.y, 4 + e.fout() * 100);
                 Fill.circle(e.x, e.y, e.fin() * 20);
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 7.5 + 5*e.fin(), 10+40*e.fin(), i*90+180*3*e.fout());
+                    Drawf.tri(e.x, e.y, 10 + 7.5*e.fin(), 15+40*e.fin(), i*90+180*3*e.fout());
                 }
                 Angles.randLenVectors(e.id, 20, 40 * e.fout(), (x, y) => {
                     Fill.circle(e.x + x, e.y + y, e.fin() * 5);
@@ -2337,7 +2346,8 @@ Arkyid.weapons.add(
             smokeEffect: Fx.shootBigSmoke2,
             shake: 5,
             status: StatusEffects.sapped,
-            statusDuration: 600
+            statusDuration: 600,
+            hitSize: 8
         })
     })
 )
@@ -2472,6 +2482,7 @@ Toxopid.weapons.add(
             hitColor: Pal.sapBullet,
             despawnSound: Sounds.explosionArtilleryShock,
             sprite: "large-orb",
+            hitSize: 6,
             trailEffect: Fx.missileTrail,
             trailInterval: 3,
             trailParam: 4,
@@ -2600,6 +2611,7 @@ Toxopid.weapons.add(
             statusDuration: 600,
             keepVelocity: false,
             reflectable: false,
+            hitSize: 50/Math.sqrt(2),
             fragLifeMin: 1,
             fragVelocityMin: 1,
             fragVelocityMax: 1,
@@ -2634,6 +2646,7 @@ Toxopid.weapons.add(
                 status: Destructed,
                 statusDuration: 300,
                 reflectable: false,
+                hitSize: 35/Math.sqrt(2),
                 fragLifeMin: 0.3,
                 fragBullets: 4,
                 fragBullet: extend(ArtilleryBulletType, 2.3, 125, {
@@ -2657,7 +2670,8 @@ Toxopid.weapons.add(
                     lightRadius: 40,
                     lightOpacity: 0.6,
                     status: Destructed,
-                    statusDuration: 180
+                    statusDuration: 180,
+                    hitSize: 8
                 })
             })
         })
@@ -3528,7 +3542,8 @@ Omura.weapons.add(
             shootEffect: Fx.shootBig,
             pierceCap: 2,
             pierceBuilding: true,
-            knockback: 0.7
+            knockback: 0.7,
+            hitSize: 6
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
@@ -3550,7 +3565,8 @@ Omura.weapons.add(
             shootEffect: Fx.shootBig,
             pierceCap: 2,
             pierceBuilding: true,
-            knockback: 0.7
+            knockback: 0.7,
+            hitSize: 6
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Big_Missile", {
@@ -3577,6 +3593,7 @@ Omura.weapons.add(
             height: 14,
             shrinkY: 0,
             drag: -0.003,
+            hitSize: 12,
             keepVelocity: false,
             splashDamage: 300,
             splashDamageRadius: 40,
@@ -3781,8 +3798,8 @@ Retusa.weapons.add(
     extend(Weapon, "destructionmod-Repair_Beam_Weapon_Center", {
         shootSound: Sounds.shootLaser,
         x: 0,
-        y: -5.5,
-        shootY: 6,
+        y: 0,
+        shootY: 0,
         mirror: false,
         reload: 30,
         rotate: true,
@@ -4483,6 +4500,7 @@ Navanax.weapons.add(
             lifetime: 70,
             width: 12,
             height: 12,
+            hitSize: 12/Math.sqrt(2),
             shrinkY: 0,
             backColor: Color.valueOf("ed655a"),
             frontColor: Color.white,
