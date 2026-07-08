@@ -459,19 +459,20 @@ SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 //High Density Thorium Reactor
 const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     localizedName: "High Density Thorium Reactor",
-    explosionRadius: 30,
-    explosionDamage: 10000,
-    health: 3000,
+    explosionRadius: 50,
+    explosionDamage: 12000,
+    health: 4820,
     itemCapacity: 20,
     ambientSound: Sounds.loopThoriumReactor,
     ambientSoundVolume: 0.2,
     size: 3,
-    itemDuration: 360,
+    itemDuration: 180,
     powerProduction: 75,
     heating: 0.1,
     lightColor: Color.valueOf("ed655a"),
     fuelItem: items.hdThorium,
     coolantPower: 1,
+    buildCostMultiplier: 0.51635556244029647,
     explodeEffect: extend(Effect, 30, 500, b => {
         let intensity = 10;
         let baseLifetime = 25 + intensity * 11;
@@ -2699,6 +2700,7 @@ module.exports = {
     DestructionNode: DestructionNode,
     DestructionLargeNode: DestructionLargeNode,
     DestructionDiamondNode: DestructionDiamondNode,
+    HDTReactor: HDTReactor,
 
     NaExtractor: NaExtractor,
     SSM: SSM,

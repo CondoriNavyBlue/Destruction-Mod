@@ -76,6 +76,11 @@ addTechTree(items.sodiumBattery,{
     objectives: Seq.with(new Objectives.Produce(items.sodiumBattery))
 });
 
+addTechTree(items.hdThorium,{
+    parent: "thorium",
+    objectives: Seq.with(new Objectives.Produce(items.hdThorium))
+});
+
 //------------------------------Unit Factorys------------------------------
 
 addTechTree(blocks.Factory,{
@@ -242,6 +247,10 @@ addTechTree(blocks.DestructionLargeNode,{
 
 addTechTree(blocks.DestructionDiamondNode,{
     parent: "Destruction_Large_Node"
+});
+
+addTechTree(blocks.HDTReactor,{
+    parent: "thorium-reactor"
 });
 
 //------------------------------Craters------------------------------
