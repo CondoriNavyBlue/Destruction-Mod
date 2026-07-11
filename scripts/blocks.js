@@ -459,7 +459,7 @@ SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 //High Density Thorium Reactor
 const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     localizedName: "High Density Thorium Reactor",
-    explosionRadius: 50,
+    explosionRadius: 30,
     explosionDamage: 12000,
     health: 4820,
     itemCapacity: 20,
