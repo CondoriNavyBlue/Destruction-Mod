@@ -8,5 +8,3 @@ const IronValley = extend(SectorPreset, "IronValley", Planets.serpulo, 218,{
 module.exports = {
     IronValley: IronValley
 }
-
-print("My sectors loaded");
