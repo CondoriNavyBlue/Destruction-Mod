@@ -1,7 +1,7 @@
 const rand = new Rand();
 
-const EffectedRegenAbility = require("ability");
-const items = require('items');
+const EffectedRegenAbility = require("DestructionModScripts/ability");
+const items = require("DestructionModScripts/items");
 
 const Destructed = extend(StatusEffect,"Destructed",{
     localizedName: "Destructed",

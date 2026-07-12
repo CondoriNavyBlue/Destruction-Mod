@@ -45,10 +45,10 @@ const addTechTree = (content, research) => {
 //Thank you
 
 
-const items = require("items");
-const blocks = require("blocks");
-const units = require("units");
-const sectors = require("sectors");
+const items = require("DestructionModScripts/items");
+const blocks = require("DestructionModScripts/blocks");
+const units = require("DestructionModScripts/units");
+const sectors = require("DestructionModScripts/sectors");
 
 //------------------------------Items------------------------------
 addTechTree(items.iron,{

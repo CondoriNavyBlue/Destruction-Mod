@@ -1,7 +1,7 @@
-require("items");
-require("liquids");
-require("units");
-require("blocks");
-require("sectors");
+require("DestructionModScripts/items");
+require("DestructionModScripts/liquids");
+require("DestructionModScripts/units");
+require("DestructionModScripts/blocks");
+require("DestructionModScripts/sectors");
 
-require("addTechTree");
+require("DestructionModScripts/addTechTree");

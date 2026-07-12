@@ -1,8 +1,8 @@
 const rand = new Rand();
 
-const items = require('items');
-const units = require('units');
-const liquids = require("liquids");
+const items = require('DestructionModScripts/items');
+const units = require('DestructionModScripts/units');
+const liquids = require("DestructionModScripts/liquids");
 
 const ironAmmoBack = Color.valueOf("c0c0c0");
 const ironAmmoFront = Color.valueOf("ffffff");
