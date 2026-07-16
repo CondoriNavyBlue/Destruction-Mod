@@ -1299,7 +1299,7 @@ Eclipse.weapons.add(
             lightningDamage: 100,
             lightningAngleRand: 40,
             lightningLengthRand: 10,
-            lightningSpacing: 30,
+            lightningSpacing: 24,
             lightningDelay: 0,
             laserAbsorb: false,
             damage: 3660/12,
@@ -1815,7 +1815,7 @@ Corvus.weapons.add(
             damage: 5250,
             width: 80,
             lifetime: 65,
-            lightningSpacing: 35,
+            lightningSpacing: 30,
             lightningLength: 5,
             lightningDelay: 1.1,
             lightningLengthRand: 15,
@@ -1892,7 +1892,7 @@ Corvus.weapons.add(
             trailInterval: 3,
             trailRotation: true,
             scaleLife: true,
-            unitDamageScl: 1,
+            unitDamageScl: 1.5,
             timeIncrease: 3,
             timeDuration: 1200,
             powerDamageScl: 3,
@@ -4434,8 +4434,16 @@ NavanaxLaserPos.forEach(pos => {
                 let fout = Mathf.clamp(b.time > b.lifetime - this.fadeTime ? 1 - (b.time - (this.lifetime - this.fadeTime)) / this.fadeTime : 1);
                 return resultLength * fout;
             },
+            lightColor: Color.valueOf("ed655a"),
+            lightningColor: Color.valueOf("ed655a"),
+            lightningLength: 2,
+            lightningDamage: 60,
+            lightningAngleRand: 40,
+            lightningLengthRand: 6,
+            lightningSpacing: 24,
+            lightningDelay: 0,
             laserAbsorb: false,
-            damage: 2400/12,
+            damage: 1660/12,
             length: 180,
             hitEffect: Fx.hitMeltdown,
             drawSize: 200,
@@ -4447,7 +4455,9 @@ NavanaxLaserPos.forEach(pos => {
             incendChance: 0.03,
             incendSpread: 5,
             incendAmount: 1,
-            colors: [Color.valueOf("ed655a"), Color.valueOf("ff9999"), Color.white]
+            colors: [Color.valueOf("ed655a"), Color.valueOf("ff9999"), Color.white],
+            status: statusEffects.destructed,
+            statusDuration: 600
         })
     }));
 });
@@ -4647,10 +4657,10 @@ Navanax.weapons.add(
             trailInterval: 3,
             trailRotation: true,
             scaleLife: true,
-            unitDamageScl: 1,
+            unitDamageScl: 2,
             timeIncrease: 3,
             timeDuration: 1200,
-            powerDamageScl: 2.5,
+            powerDamageScl: 3,
             powerSclDecrease: 0.1,
             hitShake: 4,
             hitSound: Sounds.explosionNavanax,
