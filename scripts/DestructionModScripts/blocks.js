@@ -569,6 +569,7 @@ const SSM = extend(Separator, "Sand_Sieve_Machine", {
     hasPower: true,
     hasItems: true,
     hasLiquid: false,
+    liquidCapacity: 0,
     itemCapacity: 30,
     craftTime: 30,
     requirements: ItemStack.with(Items.copper,200 , Items.lead,200 , Items.graphite,50 , Items.phaseFabric,50),
