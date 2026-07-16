@@ -2,26 +2,7 @@ const rand = new Rand();
 
 const EffectedRegenAbility = require("DestructionModScripts/ability");
 const items = require("DestructionModScripts/items");
-
-const Destructed = extend(StatusEffect,"Destructed",{
-    localizedName: "Destructed",
-    speedMultiplier: 0.5,
-    healthMultiplier: 0.75,
-    damageMultiplier: 0.75,
-    reloadMultiplier: 0.6,
-    color: Color.valueOf("ff0000"),
-    effect: Fx.flakExplosion,
-    damage: 1000/60,
-    effectChance: 0.15,
-    update(unit, entry){
-        if(!Vars.headless && this.effect != Fx.none && Mathf.chanceDelta(this.effectChance) && !unit.inFogTo(Vars.player.team())){
-            Tmp.v1.rnd(Mathf.range(unit.type.hitSize/2));
-            this.effect.at(unit.x + Tmp.v1.x, unit.y + Tmp.v1.y, 0, this.color, this.parentizeEffect ? unit : null);
-            unit.damage(0);
-        }
-        unit.health-=1000/60*Time.delta;
-    }
-});
+const statusEffects = require("DestructionModScripts/statusEffects");
 
 //Destructor Gamma
 const Gamma = extend(UnitType, "Destructor_Gamma", {
@@ -591,7 +572,7 @@ Reign.weapons.add(
             hitShake: 10,
             hitSound: Sounds.explosionReactor,
             keepVelocity: false,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 600,
             hitEffect: new MultiEffect(
                 extend(Effect, 60, 160, e => {
@@ -1327,7 +1308,7 @@ Eclipse.weapons.add(
             lifetime: 180,
             shootEffect: Fx.shockwave,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 300,
             despawnEffect: Fx.smokeCloud,
             smokeEffect: Fx.none,
@@ -1846,7 +1827,7 @@ Corvus.weapons.add(
             sideAngle: 15,
             sideWidth: 0,
             sideLength: 0,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 600,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
             shootEffect: extend(Effect, 65, 100, e => {
@@ -1919,18 +1900,7 @@ Corvus.weapons.add(
             hitShake: 2,
             hitSound: Sounds.explosionNavanax,
             sprite: "circle-bullet",
-            status: extend(StatusEffect, "CorvusElectrifiedRed", {
-                color: Color.valueOf("ed655a"),
-                speedMultiplier: 0.8,
-                reloadMultiplier: 0.6,
-                effectChance: 0.15,
-                effect: extend(Effect, 40, e => {
-                    Draw.color(Color.valueOf("ed655a"));
-                    Angles.randLenVectors(e.id, 2, 1 + e.fin() * 2, (x, y) => {
-                        Fill.square(e.x + x, e.y + y, e.fslope() * 1.1, 45);
-                    });
-                }, {followParent: true, rotWithParent: true})
-            }),
+            status: statusEffects.miniElectrified,
             trailEffect: extend(Effect, 8, e => {
                 Draw.color(Color.valueOf("ed655a"));
                 Drawf.tri(e.x, e.y, 5, 30 * e.fslope(), e.rotation + 90);
@@ -2570,7 +2540,7 @@ Toxopid.weapons.add(
             toColor: Pal.sapBulletBack,
             shootEffect: Fx.sparkShoot,
             smokeEffect: Fx.sparkShoot,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 450,
         })
     }),
@@ -2614,7 +2584,7 @@ Toxopid.weapons.add(
             lightRadius: 80,
             lightColor: Pal.sap,
             lightOpacity: 0.6,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 600,
             keepVelocity: false,
             reflectable: false,
@@ -2650,7 +2620,7 @@ Toxopid.weapons.add(
                 lightRadius: 40,
                 lightOpacity: 0.6,
                 smokeEffect: Fx.shootBigSmoke2,
-                status: Destructed,
+                status: statusEffects.destructed,
                 statusDuration: 300,
                 reflectable: false,
                 hitSize: 35/Math.sqrt(2),
@@ -2676,7 +2646,7 @@ Toxopid.weapons.add(
                     hitShake: 5,
                     lightRadius: 40,
                     lightOpacity: 0.6,
-                    status: Destructed,
+                    status: statusEffects.destructed,
                     statusDuration: 180,
                     hitSize: 8
                 })
@@ -3657,7 +3627,7 @@ Omura.weapons.add(
             damage: 2500,
             pierceDamageFactor: 0,
             pointEffectSpace: 40,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 450,
             shootEffect: extend(Effect, 24, e => {
                 e.scaled(10, b => {
@@ -3725,7 +3695,7 @@ Omura.weapons.add(
             pierceDamageFactor: 0.1,
             pointEffectSpace: 44,
             smokeEffect: Fx.shootBig2,
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 450,
             shootEffect: extend(Effect, 24, e => {
                 e.scaled(10, b => {
@@ -4529,7 +4499,7 @@ Navanax.weapons.add(
             hitShake: 4,
             hitSound: Sounds.explosionNavanax,
             sprite: "circle-bullet",
-            status: Destructed,
+            status: statusEffects.destructed,
             statusDuration: 300,
             trailEffect: extend(Effect, 16, e => {
                 Draw.color(Color.valueOf("ed655a"));
@@ -4615,7 +4585,5 @@ module.exports = {
     Cyerce: Cyerce,
     Aegires: Aegires,
     Navanax: Navanax,
-    Gamma: Gamma,
-
-    Debuff: Destructed
+    Gamma: Gamma
 }

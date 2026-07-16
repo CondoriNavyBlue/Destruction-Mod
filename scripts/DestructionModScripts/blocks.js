@@ -3,6 +3,7 @@ const rand = new Rand();
 const items = require('DestructionModScripts/items');
 const units = require('DestructionModScripts/units');
 const liquids = require("DestructionModScripts/liquids");
+const statusEffects = require("DestructionModScripts/statusEffects");
 
 const ironAmmoBack = Color.valueOf("c0c0c0");
 const ironAmmoFront = Color.valueOf("ffffff");
@@ -2397,7 +2398,7 @@ Foreshadow.ammo(
         length: 640,
         hitShake: 6,
         ammoMultiplier: 1,
-        status: units.Debuff,
+        status: statusEffects.destructed,
         statusDuration: 200,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0
