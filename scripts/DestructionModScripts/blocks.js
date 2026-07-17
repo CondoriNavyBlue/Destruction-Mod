@@ -1791,7 +1791,7 @@ Tsunami.ammo(
 
 //Destructor Fuse
 const Fuse = extend(ItemTurret, "Destructor_Fuse", {
-    localizedName: "Destructor Tsunami",
+    localizedName: "Destructor Fuse",
     requirements: ItemStack.with(items.iron,400 , items.gold,300 , Items.graphite,300 , Items.thorium,225),
     category: Category.turret,
     buildVisibility: BuildVisibility.shown,
