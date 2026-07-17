@@ -3270,7 +3270,7 @@ const Bryde = extend(UnitType, "Destructor_Bryde", {
     waveTrailX: 7,
     waveTrailY: -9,
     trailScl: 1.5,
-    lightRadius: 303.6,
+    lightRadius: 92,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
     DR: 0.3,
