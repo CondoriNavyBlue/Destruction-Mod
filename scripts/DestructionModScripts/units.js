@@ -3971,7 +3971,10 @@ Oxynoe.weapons.add(
         })
     })
 );
-Oxynoe.abilities.add(EffectedRegenAbility(125));
+Oxynoe.abilities.add(
+    EffectedRegenAbility(125),
+    StatusFieldAbility(StatusEffects.overclock, 60 * 10, 60 * 3, 80)
+);
 
 //Destructor Cyerce
 const Cyerce = extend(UnitType, "Destructor_Cyerce",{

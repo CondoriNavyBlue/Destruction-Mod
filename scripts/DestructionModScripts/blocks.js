@@ -2308,7 +2308,8 @@ Foreshadow.ammo(
         hitShake: 6,
         ammoMultiplier: 1,
         buildingDamageMultiplier: 0.2,
-        armorMultiplier: 0
+        armorMultiplier: 0,
+        knockback: 5
     }),
     items.diamond, extend(RailBulletType, {
         shootEffect: extend(Effect, 24, e => {

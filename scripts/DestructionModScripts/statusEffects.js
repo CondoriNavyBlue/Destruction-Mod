@@ -20,6 +20,7 @@ Destructed.stats.addMultModifier(extend(Stat, "Damage Multiplier", {localized(){
 Destructed.stats.addMultModifier(extend(Stat, "Health Multiplier", {localized(){return "Health Multiplier";}}), 0.75);
 Destructed.stats.addMultModifier(extend(Stat, "Speed Multiplier", {localized(){return "Speed Multiplier";}}), 0.5);
 Destructed.stats.addMultModifier(extend(Stat, "Reload Multiplier", {localized(){return "Reload Multiplier";}}), 0.5);
+Destructed.stats.add(extend(Stat, "Damage", {localized(){return "Damage";}}), 1000, StatUnit.perSecond);
 
 const MiniElectrified = extend(StatusEffect, "MiniElectrified", {
     localizedName: "mini electrified",
