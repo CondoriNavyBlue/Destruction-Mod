@@ -4658,7 +4658,7 @@ Navanax.weapons.add(
             trailInterval: 3,
             trailRotation: true,
             scaleLife: true,
-            unitDamageScl: 1,
+            unitDamageScl: 2,
             timeIncrease: 3,
             timeDuration: 1200,
             powerDamageScl: 3,
