@@ -4618,7 +4618,7 @@ Navanax.weapons.add(
         rotate: true,
         x: 17.5,
         y: -6.5,
-        reload: 50,
+        reload: 40,
         shake: 3,
         rotateSpeed: 2.2,
         shadow: 30,
