@@ -117,7 +117,7 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
 //Diamond Wall
 const DiamondWall = extend(Wall, "Diamond_Wall", {
     localizedName: "Diamond Wall",
-    health: 3000,
+    health: 3500,
     size: 1,
     chanceDeflect: 15,
     category: Category.defense,
@@ -129,7 +129,7 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
 //Large Diamond Wall
 const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     localizedName: "Large Diamond Wall",
-    health: 12000,
+    health: 14000,
     chanceDeflect: 3,
     size: 2,
     category: Category.defense,
@@ -141,7 +141,7 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
 //Destruction Wall
 const DestructionWall = extend(Wall, "Destruction_Wall", {
     localizedName: "Destruction Wall",
-    health: 6250,
+    health: 7000,
     size: 1,
     absorbLasers: true,
     chanceDeflect: 25,
@@ -160,7 +160,7 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
 //Large Destruction Wall
 const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     localizedName: "Large Destruction Wall",
-    health: 25000,
+    health: 28000,
     size: 2,
     absorbLasers: true,
     chanceDeflect: 30,
@@ -182,8 +182,8 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
 const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
     localizedName: "Core: Destruction",
     unitType: units.Gamma,
-    health: 24000,
-    itemCapacity: 24000,
+    health: 28000,
+    itemCapacity: 30000,
     size: 6,
     thrusterLength: 48/4,
     unitCapModifier: 32,
@@ -211,7 +211,7 @@ const DestructionContainer = extend(StorageBlock, "Destruction_Container", {
 //Destruction Vault
 const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
     localizedName: "Destruction Vault",
-    health: 3950,
+    health: 4550,
     itemCapacity: 2500,
     size: 3,
     requirements: ItemStack.with(items.iron,250 , items.gold,500),
@@ -363,7 +363,7 @@ const DestructionDrill = extend(Drill, "Destruction_Drill", {
     tier: 10,
     size: 4,
     drawRim: true,
-    health: 4880,
+    health: 6440,
     drillTime: 90,
     updateEffect: Fx.pulverizeRed,
     drillEffect: Fx.mineHuge,
@@ -440,7 +440,8 @@ const SodiumStorageBattery = extend(Battery, "Sodium_Storage_Battery", {
     buildVisibility: BuildVisibility.shown,
     baseExplosiveness: 2,
     researchCostMultiplier: 2/3,
-    buildCostMultiplier: 1.0114632501685771
+    buildCostMultiplier: 1.0114632501685771,
+    health: 300
 });
 SodiumStorageBattery.consumePowerBuffered(25000);
 
@@ -453,7 +454,8 @@ const SodiumStorageBatteryLarge = extend(Battery, "Sodium_Storage_Battery_Large"
     buildVisibility: BuildVisibility.shown,
     baseExplosiveness: 8,
     researchCostMultiplier: 2/3,
-    buildCostMultiplier: 6/35*2
+    buildCostMultiplier: 6/35*2,
+    health: 1000
 });
 SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 
@@ -462,7 +464,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     localizedName: "High Density Thorium Reactor",
     explosionRadius: 30,
     explosionDamage: 12000,
-    health: 4820,
+    health: 6200,
     itemCapacity: 20,
     ambientSound: Sounds.loopThoriumReactor,
     ambientSoundVolume: 0.2,
@@ -650,7 +652,7 @@ const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
     localizedName: "Electric HPHT",
     description: "generate heat with electricity\nMore convenient than HPHT synthesizer.\nBut uses a lot of electricity.",
     size: 3,
-    health: 1800,
+    health: 2000,
     hasPower: true,
     hasItems: true,
     itemCapacity: 40,
@@ -664,7 +666,7 @@ const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
     outputItem: new ItemStack(items.diamond,5),
     buildVisibility: BuildVisibility.shown,
     researchCostMultiplier: 1/5,
-    buildCostMultiplier: 6/475*10
+    buildCostMultiplier: 6/475*10,
 });
 ElectricHPHT.consumeItem(Items.graphite, 10);
 ElectricHPHT.consumePower(40);
@@ -687,7 +689,8 @@ const SodiumBatteryMachine = extend(GenericCrafter, "Sodium_Battery_Machine", {
     buildVisibility: BuildVisibility.shown,
     outputItem: new ItemStack(items.sodiumBattery,1),
     researchCostMultiplier: 1/3,
-    buildCostMultiplier: 44/105
+    buildCostMultiplier: 44/105,
+    health: 800
 });
 SodiumBatteryMachine.consumePower(1.6666666666666667);
 SodiumBatteryMachine.consumeItems(ItemStack.with(Items.titanium,1 , Items.coal,1 , items.sodium,1));
@@ -707,7 +710,8 @@ const IronMelter = extend(GenericCrafter, "Iron_Melter", {
     category: Category.crafting,
     buildVisibility: BuildVisibility.shown,
     outputLiquid: new LiquidStack(Liquids.slag,0.5),
-    buildCostMultiplier: 3/7*1.5
+    buildCostMultiplier: 3/7*1.5,
+    health: 600
 });
 IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
@@ -725,7 +729,7 @@ const ThoriumCncentrator = extend(GenericCrafter, "Thorium_Cncentrator", {
     craftTime: 45,
     craftEffect: Fx.smeltsmoke,
     buildCostMultiplier: 0.25,
-    health: 1000,
+    health: 1250,
     outputItem: new ItemStack(items.hdThorium,1)
 });
 ThoriumCncentrator.consumeItem(Items.thorium,3);
@@ -745,7 +749,7 @@ function toJavaUnitArray(jsArray) {
 //Destruction Factory
 const Factory = extend(UnitFactory, "Destruction_Factory", {
     localizedName: "Destruction Factory",
-    health: 1000,
+    health: 1500,
     size: 3,
     requirements: ItemStack.with(Items.copper,30 , Items.silicon,100 , items.iron,60),
     category: Category.units,
@@ -766,7 +770,7 @@ Factory.consumePower(120/60);
 //Destruction Additive Reconstructor
 const ReconstructorTo2 = extend(Reconstructor, "Destruction_Additive_Reconstructor",{
     localizedName: "Destruction Additive Reconstructor",
-    health: 1000,
+    health: 3000,
     size: 3,
     requirements: ItemStack.with(Items.copper,250 , Items.silicon,120 , items.iron,100),
     category: Category.units,
@@ -789,7 +793,7 @@ ReconstructorTo2.consumeItems(ItemStack.with(Items.silicon,50 , items.sodiumBatt
 //Destruction Multiplicative Reconstructor
 const ReconstructorTo3 = extend(Reconstructor, "Destruction_Multiplicative_Reconstructor",{
     localizedName: "Destruction Multiplicative Reconstructor",
-    health: 2000,
+    health: 6000,
     size: 5,
     requirements: ItemStack.with(Items.silicon,660 , items.gold,300 , items.sodiumBattery,450),
     category: Category.units,
@@ -812,7 +816,7 @@ ReconstructorTo3.consumeItems(ItemStack.with(Items.silicon,160 , items.sodiumBat
 //Destruction Exponential Reconstructor
 const ReconstructorTo4 = extend(Reconstructor, "Destruction_Exponential_Reconstructor",{
     localizedName: "Destruction Exponential Reconstructor",
-    health: 4000,
+    health: 12000,
     size: 7,
     requirements: ItemStack.with(items.iron,1800 , items.gold,1000 , items.sodiumBattery,800 , Items.silicon,1200, Items.plastanium, 700, Items.phaseFabric,800 ),
     category: Category.units,
@@ -837,7 +841,7 @@ ReconstructorTo4.consumeLiquid(Liquids.slag, 1);
 //Destruction Tetrative Reconstructor
 const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstructor",{
     localizedName: "Destruction Tetrative Reconstructor",
-    health: 8000,
+    health: 24000,
     size: 9,
     requirements: ItemStack.with(items.iron,2400 , items.gold,1800 , items.sodiumBattery,2000 , Items.silicon,3600, Items.plastanium, 1000, Items.phaseFabric,800 , Items.surgeAlloy,1200 , items.diamond,500),
     category: Category.units,
