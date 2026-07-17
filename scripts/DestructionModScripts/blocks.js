@@ -2309,7 +2309,7 @@ Foreshadow.ammo(
         ammoMultiplier: 1,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
-        knockback: 5
+        knockback: 33
     }),
     items.diamond, extend(RailBulletType, {
         shootEffect: extend(Effect, 24, e => {
@@ -2442,7 +2442,7 @@ Spectre.ammo(
         height: 25,
         shootEffect: Fx.shootBig,
         pierce: true,
-        knockback: 0.7,
+        knockback: 1.4,
         backColor: Pal.thoriumAmmoBack,
         hitColor: Pal.thoriumAmmoBack,
         trailColor: Pal.thoriumAmmoBack,
@@ -2463,7 +2463,7 @@ Spectre.ammo(
         shootEffect: Fx.shootBig,
         makeFire: true,
         pierce: true,
-        knockback: 0.6,
+        knockback: 1.2,
         ammoMultiplier: 3,
         splashDamage: 80,
         splashDamageRadius: 32
@@ -2504,7 +2504,7 @@ Spectre.ammo(
         lightningDamage: 48,
         pierce: true,
         shootEffect: Fx.shootBig,
-        knockback: 0.5,
+        knockback: 1,
         status: StatusEffects.shocked
     }),
     items.diamond, extend(BasicBulletType, 14, 330, {
@@ -2517,7 +2517,7 @@ Spectre.ammo(
         height: 25,
         shootEffect: Fx.shootBig,
         pierce: true,
-        knockback: 0.7,
+        knockback: 1.4,
         backColor: diamondAmmoBack,
         hitColor: diamondAmmoBack,
         trailColor: diamondAmmoBack,
