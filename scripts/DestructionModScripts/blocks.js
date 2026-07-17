@@ -2667,7 +2667,7 @@ const OverdriveDiamond = extend(OverdriveProjector, "Overdrive_Diamond", {
     researchCostMultiplier: 10/55,
     buildCostMultiplier: 30/41*3.6
 });
-OverdriveDiamond.consumeItems(ItemStack.with(Items.phaseFabric,10 , items.diamond,10)).boost();
+OverdriveDiamond.consumeItems(ItemStack.with(Items.phaseFabric,20 , items.diamond,20 , items.sodiumBattery,20)).boost();
 OverdriveDiamond.consumePower(66);
 
 module.exports = {
