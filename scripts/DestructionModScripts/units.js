@@ -4637,7 +4637,7 @@ Navanax.weapons.add(
             reflectable: false,
             damage: 660,
             radius: 150,
-            splashDamage: 1200,
+            splashDamage: 1000,
             splashDamageRadius: 150,
             shieldDamageMultiplier: 2,
             speed: 5,
