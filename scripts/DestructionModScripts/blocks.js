@@ -892,7 +892,7 @@ const Duo = extend(ItemTurret, "Destructor_Duo", {
     range: 200,
     shootCone: 15,
     ammoUseEffect: Fx.casing1,
-    health: 1275,
+    health: 1375,
     inaccuracy: 2,
     rotateSpeed: 12,
     coolantMultiplier: 10,
@@ -1012,7 +1012,7 @@ const Scatter = extend(ItemTurret, "Destructor_Scatter", {
     rotateSpeed: 17.5,
     inaccuracy: 15,
     shootCone: 35,
-    health: 1820,
+    health: 2000,
     shootSound: Sounds.shootScatter,
     depositCooldown: 0.5,
     researchCostMultiplier: 1/3
@@ -1108,7 +1108,7 @@ const Scorch = extend(ItemTurret, "Destructor_Scorch", {
     shootCone: 50,
     targetAir: false,
     ammoUseEffect: Fx.none,
-    health: 1380,
+    health: 1410,
     shootSound: Sounds.shootFlame,
     depositCooldown: 1,
     researchCostMultiplier: 1/3
@@ -1187,7 +1187,7 @@ const Hail = extend(ItemTurret, "Destructor_Hail", {
     range: 290,
     inaccuracy: 1.25,
     shootCone: 10,
-    health: 1590,
+    health: 1630,
     shootSound: Sounds.shootArtillerySmall,
     coolantMultiplier: 10,
     depositCooldown: 2,
@@ -1285,7 +1285,7 @@ const Wave = extend(LiquidTurret, "Destructor_Wave", {
     liquidCapacity: 20,
     shootEffect: Fx.shootLiquid,
     range: 180,
-    health: 1740,
+    health: 1880,
     researchCostMultiplier: 1/2
 });
 Wave.ammo(
@@ -1427,7 +1427,7 @@ const Parallax = extend(TractorBeamTurret, "Destructor_Parallax", {
     scaledForce: 12,
     range: 348,
     damage: 2.5,
-    health: 1530,
+    health: 1990,
     rotateSpeed: 14,
     researchCostMultiplier: 1/3
 });
@@ -1448,7 +1448,7 @@ const Swarmer = extend(ItemTurret, "Destructor_Swarmer", {
     reload: 30,
     inaccuracy: 10,
     size: 2,
-    health: 2620,
+    health: 2800,
     shootSound: Sounds.shootMissile,
     depositCooldown: 2.0,
     range: 320,
@@ -1564,7 +1564,7 @@ const Salvo = extend(ItemTurret, "Destructor_Salvo", {
         shotDelay: 1.5
     }),
     ammoUseEffect: Fx.casing2,
-    health: 1990,
+    health: 3400,
     shootSounde: Sounds.shootSalvo,
     depositCooldown: 2,
     researchCostMultiplier: 1/3
@@ -1706,7 +1706,7 @@ const DSegment = extend(PointDefenseTurret, "Destructor_Segment",{
     size: 2,
     range: 240,
     bulletDamage: 64,
-    health: 2110,
+    health: 3725,
     reload: 1,
     shootLength: 10,
     requirements: ItemStack.with(Items.silicon,300 , Items.thorium,160 , Items.phaseFabric,150, items.gold,120 , items.sodiumBattery,280),
@@ -1736,7 +1736,7 @@ const Tsunami = extend(LiquidTurret, "Destructor_Tsunami", {
     liquidCapacity: 60,
     shootEffect: Fx.shootLiquid,
     range: 280,
-    health: 3330,
+    health: 6000,
     researchCostMultiplier: 1/2
 });
 Tsunami.consumePower(4);
@@ -1804,7 +1804,7 @@ const Fuse = extend(ItemTurret, "Destructor_Fuse", {
         spread: 10
     }),
     size: 3,
-    health: 4250,
+    health: 8000,
     shootSound: Sounds.shootFuse,
     shootSoundVolume: 0.9,
     depositCooldown: 1,
@@ -1891,7 +1891,7 @@ const Ripple = extend(ItemTurret, "Destructor_Ripple", {
     shake: 2,
     range: 400,
     minRange: 50,
-    health: 4770,
+    health: 7250,
     depositCooldown: 2,
     shootSound: Sounds.shootRipple,
     researchCostMultiplier: 1/4
@@ -2106,7 +2106,7 @@ const Cyclone = extend(ItemTurret, "Destructor_Cyclone", {
     inaccuracy: 6,
     shootCone: 30,
     shootSound: Sounds.shootCyclone,
-    health: 5525,
+    health: 9900,
     depositCooldown: 2,
     researchCostMultiplier: 1/3,
 });
@@ -2218,7 +2218,7 @@ const Foreshadow = extend(ItemTurret, "Destructor_Foreshadow", {
     unitSort: UnitSorts.strongest,
     coolantMultiplier: 0.4,
     liquidCapacity: 60,
-    health: 10000,
+    health: 16600,
     depositCooldown: 2,
     range: 600,
     researchCostMultiplier: 1/4,
@@ -2425,7 +2425,7 @@ const Spectre = extend(ItemTurret, "Destructor_Spectre", {
     size: 4,
     shootCone: 24,
     shootSound: Sounds.shootSpectre,
-    health: 9900,
+    health: 13500,
     depositCooldown: 2,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.2820512820512822
@@ -2570,7 +2570,7 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
         ammoMultiplier: 1,
         colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")]
     }),
-    health: 12000,
+    health: 14200,
     liquidCapacity: 60,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.5572858731924362
