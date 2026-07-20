@@ -519,7 +519,7 @@ Reign.weapons.add(
             shootEffect: Fx.shootBig,
             fragVelocityMin: 0.4,
             hitEffect: Fx.blastExplosion,
-            splashDamage: 180,
+            splashDamage: 200,
             splashDamageRadius: 30,
             fragBullets: 5,
             fragLifeMin: 0,
@@ -529,7 +529,7 @@ Reign.weapons.add(
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
             statusDuration: 300,
-            fragBullet: extend(BasicBulletType, 9, 80, {
+            fragBullet: extend(BasicBulletType, 9, 100, {
                 width: 10,
                 height: 10,
                 pierce: true,
@@ -537,7 +537,7 @@ Reign.weapons.add(
                 pierceCap: 5,
                 lifetime: 20,
                 hitEffect: Fx.flakExplosion,
-                splashDamage: 60,
+                splashDamage: 80,
                 splashDamageRadius: 16,
                 backColor: Pal.blastAmmoBack,
                 frontColor: Pal.blastAmmoFront
@@ -1102,17 +1102,17 @@ Eclipse.weapons.add(
         recoil: 0.5,
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 133, {
+        bullet: extend(FlakBulletType, 6.6, 180, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 144,
-            splashDamageRadius: 48,
+            splashDamage: 220,
+            splashDamageRadius: 64,
             collidesGround: true,
             lifetime: 42,
             reflectable: false,
             status: StatusEffects.blasted,
             statusDuration: 300,
-            fragBullets: 2,
+            fragBullets: 3,
             backColor: Pal.blastAmmoBack,
             frontColor: Pal.blastAmmoFront,
             hitEffect: extend(Effect,30, e => {
@@ -1132,7 +1132,7 @@ Eclipse.weapons.add(
                 });
                 Drawf.light(e.x, e.y, 60, Pal.blastAmmoBack, 0.7 * e.fout());
             },{}),
-            fragBullet: extend(BasicBulletType,12,50,{
+            fragBullet: extend(BasicBulletType,12,40,{
                 width: 3,
                 height: 3,
                 backColor: Pal.blastAmmoBack,
@@ -1155,10 +1155,10 @@ Eclipse.weapons.add(
         }),
         inaccuracy: 5,
         velocityRnd: -0.25,
-        bullet: extend(FlakBulletType, 6.6, 111, {
+        bullet: extend(FlakBulletType, 6.6, 122, {
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
-            splashDamage: 122,
+            splashDamage: 144,
             splashDamageRadius: 48,
             collidesGround: true,
             reflectable: false,
@@ -1185,7 +1185,7 @@ Eclipse.weapons.add(
                 });
                 Drawf.light(e.x, e.y, 60, Color.valueOf("56ddff"), 0.7 * e.fout());
             },{}),
-            fragBullet: extend(BasicBulletType,12,30,{
+            fragBullet: extend(BasicBulletType,12,60,{
                 width: 3,
                 height: 3,
                 backColor: Color.valueOf("56ddff"),
@@ -1872,8 +1872,8 @@ Corvus.weapons.add(
         useAttackRange: false,
         bullet: extend(EmpBulletType, {
             reflectable: false,
-            damage: 400,
-            splashDamage: 800,
+            damage: 200,
+            splashDamage: 600,
             splashDamageRadius: 96,
             speed: 10,
             lifetime: 35,
