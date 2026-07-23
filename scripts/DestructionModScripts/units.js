@@ -103,7 +103,7 @@ Dagger.weapons.add(
             shots: 3,
             shotDelay: 1.25
         }),
-        bullet: extend(BasicBulletType, 3.2, 32, {
+        bullet: extend(BasicBulletType, 3.2, 40, {
             width: 8,
             height: 10,
             lifetime: 50,
@@ -144,7 +144,7 @@ Mace.weapons.add(
         top: false,
         shootSound: Sounds.shootFlame,
         shootY: 2,
-        reload: 12,
+        reload: 10,
         recoil: 1,
         ejectEffect: Fx.none,
         bullet: extend(BulletType, 5, 150, {
@@ -224,7 +224,7 @@ Fortress.weapons.add(
             statusDuration: 300,
             hitSize: 8,
             fragBullets: 1,
-            fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+            fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                 hitSize: 8,
                 hitEffect: Fx.blastExplosion,
                 knockback: 0.8,
@@ -233,14 +233,14 @@ Fortress.weapons.add(
                 height: 20,
                 collides: false,
                 collidesTiles: false,
-                splashDamage: 140,
+                splashDamage: 150,
                 splashDamageRadius: 40,
                 backColor: Pal.blastAmmoBack,
                 frontColor: Pal.blastAmmoFront,
                 status: StatusEffects.blasted,
                 statusDuration: 300,
                 fragBullets: 1,
-                fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                     hitSize: 8,
                     hitEffect: Fx.blastExplosion,
                     knockback: 0.8,
@@ -249,14 +249,14 @@ Fortress.weapons.add(
                     height: 20,
                     collides: false,
                     collidesTiles: false,
-                    splashDamage: 140,
+                    splashDamage: 150,
                     splashDamageRadius: 40,
                     backColor: Pal.blastAmmoBack,
                     frontColor: Pal.blastAmmoFront,
                     status: StatusEffects.blasted,
                     statusDuration: 300,
                     fragBullets: 1,
-                    fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                    fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                         hitSize: 8,
                         hitEffect: Fx.blastExplosion,
                         knockback: 0.8,
@@ -265,14 +265,14 @@ Fortress.weapons.add(
                         height: 20,
                         collides: false,
                         collidesTiles: false,
-                        splashDamage: 140,
+                        splashDamage: 150,
                         splashDamageRadius: 40,
                         backColor: Pal.blastAmmoBack,
                         frontColor: Pal.blastAmmoFront,
                         status: StatusEffects.blasted,
                         statusDuration: 300,
                         fragBullets: 1,
-                        fragBullet: extend(ArtilleryBulletType, 0, 40, "shell", {
+                        fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                             hitSize: 8,
                             hitEffect: Fx.blastExplosion,
                             knockback: 0.8,
@@ -281,7 +281,7 @@ Fortress.weapons.add(
                             height: 20,
                             collides: false,
                             collidesTiles: false,
-                            splashDamage: 140,
+                            splashDamage: 150,
                             splashDamageRadius: 40,
                             backColor: Pal.blastAmmoBack,
                             frontColor: Pal.blastAmmoFront,
@@ -344,7 +344,7 @@ Scepter.weapons.add(
             shots: 3,
             shotDelay: 3
         }),
-        bullet: extend(BasicBulletType,9,180,{
+        bullet: extend(BasicBulletType,9,200,{
             hitSize: 6,
             width: 12.5,
             height: 22,
@@ -357,11 +357,11 @@ Scepter.weapons.add(
             lightning: 3,
             lightningLength: 8,
             lightningColor: Pal.surge,
-            lightningDamage: 100,
+            lightningDamage: 120,
             despawnSound: Sounds.shockBullet,
             bulletInterval: 3,
             intervalBullet: extend(LightningBulletType,{
-                damage: 50,
+                damage: 80,
                 lightningLength: 4,
                 lightningLengthRand: 4,
                 lightningColor: Pal.surge,
@@ -385,7 +385,7 @@ Scepter.weapons.add(
         }),
         inaccuracy: 6,
         velocityRnd: -0.25,
-        bullet: extend(ArtilleryBulletType, 5, 80, "shell",{
+        bullet: extend(ArtilleryBulletType, 5, 100, "shell",{
             hitSize: 6,
             hitEffect: Fx.blastExplosion,
             knockback: 0.8,
@@ -395,8 +395,8 @@ Scepter.weapons.add(
             collides: true,
             collidesTiles: true,
             collidesAir: true,
-            splashDamageRadius: 40,
-            splashDamage: 120,
+            splashDamageRadius: 48,
+            splashDamage: 128,
             backColor: Pal.blastAmmoBack,
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
@@ -413,7 +413,7 @@ Scepter.weapons.add(
         ejectEffect: Fx.casing1,
         shootSound: Sounds.shootScepterSecondary,
         rotateSpeed: 3,
-        bullet: extend(BasicBulletType, 12, 75,{
+        bullet: extend(BasicBulletType, 12, 85,{
             width: 4.5,
             height: 35,
             lifetime: 28*8/12,
@@ -438,7 +438,7 @@ Scepter.weapons.add(
         ejectEffect: Fx.casing1,
         shootSound: Sounds.shootScepterSecondary,
         rotateSpeed: 3,
-        bullet: extend(BasicBulletType, 12, 75,{
+        bullet: extend(BasicBulletType, 12, 85,{
             pierce: true,
             pierceCap: 3,
             pierceBuilding: true,
@@ -568,7 +568,7 @@ Reign.weapons.add(
             splashDamage: 5000,
             splashDamageRadius: 160,
             shootEffect: Fx.shockwave,
-            lifetime: 60,
+            lifetime: 62,
             hitShake: 10,
             hitSound: Sounds.explosionReactor,
             keepVelocity: false,
@@ -658,7 +658,7 @@ Flare.weapons.add(
         ejectEffect: Fx.casing1,
         mirror: false,
         inaccuracy: 4,
-        bullet: extend(BasicBulletType, 3, 24, {
+        bullet: extend(BasicBulletType, 3, 30, {
             width: 8,
             height: 11,
             lifetime: 32,
@@ -730,8 +730,8 @@ Horizon.weapons.add(
         soundPitchMMax: 1.2,
         bullet: extend(BombBulletType, {
             sprite: "circle-bullet",
-            damage: 44,
-            splashDamage: 50,
+            damage: 50,
+            splashDamage: 60,
             splashDamageRadius: 32,
             width: 10,
             height: 10,
@@ -795,7 +795,7 @@ Zenith.weapons.add(
         shootSound: Sounds.shootMissileLong,
         bullet: extend(MultiBulletType,{
             bullets: [
-                extend(MissileBulletType, 5.5, 100, {
+                extend(MissileBulletType, 5.5, 110, {
                     width: 10,
                     height: 10,
                     shrinkY: 0,
@@ -847,7 +847,7 @@ Zenith.weapons.add(
                     weaveScale: 6,
                     weaveMag: 1
                 }),
-                extend(MissileBulletType, 4.5, 50, {
+                extend(MissileBulletType, 4.5, 55, {
                     width: 10,
                     height: 10,
                     shrinkY: 0,
@@ -855,7 +855,7 @@ Zenith.weapons.add(
                     homingRange: 60,
                     scaleKeepVelocity: true,
                     splashDamageRadius: 60,
-                    splashDamage: 50,
+                    splashDamage: 55,
                     lifetime: 49,
                     trailColor: Color.valueOf("6bd053"),
                     backColor: Color.valueOf("6bd053"),
@@ -907,7 +907,7 @@ Zenith.weapons.add(
                     homingRange: 60,
                     scaleKeepVelocity: true,
                     splashDamageRadius: 25,
-                    splashDamage: 100,
+                    splashDamage: 110,
                     lifetime: 63,
                     trailColor: Color.valueOf("536bd0"),
                     backColor: Color.valueOf("536bd0"),
@@ -1001,7 +1001,7 @@ Antumbra.weapons.add(
             shotDelay: 1.2
         }),
         shootY: 4,
-        shootCone: 100,
+        shootCone: 80,
         inaccuracy: 10,
         velocityRnd: -0.33,
         rotate: true,
@@ -1012,14 +1012,14 @@ Antumbra.weapons.add(
         bullet: extend(MissileBulletType, {
             hitShake: 1.5,
             speed: 3,
-            damage: 75,
+            damage: 80,
             width: 8,
             height: 8,
             drag: -0.003,
             homingRange: 60,
             keepVelocity: false,
-            splashDamageRadius: 32,
-            splashDamage: 180,
+            splashDamageRadius: 40,
+            splashDamage: 200,
             lifetime: 70,
             trailColor: Color.valueOf("d06b53"),
             backColor: Color.valueOf("d06b53"),
@@ -1043,7 +1043,7 @@ Antumbra.weapons.add(
         shootSound: Sounds.shootSpectre,
         rotate: true,
         shadow: 8,
-        bullet: extend(BasicBulletType, 9, 260,{
+        bullet: extend(BasicBulletType, 9, 280,{
             width: 12,
             height: 20,
             lifetime: 32,
@@ -1376,7 +1376,7 @@ Nova.weapons.add(
             length: 140,
             width: 10,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
-            damage: 36
+            damage: 40
         })
     })
 );
@@ -1430,7 +1430,7 @@ Pulsar.weapons.add(
         bullet: extend(LightningBulletType, {
             lightningColor: Color.valueOf("ed655a"),
             hitColor: Color.valueOf("ed655a"),
-            damage: 44,
+            damage: 52,
             lightningLength: 12,
             lightningLengthRand: 7,
             shootEffect: extend(Effect, 8, e=>{
@@ -1505,7 +1505,7 @@ Quasar.weapons.add(
         }),
         inaccuracy: 2,
         bullet: extend(LaserBulletType,{
-            damage: 100,
+            damage: 120,
             recoil: 0,
             sideAngle: 30,
             sideWidth: 2,
@@ -1516,10 +1516,10 @@ Quasar.weapons.add(
             lightningColor: Color.valueOf("ed655a"),
             lightColor: Color.valueOf("ed655a"),
             lightningLength: 2,
-            lightningDamage: 50,
+            lightningDamage: 55,
             lightningAngleRand: 40,
             lightningLengthRand: 5,
-            lightningSpacing: 40
+            lightningSpacing: 30
         })
     })
 );
@@ -1590,7 +1590,7 @@ Vela.weapons.add(
         shootStatus: StatusEffects.slow,
         shootStatusDuration: 199,
         bullet: extend(ContinuousLaserBulletType, {
-            damage: 2200/12,
+            damage: 2400/12,
             length: 290,
             hitEffect: extend(Effect,12, e => {
                 Draw.color(Color.valueOf("ed655a"));
@@ -1626,7 +1626,7 @@ Vela.weapons.add(
         reload: 40,
         shootSound: Vars.tree.loadSound("railgun_D"),
         bullet: extend(PointBulletType, {
-            damage: 1200,
+            damage: 1000,
             shootEffect: extend(Effect,24, e => {
                 e.scaled(10, b => {
                     Draw.color(Color.white, Color.valueOf("ed655a"), b.fin());
@@ -1984,7 +1984,7 @@ Crawler.weapons.add(
             speed: 0,
             splashDamageRadius: 60,
             instantDisappear: true,
-            splashDamage: 80,
+            splashDamage: 100,
             hittable: false,
             collidesAir: true
         })
@@ -2029,7 +2029,7 @@ Atrax.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Atrax_Weapon", {
         top: false,
         shootY: 3,
-        reload: 9,
+        reload: 8,
         ejectEffect: Fx.none,
         recoil: 1,
         x: 7,
@@ -2039,7 +2039,7 @@ Atrax.weapons.add(
             spread: 7.5
         }),
         bullet: extend(LiquidBulletType, Liquids.slag, {
-            damage: 56,
+            damage: 60,
             speed: 3,
             drag: 0.009,
             shootEffect: Fx.shootSmall,
@@ -2254,8 +2254,8 @@ Arkyid.stats.addPercent(
 Arkyid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 let ArkyidSap = extend(SapBulletType,{
     sapStrength: 0.85,
-    length: 80,
-    damage: 110,
+    length: 85,
+    damage: 120,
     shootEffect: Fx.shootSmall,
     hitColor: Color.valueOf("ed655a"),
     color: Color.valueOf("ed655a"),
@@ -2302,7 +2302,7 @@ Arkyid.weapons.add(
         shadow: 8,
         recoil: 3,
         alternate: false,
-        bullet: extend(ArtilleryBulletType,3,120,{
+        bullet: extend(ArtilleryBulletType,3,140,{
             hitEffect: Fx.sapExplosion,
             despawnSound: Sounds.explosionArtilleryShock,
             knockback: 0.8,
@@ -2312,7 +2312,7 @@ Arkyid.weapons.add(
             collidesTiles: true,
             ammoMultiplier: 4,
             splashDamageRadius: 70,
-            splashDamage: 180,
+            splashDamage: 200,
             backColor: Pal.sapBulletBack,
             frontColor: Pal.sapBullet,
             lightningColor: Pal.sapBullet,
@@ -2558,7 +2558,7 @@ Toxopid.weapons.add(
         rotate: true,
         shadow: 30,
         rotationLimit: 80,
-        bullet: extend(ArtilleryBulletType,10,500,"circle-bullet",{
+        bullet: extend(ArtilleryBulletType,10,600,"circle-bullet",{
             shrinkX: 0,
             shrinkY: 0,
             despawnSound: Sounds.explosionArtilleryShockBig,
@@ -2571,7 +2571,7 @@ Toxopid.weapons.add(
             collidesTiles: true,
             collides: true,
             ammoMultiplier: 4,
-            splashDamage: 600,
+            splashDamage: 660,
             splashDamageRadius: 140,
             backColor: Pal.sapBulletBack,
             frontColor: Pal.sapBullet,
@@ -2596,7 +2596,7 @@ Toxopid.weapons.add(
             fragAngle: 0,
             fragSpread: 360/8,
             fragBullets: 8,
-            fragBullet: extend(ArtilleryBulletType, 0.1, 250, "circle-bullet", {
+            fragBullet: extend(ArtilleryBulletType, 0.1, 300, "circle-bullet", {
                 despawnSound: Sounds.explosionArtilleryShockBig,
                 hitEffect: Fx.sapExplosion,
                 knockback: 0.8,
@@ -2608,7 +2608,7 @@ Toxopid.weapons.add(
                 shrinkY: 0,
                 collidesTiles: true,
                 collides: true,
-                splashDamage: 400,
+                splashDamage: 440,
                 splashDamageRadius: 100,
                 backColor: Pal.sapBulletBack,
                 frontColor: Pal.sapBullet,
@@ -2626,7 +2626,7 @@ Toxopid.weapons.add(
                 hitSize: 35/Math.sqrt(2),
                 fragLifeMin: 0.3,
                 fragBullets: 4,
-                fragBullet: extend(ArtilleryBulletType, 2.3, 125, {
+                fragBullet: extend(ArtilleryBulletType, 2.3, 150, {
                     despawnSound: Sounds.explosionArtilleryShock,
                     hitEffect: Fx.sapExplosion,
                     knockback: 0.8,
@@ -2634,7 +2634,7 @@ Toxopid.weapons.add(
                     width: 20,
                     height: 20,
                     collidesTiles: false,
-                    splashDamage: 200,
+                    splashDamage: 220,
                     splashDamageRadius: 80,
                     backColor: Pal.sapBulletBack,
                     frontColor: Pal.sapBullet,
@@ -2823,11 +2823,11 @@ Mega.weapons.add(
             despawnEffect: Fx.hitLaserColor,
             lightColor: Color.valueOf("ed655a"),
             hitColor: Color.valueOf("ed655a"),
-            lightning: 2,
+            lightning: 3,
             lightningLength: 5,
             lightningLengthRand: 8,
             lightningColor: Color.valueOf("ed655a"),
-            lightningDamage: 20
+            lightningDamage: 22
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
@@ -2849,7 +2849,7 @@ Mega.weapons.add(
             despawnEffect: Fx.hitLaserColor,
             lightColor: Color.valueOf("789aff"),
             hitColor: Color.valueOf("789aff"),
-            lightning: 2,
+            lightning: 3,
             lightningLength: 5,
             lightningLengthRand: 8,
             lightningColor: Color.valueOf("789aff"),
@@ -2929,12 +2929,18 @@ Quad.weapons.add(
                 let circleRad = 4 + e.finpow() * 112;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Color.valueOf("ed655a"));
+                rand.setSeed(e.id);
+                let s = 1;
+                if(rand.random(100) < 50){
+                    s *= -1;
+                }
+                let Dir = e.fin()*rand.random(180)*s;
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 8, 132 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 8, 132 * e.fout(), i*90+Dir);
                 }
                 Draw.color();
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 4, 132/3 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 4, 132/3 * e.fout(), i*90+Dir);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Color.valueOf("ed655a"), e.fout());
             },{}),
@@ -2977,12 +2983,18 @@ Quad.weapons.add(
                 let circleRad = 4 + e.finpow() * 64;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Color.valueOf("789aff"));
+                rand.setSeed(e.id);
+                let s = 1;
+                if(rand.random(100) < 50){
+                    s *= -1;
+                }
+                let Dir = e.fin()*rand.random(180)*s;
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 8, 84 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 8, 84 * e.fout(), i*90+Dir);
                 }
                 Draw.color();
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 4, 84/3 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 4, 84/3 * e.fout(), i*90+Dir);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Color.valueOf("789aff"), e.fout());
             },{}),
@@ -2992,7 +3004,7 @@ Quad.weapons.add(
             shrinkX: 0.7,
             shrinkY: 0.7,
             collides: false,
-            splashDamage: 800,
+            splashDamage: 1000,
             splashDamageRadius: 64
         })
     }),
@@ -3025,12 +3037,18 @@ Quad.weapons.add(
                 let circleRad = 4 + e.finpow() * 160;
                 Lines.circle(e.x, e.y, circleRad);
                 Draw.color(Pal.heal);
+                rand.setSeed(e.id);
+                let s = 1;
+                if(rand.random(100) < 50){
+                    s *= -1;
+                }
+                let Dir = e.fin()*rand.random(180)*s;
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 8, 180 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 8, 180 * e.fout(), i*90+Dir);
                 }
                 Draw.color();
                 for(let i = 0; i < 4; i++){
-                    Drawf.tri(e.x, e.y, 4, 180/3 * e.fout(), i*90);
+                    Drawf.tri(e.x, e.y, 4, 180/3 * e.fout(), i*90+Dir);
                 }
                 Drawf.light(e.x, e.y, circleRad * 1.6, Pal.heal, e.fout());
             },{}),
@@ -3040,7 +3058,7 @@ Quad.weapons.add(
             shrinkX: 0.7,
             shrinkY: 0.7,
             collides: false,
-            splashDamage: 400,
+            splashDamage: 500,
             splashDamageRadius: 160
         })
     })
@@ -3146,7 +3164,7 @@ Risso.weapons.add(
         rotate: true,
         ejectEffect: Fx.casing1,
         shootSound: Sounds.shootMissileShort,
-        bullet: extend(MissileBulletType, 3, 45, "missile", {
+        bullet: extend(MissileBulletType, 3, 50, "missile", {
             keepVelocity: true,
             width: 8,
             height: 8,
@@ -3211,13 +3229,13 @@ Minke.weapons.add(
         inaccuracy: 6,
         ejectEffect: Fx.casing1,
         shootSound: Sounds.shootDuo,
-        bullet: extend(FlakBulletType, 5, 20, {
+        bullet: extend(FlakBulletType, 5, 30, {
             lifetime: 45,
             shootEffect: Fx.shootSmall,
             width: 6,
             height: 8,
             hitEffect: Fx.flakExplosion,
-            splashDamage: 55,
+            splashDamage: 60,
             splashDamageRadius: 24
         })
     }),
@@ -3235,7 +3253,7 @@ Minke.weapons.add(
         shoot: extend(ShootPattern,{
             shots: 3
         }),
-        bullet: extend(ArtilleryBulletType, 4, 66, "shell",{
+        bullet: extend(ArtilleryBulletType, 4, 70, "shell",{
             hitEffect: Fx.flakExplosion,
             knockback: 0.8,
             lifetime: 60,
@@ -3243,7 +3261,7 @@ Minke.weapons.add(
             height: 12.5,
             collidesTiles: false,
             splashDamageRadius: 40,
-            splashDamage: 66,
+            splashDamage: 70,
             homingPower: 0.08,
             homingRange: 60
         })
@@ -3407,7 +3425,7 @@ Sei.weapons.add(
             shotDelay: 6
         }),
         inaccuracy: 1,
-        bullet: extend(BasicBulletType, 8,120, {
+        bullet: extend(BasicBulletType, 8,180, {
             width: 14,
             height: 20,
             shootEffect: Fx.shootBig,
@@ -3432,12 +3450,12 @@ Sei.weapons.add(
         shake: 1,
         shootSound: Sounds.shootMissileLong,
         shoot: extend(ShootAlternate,{
-            shots: 6,
+            shots: 8,
             shotDelay: 0,
             spread: 2.5,
             barrels: 6
         }),
-        bullet: extend(MissileBulletType, 1,100, {
+        bullet: extend(MissileBulletType, 1,150, {
             homingPower: 0,
             homingRange: 0,
             pierce: true,
@@ -3450,7 +3468,7 @@ Sei.weapons.add(
             drag: -0.075,
             keepVelocity: false,
             splashDamageRadius: 40,
-            splashDamage: 60,
+            splashDamage: 80,
             lifetime: 45,
             trailColor: Pal.blastAmmoBack,
             backColor: Pal.blastAmmoBack,
@@ -3967,13 +3985,13 @@ Oxynoe.weapons.add(
             shootEffect: Fx.sparkShoot,
             hitEffect: Fx.pointHit,
             maxRange: 140,
-            damage: 24
+            damage: 32
         })
     })
 );
 Oxynoe.abilities.add(
     EffectedRegenAbility(125),
-    StatusFieldAbility(StatusEffects.overclock, 60 * 10, 60 * 3, 80)
+    StatusFieldAbility(StatusEffects.overclock, 60 * 20, 60 * 1, 80)
 );
 
 //Destructor Cyerce
@@ -4017,7 +4035,7 @@ Cyerce.weapons.add(
         rotate: true,
         rotateSpeed: 5,
         reload: 12,
-        bullet: extend(MissileBulletType, 4, 40, {
+        bullet: extend(MissileBulletType, 4, 60, {
             homingPower: 0.5,
             weaveMag: 4,
             weaveScale: 4,
@@ -4030,7 +4048,7 @@ Cyerce.weapons.add(
                 Drawf.tri(e.x, e.y, w, 4 * e.fout(), e.rotation + 180);
             },{}),
             smokeEffect: Fx.hitLaser,
-            splashDamage: 40,
+            splashDamage: 50,
             splashDamageRadius: 30,
             backColor: Color.valueOf("ed655a"),
             frontColor: Color.valueOf("ff9999"),
@@ -4059,7 +4077,7 @@ Cyerce.weapons.add(
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Plasma_Missile_Mount", {
-        reload: 55,
+        reload: 50,
         x: 9,
         y: 3,
         shadow: 5,
@@ -4069,7 +4087,7 @@ Cyerce.weapons.add(
         velocityRnd: 0.1,
         shootSound: Sounds.shootMissilePlasma,
         ejectEffect: Fx.none,
-        bullet: extend(FlakBulletType, 2.7, 80, {
+        bullet: extend(FlakBulletType, 2.7, 100, {
             sprite: "missile-large",
             collidesGround: true,
             collidesAir: true,
@@ -4084,7 +4102,7 @@ Cyerce.weapons.add(
             lightOpacity: 0.7,
             lightColor: Color.valueOf("ed655a"),
             despawnSound: Sounds.explosion,
-            splashDamage: 80,
+            splashDamage: 88,
             splashDamageRadius: 40,
             lifetime: 80,
             backColor: Color.valueOf("ed655a"),
@@ -4111,7 +4129,7 @@ Cyerce.weapons.add(
             trailLength: 29,
             fragBullets: 3,
             fragVelocityMin:0.5,
-            fragBullet: extend(FlakBulletType,2.5, 60, {
+            fragBullet: extend(FlakBulletType,2.5, 80, {
                 sprite: "missile-large",
                 collidesGround: true,
                 collidesAir: true,
@@ -4126,7 +4144,7 @@ Cyerce.weapons.add(
                 lightOpacity: 0.7,
                 lightColor: Color.valueOf("ed655a"),
                 despawnSound: Sounds.explosion,
-                splashDamage: 60,
+                splashDamage: 72,
                 splashDamageRadius: 40,
                 lifetime: 40,
                 backColor: Color.valueOf("ed655a"),
@@ -4153,7 +4171,7 @@ Cyerce.weapons.add(
                 trailLength: 29,
                 fragBullets: 8,
                 fragVelocityMin:0.5,
-                fragBullet: extend(MissileBulletType, 4, 40, {
+                fragBullet: extend(MissileBulletType, 4, 60, {
                     homingPower: 0.5,
                     weaveMag: 4,
                     weaveScale: 4,
@@ -4166,7 +4184,7 @@ Cyerce.weapons.add(
                         Drawf.tri(e.x, e.y, w, 4 * e.fout(), e.rotation + 180);
                     },{}),
                     smokeEffect: Fx.hitLaser,
-                    splashDamage: 40,
+                    splashDamage: 50,
                     splashDamageRadius: 30,
                     backColor: Color.valueOf("ed655a"),
                     frontColor: Color.valueOf("ff9999"),
@@ -4279,7 +4297,7 @@ Aegires.weapons.add(
         bullet: extend(LightningBulletType,{
             lightningColor: Color.valueOf("ed655a"),
             hitColor: Color.valueOf("ed655a"),
-            damage: 200,
+            damage: 280,
             lightningLength: 10,
             lightningLengthRand: 20,
             lightningType: extend(BulletType,0.0001,0,{
@@ -4295,7 +4313,7 @@ Aegires.weapons.add(
 );
 Aegires.abilities.add(
     EffectedRegenAbility(500),
-    extend(EnergyFieldAbility, 100, 50, 208, {
+    extend(EnergyFieldAbility, 160, 50, 208, {
         color: Color.valueOf("ed655a"),
         maxTargets: 32,
         healPercent: 1

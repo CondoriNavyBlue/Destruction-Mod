@@ -67,6 +67,7 @@ const IronWall = extend(Wall, "Iron_Wall", {
     localizedName: "Iron Wall",
     health: 1000,
     size: 1,
+    armor: 10,
     absorbLasers: true,
     chanceDeflect: 5,
     category: Category.defense,
@@ -82,6 +83,7 @@ const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
     absorbLasers: true,
     chanceDeflect: 5,
     size: 2,
+    armor: 10,
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32),
     buildVisibility: BuildVisibility.shown,
@@ -95,6 +97,7 @@ const GoldWall = extend(Wall, "Gold_Wall", {
     size: 1,
     absorbLasers: true,
     chanceDeflect: 2.5,
+    armor: 20,
     category: Category.defense,
     requirements: ItemStack.with(items.gold,8),
     buildVisibility: BuildVisibility.shown,
@@ -107,6 +110,7 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
     health: 8000,
     absorbLasers: true,
     chanceDeflect: 3,
+    armor: 20,
     size: 2,
     category: Category.defense,
     requirements: ItemStack.with(items.gold,32),
@@ -119,6 +123,7 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
     localizedName: "Diamond Wall",
     health: 3500,
     size: 1,
+    armor: 40,
     chanceDeflect: 15,
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,8),
@@ -132,6 +137,7 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     health: 14000,
     chanceDeflect: 3,
     size: 2,
+    armor: 40,
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,32),
     buildVisibility: BuildVisibility.shown,
@@ -144,10 +150,11 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
     health: 7000,
     size: 1,
     absorbLasers: true,
-    chanceDeflect: 25,
-    lightningChance: 0.2,
-    lightningDamage: 48,
+    chanceDeflect: 40,
+    lightningChance: 0.3,
+    lightningDamage: 80,
     lightningLength: 24,
+    armor: 100,
     lightningColor: Color.valueOf("ed655a"),
     flashHit: true,
     flashColor: Color.valueOf("ed655a"),
@@ -163,10 +170,11 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     health: 28000,
     size: 2,
     absorbLasers: true,
-    chanceDeflect: 30,
-    lightningChance: 0.2,
-    lightningDamage: 64,
+    chanceDeflect: 50,
+    lightningChance: 0.3,
+    lightningDamage: 100,
     lightningLength: 30,
+    armor: 100,
     lightningColor: Color.valueOf("ed655a"),
     flashHit: true,
     flashColor: Color.valueOf("ed655a"),
@@ -835,7 +843,7 @@ const ReconstructorTo4 = extend(Reconstructor, "Destruction_Exponential_Reconstr
     buildCostMultiplier: 4.0130987543341461
 });
 ReconstructorTo4.consumePower(900/60);
-ReconstructorTo4.consumeItems(ItemStack.with(Items.silicon,800 , Items.thorium,750 , items.sodiumBattery,600 , items.gold, 650));
+ReconstructorTo4.consumeItems(ItemStack.with(Items.silicon,1000 , Items.thorium,850 , items.sodiumBattery,800 , items.gold, 750));
 ReconstructorTo4.consumeLiquid(Liquids.slag, 1);
 
 //Destruction Tetrative Reconstructor
@@ -843,7 +851,7 @@ const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstruc
     localizedName: "Destruction Tetrative Reconstructor",
     health: 24000,
     size: 9,
-    requirements: ItemStack.with(items.iron,2400 , items.gold,1800 , items.sodiumBattery,2000 , Items.silicon,3600, Items.plastanium, 1000, Items.phaseFabric,800 , Items.surgeAlloy,1200 , items.diamond,500),
+    requirements: ItemStack.with(items.iron,3000 , items.gold,2000 , items.sodiumBattery,2000 , Items.silicon,4000, Items.plastanium, 1000, Items.phaseFabric,800 , Items.surgeAlloy,1200 , items.diamond,500),
     category: Category.units,
     buildVisibility: BuildVisibility.shown,
     constructTime: 60*600,
@@ -860,7 +868,7 @@ const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstruc
     buildCostMultiplier: 3/868*(150*7.5)
 });
 ReconstructorTo5.consumePower(3000/60);
-ReconstructorTo5.consumeItems(ItemStack.with(Items.silicon,1200 , items.sodiumBattery,1000 , items.iron,1000 , items.gold,850 , items.diamond,700));
+ReconstructorTo5.consumeItems(ItemStack.with(Items.silicon,2500 , items.sodiumBattery,2000 , items.iron,1500 , items.gold,1250 , items.diamond,1000));
 ReconstructorTo5.consumeLiquid(Liquids.slag, 3);
 
 //------------------------------Turrets------------------------------
