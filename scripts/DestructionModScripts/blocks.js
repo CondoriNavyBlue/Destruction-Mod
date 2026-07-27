@@ -725,8 +725,8 @@ IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
 
 //Thorium Cncentrator
-const ThoriumCncentrator = extend(GenericCrafter, "Thorium_Cncentrator", {
-    localizedName: "Thorium Cncentrator",
+const ThoriumConcentrator = extend(GenericCrafter, "Thorium_Concentrator", {
+    localizedName: "Thorium Concentrator",
     size: 2,
     hasPower: true,
     hasItem: true,
@@ -740,8 +740,8 @@ const ThoriumCncentrator = extend(GenericCrafter, "Thorium_Cncentrator", {
     health: 1250,
     outputItem: new ItemStack(items.hdThorium,1)
 });
-ThoriumCncentrator.consumeItem(Items.thorium,3);
-ThoriumCncentrator.consumePower(2.5);
+ThoriumConcentrator.consumeItem(Items.thorium,3);
+ThoriumConcentrator.consumePower(2.5);
 
 //------------------------------Unit Related------------------------------
 
@@ -2723,6 +2723,7 @@ module.exports = {
     ElectricHPHT: ElectricHPHT,
     SodiumBatteryMachine: SodiumBatteryMachine,
     IronMelter: IronMelter,
+    ThoriumConcentrator: ThoriumConcentrator,
 
     Factory: Factory,
     ReconstructorTo2: ReconstructorTo2,

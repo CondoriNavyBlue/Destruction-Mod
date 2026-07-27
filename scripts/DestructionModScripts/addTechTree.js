@@ -279,6 +279,10 @@ addTechTree(blocks.IronMelter,{
     parent: "melter"
 });
 
+addTechTree(blocks.ThoriumConcentrator,{
+    parent: "phase-weaver"
+});
+
 //------------------------------Turrets------------------------------
 
 
