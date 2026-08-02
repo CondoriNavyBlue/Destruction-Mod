@@ -2321,7 +2321,9 @@ Foreshadow.ammo(
         ammoMultiplier: 1,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
-        knockback: 33
+        knockback: 33,
+        splashDamage: 1350*2/3,
+        splashDamageRadius: 32
     }),
     items.diamond, extend(RailBulletType, {
         shootEffect: extend(Effect, 24, e => {
@@ -2414,7 +2416,9 @@ Foreshadow.ammo(
         status: statusEffects.destructed,
         statusDuration: 200,
         buildingDamageMultiplier: 0.2,
-        armorMultiplier: 0
+        armorMultiplier: 0,
+        splashDamage: 1350*2/3,
+        splashDamageRadius: 32
     })
 );
 
@@ -2447,6 +2451,7 @@ Spectre.ammo(
     Items.thorium, extend(BasicBulletType, 12, 320, {
         pierceDamageFactor: 0,
         pierceBuilding: false,
+        pierceCap: 5,
         reflectable: false,
         lifetime: 370/12,
         hitSize: 5,
@@ -2463,6 +2468,7 @@ Spectre.ammo(
     Items.pyratite, extend(BasicBulletType, 10, 280, {
         pierceDamageFactor: 0,
         pierceBuilding: false,
+        pierceCap: 5,
         reflectable: false,
         lifetime: 370/10,
         hitSize: 5,
@@ -2480,9 +2486,10 @@ Spectre.ammo(
         splashDamage: 80,
         splashDamageRadius: 32
     }),
-    items.sodiumBattery, extend(BasicBulletType, 14, 200, {
+    items.sodiumBattery, extend(BasicBulletType, 14, 220, {
         pierceDamageFactor: 0,
         pierceBuilding: false,
+        pierceCap: 5,
         reflectable: false,
         lifetime: 370/14,
         hitSize: 5,
@@ -2493,7 +2500,7 @@ Spectre.ammo(
         trailColor: batteryAmmoBack,
         frontColor: batteryAmmoFront,
         intervalBullet: extend(LightningBulletType,{
-            damage: 36,
+            damage: 40,
             collidesAir: true,
             ammoMultiplier: 1,
             lightningColor: Color.valueOf("ffffff"),
@@ -2513,7 +2520,7 @@ Spectre.ammo(
         bulletInterval: 3,
         lightning: 5,
         lightningLength: 12,
-        lightningDamage: 48,
+        lightningDamage: 60,
         pierce: true,
         shootEffect: Fx.shootBig,
         knockback: 1,
@@ -2522,6 +2529,7 @@ Spectre.ammo(
     items.diamond, extend(BasicBulletType, 14, 330, {
         pierceDamageFactor: 0,
         pierceBuilding: false,
+        pierceCap: 5,
         reflectable: false,
         lifetime: 370/14,
         hitSize: 6,
@@ -2539,6 +2547,7 @@ Spectre.ammo(
         fragBullets: 5,
         ammoMultiplier: 8,
         reloadMultiplier: 1.25,
+        armorMultiplier: 0,
         fragBullet: extend(BasicBulletType, 10, 100, {
             width: 3,
             height: 16,

@@ -11,8 +11,8 @@ const Destructed = extend(StatusEffect,"Destructed",{
         }
         unit.health-=1000/60*Time.delta;
         unit.speedMultiplier *= 0.5;
-        unit.healthMultiplier *= 0.75;
-        unit.damageMultiplier *= 0.75;
+        unit.healthMultiplier *= 0.5;
+        unit.damageMultiplier *= 0.5;
         unit.reloadMultiplier *= 0.5;
     }
 });

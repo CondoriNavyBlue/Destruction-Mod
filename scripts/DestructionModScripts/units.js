@@ -28,7 +28,7 @@ const Gamma = extend(UnitType, "Destructor_Gamma", {
     lightRadius: 50.3,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
-    DR: 0.4,
+    DR: 0.9,
     update(unit){
         unit.healthMultiplier += 1/(1-Gamma.DR)-1;
     }
@@ -80,6 +80,7 @@ const Dagger = extend(UnitType, "Destructor_Dagger", {
     lightRadius: 36.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Dagger.DR)-1;
@@ -128,6 +129,7 @@ const Mace = extend(UnitType, "Destructor_Mace",{
     lightRadius: 46,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Mace.DR)-1;
@@ -187,6 +189,7 @@ const Fortress = extend(UnitType, "Destructor_Fortress",{
     lightRadius: 59.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Fortress.DR)-1;
@@ -315,6 +318,7 @@ const Scepter = extend(UnitType, "Destructor_Scepter", {
     lightRadius: 101.2,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -481,6 +485,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
     lightRadius: 138,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
@@ -637,6 +642,7 @@ const Flare = extend(UnitType, "Destructor_Flare", {
     lightRadius: 41.4,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Flare.DR)-1;
@@ -705,6 +711,7 @@ const Horizon = extend(UnitType, "Destructor_Horizon", {
     lightRadius: 50.56,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Horizon.DR)-1;
@@ -770,6 +777,7 @@ const Zenith = extend(UnitType, "Destructor_Zenith", {
     lightRadius: 92,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Zenith.DR)-1;
@@ -979,6 +987,7 @@ const Antumbra = extend(UnitType, "Destructor_Antumbra", {
     lightRadius: 211.6,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -1078,6 +1087,7 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
@@ -1350,6 +1360,7 @@ const Nova = extend(UnitType, "Destructor_Nova",{
     lightRadius: 36.8,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Nova.DR)-1;
@@ -1400,6 +1411,7 @@ const Pulsar = extend(UnitType, "Destructor_Pulsar", {
     lightRadius: 50.56,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Pulsar.DR)-1;
@@ -1479,6 +1491,7 @@ const Quasar = extend(UnitType, "Destructor_Quasar",{
     lightRadius: 59.8,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Quasar.DR)-1;
@@ -1556,6 +1569,7 @@ const Vela = extend(UnitType, "Destructor_Vela", {
     lightRadius: 110.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -1723,6 +1737,7 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
     lightRadius: 133.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58,
     range: 532,
     researchCostMultiplier: 25,
     DR: 0.5,
@@ -1953,6 +1968,7 @@ const Crawler = extend(UnitType, "Destructor_Crawler", {
     lightColor: Color.valueOf("0000ff"),
     lightRadius: 36.8,
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Crawler.DR)-1;
@@ -2014,6 +2030,7 @@ const Atrax = extend(UnitType, "Destructor_Atrax", {
     lightColor: Color.valueOf("0000ff"),
     lightRadius: 59.8,
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Atrax.DR)-1;
@@ -2073,6 +2090,7 @@ const Spiroct = extend(UnitType, "Destructor_Spiroct",{
     lightColor: Color.valueOf("0000ff"),
     lightRadius: 69,
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Spiroct.DR)-1;
@@ -2240,6 +2258,7 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     lightRadius: 105.8,
     lightColor: Color.valueOf("0000ff"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -2377,6 +2396,7 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
     hovering: true,
     lightColor: Color.valueOf("0000ff"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
@@ -2680,6 +2700,7 @@ const Mono = extend(UnitType, "Miner_Mono", {
     lightRadius: 27.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Mono.DR)-1;
@@ -2715,6 +2736,7 @@ const Poly = extend(UnitType, "Builder_Poly", {
     lightRadius: 41.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Poly.DR)-1;
@@ -2792,6 +2814,7 @@ const Mega = extend(UnitType, "Destructor_Mega",{
     lightRadius: 73.83,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Mega.DR)-1;
@@ -2887,6 +2910,7 @@ const Quad = extend(UnitType, "Destructor_Quad", {
     lightRadius: 165.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -3091,6 +3115,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
     lightRadius: 303.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.75,
     update(unit){
@@ -3128,6 +3153,7 @@ const Risso = extend(UnitType, "Destructor_Risso",{
     lightColor: Color.valueOf("ff0000"),
     lightRadius: 46,
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Risso.DR)-1;
@@ -3208,6 +3234,7 @@ const Minke = extend(UnitType, "Destructor_Minke", {
     lightColor: Color.valueOf("ff0000"),
     lightRadius: 59.8,
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Minke.DR)-1;
@@ -3291,6 +3318,7 @@ const Bryde = extend(UnitType, "Destructor_Bryde", {
     lightRadius: 92,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Bryde.DR)-1;
@@ -3394,6 +3422,7 @@ const Sei = extend(UnitType, "Destructor_Sei",{
     lightRadius: 179.4,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -3503,6 +3532,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
@@ -3778,6 +3808,7 @@ const Retusa = extend(UnitType, "Destructor_Retusa", {
     lightRadius: 50.6,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
         unit.healthMultiplier += 1/(1-Retusa.DR)-1;
@@ -3922,6 +3953,7 @@ const Oxynoe = extend(UnitType, "Destructor_Oxynoe", {
     lightRadius: 64.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
         unit.healthMultiplier += 1/(1-Oxynoe.DR)-1;
@@ -4016,6 +4048,7 @@ const Cyerce = extend(UnitType, "Destructor_Cyerce",{
     lightRadius: 92,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
         unit.healthMultiplier += 1/(1-Cyerce.DR)-1;
@@ -4242,6 +4275,7 @@ const Aegires = extend(UnitType, "Destructor_Aegires", {
     lightRadius: 202.4,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58*6/8,
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
@@ -4338,6 +4372,7 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
     lightRadius: 266.8,
     lightColor: Color.valueOf("ff00ff"),
     lightOpacity: 1,
+    fogRadius: 58,
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
@@ -4502,6 +4537,7 @@ Navanax.weapons.add(
             return 420;
         },
         bullet: extend(FlakBulletType, 3, 300, {
+            reflectable: false,
             sprite: "missile-large",
             collidesGround: true,
             collidesAir: true,
@@ -4519,7 +4555,7 @@ Navanax.weapons.add(
             despawnSound: Sounds.explosion,
             splashDamage: 500,
             splashDamageRadius: 50,
-            lifetime: 70,
+            lifetime: 60,
             backColor: Color.valueOf("ed655a"),
             frontColor: Color.valueOf("ff9999"),
             hitEffect: extend(ExplosionEffect,{
@@ -4546,6 +4582,7 @@ Navanax.weapons.add(
             fragVelocityMin: 0.8,
             fragRandomSpread: 45,
             fragBullet: extend(FlakBulletType, 3, 200, {
+                reflectable: false,
                 sprite: "missile-large",
                 collidesGround: true,
                 collidesAir: true,
@@ -4563,7 +4600,7 @@ Navanax.weapons.add(
                 despawnSound: Sounds.explosion,
                 splashDamage: 350,
                 splashDamageRadius: 50,
-                lifetime: 70,
+                lifetime: 60,
                 backColor: Color.valueOf("ed655a"),
                 frontColor: Color.valueOf("ff9999"),
                 hitEffect: extend(ExplosionEffect,{
@@ -4590,13 +4627,14 @@ Navanax.weapons.add(
                 fragVelocityMin: 0.8,
                 fragRandomSpread: 45,
                 fragBullet: extend(MissileBulletType, 4, 100, {
+                    reflectable: false,
                     width: 10,
                     height: 10,
                     homingRange: 60,
                     homingPower: 0.5,
                     weaveMag: 4,
                     weaveScale: 4,
-                    lifetime: 60,
+                    lifetime: 50,
                     keepVelocity: false,
                     shootEffect: extend(Effect, 8, e => {
                         Draw.color(Color.valueOf("ed655a"));
