@@ -28,7 +28,7 @@ const Gamma = extend(UnitType, "Destructor_Gamma", {
     lightRadius: 50.3,
     lightColor: Color.valueOf("ff0000"),
     lightOpacity: 1,
-    DR: 0.9,
+    DR: 0.4,
     update(unit){
         unit.healthMultiplier += 1/(1-Gamma.DR)-1;
     }
