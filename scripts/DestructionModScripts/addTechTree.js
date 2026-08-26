@@ -291,7 +291,10 @@ addTechTree(blocks.SSM,{
 });
 
 addTechTree(blocks.HPHT,{
-    parent: "Sand_Sieve_Machine"
+    parent: "Sand_Sieve_Machine",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(sectors.GoldMine)
+    )
 });
 
 addTechTree(blocks.ElectricHPHT,{
@@ -392,7 +395,10 @@ addTechTree(blocks.ForceDestruction,{
 });
 
 addTechTree(blocks.MendDestruction,{
-    parent: "mend-projector"
+    parent: "mend-projector",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(SectorPresets.impact0078)
+    )
 });
 
 addTechTree(blocks.OverdriveDiamond,{

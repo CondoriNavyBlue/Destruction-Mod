@@ -3103,7 +3103,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
     engineSize: 7.8,
     faceTarget: false,
     hitSize: 66,
-    payloadCapacity: 6*6*Vars.tilePayload,
+    payloadCapacity: 7.25*7.25*Vars.tilePayload,
     buildSpeed: 8,
     drawShilds: false,
     lowAltitude: true,
@@ -3659,11 +3659,11 @@ Omura.weapons.add(
         mirror: false,
         x: 0,
         y: -3.5,
-        rotateSpeed: 5,
-        rotate: true,
+        rotate: false,
         shootY: 0,
         shake: 2,
         recoil: 0,
+        shootCone: 180,
         shootSound: Sounds.shootOmura,
         shoot: extend(ShootSpread, {
             shots: 24,
@@ -3671,7 +3671,7 @@ Omura.weapons.add(
             shotDelay: 200/24
         }),
         bullet: extend(RailBulletType, {
-            length: 300,
+            length: 200,
             damage: 1250,
             pierceDamageFactor: 0,
             pointEffectSpace: 40,
@@ -3681,11 +3681,11 @@ Omura.weapons.add(
                 e.scaled(10, b => {
                     Draw.color(Color.red, Color.lightGray, b.fin());
                     Lines.stroke(b.fout() * 3 + 0.2);
-                    Lines.circle(b.x, b.y, b.fin() * 50);
+                    Lines.circle(b.x, b.y, b.fin() * 25);
                 });
                 Draw.color(Color.valueOf("ed655a"));
-                Drawf.tri(e.x, e.y, 13 * e.fout(), 85, e.rotation + 90);
-                Drawf.tri(e.x, e.y, 13 * e.fout(), 85, e.rotation - 90);
+                Drawf.tri(e.x, e.y, 10 * e.fout(), 42.5, e.rotation + 90);
+                Drawf.tri(e.x, e.y, 10 * e.fout(), 42.5, e.rotation - 90);
             }, {followParent: true, rotWithParent: true}),
             pointEffect: extend(Effect, 16, e => {
                 Draw.color(Color.valueOf("ed655a"));
