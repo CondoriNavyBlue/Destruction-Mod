@@ -3130,7 +3130,7 @@ Oct.stats.addPercent(
 Oct.aiController = () => extend(DefenderAI, {});
 Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oct.abilities.add(
-    ForceFieldAbility(200,1000/60,26000,600,10,0),
+    ForceFieldAbility(200,1000/60,25000,600,10,0),
     EffectedRegenAbility(1000)
 );
 
@@ -3383,7 +3383,16 @@ Bryde.weapons.add(
             shotDelay: 12.5
         }),
         bullet: extend(RailBulletType, {
-            shootEffect: Fx.railShoot,
+            shootEffect: extend(Effect, 24, e => {
+                e.scaled(10, b => {
+                    Draw.color(Color.valueOf("ffffff"), Color.lightGray, b.fin());
+                    Lines.stroke(b.fout() * 3 + 0.2);
+                    Lines.circle(b.x, b.y, b.fin() * 25);
+                });
+                Draw.color(Pal.orangeSpark);
+                Drawf.tri(e.x, e.y, 10 * e.fout(), 42.5, e.rotation + 90);
+                Drawf.tri(e.x, e.y, 10 * e.fout(), 42.5, e.rotation - 90);
+            },{}),
             length: 260,
             pointEffectSpace: 40,
             pierceEffect: Fx.railHit,
