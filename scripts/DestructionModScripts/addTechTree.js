@@ -287,14 +287,14 @@ addTechTree(blocks.NaExtractor,{
 });
 
 addTechTree(blocks.SSM,{
-    parent: "kiln"
+    parent: "kiln",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(sectors.GoldMine)
+    )
 });
 
 addTechTree(blocks.HPHT,{
     parent: "Sand_Sieve_Machine",
-    objectives: Seq.with(
-        new Objectives.SectorComplete(sectors.GoldMine)
-    )
 });
 
 addTechTree(blocks.ElectricHPHT,{
