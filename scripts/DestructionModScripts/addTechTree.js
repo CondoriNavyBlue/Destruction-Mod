@@ -380,3 +380,12 @@ addTechTree(sectors.IronValley,{
         new Objectives.SectorComplete(SectorPresets.stainedMountains)
     )
 });
+
+addTechTree(sectors.GoldMine,{
+    parent: "nuclearComplex",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(SectorPresets.nuclearComplex),
+        new Objectives.SectorComplete(SectorPresets.coastline),
+        new Objectives.SectorComplete(SectorPresets.impact0078),
+    )
+});
