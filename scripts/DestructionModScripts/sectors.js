@@ -7,13 +7,13 @@ const IronValley = extend(SectorPreset, "IronValley", Planets.serpulo, 218,{
 
 const GoldMine = extend(SectorPreset, "GoldMine", Planets.serpulo, 84,{
     localizedName: "Gold Mine",
-    difficulty: 8,
+    difficulty: 9,
     captureWave: 30
 });
 
 const DiamondVolcano = extend(SectorPreset, "DiamondVolcano", Planets.serpulo, 203,{
     localizedName: "Diamond Volcano",
-    difficulty: 9,
+    difficulty: 10,
     captureWave: 11
 });
 module.exports = {

@@ -368,7 +368,10 @@ addTechTree(blocks.Tsunami,{
 });
 
 addTechTree(blocks.Meltdown,{
-    parent: "Destructor_Lancer"
+    parent: "Destructor_Lancer",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(sectors.DiamondVolcano)
+    )
 });
 
 addTechTree(blocks.Cyclone,{
@@ -384,11 +387,14 @@ addTechTree(blocks.Segment,{
 });
 
 addTechTree(blocks.Foreshadow,{
-    parent: "Destructor_Meltdown"
+    parent: "Destructor_Meltdown",
 });
 
 addTechTree(blocks.Spectre,{
-    parent: "Destructor_Cyclone"
+    parent: "Destructor_Cyclone",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(sectors.DiamondVolcano)
+    )
 });
 
 //------------------------------Effects------------------------------
@@ -428,7 +434,4 @@ addTechTree(sectors.GoldMine,{
 
 addTechTree(sectors.DiamondVolcano,{
     parent: "littoralShipyard",
-    objectives: Seq.with(
-        new Objectives.SectorComplete(SectorPresets.desolateRift),
-    )
 });
