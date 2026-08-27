@@ -295,6 +295,9 @@ addTechTree(blocks.SSM,{
 
 addTechTree(blocks.HPHT,{
     parent: "Sand_Sieve_Machine",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(sectors.DiamondVolcano)
+    )
 });
 
 addTechTree(blocks.ElectricHPHT,{
@@ -420,5 +423,12 @@ addTechTree(sectors.GoldMine,{
         new Objectives.SectorComplete(SectorPresets.nuclearComplex),
         new Objectives.SectorComplete(SectorPresets.coastline),
         new Objectives.SectorComplete(SectorPresets.impact0078),
+    )
+});
+
+addTechTree(sectors.DiamondVolcano,{
+    parent: "littoralShipyard",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(SectorPresets.desolateRift),
     )
 });

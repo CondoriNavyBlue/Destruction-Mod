@@ -11,7 +11,13 @@ const GoldMine = extend(SectorPreset, "GoldMine", Planets.serpulo, 84,{
     captureWave: 30
 });
 
+const DiamondVolcano = extend(SectorPreset, "DiamondVolcano", Planets.serpulo, 203,{
+    localizedName: "Diamond Volcano",
+    difficulty: 9,
+    captureWave: 11
+});
 module.exports = {
     IronValley: IronValley,
-    GoldMine: GoldMine
+    GoldMine: GoldMine,
+    DiamondVolcano: DiamondVolcano
 }
