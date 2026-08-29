@@ -600,7 +600,7 @@ SSM.buildType = () => extend(Separator.SeparatorBuild, SSM, {
 	draw(){
 		Draw.rect(SSM.region, this.x, this.y);
 		Draw.color();
-		var A = this.items.get(Items.sand) / 10;
+		let A = this.items.get(Items.sand) / 10;
 		if(A>1){
 			A=1;
 		}
@@ -749,8 +749,8 @@ ThoriumConcentrator.consumePower(2.5);
 
 //ArrayConverter
 function toJavaUnitArray(jsArray) {
-    var javaArray = java.lang.reflect.Array.newInstance(UnitType, jsArray.length);
-    for (var i = 0; i < jsArray.length; i++) {
+    let javaArray = java.lang.reflect.Array.newInstance(UnitType, jsArray.length);
+    for (let i = 0; i < jsArray.length; i++) {
         javaArray[i] = jsArray[i];
     }
     return javaArray;

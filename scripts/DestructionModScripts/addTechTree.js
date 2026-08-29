@@ -7,37 +7,37 @@ const addTechTree = (content, research) => {
         throw new Error('研究。父母为空!');
     }
 
-    var researchName = research.parent;
-    var customRequirements = research.requirements;
-    var objectives = research.objectives;
+    let researchName = research.parent;
+    let customRequirements = research.requirements;
+    let objectives = research.objectives;
 
-    var lastNode = TechTree.all.find(boolf(t => t.content == content));
+    let lastNode = TechTree.all.find(boolf(t => t.content == content));
 
     if (lastNode != null) {
         lastNode.remove();
     }
 
-    var requirements;
+    let requirements;
 
     if (customRequirements !== undefined) {
         requirements = customRequirements.map(req =>
             new ItemStack(req.item, req.amount)
         );
     } else {
-        var originalRequirements = content.researchRequirements();
+        let originalRequirements = content.researchRequirements();
 
         requirements = originalRequirements.map(req =>
             new ItemStack(req.item, req.amount)
         );
     }
 
-    var node = new TechTree.TechNode(
+    let node = new TechTree.TechNode(
         null,
         content,
         requirements
     );
 
-    var currentMod = Vars.mods.getMod("destructionmod");
+    let currentMod = Vars.mods.getMod("destructionmod");
 
     if (objectives) {
         node.objectives.addAll(objectives);
@@ -47,7 +47,7 @@ const addTechTree = (content, research) => {
         node.parent.children.remove(node);
     }
 
-    var parent = TechTree.all.find(
+    let parent = TechTree.all.find(
         boolf(t =>
             t.content.name.equals(researchName) ||
             t.content.name.equals(currentMod.name + "-" + researchName)

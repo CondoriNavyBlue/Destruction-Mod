@@ -30,7 +30,7 @@ const Gamma = extend(UnitType, "Destructor_Gamma", {
     lightOpacity: 1,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Gamma.DR)-1;
+        unit.healthMultiplier *= 1/(1-Gamma.DR);
     }
 });
 Gamma.constructor = () => extend(UnitEntity, {});
@@ -83,7 +83,7 @@ const Dagger = extend(UnitType, "Destructor_Dagger", {
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Dagger.DR)-1;
+        unit.healthMultiplier *= 1/(1-Dagger.DR);
     }
 });
 Dagger.constructor = () => extend(MechUnit, {});
@@ -132,7 +132,7 @@ const Mace = extend(UnitType, "Destructor_Mace",{
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Mace.DR)-1;
+        unit.healthMultiplier *= 1/(1-Mace.DR);
     }
 });
 Mace.constructor = () => extend(MechUnit, {});
@@ -192,7 +192,7 @@ const Fortress = extend(UnitType, "Destructor_Fortress",{
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Fortress.DR)-1;
+        unit.healthMultiplier *= 1/(1-Fortress.DR);
     }
 });
 Fortress.constructor = () => extend(MechUnit, {});
@@ -322,7 +322,7 @@ const Scepter = extend(UnitType, "Destructor_Scepter", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Scepter.DR)-1;
+        unit.healthMultiplier *= 1/(1-Scepter.DR);
     }
 });
 Scepter.constructor = () => extend(MechUnit, {});
@@ -489,7 +489,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Reign.DR)-1;
+        unit.healthMultiplier *= 1/(1-Reign.DR);
     }
 });
 Reign.constructor = () => extend(MechUnit, {});
@@ -645,7 +645,7 @@ const Flare = extend(UnitType, "Destructor_Flare", {
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Flare.DR)-1;
+        unit.healthMultiplier *= 1/(1-Flare.DR);
     }
 });
 Flare.constructor = () => extend(UnitEntity, {});
@@ -714,7 +714,7 @@ const Horizon = extend(UnitType, "Destructor_Horizon", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Horizon.DR)-1;
+        unit.healthMultiplier *= 1/(1-Horizon.DR);
     }
 });
 Horizon.constructor = () => extend(UnitEntity, {});
@@ -780,7 +780,7 @@ const Zenith = extend(UnitType, "Destructor_Zenith", {
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Zenith.DR)-1;
+        unit.healthMultiplier *= 1/(1-Zenith.DR);
     }
 });
 Zenith.constructor = () => extend(UnitEntity, {});
@@ -991,7 +991,7 @@ const Antumbra = extend(UnitType, "Destructor_Antumbra", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Antumbra.DR)-1;
+        unit.healthMultiplier *= 1/(1-Antumbra.DR);
     }
 });
 Antumbra.constructor = () => extend(UnitEntity, {});
@@ -1091,7 +1091,7 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Eclipse.DR)-1;
+        unit.healthMultiplier *= 1/(1-Eclipse.DR);
     }
 });
 Eclipse.constructor = ()=> extend(UnitEntity,{});
@@ -1363,7 +1363,7 @@ const Nova = extend(UnitType, "Destructor_Nova",{
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Nova.DR)-1;
+        unit.healthMultiplier *= 1/(1-Nova.DR);
     }
 });
 Nova.constructor = () => extend(MechUnit, {});
@@ -1414,7 +1414,7 @@ const Pulsar = extend(UnitType, "Destructor_Pulsar", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Pulsar.DR)-1;
+        unit.healthMultiplier *= 1/(1-Pulsar.DR);
     }
 });
 Pulsar.constructor = () => extend(MechUnit, {});
@@ -1494,7 +1494,7 @@ const Quasar = extend(UnitType, "Destructor_Quasar",{
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Quasar.DR)-1;
+        unit.healthMultiplier *= 1/(1-Quasar.DR);
     }
 });
 Quasar.constructor = () => extend(MechUnit, {});
@@ -1573,7 +1573,7 @@ const Vela = extend(UnitType, "Destructor_Vela", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Vela.DR)-1;
+        unit.healthMultiplier *= 1/(1-Vela.DR);
     }
 });
 Vela.constructor = () => extend(MechUnit, {});
@@ -1742,7 +1742,7 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Corvus.DR)-1;
+        unit.healthMultiplier *= 1/(1-Corvus.DR);
     }
 });
 Corvus.constructor = () => extend(LegsUnit, {});
@@ -1971,7 +1971,7 @@ const Crawler = extend(UnitType, "Destructor_Crawler", {
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Crawler.DR)-1;
+        unit.healthMultiplier *= 1/(1-Crawler.DR);
     }
 });
 Crawler.constructor = () => extend(MechUnit, {});
@@ -2033,7 +2033,7 @@ const Atrax = extend(UnitType, "Destructor_Atrax", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Atrax.DR)-1;
+        unit.healthMultiplier *= 1/(1-Atrax.DR);
     }
 });
 Atrax.constructor = () => extend(LegsUnit, {});
@@ -2093,7 +2093,7 @@ const Spiroct = extend(UnitType, "Destructor_Spiroct",{
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Spiroct.DR)-1;
+        unit.healthMultiplier *= 1/(1-Spiroct.DR);
     }
 });
 Spiroct.constructor = () => extend(LegsUnit, {});
@@ -2262,7 +2262,7 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Arkyid.DR)-1;
+        unit.healthMultiplier *= 1/(1-Arkyid.DR);
     }
 });
 Arkyid.constructor = () => extend(LegsUnit, {});
@@ -2400,7 +2400,7 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Toxopid.DR)-1;
+        unit.healthMultiplier *= 1/(1-Toxopid.DR);
     }
 });
 Toxopid.constructor = () => extend(LegsUnit, {});
@@ -2703,7 +2703,7 @@ const Mono = extend(UnitType, "Miner_Mono", {
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Mono.DR)-1;
+        unit.healthMultiplier *= 1/(1-Mono.DR);
     }
 });
 Mono.constructor = () => extend(UnitEntity, {});
@@ -2739,7 +2739,7 @@ const Poly = extend(UnitType, "Builder_Poly", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Poly.DR)-1;
+        unit.healthMultiplier *= 1/(1-Poly.DR);
     }
 });
 Poly.constructor = () => extend(UnitEntity, {});
@@ -2817,7 +2817,7 @@ const Mega = extend(UnitType, "Destructor_Mega",{
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Mega.DR)-1;
+        unit.healthMultiplier *= 1/(1-Mega.DR);
     }
 });
 Mega.constructor = () => extend(PayloadUnit, {});
@@ -2914,7 +2914,7 @@ const Quad = extend(UnitType, "Destructor_Quad", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Quad.DR)-1;
+        unit.healthMultiplier *= 1/(1-Quad.DR);
     }
 })
 Quad.constructor = () => extend(PayloadUnit, {});
@@ -3119,7 +3119,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
     researchCostMultiplier: 25,
     DR: 0.75,
     update(unit){
-        unit.healthMultiplier += 1/(1-Oct.DR)-1;
+        unit.healthMultiplier *= 1/(1-Oct.DR);
     }
 });
 Oct.constructor = () => extend(PayloadUnit, {});
@@ -3156,7 +3156,7 @@ const Risso = extend(UnitType, "Destructor_Risso",{
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Risso.DR)-1;
+        unit.healthMultiplier *= 1/(1-Risso.DR);
     }
 });
 Risso.constructor = () => extend(UnitWaterMove, {});
@@ -3237,7 +3237,7 @@ const Minke = extend(UnitType, "Destructor_Minke", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Minke.DR)-1;
+        unit.healthMultiplier *= 1/(1-Minke.DR);
     }
 });
 Minke.constructor = () => extend(UnitWaterMove, {});
@@ -3321,7 +3321,7 @@ const Bryde = extend(UnitType, "Destructor_Bryde", {
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Bryde.DR)-1;
+        unit.healthMultiplier *= 1/(1-Bryde.DR);
     }
 });
 Bryde.constructor = () => extend(UnitWaterMove, {});
@@ -3435,7 +3435,7 @@ const Sei = extend(UnitType, "Destructor_Sei",{
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Sei.DR)-1;
+        unit.healthMultiplier *= 1/(1-Sei.DR);
     }
 });
 Sei.constructor = () => extend(UnitWaterMove, {});
@@ -3545,7 +3545,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Omura.DR)-1;
+        unit.healthMultiplier *= 1/(1-Omura.DR);
     }
 });
 Omura.constructor = () => extend(UnitWaterMove, {});
@@ -3820,7 +3820,7 @@ const Retusa = extend(UnitType, "Destructor_Retusa", {
     fogRadius: 58*3/8,
     DR: 0.1,
     update(unit){
-        unit.healthMultiplier += 1/(1-Retusa.DR)-1;
+        unit.healthMultiplier *= 1/(1-Retusa.DR);
     }
 });
 Retusa.constructor = () => extend(UnitWaterMove, {});
@@ -3965,7 +3965,7 @@ const Oxynoe = extend(UnitType, "Destructor_Oxynoe", {
     fogRadius: 58*4/8,
     DR: 0.2,
     update(unit){
-        unit.healthMultiplier += 1/(1-Oxynoe.DR)-1;
+        unit.healthMultiplier *= 1/(1-Oxynoe.DR);
     }
 });
 Oxynoe.constructor = () => extend(UnitWaterMove, {});
@@ -4060,7 +4060,7 @@ const Cyerce = extend(UnitType, "Destructor_Cyerce",{
     fogRadius: 58*5/8,
     DR: 0.3,
     update(unit){
-        unit.healthMultiplier += 1/(1-Cyerce.DR)-1;
+        unit.healthMultiplier *= 1/(1-Cyerce.DR);
     }
 });
 Cyerce.constructor = () => extend(UnitWaterMove, {});
@@ -4288,7 +4288,7 @@ const Aegires = extend(UnitType, "Destructor_Aegires", {
     researchCostMultiplier: 25,
     DR: 0.4,
     update(unit){
-        unit.healthMultiplier += 1/(1-Aegires.DR)-1;
+        unit.healthMultiplier *= 1/(1-Aegires.DR);
     }
 });
 Aegires.constructor = () => extend(UnitWaterMove, {});
@@ -4385,7 +4385,7 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
     researchCostMultiplier: 25,
     DR: 0.5,
     update(unit){
-        unit.healthMultiplier += 1/(1-Navanax.DR)-1;
+        unit.healthMultiplier *= 1/(1-Navanax.DR);
     }
 });
 Navanax.constructor = () => extend(UnitWaterMove, {});
