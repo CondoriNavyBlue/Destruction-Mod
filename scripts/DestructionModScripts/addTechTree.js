@@ -435,3 +435,7 @@ addTechTree(sectors.GoldMine,{
 addTechTree(sectors.DiamondVolcano,{
     parent: "littoralShipyard",
 });
+
+addTechTree(sectors.Cove,{
+    parent: "planetaryTerminal",
+});
