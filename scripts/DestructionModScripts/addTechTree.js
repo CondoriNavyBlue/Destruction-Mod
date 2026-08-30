@@ -434,8 +434,14 @@ addTechTree(sectors.GoldMine,{
 
 addTechTree(sectors.DiamondVolcano,{
     parent: "littoralShipyard",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(SectorPresets.littoralShipyard)
+    )
 });
 
 addTechTree(sectors.Cove,{
     parent: "planetaryTerminal",
+    objectives: Seq.with(
+        new Objectives.SectorComplete(SectorPresets.planetaryTerminal)
+    )
 });
