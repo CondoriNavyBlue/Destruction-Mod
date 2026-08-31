@@ -20,7 +20,7 @@ const DiamondVolcano = extend(SectorPreset, "DiamondVolcano", Planets.serpulo, 2
 const Cove = extend(SectorPreset, "Cove", Planets.serpulo, 216,{
     localizedName: "Cove",
     difficulty: 10,
-    captureWave: 50
+    captureWave: 30
 });
 
 module.exports = {
