@@ -1,6 +1,6 @@
 const rand = new Rand();
 
-const EffectedRegenAbility = require("DestructionModScripts/ability");
+const abilities = require("DestructionModScripts/ability");
 const items = require("DestructionModScripts/items");
 const statusEffects = require("DestructionModScripts/statusEffects");
 
@@ -68,7 +68,10 @@ Gamma.weapons.add(
         })
     })
 );
-Gamma.abilities.add(EffectedRegenAbility(500));
+Gamma.abilities.add(
+    abilities.rage(2),
+    abilities.regen(500)
+);
 
 //Destructor Dagger
 const Dagger = extend(UnitType, "Destructor_Dagger", {
@@ -119,7 +122,10 @@ Dagger.weapons.add(
         })
     })
 );
-Dagger.abilities.add(EffectedRegenAbility(62.5));
+Dagger.abilities.add(
+    abilities.rage(2),
+    abilities.regen(62.5)
+);
 
 //Destrutor Mace
 const Mace = extend(UnitType, "Destructor_Mace",{
@@ -174,7 +180,10 @@ Mace.weapons.add(
         })
     })
 );
-Mace.abilities.add(EffectedRegenAbility(125));
+Mace.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Fortress
 const Fortress = extend(UnitType, "Destructor_Fortress",{
@@ -301,7 +310,10 @@ Fortress.weapons.add(
         })
     })
 );
-Fortress.abilities.add(EffectedRegenAbility(250));
+Fortress.abilities.add(
+    abilities.rage(2),
+    abilities.regen(250)
+);
 
 //Destructor Scepter
 const Scepter = extend(UnitType, "Destructor_Scepter", {
@@ -468,7 +480,8 @@ Scepter.weapons.add(
 );
 Scepter.abilities.add(
     ShieldRegenFieldAbility(100, 2000, 30, 80),
-    EffectedRegenAbility(500)
+    abilities.rage(3),
+    abilities.regen(500)
 );
 
 //Destructor Reign
@@ -619,7 +632,10 @@ Reign.weapons.add(
         })
     })
 );
-Reign.abilities.add(EffectedRegenAbility(1000));
+Reign.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000)
+);
 
 //Destructor Flare
 const Flare = extend(UnitType, "Destructor_Flare", {
@@ -686,7 +702,10 @@ Flare.weapons.add(
         })
     })
 );
-Flare.abilities.add(EffectedRegenAbility(62.5));
+Flare.abilities.add(
+    abilities.rage(2),
+    abilities.regen(62.5)
+);
 
 //Destructor Horizon
 const Horizon = extend(UnitType, "Destructor_Horizon", {
@@ -762,7 +781,10 @@ Horizon.weapons.add(
         })
     })
 );
-Horizon.abilities.add(EffectedRegenAbility(125));
+Horizon.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Zenith
 const Zenith = extend(UnitType, "Destructor_Zenith", {
@@ -972,7 +994,10 @@ Zenith.weapons.add(
         })
     })
 );
-Zenith.abilities.add(EffectedRegenAbility(250));
+Zenith.abilities.add(
+    abilities.rage(2),
+    abilities.regen(250)
+);
 
 //Destructor Antumbra
 const Antumbra = extend(UnitType, "Destructor_Antumbra", {
@@ -1073,7 +1098,10 @@ Antumbra.weapons.add(
         })
     })
 );
-Antumbra.abilities.add(EffectedRegenAbility(500));
+Antumbra.abilities.add(
+    abilities.rage(3),
+    abilities.regen(500)
+);
 
 //Destructor Eclipse
 const Eclipse = extend(UnitType, "Destructor_Eclipse", {
@@ -1353,7 +1381,10 @@ Eclipse.weapons.add(
         })
     })
 );
-Eclipse.abilities.add(EffectedRegenAbility(1000));
+Eclipse.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000)
+);
 
 //Destructor Nova
 const Nova = extend(UnitType, "Destructor_Nova",{
@@ -1403,7 +1434,10 @@ Nova.weapons.add(
         })
     })
 );
-Nova.abilities.add(EffectedRegenAbility(62.5));
+Nova.abilities.add(
+    abilities.rage(2),
+    abilities.regen(62.5)
+);
 
 //Destructor Pulsar
 const Pulsar = extend(UnitType, "Destructor_Pulsar", {
@@ -1476,7 +1510,7 @@ Pulsar.weapons.add(
     })
 );
 Pulsar.abilities.add(
-    EffectedRegenAbility(125),
+    abilities.rage(2),abilities.regen(125),
     ShieldRegenFieldAbility(40, 200, 60 * 2.5, 80)
 );
 
@@ -1551,7 +1585,7 @@ Quasar.weapons.add(
     })
 );
 Quasar.abilities.add(
-    EffectedRegenAbility(250),
+    abilities.rage(2),abilities.regen(250),
     ForceFieldAbility(100, 1.5, 1000, 300, 5, 9)
 );
 
@@ -1725,7 +1759,10 @@ Vela.weapons.add(
         })
     })
 );
-Vela.abilities.add(EffectedRegenAbility(500));
+Vela.abilities.add(
+    abilities.rage(3),
+    abilities.regen(500)
+);
 
 //Destructor Corvus
 const Corvus = extend(UnitType, "Destructor_Corvus", {
@@ -1969,7 +2006,10 @@ Corvus.weapons.add(
         })
     })
 );
-Corvus.abilities.add(EffectedRegenAbility(1000));
+Corvus.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000)
+);
 
 //Destructor Crawler
 const Crawler = extend(UnitType, "Destructor_Crawler", {
@@ -2023,7 +2063,10 @@ Crawler.weapons.add(
         })
     })
 );
-Crawler.abilities.add(EffectedRegenAbility(125));
+Crawler.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Atrax
 const Atrax = extend(UnitType, "Destructor_Atrax", {
@@ -2083,7 +2126,10 @@ Atrax.weapons.add(
         })
     })
 );
-Atrax.abilities.add(EffectedRegenAbility(125));
+Atrax.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Spiroct
 const Spiroct = extend(UnitType, "Destructor_Spiroct",{
@@ -2245,7 +2291,10 @@ Spiroct.weapons.add(
         })
     }),
 );
-Spiroct.abilities.add(EffectedRegenAbility(250));
+Spiroct.abilities.add(
+    abilities.rage(2),
+    abilities.regen(250)
+);
 
 //Destructor Arkid
 const Arkyid = extend(UnitType, "Destructor_Arkyid", {
@@ -2368,7 +2417,8 @@ Arkyid.weapons.add(
     })
 )
 Arkyid.abilities.add(
-    EffectedRegenAbility(500),
+    abilities.rage(3),
+    abilities.regen(500),
     extend(ShieldArcAbility,{
         region: "tecta-shield",
         radius: 45,
@@ -2695,7 +2745,10 @@ Toxopid.weapons.add(
         })
     }),
 );
-Toxopid.abilities.add(EffectedRegenAbility(1000));
+Toxopid.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000)
+);
 
 const Mono = extend(UnitType, "Miner_Mono", {
     localizedName: "Miner Mono",
@@ -2735,6 +2788,7 @@ Mono.stats.addPercent(
     Mono.DR
 );
 Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+Mono.abilities.add(abilities.regen(62.5))
 
 //Builder Poly
 const Poly = extend(UnitType, "Builder_Poly", {
@@ -2814,7 +2868,10 @@ Poly.weapons.add(
         })
     })
 );
-Poly.abilities.add(EffectedRegenAbility(125));
+Poly.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Mega
 const Mega = extend(UnitType, "Destructor_Mega",{
@@ -2904,7 +2961,10 @@ Mega.weapons.add(
         })
     })
 );
-Mega.abilities.add(EffectedRegenAbility(250));
+Mega.abilities.add(
+    abilities.rage(2),
+    abilities.regen(250)
+);
 
 //Destructor Quad
 const Quad = extend(UnitType, "Destructor_Quad", {
@@ -3112,7 +3172,10 @@ Quad.weapons.add(
         })
     })
 );
-Quad.abilities.add(EffectedRegenAbility(500));
+Quad.abilities.add(
+    abilities.rage(3),
+    abilities.regen(500)
+);
 
 //Athena Oct
 const Oct = extend(UnitType, "Athena_Oct", {
@@ -3157,7 +3220,7 @@ Oct.aiController = () => extend(DefenderAI, {});
 Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oct.abilities.add(
     ForceFieldAbility(200,1000/60,25000,600,10,0),
-    EffectedRegenAbility(1000)
+    abilities.regen(1000)
 );
 
 //Destructor Risso
@@ -3237,7 +3300,10 @@ Risso.weapons.add(
         })
     })
 );
-Risso.abilities.add(EffectedRegenAbility(62.5));
+Risso.abilities.add(
+    abilities.rage(2),
+    abilities.regen(62.5)
+);
 
 //Destructor Minke
 const Minke = extend(UnitType, "Destructor_Minke", {
@@ -3322,7 +3388,10 @@ Minke.weapons.add(
         })
     })
 );
-Minke.abilities.add(EffectedRegenAbility(125));
+Minke.abilities.add(
+    abilities.rage(2),
+    abilities.regen(125)
+);
 
 //Destructor Bryde
 const Bryde = extend(UnitType, "Destructor_Bryde", {
@@ -3434,7 +3503,8 @@ Bryde.weapons.add(
     })
 );
 Bryde.abilities.add(
-    EffectedRegenAbility(250),
+    abilities.rage(2),
+    abilities.regen(250),
     ShieldRegenFieldAbility(50, 1000, 30, 60)
 );
 
@@ -3547,7 +3617,10 @@ Sei.weapons.add(
         })
     })
 );
-Sei.abilities.add(EffectedRegenAbility(500));
+Sei.abilities.add(
+    abilities.rage(3),
+    abilities.regen(500)
+);
 
 //Destructor Omura
 const Omura = extend(UnitType, "Destructor_Omura", {
@@ -3826,7 +3899,10 @@ Omura.weapons.add(
         })
     })
 );
-Omura.abilities.add(EffectedRegenAbility(1000));
+Omura.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000)
+);
 
 //Destructor Retusa
 const Retusa = extend(UnitType, "Destructor_Retusa", {
@@ -3970,7 +4046,10 @@ Retusa.weapons.add(
             })
         })
 );
-Retusa.abilities.add(EffectedRegenAbility(62.5));
+Retusa.abilities.add(
+    abilities.rage(2),
+    abilities.regen(62.5)
+);
 
 //Destructor Oxynoe
 const Oxynoe = extend(UnitType, "Destructor_Oxynoe", {
@@ -4064,7 +4143,8 @@ Oxynoe.weapons.add(
     })
 );
 Oxynoe.abilities.add(
-    EffectedRegenAbility(125),
+    abilities.rage(2),
+    abilities.regen(125),
     StatusFieldAbility(StatusEffects.overclock, 60 * 20, 60 * 1, 80)
 );
 
@@ -4291,7 +4371,10 @@ Cyerce.weapons.add(
         })
     })
 );
-Cyerce.abilities.add(EffectedRegenAbility(250));
+Cyerce.abilities.add(
+    abilities.rage(2),
+    abilities.regen(250)
+);
 
 //Destructor Aegires
 const Aegires = extend(UnitType, "Destructor_Aegires", {
@@ -4390,7 +4473,8 @@ Aegires.weapons.add(
     })
 );
 Aegires.abilities.add(
-    EffectedRegenAbility(500),
+    abilities.rage(3),
+    abilities.regen(500),
     extend(EnergyFieldAbility, 160, 50, 208, {
         color: Color.valueOf("ed655a"),
         maxTargets: 32,
@@ -4806,8 +4890,9 @@ Navanax.weapons.add(
         })
     })
 );
-Navanax.abilities.add(EffectedRegenAbility(1000));
 Navanax.abilities.add(
+    abilities.rage(3),
+    abilities.regen(1000),
     extend(SuppressionFieldAbility,{
         range: 240,
         orbRadius: 5,

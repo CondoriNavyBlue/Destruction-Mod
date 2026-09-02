@@ -99,4 +99,21 @@ const SelfRegenerationAbility = (RPS)=>{
         }
     });
 }
-module.exports = SelfRegenerationAbility;
+
+const Rage = (Multiplier)=>{
+    return extend(Ability,{
+        update(unit){
+            let Rate = unit.health/unit.maxHealth;
+            unit.damageMultiplier *= 1+(Multiplier-1)*(1-Rate);
+        },
+        localized(){
+            return "Rage";
+        }
+    });
+}
+
+
+module.exports = {
+    regen: SelfRegenerationAbility,
+    rage: Rage
+}
