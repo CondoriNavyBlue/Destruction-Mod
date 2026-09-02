@@ -105,13 +105,14 @@ const Rage = (Multiplier)=>{
         update(unit){
             let Rate = unit.health/unit.maxHealth;
             unit.damageMultiplier *= 1+(Multiplier-1)*(1-Rate);
+            unit.armor = unit.type.armor + (Multiplier-1)*unit.type.armor*(1-Rate);
+            unit.healthMultiplier *= 1+(Multiplier-1)*(1-Rate);
         },
         localized(){
             return "Rage";
         }
     });
 }
-
 
 module.exports = {
     regen: SelfRegenerationAbility,

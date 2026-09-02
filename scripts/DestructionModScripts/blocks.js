@@ -927,7 +927,14 @@ Duo.ammo(
         trailColor: Pal.copperAmmoBack,
         frontColor: Pal.copperAmmoFront,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+            print(b.splashDamage)
+        }
     }),
     Items.graphite, extend(BasicBulletType, 4, 45, {
         width: 10,
@@ -943,7 +950,13 @@ Duo.ammo(
         trailColor: Pal.graphiteAmmoBack,
         frontColor: Pal.graphiteAmmoFront,
         pierce: true,
-        pierceCap: 3
+        pierceCap: 3,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.silicon, extend(BasicBulletType, 3.5, 30, {
         width: 8,
@@ -961,7 +974,13 @@ Duo.ammo(
         trailLength: 5,
         trailWidth: 1.5,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.iron, extend(BasicBulletType, 5, 50, {
         width: 10,
@@ -978,7 +997,13 @@ Duo.ammo(
         frontColor: ironAmmoFront,
         pierce: true,
         pierceCap: 5,
-        armorMultiplier: 0.75
+        armorMultiplier: 0.75,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.sodium, extend(BasicBulletType, 4, 36, {
         width: 10,
@@ -995,7 +1020,13 @@ Duo.ammo(
         splashDamage: 36,
         splashDamageRadius: 24,
         status: StatusEffects.burning,
-        statusDuration: 60*5
+        statusDuration: 60*5,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1046,7 +1077,13 @@ Scatter.ammo(
         frontColor: Pal.scrapAmmoFront,
         backColor: Pal.scrapAmmoBack,
         hitColor: Pal.scrapAmmoBack,
-        despawnEffect: Fx.hitBulletColor
+        despawnEffect: Fx.hitBulletColor,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.lead, extend(FlakBulletType, 6.4, 7.5, {
         lifetime: 270/6,
@@ -1056,7 +1093,13 @@ Scatter.ammo(
         height: 8,
         hitEffect: Fx.flakExplosion,
         splashDamage: 101.25,
-        splashDamageRadius: 26
+        splashDamageRadius: 26,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.metaglass, extend(FlakBulletType, 6, 7.5, {
         backColor: Pal.glassAmmoBack,
@@ -1074,6 +1117,12 @@ Scatter.ammo(
         splashDamage: 112.5,
         splashDamageRadius: 30,
         fragBullets: 8,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        },
         fragBullet: extend(BasicBulletType, 4, 12.5, {
             widht: 3,
             height: 12,
@@ -1086,7 +1135,13 @@ Scatter.ammo(
             despawnEffect: Fx.none,
             collidesGround: false,
             pierce: true,
-            pireceCap: 2
+            pireceCap: 2,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         })
     }),
     items.sodium, extend(FlakBulletType, 5, 20, {
@@ -1104,7 +1159,13 @@ Scatter.ammo(
         splashDamage: 125,
         splashDamageRadius: 48,
         status: StatusEffects.burning,
-        statusDuration: 300
+        statusDuration: 300,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1146,7 +1207,13 @@ Scorch.ammo(
         hitEffect: Fx.hitFlameSmall,
         despawnEffect: Fx.none,
         status: StatusEffects.burning,
-        hittable: false
+        hittable: false,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(BulletType, 8, 80, {
         ammoMultiplier: 12,
@@ -1165,7 +1232,13 @@ Scorch.ammo(
         hitEffect: Fx.hitFlameSmall,
         despawnEffect: Fx.none,
         status: StatusEffects.burning,
-        hittable: false
+        hittable: false,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.sodium, extend(BulletType, 8, 60, {
         ammoMultiplier: 8,
@@ -1185,7 +1258,13 @@ Scorch.ammo(
         hitEffect: Fx.hitFlameSmall,
         despawnEffect: Fx.none,
         status: StatusEffects.burning,
-        hittable: false
+        hittable: false,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1224,7 +1303,13 @@ Hail.ammo(
         backColor: Pal.graphiteAmmoBack,
         trailColor: Pal.graphiteAmmoBack,
         frontColor: Pal.graphiteAmmoFront,
-        despawnEffect: Fx.hitBulletColor
+        despawnEffect: Fx.hitBulletColor,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.silicon, extend(ArtilleryBulletType, 4.5, 50, {
         knockback: 0.8,
@@ -1245,6 +1330,12 @@ Hail.ammo(
         homingRange: 60,
         trailLength: 7,
         trailWidth: 3,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(ArtilleryBulletType, 4.5, 62.5, {
         hitEffect: Fx.blastExplosion,
@@ -1262,7 +1353,13 @@ Hail.ammo(
         frontColor: Pal.lightOrange,
         despawnEffect: Fx.hitBulletColor,
         makeFire: true,
-        trailEffect: Fx.incendTrail
+        trailEffect: Fx.incendTrail,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.sodiumBattery, extend(ArtilleryBulletType, 4.5, 80, {
         knockback: 0.8,
@@ -1281,7 +1378,13 @@ Hail.ammo(
         lightning: 3,
         lightningLength: 3,
         lightningLengthRand: 5,
-        lightningDamage: 20
+        lightningDamage: 20,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1309,26 +1412,50 @@ Wave.ammo(
         layer: Layer.bullet - 2,
         damage: 6,
         speed: 8,
-        lifetime: 190/8
+        lifetime: 190/8,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.slag, extend(LiquidBulletType, Liquids.slag, {
         drag: 0.01,
         damage: 10,
         speed: 8,
-        lifetime: 190/8
+        lifetime: 190/8,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.cryofluid, extend(LiquidBulletType, Liquids.cryofluid, {
         drag: 0.01,
         damage: 8,
         speed: 8,
-        lifetime: 190/8
+        lifetime: 190/8,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.oil, extend(LiquidBulletType, Liquids.oil, {
         drag: 0.01,
         layer: Layer.bullet - 2,
         damage: 8,
         speed: 8,
-        lifetime: 190/8
+        lifetime: 190/8,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1383,7 +1510,13 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
         drawSize: 400,
         length: 230,
         width: 24,
-        ammoMultiplier: 1
+        ammoMultiplier: 1,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 });
 Lancer.coolant = Lancer.consumeCoolant(0.2);
@@ -1422,7 +1555,13 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
             lightColor: Color.white,
             buildingDamageMultiplier: 0.5,
             shieldDamageMultiplier: 0.5
-        })
+        }),
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     researchCostMultiplier: 1/3
 });
@@ -1484,7 +1623,13 @@ Swarmer.ammo(
         hitColor: Pal.blastAmmoBack,
         backColor: Pal.blastAmmoBack,
         trailColor: Pal.blastAmmoBack,
-        frontColor: Pal.blastAmmoFront
+        frontColor: Pal.blastAmmoFront,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(MissileBulletType, 6, 30, {
         frontColor: Pal.lightishOrange,
@@ -1499,7 +1644,13 @@ Swarmer.ammo(
         makeFire: true,
         ammoMultiplier: 8,
         hitEffect: Fx.blastExplosion,
-        status: StatusEffects.burning
+        status: StatusEffects.burning,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.surgeAlloy, extend(MissileBulletType, 6, 54, {
         width: 9,
@@ -1515,7 +1666,13 @@ Swarmer.ammo(
         hitColor: Pal.surgeAmmoBack,
         backColor: Pal.surgeAmmoBack,
         trailColor: Pal.surgeAmmoBack,
-        frontColor: Pal.surgeAmmoFront
+        frontColor: Pal.surgeAmmoFront,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(MissileBulletType, 8, 80, {
         width: 9,
@@ -1530,7 +1687,13 @@ Swarmer.ammo(
         frontColor: diamondAmmoFront,
         fragBullets: 7,
         fragLifeMin: 0.3,
-        armorMultiplier: 0.5, 
+        armorMultiplier: 0.5,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        },
         fragBullet: extend(BasicBulletType, 6, 64, {
             widht: 2,
             height: 2,
@@ -1539,7 +1702,13 @@ Swarmer.ammo(
             backColor: diamondAmmoBack,
             frontColor: diamondAmmoFront,
             pierce: true,
-            buildingDamageMultiplier: 0.1
+            buildingDamageMultiplier: 0.1,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         })
     })
 );
@@ -1597,7 +1766,13 @@ Salvo.ammo(
         trailColor: Pal.copperAmmoBack,
         frontColor: Pal.copperAmmoFront,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.graphite, extend(BasicBulletType, 5, 108.5, {
         width: 10,
@@ -1613,7 +1788,13 @@ Salvo.ammo(
         trailColor: Pal.graphiteAmmoBack,
         frontColor: Pal.graphiteAmmoFront,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(BasicBulletType, 4, 87.5, {
         widht: 11,
@@ -1629,7 +1810,13 @@ Salvo.ammo(
         makeFire: true,
         lifetime: 280/4,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.silicon, extend(BasicBulletType, 4.5, 52.5, {
         width: 9,
@@ -1647,7 +1834,13 @@ Salvo.ammo(
         trailLength: 5,
         trailWidth: 1.5,
         pierce: true,
-        pierceCap: 2
+        pierceCap: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.thorium, extend(BasicBulletType, 6, 98, "bullet", {
         width: 10,
@@ -1664,7 +1857,13 @@ Salvo.ammo(
         pierce: true,
         pierceCap: 2,
         shootEffect: Fx.shootBig,
-        smokeEffect: Fx.shootBigSmoke
+        smokeEffect: Fx.shootBigSmoke,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.gold, extend(BasicBulletType, 6, 122, "bullet", {
         width: 10,
@@ -1681,7 +1880,13 @@ Salvo.ammo(
         pierce: true,
         pierceCap: 3,
         shootEffect: Fx.shootBig,
-        smokeEffect: Fx.shootBigSmoke
+        smokeEffect: Fx.shootBigSmoke,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(BasicBulletType, 6, 165, "bullet", {
         width: 10,
@@ -1701,6 +1906,12 @@ Salvo.ammo(
         smokeEffect: Fx.shootBigSmoke,
         fragBullets: 3,
         fragLifeMin: 0.3,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        },
         fragBullet: extend(BasicBulletType, 6, 44, {
             widht: 2,
             height: 2,
@@ -1708,7 +1919,13 @@ Salvo.ammo(
             despawnEffect: Fx.none,
             backColor: diamondAmmoBack,
             frontColor: diamondAmmoFront,
-            buildingDamageMultiplier: 0.2
+            buildingDamageMultiplier: 0.2,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         })
     })
 );
@@ -1765,7 +1982,13 @@ Tsunami.ammo(
         statusDuration: 360,
         damage: 2,
         layer: Layer.bullet - 2,
-        knockback: 1.7
+        knockback: 1.7,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.slag, extend(LiquidBulletType, Liquids.slag, {
         lifetime: 50,
@@ -1776,7 +1999,13 @@ Tsunami.ammo(
         drag: 0.001,
         ammoMultiplier: 0.033,
         statusDuration: 360,
-        damage: 5
+        damage: 5,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.cryofluid, extend(LiquidBulletType, Liquids.cryofluid, {
         lifetime: 50,
@@ -1787,7 +2016,13 @@ Tsunami.ammo(
         drag: 0.001,
         ammoMultiplier: 0.033,
         statusDuration: 360,
-        damage: 2
+        damage: 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Liquids.oil, extend(LiquidBulletType, Liquids.oil, {
         lifetime: 50,
@@ -1799,7 +2034,13 @@ Tsunami.ammo(
         ammoMultiplier: 0.033,
         statusDuration: 360,
         damage: 2,
-        layer: Layer.bullet - 2
+        layer: Layer.bullet - 2,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1830,7 +2071,13 @@ Fuse.ammo(
         length: 160,
         damage: 165,
         ammoMultiplier: 4,
-        reloadMultiplier: 1.3
+        reloadMultiplier: 1.3,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.thorium, extend(ShrapnelBulletType,{
         length: 160,
@@ -1839,7 +2086,13 @@ Fuse.ammo(
         toColor: Pal.thoriumPink,
         shootEffect: Fx.thoriumShoot,
         smokeEffect: Fx.thoriumShoot,
-        reloadMultiplier: 1.1
+        reloadMultiplier: 1.1,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.gold, extend(ShrapnelBulletType, {
         length: 160,
@@ -1860,6 +2113,12 @@ Fuse.ammo(
                 Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fin() * 5 + 2);
             });
         },{}),
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(ShrapnelBulletType, {
         length: 160,
@@ -1880,6 +2139,12 @@ Fuse.ammo(
                 Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fin() * 5 + 2);
             });
         },{}),
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -1928,7 +2193,13 @@ Ripple.ammo(
         frontColor: Pal.graphiteAmmoFront,
         despawnEffect: Fx.hitBulletColor,
         lifeScaleRandMax: 1.1,
-        lifeScaleRandMin: 0.92
+        lifeScaleRandMin: 0.92,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.silicon, extend(ArtilleryBulletType, 6,100,{
         hitEffect: new MultiEffect(Fx.flakExplosion, Fx.shockwaveSmaller),
@@ -1951,7 +2222,13 @@ Ripple.ammo(
         trailColor: Pal.siliconAmmoBack,
         frontColor: Pal.siliconAmmoFront,
         lifeScaleRandMax: 1.1,
-        lifeScaleRandMin: 0.92
+        lifeScaleRandMin: 0.92,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(ArtilleryBulletType,6,120,{
         reflectable: false,
@@ -1973,7 +2250,13 @@ Ripple.ammo(
         ammoMultiplier: 4,
         despawnEffect: Fx.hitBulletColor,
         lifeScaleRandMax: 1.1,
-        lifeScaleRandMin: 0.92
+        lifeScaleRandMin: 0.92,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.blastCompound, extend(ArtilleryBulletType, 4, 100, "shell", {
         reflectable: false,
@@ -1993,7 +2276,13 @@ Ripple.ammo(
         backColor: Pal.blastAmmoBack,
         hitColor: Pal.blastAmmoBack,
         trailColor: Pal.blastAmmoBack,
-        frontColor: Pal.blastAmmoFront
+        frontColor: Pal.blastAmmoFront,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.plastanium, extend(ArtilleryBulletType, 6.8, 100, "shell", {
         reflectable: false,
@@ -2015,13 +2304,25 @@ Ripple.ammo(
             frontColor: Pal.plastaniumFront,
             despawnEffect: Fx.none,
             collidesAir: false,
-            buildingDamageMultiplier: 0.5
+            buildingDamageMultiplier: 0.5,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         }),
         fragBullets: 15,
         backColor: Pal.plastaniumBack,
         frontColor: Pal.plastaniumFront,
         lifeScaleRandMax: 1.1,
-        lifeScaleRandMin: 0.92
+        lifeScaleRandMin: 0.92,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.surgeAlloy, extend(ArtilleryBulletType, 6, 80, {
         reflectable: false,
@@ -2043,7 +2344,13 @@ Ripple.ammo(
         lifeScaleRandMin: 0.92,
         lightning: 3,
         lightningLength: 6,
-        lightningLengthRand: 6
+        lightningLengthRand: 6,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(ArtilleryBulletType, 8, 155, "shell", {
         reflectable: false,
@@ -2064,6 +2371,12 @@ Ripple.ammo(
         lifeScaleRandMax: 1.1,
         lifeScaleRandMin: 0.92,
         fragBullets: 6,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        },
         fragBullet: extend(BasicBulletType, 5, 48, {
             width: 3,
             height: 15,
@@ -2073,7 +2386,13 @@ Ripple.ammo(
             backColor: diamondAmmoFront,
             despawnEffect: Fx.none,
             pierce: true,
-            collidesAir: false
+            collidesAir: false,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         })
     }),
 );
@@ -2139,7 +2458,13 @@ Cyclone.ammo(
         hitColor: Pal.blastAmmoBack,
         trailColor: Pal.blastAmmoBack,
         frontColor: Pal.blastAmmoFront,
-        despawnEffect: Fx.hitBulletColor
+        despawnEffect: Fx.hitBulletColor,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.plastanium, extend(FlakBulletType, 6,24, {
         reflectable: false,
@@ -2163,7 +2488,13 @@ Cyclone.ammo(
         shootEffect: Fx.shootBig,
         collidesGround: true,
         explodeRange: 20,
-        despawnEffect: Fx.hitBulletColor
+        despawnEffect: Fx.hitBulletColor,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.surgeAlloy, extend(FlakBulletType,7,39,{
         reflectable: false,
@@ -2180,7 +2511,13 @@ Cyclone.ammo(
         hitColor: Pal.surgeAmmoBack,
         trailColor: Pal.surgeAmmoBack,
         frontColor: Pal.surgeAmmoFront,
-        despawnEffect: Fx.hitBulletColor
+        despawnEffect: Fx.hitBulletColor,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(FlakBulletType, 8,57, {
         reflectable: false,
@@ -2196,7 +2533,13 @@ Cyclone.ammo(
             backColor: diamondAmmoBack,
             frontColor: diamondAmmoFront,
             despawnEffect: Fx.none,
-            pierce: true
+            pierce: true,
+            hitEntity(b, entity, health){
+                his.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         }),
         fragBullets: 8,
         backColor: diamondAmmoBack,
@@ -2208,7 +2551,13 @@ Cyclone.ammo(
         collidesGround: true,
         explodeRange: 20,
         pierce: true,
-        pierceCap: 3
+        pierceCap: 3,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -2325,7 +2674,13 @@ Foreshadow.ammo(
         armorMultiplier: 0,
         knockback: 33,
         splashDamage: 1350*2/3,
-        splashDamageRadius: 32
+        splashDamageRadius: 32,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(RailBulletType, {
         shootEffect: extend(Effect, 24, e => {
@@ -2420,7 +2775,13 @@ Foreshadow.ammo(
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
         splashDamage: 1350*2/3,
-        splashDamageRadius: 32
+        splashDamageRadius: 32,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     })
 );
 
@@ -2465,7 +2826,13 @@ Spectre.ammo(
         backColor: Pal.thoriumAmmoBack,
         hitColor: Pal.thoriumAmmoBack,
         trailColor: Pal.thoriumAmmoBack,
-        frontColor: Pal.thoriumAmmoFront
+        frontColor: Pal.thoriumAmmoFront,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     Items.pyratite, extend(BasicBulletType, 10, 280, {
         pierceDamageFactor: 0,
@@ -2486,7 +2853,13 @@ Spectre.ammo(
         knockback: 1.2,
         ammoMultiplier: 3,
         splashDamage: 80,
-        splashDamageRadius: 32
+        splashDamageRadius: 32,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.sodiumBattery, extend(BasicBulletType, 14, 220, {
         pierceDamageFactor: 0,
@@ -2517,7 +2890,13 @@ Spectre.ammo(
                 hittable: false,
                 lightColor: Color.white,
                 buildingDamageMultiplier: 0.25
-            })
+            }),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         }),
         bulletInterval: 3,
         lightning: 5,
@@ -2526,7 +2905,13 @@ Spectre.ammo(
         pierce: true,
         shootEffect: Fx.shootBig,
         knockback: 1,
-        status: StatusEffects.shocked
+        status: StatusEffects.shocked,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     items.diamond, extend(BasicBulletType, 14, 330, {
         pierceDamageFactor: 0,
@@ -2550,6 +2935,12 @@ Spectre.ammo(
         ammoMultiplier: 8,
         reloadMultiplier: 1.25,
         armorMultiplier: 0,
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        },
         fragBullet: extend(BasicBulletType, 10, 100, {
             width: 3,
             height: 16,
@@ -2558,7 +2949,13 @@ Spectre.ammo(
             backColor: diamondAmmoBack,
             frontColor: diamondAmmoFront,
             despawnEffect: Fx.none,
-            pierce: true
+            pierce: true,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                }
+            }
         })
     })
 );
@@ -2591,7 +2988,13 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
         incendSpread: 5,
         incendAmount: 1,
         ammoMultiplier: 1,
-        colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")]
+        colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
+        hitEntity(b, entity, health){
+            this.super$hitEntity(b, entity, health);
+            if(entity instanceof Unit){
+                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+            }
+        }
     }),
     health: 14200,
     liquidCapacity: 60,

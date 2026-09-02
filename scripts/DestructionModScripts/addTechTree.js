@@ -288,16 +288,16 @@ addTechTree(blocks.NaExtractor,{
 
 addTechTree(blocks.SSM,{
     parent: "kiln",
-    objectives: Seq.with(
+    /*objectives: Seq.with(
         new Objectives.SectorComplete(sectors.GoldMine)
-    )
+    )*/
 });
 
 addTechTree(blocks.HPHT,{
     parent: "Sand_Sieve_Machine",
-    objectives: Seq.with(
+    /*objectives: Seq.with(
         new Objectives.SectorComplete(sectors.DiamondVolcano)
-    )
+    )*/
 });
 
 addTechTree(blocks.ElectricHPHT,{
@@ -369,9 +369,9 @@ addTechTree(blocks.Tsunami,{
 
 addTechTree(blocks.Meltdown,{
     parent: "Destructor_Lancer",
-    objectives: Seq.with(
+    /*objectives: Seq.with(
         new Objectives.SectorComplete(sectors.DiamondVolcano)
-    )
+    )*/
 });
 
 addTechTree(blocks.Cyclone,{
