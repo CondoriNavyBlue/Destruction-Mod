@@ -587,6 +587,18 @@ const Reign = extend(UnitType, "Destructor_Reign", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Reign.DR);
+    },
+    killed(unit){
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        for(let i = 0; i<6; i++){
+            const DeathBullet = unit.type.weapons.get(2).bullet.copy();
+            DeathBullet.speed = Math.random()*6;
+            DeathBullet.drag = 0.025;
+            DeathBullet.lifetime+=5;
+            DeathBullet.create(unit, T, X, Y, Math.random()*360);
+        }
     }
 });
 Reign.constructor = () => extend(MechUnit, {});
@@ -1269,6 +1281,37 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Eclipse.DR);
+    },
+    killed(unit){
+        const direction = Math.random()*360;
+        const DeathBullet = unit.type.weapons.get(4).bullet;
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        for(let i = 0; i<4; ++i){
+            DeathBullet.create(unit, T, X, Y, direction+360/4*i);
+        }
+        Time.run(20,()=>{
+            for(let i = 0; i<4; ++i){
+                DeathBullet.create(unit, T, X, Y, direction+360/4*i+360/4/3);
+            }
+        });
+        Time.run(40,()=>{
+            for(let i = 0; i<4; ++i){
+                DeathBullet.create(unit, T, X, Y, direction+360/4*i+360/4/3*2);
+            }
+        });
+        const DeathBullet2 = unit.type.weapons.get(0).bullet;
+        const DeathBullet3 = unit.type.weapons.get(2).bullet;
+        for(let i = 0; i<(180/3); ++i){
+            const a = i;
+            Time.run(i*3, ()=>{
+                DeathBullet2.create(unit, T, X, Y, direction + a*360*3/180);
+                DeathBullet2.create(unit, T, X, Y, direction + 180 + a*360*3/180);
+                DeathBullet3.create(unit, T, X, Y, direction + 90 + a*360*3/180);
+                DeathBullet3.create(unit, T, X, Y, direction + 270 + a*360*3/180);
+            });
+        }
     }
 });
 Eclipse.constructor = ()=> extend(UnitEntity,{});
