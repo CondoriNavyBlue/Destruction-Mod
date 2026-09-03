@@ -64,7 +64,13 @@ Gamma.weapons.add(
             buildingDamageMultiplier: 0.01,
             homingPower: 0.15,
             splashDamage: 44,
-            splashDamageRadius: 24
+            splashDamageRadius: 24,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -118,7 +124,13 @@ Dagger.weapons.add(
             backColor: Pal.lightOrange,
             hitColor: Pal.lightOrange,
             status: StatusEffects.burning,
-            statusDuration: 8*60
+            statusDuration: 8*60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -176,7 +188,13 @@ Mace.weapons.add(
             despawnEffect: Fx.none,
             status: StatusEffects.burning,
             keepVelocity: false,
-            hittable: false
+            hittable: false,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -239,6 +257,12 @@ Fortress.weapons.add(
             status: StatusEffects.blasted,
             statusDuration: 300,
             hitSize: 8,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             fragBullets: 1,
             fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                 hitSize: 8,
@@ -255,6 +279,12 @@ Fortress.weapons.add(
                 frontColor: Pal.blastAmmoFront,
                 status: StatusEffects.blasted,
                 statusDuration: 300,
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                },
                 fragBullets: 1,
                 fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                     hitSize: 8,
@@ -271,6 +301,12 @@ Fortress.weapons.add(
                     frontColor: Pal.blastAmmoFront,
                     status: StatusEffects.blasted,
                     statusDuration: 300,
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    },
                     fragBullets: 1,
                     fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                         hitSize: 8,
@@ -287,6 +323,12 @@ Fortress.weapons.add(
                         frontColor: Pal.blastAmmoFront,
                         status: StatusEffects.blasted,
                         statusDuration: 300,
+                        hitEntity(b, entity, health){
+                            this.super$hitEntity(b, entity, health);
+                            if(entity instanceof Unit){
+                                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
+                        },
                         fragBullets: 1,
                         fragBullet: extend(ArtilleryBulletType, 0, 50, "shell", {
                             hitSize: 8,
@@ -302,7 +344,13 @@ Fortress.weapons.add(
                             backColor: Pal.blastAmmoBack,
                             frontColor: Pal.blastAmmoFront,
                             status: StatusEffects.blasted,
-                            statusDuration: 300
+                            statusDuration: 300,
+                            hitEntity(b, entity, health){
+                                this.super$hitEntity(b, entity, health);
+                                if(entity instanceof Unit){
+                                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                }
+                            }
                         })
                     })
                 })
@@ -381,12 +429,24 @@ Scepter.weapons.add(
             lightningDamage: 120,
             despawnSound: Sounds.shockBullet,
             bulletInterval: 3,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             intervalBullet: extend(LightningBulletType,{
                 damage: 80,
                 lightningLength: 4,
                 lightningLengthRand: 4,
                 lightningColor: Pal.surge,
-                hitEffect: Fx.hitLancerLow
+                hitEffect: Fx.hitLancerLow,
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                }
             })
         })
     }),
@@ -421,7 +481,13 @@ Scepter.weapons.add(
             backColor: Pal.blastAmmoBack,
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
-            statusDuration: 300
+            statusDuration: 300,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
 );
@@ -448,7 +514,13 @@ Scepter.weapons.add(
             trailEffect: Fx.bulletSparkSmokeTrailSmall,
             trailSpread: 12,
             shootEffect: Fx.shootScepterSecondary,
-            hitEffect: Fx.hitScepterSecondary
+            hitEffect: Fx.hitScepterSecondary,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,"destructionmod-Destructor_Scepter_Mount",{
@@ -474,7 +546,13 @@ Scepter.weapons.add(
             trailEffect: Fx.bulletSparkSmokeTrailSmall,
             trailSpread: 12,
             shootEffect: Fx.shootScepterSecondary,
-            hitEffect: Fx.hitScepterSecondary
+            hitEffect: Fx.hitScepterSecondary,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -553,6 +631,12 @@ Reign.weapons.add(
             frontColor: Pal.blastAmmoFront,
             status: StatusEffects.blasted,
             statusDuration: 300,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             fragBullet: extend(BasicBulletType, 9, 100, {
                 width: 10,
                 height: 10,
@@ -564,7 +648,13 @@ Reign.weapons.add(
                 splashDamage: 80,
                 splashDamageRadius: 16,
                 backColor: Pal.blastAmmoBack,
-                frontColor: Pal.blastAmmoFront
+                frontColor: Pal.blastAmmoFront,
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                }
             })
         })
     }),
@@ -628,7 +718,13 @@ Reign.weapons.add(
                         });
                     }
                 },{})
-            )
+            ),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -698,7 +794,13 @@ Flare.weapons.add(
             backColor: Pal.lightOrange,
             hitColor: Pal.lightOrange,
             status: StatusEffects.burning,
-            statusDuration: 8*60
+            statusDuration: 8*60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -777,7 +879,13 @@ Horizon.weapons.add(
             shootEffect: Fx.none,
             smokeEffect: Fx.none,
             status: StatusEffects.blasted,
-            statusDuration: 60
+            statusDuration: 60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -884,7 +992,13 @@ Zenith.weapons.add(
                         Drawf.light(e.x, e.y, 45, Color.valueOf("d06b53"), 0.8 * e.fout());
                     },{}),
                     weaveScale: 6,
-                    weaveMag: 1
+                    weaveMag: 1,
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    }
                 }),
                 extend(MissileBulletType, 4.5, 55, {
                     width: 10,
@@ -936,7 +1050,13 @@ Zenith.weapons.add(
                         Drawf.light(e.x, e.y, 45, Color.valueOf("6bd053"), 0.8 * e.fout());
                     },{}),
                     weaveScale: 6,
-                    weaveMag: 1
+                    weaveMag: 1,
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    }
                 }),
                 extend(MissileBulletType, 3.5, 10, {
                     width: 10,
@@ -988,7 +1108,13 @@ Zenith.weapons.add(
                         Drawf.light(e.x, e.y, 45, Color.valueOf("536bd0"), 0.8 * e.fout());
                     },{}),
                     weaveScale: 6,
-                    weaveMag: 1
+                    weaveMag: 1,
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    }
                 })
             ]
         })
@@ -1073,7 +1199,13 @@ Antumbra.weapons.add(
             weaveScale: 6,
             weaveMag: 1,
             status: StatusEffects.blasted,
-            statusDuration: 60
+            statusDuration: 60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Bullet_Mount", {
@@ -1094,7 +1226,13 @@ Antumbra.weapons.add(
             shootEffect: Fx.shootBig,
             pierce: true,
             pierceBuilding: true,
-            pierceCap: 2
+            pierceCap: 2,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -1152,6 +1290,12 @@ Eclipse.weapons.add(
         inaccuracy: 5,
         velocityRnd: -0.25,
         bullet: extend(FlakBulletType, 6.6, 180, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
             splashDamage: 220,
@@ -1205,6 +1349,12 @@ Eclipse.weapons.add(
         inaccuracy: 5,
         velocityRnd: -0.25,
         bullet: extend(FlakBulletType, 6.6, 122, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             shootEffect: Fx.shootBig,
             ammoMultiplier: 4,
             splashDamage: 144,
@@ -1263,6 +1413,12 @@ Eclipse.weapons.add(
             firstShotDelay: 39
         }),
         bullet: extend(ContinuousLaserBulletType,{
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             applyDamage(b){
                 this.super$applyDamage(b);
                 let resultLength = this.currentLength(b);
@@ -1430,7 +1586,13 @@ Nova.weapons.add(
             length: 140,
             width: 10,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
-            damage: 40
+            damage: 40,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -1505,7 +1667,13 @@ Pulsar.weapons.add(
                 status: StatusEffects.shocked,
                 statusDuration: 10,
                 hittable: false
-            })
+            }),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -1581,7 +1749,13 @@ Quasar.weapons.add(
             lightningDamage: 55,
             lightningAngleRand: 40,
             lightningLengthRand: 5,
-            lightningSpacing: 30
+            lightningSpacing: 30,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -1655,6 +1829,12 @@ Vela.weapons.add(
         shootStatus: StatusEffects.slow,
         shootStatusDuration: 199,
         bullet: extend(ContinuousLaserBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             damage: 2400/12,
             length: 290,
             hitEffect: extend(Effect,12, e => {
@@ -1691,6 +1871,12 @@ Vela.weapons.add(
         reload: 40,
         shootSound: Vars.tree.loadSound("railgun_D"),
         bullet: extend(PointBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             damage: 1000,
             shootEffect: extend(Effect,24, e => {
                 e.scaled(10, b => {
@@ -1831,6 +2017,12 @@ Corvus.weapons.add(
             return this.bullet.length;
         },
         bullet: extend(LaserBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             init(b) {
                 if (!b) return;
             
@@ -1941,6 +2133,12 @@ Corvus.weapons.add(
         shootSound: Sounds.shootNavanax,
         useAttackRange: false,
         bullet: extend(EmpBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             reflectable: false,
             damage: 200,
             splashDamage: 600,
@@ -2061,7 +2259,13 @@ Crawler.weapons.add(
             instantDisappear: true,
             splashDamage: 100,
             hittable: false,
-            collidesAir: true
+            collidesAir: true,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -2124,7 +2328,13 @@ Atrax.weapons.add(
             drag: 0.009,
             shootEffect: Fx.shootSmall,
             lifetime: 60,
-            collidesAir: false
+            collidesAir: false,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -2189,7 +2399,13 @@ Spiroct.weapons.add(
             despawnEffect: Fx.none,
             width: 0.54,
             lifetime: 35,
-            knockback: -1.24
+            knockback: -1.24,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Mount_Purple_Weapon", {
@@ -2208,7 +2424,13 @@ Spiroct.weapons.add(
             despawnEffect: Fx.none,
             width: 0.4,
             lifetime: 25,
-            knockback: -0.65
+            knockback: -0.65,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,{
@@ -2226,6 +2448,12 @@ Spiroct.weapons.add(
             shots: 3,
         }),
         bullet: extend(BasicBulletType,5,160,{
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             shootEffect: new MultiEffect(
                 Fx.shootTitan,
                 extend(WaveEffect,{
@@ -2331,6 +2559,7 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     envDisabled: Env.space,
     fogRadius: 58*6/8,
     researchCostMultiplier: 25,
+    drownTimeMultiplier: 2,
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Arkyid.DR);
@@ -2352,7 +2581,12 @@ let ArkyidSap = extend(SapBulletType,{
     daspawnEffect: Fx.none,
     lifetime: 30,
     knockback: -1,
-    drownTimeMultiplier: 2
+    hitEntity(b, entity, health){
+        this.super$hitEntity(b, entity, health);
+        if(entity instanceof Unit){
+            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+        }
+    }
 });
 Arkyid.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Spiroct_Weapon",{
@@ -2361,7 +2595,7 @@ Arkyid.weapons.add(
         y: 8,
         rotate: true,
         shootSound: Sounds.shootSap,
-        bullet: ArkyidSap
+        bullet: ArkyidSap,
     }),
     extend(Weapon,"destructionmod-Destructor_Spiroct_Weapon",{
         reload: 14,
@@ -2393,6 +2627,12 @@ Arkyid.weapons.add(
         recoil: 3,
         alternate: false,
         bullet: extend(ArtilleryBulletType,3,140,{
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             hitEffect: Fx.sapExplosion,
             despawnSound: Sounds.explosionArtilleryShock,
             knockback: 0.8,
@@ -2596,14 +2836,26 @@ Toxopid.weapons.add(
                     hittable: false,
                     lightColor: Color.white,
                     buildingDamageMultiplier: 0.25
-                })
+                }),
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                }
             }),
             bulletInterval: 4,
             lightningColor: Pal.sapBullet,
             lightningDamage: 100,
             lightning: 3,
             lightningLength: 8,
-            lightningLengthRand: 5
+            lightningLengthRand: 5,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,"destructionmod-Destructor_Large_Purple_Mount",{
@@ -2635,6 +2887,12 @@ Toxopid.weapons.add(
             smokeEffect: Fx.sparkShoot,
             status: statusEffects.destructed,
             statusDuration: 450,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,"destructionmod-Destructor_Toxopid_Cannon",{
@@ -2682,6 +2940,12 @@ Toxopid.weapons.add(
             keepVelocity: false,
             reflectable: false,
             hitSize: 50/Math.sqrt(2),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             fragLifeMin: 1,
             fragVelocityMin: 1,
             fragVelocityMax: 1,
@@ -2717,6 +2981,12 @@ Toxopid.weapons.add(
                 statusDuration: 300,
                 reflectable: false,
                 hitSize: 35/Math.sqrt(2),
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                },
                 fragLifeMin: 0.3,
                 fragBullets: 4,
                 fragBullet: extend(ArtilleryBulletType, 2.3, 150, {
@@ -2741,7 +3011,13 @@ Toxopid.weapons.add(
                     lightOpacity: 0.6,
                     status: statusEffects.destructed,
                     statusDuration: 180,
-                    hitSize: 8
+                    hitSize: 8,
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    }
                 })
             })
         })
@@ -2869,7 +3145,13 @@ Poly.weapons.add(
             collidesTeam: true,
             reflectable: false,
             trailColor: Color.valueOf("ff80bd"),
-            healColor: Color.valueOf("ff80bd")
+            healColor: Color.valueOf("ff80bd"),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -2936,7 +3218,13 @@ Mega.weapons.add(
             lightningLength: 5,
             lightningLengthRand: 8,
             lightningColor: Color.valueOf("ed655a"),
-            lightningDamage: 22
+            lightningDamage: 22,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
@@ -2962,7 +3250,13 @@ Mega.weapons.add(
             lightningLength: 5,
             lightningLengthRand: 8,
             lightningColor: Color.valueOf("789aff"),
-            lightningDamage: 36
+            lightningDamage: 36,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3065,7 +3359,13 @@ Quad.weapons.add(
             shrinkY: 0.7,
             collides: false,
             splashDamage: 200,
-            splashDamageRadius: 112
+            splashDamageRadius: 112,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,{
@@ -3119,7 +3419,13 @@ Quad.weapons.add(
             shrinkY: 0.7,
             collides: false,
             splashDamage: 1000,
-            splashDamageRadius: 64
+            splashDamageRadius: 64,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon,{
@@ -3173,7 +3479,13 @@ Quad.weapons.add(
             shrinkY: 0.7,
             collides: false,
             splashDamage: 500,
-            splashDamageRadius: 160
+            splashDamageRadius: 160,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3276,6 +3588,12 @@ Risso.weapons.add(
             pierceBuilding: true,
             pierceCap: 2,
             lifetime: 60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Missile_Mount", {
@@ -3302,7 +3620,13 @@ Risso.weapons.add(
             hitEffect: Fx.blastExplosion,
             despawnEffect: Fx.blastExplosion,
             weaveScale: 8,
-            weaveMag: 2
+            weaveMag: 2,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3363,7 +3687,13 @@ Minke.weapons.add(
             height: 8,
             hitEffect: Fx.flakExplosion,
             splashDamage: 60,
-            splashDamageRadius: 24
+            splashDamageRadius: 24,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Artillery_Mount", {
@@ -3390,7 +3720,13 @@ Minke.weapons.add(
             splashDamageRadius: 40,
             splashDamage: 70,
             homingPower: 0.08,
-            homingRange: 60
+            homingRange: 60,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3465,7 +3801,13 @@ Bryde.weapons.add(
             hitEffect: Fx.blastExplosion,
             despawnEffect: Fx.blastExplosion,
             weaveScale: 8,
-            weaveMag: 1
+            weaveMag: 1,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
@@ -3504,7 +3846,13 @@ Bryde.weapons.add(
             hitEffect: Fx.massiveExplosion,
             smokeEffect: Fx.shootBig2,
             damage: 500,
-            pierceDamageFactor: 0.22
+            pierceDamageFactor: 0.22,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3576,7 +3924,13 @@ Sei.weapons.add(
             lifetime: 36,
             pierce: true,
             pierceBuilding: true,
-            pierceCap: 2
+            pierceCap: 2,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Sei_Launcher",{
@@ -3619,7 +3973,13 @@ Sei.weapons.add(
             frontColor: Pal.blastAmmoFront,
             hitEffect: Fx.blastExplosion,
             weaveScale: 0,
-            weaveMag: 0
+            weaveMag: 0,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3687,7 +4047,13 @@ Omura.weapons.add(
             pierceCap: 2,
             pierceBuilding: true,
             knockback: 0.7,
-            hitSize: 6
+            hitSize: 6,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
@@ -3710,7 +4076,13 @@ Omura.weapons.add(
             pierceCap: 2,
             pierceBuilding: true,
             knockback: 0.7,
-            hitSize: 6
+            hitSize: 6,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Big_Missile", {
@@ -3751,6 +4123,12 @@ Omura.weapons.add(
             weaveMag: 3,
             status: StatusEffects.blasted,
             statusDuration: 300,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -3790,6 +4168,12 @@ Omura.weapons.add(
             shotDelay: 200/24
         }),
         bullet: extend(RailBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             length: 200,
             damage: 1250,
             pierceDamageFactor: 0,
@@ -3835,7 +4219,6 @@ Omura.weapons.add(
                 Drawf.light(e.x, e.y, 50, Color.valueOf("ed655a"), 0.8 * e.fout());
             }, {followParent: true, rotWithParent: true})
         })
-        
     }),
     extend(Weapon, "destructionmod-Destructor_Omura_Cannon", {
         reload: 40,
@@ -3857,6 +4240,12 @@ Omura.weapons.add(
             shotDelay: 6
         }),
         bullet: extend(RailBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             length: 544,
             damage: 1250,
             pierceDamageFactor: 0.1,
@@ -3966,7 +4355,13 @@ Retusa.weapons.add(
             hitEffect: Fx.hitLaserColor,
             despawnEffect: Fx.hitLaserColor,
             lightColor: Color.valueOf("789aff"),
-            hitColor: Color.valueOf("789aff")
+            hitColor: Color.valueOf("789aff"),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
@@ -3989,68 +4384,80 @@ Retusa.weapons.add(
             hitEffect: Fx.hitLaserColor,
             despawnEffect: Fx.hitLaserColor,
             lightColor: Color.valueOf("ed655a"),
-            hitColor: Color.valueOf("ed655a")
+            hitColor: Color.valueOf("ed655a"),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, {
-            mirror: false,
-            rotate: true,
-            reload: 90,
-            x: 0,
-            y: 0,
-            shootX: 0,
-            shootY: 0,
-            shootSound: Sounds.shootRetusa,
-            rotateSpeed: 180,
-            shootSoundVolume: 0.9,
-            shoot: extend(ShootPattern, {
-                shots: 3,
-                shotDelay: 7
-            }),
-            ignoreRotation: true,
-            bullet: extend(BasicBulletType,{
-                sprite: "mine-bullet",
-                width: 8,
-                height: 8,
-                layer: Layer.scorch,
-                shootEffect: Fx.none,
-                smokeEffect: Fx.none,
-                maxRange: 50,
-                backColor: Color.valueOf("ed655a"),
-                frontColor: Color.white,
-                mixColorTo: Color.white,
-                hitSound: Sounds.explosionPlasmaSmall,
-                underwater: true,
-                ejectEffect: Fx.none,
-                hitSize: 22,
-                collidesAir: false,
-                lifetime: 87,
-                hitEffect: new MultiEffect(
-                    Fx.blastExplosion, 
-                    extend(Effect, 80, e => {
-                        Draw.color(Color.valueOf("ed655a"));
-                        Angles.randLenVectors(e.id, 7, 9 * e.fin(), (x, y, fin, fout) => {
-                            Fill.circle(e.x + x, e.y + y, 5 * fout);
-                        });
-                    },{})
-                ),
-                keepVelocity: false,
-                shrinkX: 0,
-                shrinkY: 0,
-                inaccuracy: 2,
-                weaveMag: 5,
-                weaveScale: 4,
-                speed: 0.7,
-                drag: -0.017,
-                homingPower: 0.05,
-                collideFloor: true,
-                trailColor: Color.valueOf("ed655a"),
-                trailWidth: 3,
-                trailLength: 8,
-                splashDamage: 50,
-                splashDamageRadius: 32
-            })
+         mirror: false,
+         rotate: true,
+         reload: 90,
+         x: 0,
+         y: 0,
+         shootX: 0,
+         shootY: 0,
+         shootSound: Sounds.shootRetusa,
+         rotateSpeed: 180,
+         shootSoundVolume: 0.9,
+         shoot: extend(ShootPattern, {
+             shots: 3,
+             shotDelay: 7
+         }),
+         ignoreRotation: true,
+         bullet: extend(BasicBulletType,{
+             sprite: "mine-bullet",
+             width: 8,
+             height: 8,
+             layer: Layer.scorch,
+             shootEffect: Fx.none,
+             smokeEffect: Fx.none,
+             maxRange: 50,
+             backColor: Color.valueOf("ed655a"),
+             frontColor: Color.white,
+             mixColorTo: Color.white,
+             hitSound: Sounds.explosionPlasmaSmall,
+             underwater: true,
+             ejectEffect: Fx.none,
+             hitSize: 22,
+             collidesAir: false,
+             lifetime: 87,
+             hitEffect: new MultiEffect(
+                 Fx.blastExplosion, 
+                 extend(Effect, 80, e => {
+                     Draw.color(Color.valueOf("ed655a"));
+                     Angles.randLenVectors(e.id, 7, 9 * e.fin(), (x, y, fin, fout) => {
+                         Fill.circle(e.x + x, e.y + y, 5 * fout);
+                     });
+                 },{})
+             ),
+             keepVelocity: false,
+             shrinkX: 0,
+             shrinkY: 0,
+             inaccuracy: 2,
+             weaveMag: 5,
+             weaveScale: 4,
+             speed: 0.7,
+             drag: -0.017,
+             homingPower: 0.05,
+             collideFloor: true,
+             trailColor: Color.valueOf("ed655a"),
+             trailWidth: 3,
+             trailLength: 8,
+             splashDamage: 50,
+             splashDamageRadius: 32,
+             hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
+    })
 );
 Retusa.abilities.add(
     abilities.rage(2),
@@ -4130,7 +4537,13 @@ Oxynoe.weapons.add(
             despawnEffect: Fx.none,
             status: StatusEffects.burning,
             keepVelocity: false,
-            hittable: false
+            hittable: false,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(PointDefenseWeapon, "destructionmod-Destructor_Point_Defense_Mount", {
@@ -4235,7 +4648,13 @@ Cyerce.weapons.add(
                 sparkRad: 35,
                 sparkStroke: 1.5,
                 sparkLen: 4
-            })
+            }),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Plasma_Missile_Mount", {
@@ -4289,6 +4708,12 @@ Cyerce.weapons.add(
             trailColor: Color.valueOf("ed655a"),
             trailWidth: 4.5,
             trailLength: 29,
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             fragBullets: 3,
             fragVelocityMin:0.5,
             fragBullet: extend(FlakBulletType,2.5, 80, {
@@ -4331,6 +4756,12 @@ Cyerce.weapons.add(
                 trailColor: Color.valueOf("ed655a"),
                 trailWidth: 4.5,
                 trailLength: 29,
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                },
                 fragBullets: 8,
                 fragVelocityMin:0.5,
                 fragBullet: extend(MissileBulletType, 4, 60, {
@@ -4371,7 +4802,13 @@ Cyerce.weapons.add(
                         sparkRad: 35,
                         sparkStroke: 1.5,
                         sparkLen: 4
-                    })
+                    }),
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    }
                 })
             })
         })
@@ -4474,7 +4911,13 @@ Aegires.weapons.add(
                 status: StatusEffects.shocked,
                 statusDuration: 30,
                 hittable: false
-            })
+            }),
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            }
         })
     })
 );
@@ -4545,6 +4988,12 @@ NavanaxLaserPos.forEach(pos => {
         continuous: true,
         cooldownTime: 170,
         bullet: extend(ContinuousLaserBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             applyDamage(b){
                 this.super$applyDamage(b);
                 let resultLength = this.currentLength(b);
@@ -4672,6 +5121,12 @@ Navanax.weapons.add(
             return 420;
         },
         bullet: extend(FlakBulletType, 3, 300, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             reflectable: false,
             sprite: "missile-large",
             collidesGround: true,
@@ -4717,6 +5172,12 @@ Navanax.weapons.add(
             fragVelocityMin: 0.8,
             fragRandomSpread: 45,
             fragBullet: extend(FlakBulletType, 3, 200, {
+                hitEntity(b, entity, health){
+                    this.super$hitEntity(b, entity, health);
+                    if(entity instanceof Unit){
+                        entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                },
                 reflectable: false,
                 sprite: "missile-large",
                 collidesGround: true,
@@ -4762,6 +5223,12 @@ Navanax.weapons.add(
                 fragVelocityMin: 0.8,
                 fragRandomSpread: 45,
                 fragBullet: extend(MissileBulletType, 4, 100, {
+                    hitEntity(b, entity, health){
+                        this.super$hitEntity(b, entity, health);
+                        if(entity instanceof Unit){
+                            entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
+                    },
                     reflectable: false,
                     width: 10,
                     height: 10,
@@ -4828,6 +5295,12 @@ Navanax.weapons.add(
             shotDelay: 5
         }),
         bullet: extend(EmpBulletType, {
+            hitEntity(b, entity, health){
+                this.super$hitEntity(b, entity, health);
+                if(entity instanceof Unit){
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                }
+            },
             reflectable: false,
             damage: 660,
             radius: 150,
