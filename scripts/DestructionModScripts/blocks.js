@@ -931,9 +931,9 @@ Duo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
-            print(b.splashDamage)
         }
     }),
     Items.graphite, extend(BasicBulletType, 4, 45, {
@@ -954,7 +954,8 @@ Duo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -978,7 +979,8 @@ Duo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1001,7 +1003,8 @@ Duo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1024,7 +1027,8 @@ Duo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1081,7 +1085,8 @@ Scatter.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1097,7 +1102,8 @@ Scatter.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1120,7 +1126,8 @@ Scatter.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         },
         fragBullet: extend(BasicBulletType, 4, 12.5, {
@@ -1139,7 +1146,8 @@ Scatter.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         })
@@ -1163,7 +1171,8 @@ Scatter.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1211,7 +1220,8 @@ Scorch.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1236,7 +1246,8 @@ Scorch.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1262,7 +1273,8 @@ Scorch.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1307,7 +1319,8 @@ Hail.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1333,7 +1346,8 @@ Hail.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1357,7 +1371,8 @@ Hail.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1382,7 +1397,8 @@ Hail.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1416,7 +1432,8 @@ Wave.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1428,7 +1445,8 @@ Wave.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1440,7 +1458,8 @@ Wave.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1453,7 +1472,8 @@ Wave.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1514,7 +1534,8 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -1559,7 +1580,8 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1627,7 +1649,8 @@ Swarmer.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1648,7 +1671,8 @@ Swarmer.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1670,7 +1694,8 @@ Swarmer.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1691,7 +1716,8 @@ Swarmer.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         },
         fragBullet: extend(BasicBulletType, 6, 64, {
@@ -1706,7 +1732,8 @@ Swarmer.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         })
@@ -1770,7 +1797,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1792,7 +1820,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1814,7 +1843,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1838,7 +1868,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1861,7 +1892,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1884,7 +1916,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -1909,7 +1942,8 @@ Salvo.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         },
         fragBullet: extend(BasicBulletType, 6, 44, {
@@ -1923,7 +1957,8 @@ Salvo.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         })
@@ -1986,7 +2021,8 @@ Tsunami.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2003,7 +2039,8 @@ Tsunami.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2020,7 +2057,8 @@ Tsunami.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2038,7 +2076,8 @@ Tsunami.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -2075,7 +2114,8 @@ Fuse.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2090,7 +2130,8 @@ Fuse.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2116,7 +2157,8 @@ Fuse.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2142,7 +2184,8 @@ Fuse.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -2197,7 +2240,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2226,7 +2270,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2254,7 +2299,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2280,7 +2326,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2308,7 +2355,8 @@ Ripple.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         }),
@@ -2320,7 +2368,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2348,7 +2397,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2374,7 +2424,8 @@ Ripple.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         },
         fragBullet: extend(BasicBulletType, 5, 48, {
@@ -2390,7 +2441,8 @@ Ripple.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         })
@@ -2462,7 +2514,8 @@ Cyclone.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2492,7 +2545,8 @@ Cyclone.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2515,7 +2569,8 @@ Cyclone.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2535,9 +2590,10 @@ Cyclone.ammo(
             despawnEffect: Fx.none,
             pierce: true,
             hitEntity(b, entity, health){
-                his.super$hitEntity(b, entity, health);
+                this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         }),
@@ -2555,7 +2611,8 @@ Cyclone.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -2665,7 +2722,7 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, Color.valueOf("ed655a"), 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 1350*2.5,
+        damage: 1350*2,
         pierceDamageFactor: 1,
         length: 640,
         hitShake: 6,
@@ -2673,12 +2730,13 @@ Foreshadow.ammo(
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
         knockback: 33,
-        splashDamage: 1000,
+        splashDamage: 1350*2/3,
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2765,7 +2823,7 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, diamondAmmoBack, 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 1350*2.5,
+        damage: 1350*2,
         pierceDamageFactor: 0.5,
         length: 640,
         hitShake: 6,
@@ -2774,12 +2832,13 @@ Foreshadow.ammo(
         statusDuration: 200,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
-        splashDamage: 1000,
+        splashDamage: 1350*2/3,
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     })
@@ -2830,7 +2889,8 @@ Spectre.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2857,7 +2917,8 @@ Spectre.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2894,7 +2955,8 @@ Spectre.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         }),
@@ -2909,7 +2971,8 @@ Spectre.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
@@ -2938,7 +3001,8 @@ Spectre.ammo(
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         },
         fragBullet: extend(BasicBulletType, 10, 100, {
@@ -2953,7 +3017,8 @@ Spectre.ammo(
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
-                    entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                    entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
                 }
             }
         })
@@ -2992,7 +3057,8 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit){
-                entity.health -= (typeof b.splashDamage === "number" ? Math.max(b.splashDamage, b.damage) : b.damage)/3;
+                entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                print(Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier());
             }
         }
     }),
