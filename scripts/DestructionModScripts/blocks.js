@@ -480,7 +480,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     ambientSoundVolume: 0.2,
     size: 3,
     itemDuration: 180,
-    powerProduction: 75,
+    powerProduction: 80,
     heating: 0.1,
     lightColor: Color.valueOf("ed655a"),
     fuelItem: items.hdThorium,
@@ -2665,7 +2665,7 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, Color.valueOf("ed655a"), 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 1350*2,
+        damage: 1350*2.5,
         pierceDamageFactor: 1,
         length: 640,
         hitShake: 6,
@@ -2673,7 +2673,7 @@ Foreshadow.ammo(
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
         knockback: 33,
-        splashDamage: 1350*2/3,
+        splashDamage: 1000,
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
@@ -2765,7 +2765,7 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, diamondAmmoBack, 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 1350*2,
+        damage: 1350*2.5,
         pierceDamageFactor: 0.5,
         length: 640,
         hitShake: 6,
@@ -2774,7 +2774,7 @@ Foreshadow.ammo(
         statusDuration: 200,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
-        splashDamage: 1350*2/3,
+        splashDamage: 1000,
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
