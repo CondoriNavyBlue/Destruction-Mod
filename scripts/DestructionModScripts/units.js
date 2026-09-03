@@ -69,7 +69,7 @@ Gamma.weapons.add(
     })
 );
 Gamma.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -123,7 +123,7 @@ Dagger.weapons.add(
     })
 );
 Dagger.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(62.5)
 );
 
@@ -181,7 +181,7 @@ Mace.weapons.add(
     })
 );
 Mace.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125)
 );
 
@@ -311,7 +311,7 @@ Fortress.weapons.add(
     })
 );
 Fortress.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250)
 );
 
@@ -480,7 +480,7 @@ Scepter.weapons.add(
 );
 Scepter.abilities.add(
     ShieldRegenFieldAbility(100, 2000, 30, 80),
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -633,7 +633,7 @@ Reign.weapons.add(
     })
 );
 Reign.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000)
 );
 
@@ -703,7 +703,7 @@ Flare.weapons.add(
     })
 );
 Flare.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(62.5)
 );
 
@@ -782,7 +782,7 @@ Horizon.weapons.add(
     })
 );
 Horizon.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125)
 );
 
@@ -995,7 +995,7 @@ Zenith.weapons.add(
     })
 );
 Zenith.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250)
 );
 
@@ -1099,7 +1099,7 @@ Antumbra.weapons.add(
     })
 );
 Antumbra.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -1382,7 +1382,7 @@ Eclipse.weapons.add(
     })
 );
 Eclipse.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000)
 );
 
@@ -1435,7 +1435,7 @@ Nova.weapons.add(
     })
 );
 Nova.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(62.5)
 );
 
@@ -1510,7 +1510,7 @@ Pulsar.weapons.add(
     })
 );
 Pulsar.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125),
     ShieldRegenFieldAbility(40, 200, 60 * 2.5, 80)
 );
@@ -1586,7 +1586,7 @@ Quasar.weapons.add(
     })
 );
 Quasar.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250),
     ForceFieldAbility(100, 1.5, 1000, 300, 5, 9)
 );
@@ -1762,7 +1762,7 @@ Vela.weapons.add(
     })
 );
 Vela.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -2009,7 +2009,7 @@ Corvus.weapons.add(
     })
 );
 Corvus.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000)
 );
 
@@ -2066,7 +2066,7 @@ Crawler.weapons.add(
     })
 );
 Crawler.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(125)
 );
 
@@ -2129,7 +2129,7 @@ Atrax.weapons.add(
     })
 );
 Atrax.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125)
 );
 
@@ -2294,7 +2294,7 @@ Spiroct.weapons.add(
     }),
 );
 Spiroct.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250)
 );
 
@@ -2419,7 +2419,7 @@ Arkyid.weapons.add(
     })
 )
 Arkyid.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500),
     extend(ShieldArcAbility,{
         region: "tecta-shield",
@@ -2748,7 +2748,7 @@ Toxopid.weapons.add(
     }),
 );
 Toxopid.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000)
 );
 
@@ -2792,7 +2792,7 @@ Mono.stats.addPercent(
 Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mono.abilities.add(
     abilities.regen(62.5),
-    abilities.rage(1.5)
+    abilities.rage(2)
 )
 
 //Builder Poly
@@ -2874,7 +2874,7 @@ Poly.weapons.add(
     })
 );
 Poly.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125)
 );
 
@@ -2967,7 +2967,7 @@ Mega.weapons.add(
     })
 );
 Mega.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250)
 );
 
@@ -3178,7 +3178,7 @@ Quad.weapons.add(
     })
 );
 Quad.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -3211,7 +3211,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
     envDisabled: Env.space,
     fogRadius: 58,
     researchCostMultiplier: 25,
-    DR: 0.8,
+    DR: 0.75,
     update(unit){
         unit.healthMultiplier *= 1/(1-Oct.DR);
     }
@@ -3225,7 +3225,8 @@ Oct.aiController = () => extend(DefenderAI, {});
 Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oct.abilities.add(
     ForceFieldAbility(200,1000/60,25000,600,10,0),
-    abilities.regen(1000)
+    abilities.regen(1000),
+    abilities.rage(5)
 );
 
 //Destructor Risso
@@ -3306,7 +3307,7 @@ Risso.weapons.add(
     })
 );
 Risso.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(62.5)
 );
 
@@ -3394,7 +3395,7 @@ Minke.weapons.add(
     })
 );
 Minke.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125)
 );
 
@@ -3508,7 +3509,7 @@ Bryde.weapons.add(
     })
 );
 Bryde.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250),
     ShieldRegenFieldAbility(50, 1000, 30, 60)
 );
@@ -3623,7 +3624,7 @@ Sei.weapons.add(
     })
 );
 Sei.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500)
 );
 
@@ -3905,7 +3906,7 @@ Omura.weapons.add(
     })
 );
 Omura.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000)
 );
 
@@ -4052,7 +4053,7 @@ Retusa.weapons.add(
         })
 );
 Retusa.abilities.add(
-    abilities.rage(1.5),
+    abilities.rage(2),
     abilities.regen(62.5)
 );
 
@@ -4148,7 +4149,7 @@ Oxynoe.weapons.add(
     })
 );
 Oxynoe.abilities.add(
-    abilities.rage(2),
+    abilities.rage(2.5),
     abilities.regen(125),
     StatusFieldAbility(StatusEffects.overclock, 60 * 20, 60 * 1, 80)
 );
@@ -4377,7 +4378,7 @@ Cyerce.weapons.add(
     })
 );
 Cyerce.abilities.add(
-    abilities.rage(2.5),
+    abilities.rage(3),
     abilities.regen(250)
 );
 
@@ -4478,7 +4479,7 @@ Aegires.weapons.add(
     })
 );
 Aegires.abilities.add(
-    abilities.rage(3),
+    abilities.rage(4),
     abilities.regen(500),
     extend(EnergyFieldAbility, 160, 50, 208, {
         color: Color.valueOf("ed655a"),
@@ -4896,7 +4897,7 @@ Navanax.weapons.add(
     })
 );
 Navanax.abilities.add(
-    abilities.rage(3),
+    abilities.rage(5),
     abilities.regen(1000),
     extend(SuppressionFieldAbility,{
         range: 240,
