@@ -592,12 +592,12 @@ const Reign = extend(UnitType, "Destructor_Reign", {
         const X = unit.x;
         const Y = unit.y;
         const T = unit.team;
-        for(let i = 0; i<6; i++){
+        for(let i = 0; i<8; i++){
             const DeathBullet = unit.type.weapons.get(2).bullet.copy();
             DeathBullet.speed = Math.random()*6;
             DeathBullet.drag = 0.025;
             DeathBullet.lifetime+=5;
-            DeathBullet.fragBullets = 12;
+            DeathBullet.fragBullets = 24;
             DeathBullet.fragBullet = unit.type.weapons.get(0).bullet.copy();
             DeathBullet.fragBullet.lifetime = 24*0.75;
             DeathBullet.create(unit, T, X, Y, Math.random()*360);
