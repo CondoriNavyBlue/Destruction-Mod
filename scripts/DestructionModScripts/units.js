@@ -592,7 +592,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
         const X = unit.x;
         const Y = unit.y;
         const T = unit.team;
-        for(let i = 0; i<8; i++){
+        for(let i = 0; i<10; i++){
             const DeathBullet = unit.type.weapons.get(2).bullet.copy();
             DeathBullet.speed = Math.random()*6;
             DeathBullet.drag = 0.025;
@@ -2030,6 +2030,32 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Corvus.DR);
+    },
+    killed(unit){
+        const direction = Math.random()*360;
+        const DeathBullet = unit.type.weapons.get(0).bullet;
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        const R = 8*30;
+        for(let i = 0; i < 5; ++i){
+            const DeathBullet2 = unit.type.weapons.get(1).bullet.copy();
+            DeathBullet2.lifetime = 90;
+            DeathBullet2.speed = 8*30/90;
+            DeathBullet2.collidesTiles = false;
+            DeathBullet2.hittable = false;
+            DeathBullet2.create(unit, T, X, Y, direction*Math.PI/180 + 360/5*i);
+        }
+        Time.run(90,()=>{
+            for(let i = 0; i < 5; ++i){
+                let SX = X + Math.cos(direction*Math.PI/180 + Math.PI*2/5*i)*R;
+                let SY = Y + Math.sin(direction*Math.PI/180 + Math.PI*2/5*i)*R;
+                let EX = X + Math.cos(direction*Math.PI/180 + Math.PI*2/5*(i+2))*R;
+                let EY = Y + Math.sin(direction*Math.PI/180 + Math.PI*2/5*(i+2))*R;
+                let dir = Math.atan2(EY-SY,EX-SX)*180/Math.PI;
+                DeathBullet.create(unit, T, SX, SY, dir);
+            }
+        });
     }
 });
 Corvus.constructor = () => extend(LegsUnit, {});
@@ -2760,6 +2786,26 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Toxopid.DR);
+    },
+    killed(unit){
+        const direction = Math.random()*360;
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        for(let i = 0; i<3; ++i){
+            const DeathBullet = unit.type.weapons.get(3).bullet.fragBullet.copy();
+            DeathBullet.damage = unit.type.weapons.get(3).bullet.damage;
+            DeathBullet.splashDamage = unit.type.weapons.get(3).bullet.splashDamage;
+            DeathBullet.drag = -0.085+0.015*i;
+            DeathBullet.lifetime = 60+20*i
+            for(let j = 0; j<12; ++j){
+                DeathBullet.create(unit, T, X, Y, direction + 360/12*j + 360/12/2*i);
+            }
+        }
+        const DeathBullet2 = unit.type.weapons.get(0).bullet;
+        for(let i = 0; i < 66; ++i){
+            DeathBullet2.create(unit, T, X, Y, direction + 360/66*i);
+        }
     }
 });
 Toxopid.constructor = () => extend(LegsUnit, {});
