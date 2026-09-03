@@ -3211,7 +3211,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
     envDisabled: Env.space,
     fogRadius: 58,
     researchCostMultiplier: 25,
-    DR: 0.75,
+    DR: 0.8,
     update(unit){
         unit.healthMultiplier *= 1/(1-Oct.DR);
     }
