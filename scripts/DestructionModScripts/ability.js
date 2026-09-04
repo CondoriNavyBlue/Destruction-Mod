@@ -107,7 +107,7 @@ const Rage = (Multiplier)=>{
             unit.damageMultiplier *= 1+(Multiplier-1)*(1-Rate);
             unit.armor = unit.type.armor + (Multiplier-1)*unit.type.armor*(1-Rate);
             unit.healthMultiplier *= 1+(Multiplier-1)*(1-Rate);
-            unit.reloadMultiplier *= 1+0.5*(1-Rate);
+            unit.reloadMultiplier *= 1+(1-Rate);
         },
         localized(){
             return "Rage";
