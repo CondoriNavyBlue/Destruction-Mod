@@ -2083,12 +2083,12 @@ Corvus.weapons.add(
         reload: 300,
         recoil: 0,
         cooldownTime: 280,
-        shootStatusDuration: 180,
+        shootStatusDuration: 160,
         shootStatus: StatusEffects.unmoving,
         parentizeEffects: true,
         heatColor: Color.red,
         shoot: extend(ShootPattern, {
-            firstShotDelay: 80
+            firstShotDelay: 60
         }),
         range(){
             return this.bullet.length;
@@ -2178,7 +2178,7 @@ Corvus.weapons.add(
                     Drawf.tri(e.x, e.y, 20*e.fout(), 80, i*90);
                 }
             }, {followParent: true, rotWithParent: true}),
-            chargeEffect: extend(Effect, 80, 100, e => {
+            chargeEffect: extend(Effect, 60, 100, e => {
                 Draw.color(Color.valueOf("ed655a"));
                 Lines.stroke(e.fin() * 4);
                 Lines.circle(e.x, e.y, 4 + e.fout() * 100);
@@ -4366,7 +4366,7 @@ Omura.weapons.add(
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Omura_Cannon", {
-        reload: 40,
+        reload: 45,
         cooldownTime: 90,
         mirror: false,
         x: 0,
@@ -5289,7 +5289,7 @@ NavanaxLaserPos.forEach(pos => {
 });
 Navanax.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Plasma_Missile_Mount", {
-        reload: 80,
+        reload: 90,
         x: 0,
         y: 12,
         shadow: 5,
@@ -5465,7 +5465,7 @@ Navanax.weapons.add(
         rotate: true,
         x: 17.5,
         y: -6.5,
-        reload: 40,
+        reload: 50,
         shake: 3,
         rotateSpeed: 2.2,
         shadow: 30,
