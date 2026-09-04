@@ -592,7 +592,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
         const X = unit.x;
         const Y = unit.y;
         const T = unit.team;
-        for(let i = 0; i<10; i++){
+        for(let i = 0; i<8; i++){
             const DeathBullet = unit.type.weapons.get(2).bullet.copy();
             DeathBullet.speed = Math.random()*6;
             DeathBullet.drag = 0.025;
@@ -1291,28 +1291,33 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
         const X = unit.x;
         const Y = unit.y;
         const T = unit.team;
-        for(let i = 0; i<4; ++i){
-            DeathBullet.create(unit, T, X, Y, direction+360/4*i);
+        for(let i = 0; i<2; ++i){
+            DeathBullet.create(unit, T, X, Y, direction+360/2*i);
         }
         Time.run(20,()=>{
-            for(let i = 0; i<4; ++i){
-                DeathBullet.create(unit, T, X, Y, direction+360/4*i+360/4/3);
+            for(let i = 0; i<2; ++i){
+                DeathBullet.create(unit, T, X, Y, direction+360/2*i+360/2/4);
             }
         });
         Time.run(40,()=>{
-            for(let i = 0; i<4; ++i){
-                DeathBullet.create(unit, T, X, Y, direction+360/4*i+360/4/3*2);
+            for(let i = 0; i<2; ++i){
+                DeathBullet.create(unit, T, X, Y, direction+360/2*i+360/2/4*2);
+            }
+        });
+        Time.run(60,()=>{
+            for(let i = 0; i<2; ++i){
+                DeathBullet.create(unit, T, X, Y, direction+360/2*i+360/2/4*3);
             }
         });
         const DeathBullet2 = unit.type.weapons.get(0).bullet;
         const DeathBullet3 = unit.type.weapons.get(2).bullet;
-        for(let i = 0; i<(180/3); ++i){
+        for(let i = 0; i<(180/6); ++i){
             const a = i;
-            Time.run(i*3, ()=>{
-                DeathBullet2.create(unit, T, X, Y, direction + a*360*3/180);
-                DeathBullet2.create(unit, T, X, Y, direction + 180 + a*360*3/180);
-                DeathBullet3.create(unit, T, X, Y, direction + 90 + a*360*3/180);
-                DeathBullet3.create(unit, T, X, Y, direction + 270 + a*360*3/180);
+            Time.run(i*6, ()=>{
+                DeathBullet2.create(unit, T, X, Y, direction + a*360*6/180);
+                DeathBullet2.create(unit, T, X, Y, direction + 180 + a*360*6/180);
+                DeathBullet3.create(unit, T, X, Y, direction + 90 + a*360*6/180);
+                DeathBullet3.create(unit, T, X, Y, direction + 270 + a*360*6/180);
             });
         }
     }
@@ -2793,14 +2798,18 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
         const Y = unit.y;
         const T = unit.team;
         for(let i = 0; i<3; ++i){
-            const DeathBullet = unit.type.weapons.get(3).bullet.fragBullet.copy();
-            DeathBullet.damage = unit.type.weapons.get(3).bullet.damage;
-            DeathBullet.splashDamage = unit.type.weapons.get(3).bullet.splashDamage;
-            DeathBullet.drag = -0.085+0.015*i;
-            DeathBullet.lifetime = 60+20*i
-            for(let j = 0; j<12; ++j){
-                DeathBullet.create(unit, T, X, Y, direction + 360/12*j + 360/12/2*i);
-            }
+            const a = i;
+            Time.run(5+10*a, ()=>{
+                const DeathBullet = unit.type.weapons.get(3).bullet.fragBullet.copy();
+                DeathBullet.damage = unit.type.weapons.get(3).bullet.damage;
+                DeathBullet.splashDamage = unit.type.weapons.get(3).bullet.splashDamage;
+                DeathBullet.splashDamageRadius = unit.type.weapons.get(3).bullet.splashDamageRadius;
+                DeathBullet.drag = -0.065-0.03*a;
+                DeathBullet.lifetime = 60-4*a;
+                for(let j = 0; j<12; ++j){
+                    DeathBullet.create(unit, T, X, Y, direction + 360/12*j + 360/12/2*a);
+                }
+            });
         }
         const DeathBullet2 = unit.type.weapons.get(0).bullet;
         for(let i = 0; i < 66; ++i){
@@ -3618,6 +3627,24 @@ const Oct = extend(UnitType, "Athena_Oct", {
     DR: 0.8,
     update(unit){
         unit.healthMultiplier *= 1/(1-Oct.DR);
+    },
+    killed(unit){
+        const DeathBullets = [
+            Vars.content.getByName(ContentType.unit, "destructionmod-Destructor_Quad").weapons.get(0).bullet.copy(),
+            Vars.content.getByName(ContentType.unit, "destructionmod-Destructor_Quad").weapons.get(1).bullet.copy(),
+            Vars.content.getByName(ContentType.unit, "destructionmod-Destructor_Quad").weapons.get(2).bullet.copy()
+        ];
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        for(let i = 0; i < 60; ++i){
+            DeathBullets.forEach(b => {
+                b.speed = 1+Math.random()*9;
+                b.drag = 0.033;
+                b.lifetime = 150-30+Math.random()*90;
+            });
+            DeathBullets[Math.floor(Math.random()*3)].create(unit, T, X, Y, Math.random()*360);
+        }
     }
 });
 Oct.constructor = () => extend(PayloadUnit, {});
@@ -4108,6 +4135,32 @@ const Omura = extend(UnitType, "Destructor_Omura", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Omura.DR);
+    },
+    killed(unit){
+        const direction = Math.random()*360;
+        const X = unit.x;
+        const Y = unit.y;
+        const T = unit.team;
+        const DeathBullet = unit.type.weapons.get(6).bullet.copy();
+        DeathBullet.length = 300;
+        DeathBullet.damage = 2700;
+        DeathBullet.splashDamage = 1350*2/3;
+        DeathBullet.splashDamageRadius = 32;
+        DeathBullet.pointEffect.lifetime = 90;
+        for(let i = 0; i<32; ++i){
+            DeathBullet.create(unit, T, X, Y, direction + 360/32*i);
+        }
+        const direction2 = Math.random()*360;
+        const DeathBullet2 = unit.type.weapons.get(4).bullet.copy();
+        DeathBullet2.fragBullet = unit.type.weapons.get(0).bullet.copy();
+        DeathBullet2.fragBullets = 8;
+        DeathBullet2.lifetime = 40;
+        for(let j = 0; j<3; ++j){
+            DeathBullet2.speed = 3+3*j;
+            for(let i = 0; i<16; ++i){
+                DeathBullet2.create(unit, T, X, Y, direction2 + 360/16*i + 360/16/2*j);
+            }
+        }
     }
 });
 Omura.constructor = () => extend(UnitWaterMove, {});
@@ -5047,6 +5100,47 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
     DR: 0.5,
     update(unit){
         unit.healthMultiplier *= 1/(1-Navanax.DR);
+    },
+    killed(unit){
+        const DeathBullet = unit.type.weapons.get(5).bullet.copy();
+        DeathBullet.damage = 1000;
+        DeathBullet.radius = 320;
+        DeathBullet.splashDamage = 10000;
+        DeathBullet.splashDamageRadius = 320;
+        DeathBullet.speed = 0.001;
+        DeathBullet.lifetime = 1;
+        DeathBullet.width = 36;
+        DeathBullet.height = 36;
+        DeathBullet.hitSize = 36/Math.sqrt(2);
+        DeathBullet.hitEffect = extend(Effect, 120, 100, e => {
+            e.scaled(7, b => {
+                Draw.color(Color.valueOf("ed655a"), b.fout());
+                Fill.circle(e.x, e.y, 320);
+            });
+            Draw.color(Color.valueOf("ed655a"));
+            Lines.stroke(e.fout() * 3);
+            Lines.circle(e.x, e.y, 320);
+            let offset = Mathf.randomSeed(e.id, 360);
+            for(let i = 0; i < 10; i++){
+                let angle = i * 360 / 10 + offset;
+                Drawf.tri(e.x + Angles.trnsx(angle, 320), e.y + Angles.trnsy(angle, 320), 15, 100 * e.fout(), angle);
+            }
+            Fill.circle(e.x, e.y, 36 * e.fout());
+            Draw.color();
+            Fill.circle(e.x, e.y, 18 * e.fout());
+            Drawf.light(e.x, e.y, 320 * 1.6, Color.valueOf("ed655a"), e.fout());
+        }, {followParent: true, rotWithParent: true});
+        const T = unit.team;
+        const X = unit.x;
+        const Y = unit.y;
+        DeathBullet.create(unit, T, X, Y, 0);
+        const direction = Math.random()*360;
+        const DeathBullet2 = unit.type.weapons.get(4).bullet;
+        for(let i = 0; i<3; ++i){
+            for(let j = 0; j<3; ++j){
+                DeathBullet2.create(unit, T, X, Y, direction + 360/3*i);
+            }
+        }
     }
 });
 Navanax.constructor = () => extend(UnitWaterMove, {});
