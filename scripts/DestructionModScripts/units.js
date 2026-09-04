@@ -4144,6 +4144,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
         const DeathBullet = unit.type.weapons.get(6).bullet.copy();
         DeathBullet.length = 300;
         DeathBullet.damage = 2700;
+        DeathBullet.pierceDamageFactor = 0.1;
         DeathBullet.splashDamage = 1350*2/3;
         DeathBullet.splashDamageRadius = 32;
         DeathBullet.pointEffect.lifetime = 90;
