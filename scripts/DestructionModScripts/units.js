@@ -5512,7 +5512,7 @@ Navanax.weapons.add(
             trailRotation: true,
             scaleLife: true,
             unitDamageScl: 2,
-            timeIncrease: 3,
+            timeIncrease: 4,
             timeDuration: 1200,
             powerDamageScl: 3,
             powerSclDecrease: 0.2,
