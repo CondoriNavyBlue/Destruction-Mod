@@ -1450,7 +1450,7 @@ Eclipse.weapons.add(
         x: 18,
         y: 5,
         rotateSpeed: 1.8,
-        reload: 55,
+        reload: 60,
         recoil: 4,
         chargeSound: Sounds.chargeVela,
         shootSound: Sounds.beamPlasma,
