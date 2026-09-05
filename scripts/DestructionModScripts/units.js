@@ -4147,7 +4147,12 @@ const Omura = extend(UnitType, "Destructor_Omura", {
         DeathBullet.pierceDamageFactor = 0.1;
         DeathBullet.splashDamage = 1350*2/3;
         DeathBullet.splashDamageRadius = 32;
-        DeathBullet.pointEffect.lifetime = 90;
+        DeathBullet.pointEffect = extend(Effect, 90, e => {
+            Draw.color(Color.valueOf("ed655a"));
+            Drawf.tri(e.x, e.y, 10 * e.fout(), 24, e.rotation + 180);
+            Drawf.tri(e.x, e.y, 10 * e.fout(), 24, e.rotation);
+            Drawf.light(e.x, e.y, 60 * e.fout(), Color.valueOf("ed655a"), 0.5);
+        }, {followParent: true, rotWithParent: true});
         for(let i = 0; i<32; ++i){
             DeathBullet.create(unit, T, X, Y, direction + 360/32*i);
         }
