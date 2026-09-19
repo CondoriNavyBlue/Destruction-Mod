@@ -32,13 +32,16 @@ const Gamma = extend(UnitType, "Destructor_Gamma", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Gamma.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Gamma.DR
+        );
     }
 });
 Gamma.constructor = () => extend(UnitEntity, {});
-Gamma.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Gamma.DR
-);
 Gamma.aiController = () => extend(BuilderAI, {});
 Gamma.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Gamma.weapons.add(
@@ -95,13 +98,16 @@ const Dagger = extend(UnitType, "Destructor_Dagger", {
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Dagger.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Dagger.DR
+        );
     }
 });
 Dagger.constructor = () => extend(MechUnit, {});
-Dagger.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Dagger.DR
-);
 Dagger.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Dagger.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Weapon",{
@@ -154,13 +160,16 @@ const Mace = extend(UnitType, "Destructor_Mace",{
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Mace.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Mace.DR
+        );
     }
 });
 Mace.constructor = () => extend(MechUnit, {});
-Mace.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Mace.DR
-);
 Mace.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mace.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Flamethrower", {
@@ -224,13 +233,16 @@ const Fortress = extend(UnitType, "Destructor_Fortress",{
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Fortress.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Fortress.DR
+        );
     }
 });
 Fortress.constructor = () => extend(MechUnit, {});
-Fortress.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Fortress.DR
-);
 Fortress.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Fortress.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Artillery", {
@@ -388,13 +400,16 @@ const Scepter = extend(UnitType, "Destructor_Scepter", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Scepter.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Scepter.DR
+        );
     }
 });
 Scepter.constructor = () => extend(MechUnit, {});
-Scepter.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Scepter.DR
-);
 Scepter.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Scepter.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Scepter_Weapon",{
@@ -602,13 +617,16 @@ const Reign = extend(UnitType, "Destructor_Reign", {
             DeathBullet.fragBullet.lifetime = 24*0.75;
             DeathBullet.create(unit, T, X, Y, Math.random()*360);
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Reign.DR
+        );
     }
 });
 Reign.constructor = () => extend(MechUnit, {});
-Reign.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Reign.DR
-);
 Reign.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Reign.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Reign_Weapon",{
@@ -780,13 +798,16 @@ const Flare = extend(UnitType, "Destructor_Flare", {
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Flare.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Flare.DR
+        );
     }
 });
 Flare.constructor = () => extend(UnitEntity, {});
-Flare.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Flare.DR
-);
 Flare.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Flare.weapons.add(
     extend(Weapon,{
@@ -859,13 +880,16 @@ const Horizon = extend(UnitType, "Destructor_Horizon", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Horizon.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Horizon.DR
+        );
     }
 });
 Horizon.constructor = () => extend(UnitEntity, {});
-Horizon.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Horizon.DR
-);
 Horizon.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Horizon.weapons.add(
     extend(Weapon, {
@@ -935,13 +959,16 @@ const Zenith = extend(UnitType, "Destructor_Zenith", {
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Zenith.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Zenith.DR
+        );
     }
 });
 Zenith.constructor = () => extend(UnitEntity, {});
-Zenith.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Zenith.DR
-);
 Zenith.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Zenith.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Zenith_Missile",{
@@ -1168,13 +1195,16 @@ const Antumbra = extend(UnitType, "Destructor_Antumbra", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Antumbra.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Antumbra.DR
+        );
     }
 });
 Antumbra.constructor = () => extend(UnitEntity, {});
-Antumbra.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Antumbra.DR
-);
 Antumbra.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Antumbra.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Super_Missile_Mount",{
@@ -1320,13 +1350,16 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
                 DeathBullet3.create(unit, T, X, Y, direction + 270 + a*360*6/180);
             });
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Eclipse.DR
+        );
     }
 });
 Eclipse.constructor = ()=> extend(UnitEntity,{});
-Eclipse.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Eclipse.DR
-);
 Eclipse.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Eclipse.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Artillery",{
@@ -1614,13 +1647,16 @@ const Nova = extend(UnitType, "Destructor_Nova",{
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Nova.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Nova.DR
+        );
     }
 });
 Nova.constructor = () => extend(MechUnit, {});
-Nova.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Nova.DR
-);
 Nova.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Nova.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon",{
@@ -1675,13 +1711,16 @@ const Pulsar = extend(UnitType, "Destructor_Pulsar", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Pulsar.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Pulsar.DR
+        );
     }
 });
 Pulsar.constructor = () => extend(MechUnit, {});
-Pulsar.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Pulsar.DR
-);
 Pulsar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Pulsar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Shotgun_Weapon",{
@@ -1763,13 +1802,16 @@ const Quasar = extend(UnitType, "Destructor_Quasar",{
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Quasar.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Quasar.DR
+        );
     }
 });
 Quasar.constructor = () => extend(MechUnit, {});
-Quasar.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Quasar.DR
-);
 Quasar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Quasar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Beam_Weapon",{
@@ -1850,13 +1892,16 @@ const Vela = extend(UnitType, "Destructor_Vela", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Vela.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Vela.DR
+        );
     }
 });
 Vela.constructor = () => extend(MechUnit, {});
-Vela.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Vela.DR
-);
 Vela.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Vela.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Vela_Weapon",{
@@ -2061,13 +2106,16 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
                 DeathBullet.create(unit, T, SX, SY, dir);
             }
         });
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Corvus.DR
+        );
     }
 });
 Corvus.constructor = () => extend(LegsUnit, {});
-Corvus.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Corvus.DR
-);
 Corvus.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Corvus.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Corvus_Weapon",{
@@ -2306,14 +2354,17 @@ const Crawler = extend(UnitType, "Destructor_Crawler", {
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Crawler.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Crawler.DR
+        );
     }
 });
 Crawler.constructor = () => extend(MechUnit, {});
 Crawler.aiController = () => extend(SuicideAI, {});
-Crawler.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Crawler.DR
-);
 Crawler.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Crawler.weapons.add(
     extend(Weapon,{
@@ -2378,13 +2429,16 @@ const Atrax = extend(UnitType, "Destructor_Atrax", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Atrax.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Atrax.DR
+        );
     }
 });
 Atrax.constructor = () => extend(LegsUnit, {});
-Atrax.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Atrax.DR
-);
 Atrax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Atrax.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Atrax_Weapon", {
@@ -2448,13 +2502,16 @@ const Spiroct = extend(UnitType, "Destructor_Spiroct",{
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Spiroct.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Spiroct.DR
+        );
     }
 });
 Spiroct.constructor = () => extend(LegsUnit, {});
-Spiroct.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Spiroct.DR
-);
 Spiroct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Spiroct.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Spiroct_Weapon", {
@@ -2640,13 +2697,16 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Arkyid.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Arkyid.DR
+        );
     }
 });
 Arkyid.constructor = () => extend(LegsUnit, {});
-Arkyid.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Arkyid.DR
-);
 Arkyid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 let ArkyidSap = extend(SapBulletType,{
     sapStrength: 0.85,
@@ -2815,13 +2875,16 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
         for(let i = 0; i < 66; ++i){
             DeathBullet2.create(unit, T, X, Y, direction + 360/66*i);
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Toxopid.DR
+        );
     }
 });
 Toxopid.constructor = () => extend(LegsUnit, {});
-Toxopid.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Toxopid.DR
-);
 Toxopid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Toxopid.weapons.add(
     extend(Weapon,{
@@ -3158,14 +3221,17 @@ const Mono = extend(UnitType, "Miner_Mono", {
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Mono.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Mono.DR
+        );
     }
 });
 Mono.constructor = () => extend(UnitEntity, {});
 Mono.aiController = () => extend(MinerAI, {});
-Mono.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Mono.DR
-);
 Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mono.abilities.add(
     abilities.regen(62.5),
@@ -3199,13 +3265,16 @@ const Poly = extend(UnitType, "Builder_Poly", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Poly.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Poly.DR
+        );
     }
 });
 Poly.constructor = () => extend(UnitEntity, {});
-Poly.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Poly.DR
-);
 Poly.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Poly.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Poly_Weapon",{
@@ -3287,13 +3356,16 @@ const Mega = extend(UnitType, "Destructor_Mega",{
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Mega.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Mega.DR
+        );
     }
 });
 Mega.constructor = () => extend(PayloadUnit, {});
-Mega.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Mega.DR
-);
 Mega.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mega.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
@@ -3400,13 +3472,16 @@ const Quad = extend(UnitType, "Destructor_Quad", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Quad.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Quad.DR
+        );
     }
 })
 Quad.constructor = () => extend(PayloadUnit, {});
-Quad.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Quad.DR
-);
 Quad.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Quad.weapons.add(
     extend(Weapon,{
@@ -3645,13 +3720,16 @@ const Oct = extend(UnitType, "Athena_Oct", {
             });
             DeathBullets[Math.floor(Math.random()*3)].create(unit, T, X, Y, Math.random()*360);
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Oct.DR
+        );
     }
 });
 Oct.constructor = () => extend(PayloadUnit, {});
-Oct.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Oct.DR
-);
 Oct.aiController = () => extend(DefenderAI, {});
 Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oct.abilities.add(
@@ -3684,13 +3762,16 @@ const Risso = extend(UnitType, "Destructor_Risso",{
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Risso.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Risso.DR
+        );
     }
 });
 Risso.constructor = () => extend(UnitWaterMove, {});
-Risso.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Risso.DR
-);
 Risso.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Risso.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
@@ -3781,13 +3862,16 @@ const Minke = extend(UnitType, "Destructor_Minke", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Minke.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Minke.DR
+        );
     }
 });
 Minke.constructor = () => extend(UnitWaterMove, {});
-Minke.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Minke.DR
-);
 Minke.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Minke.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
@@ -3881,13 +3965,16 @@ const Bryde = extend(UnitType, "Destructor_Bryde", {
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Bryde.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Bryde.DR
+        );
     }
 });
 Bryde.constructor = () => extend(UnitWaterMove, {});
-Bryde.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Bryde.DR
-);
 Bryde.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Bryde.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Missile_Mount", {
@@ -4009,13 +4096,16 @@ const Sei = extend(UnitType, "Destructor_Sei",{
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Sei.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Sei.DR
+        );
     }
 });
 Sei.constructor = () => extend(UnitWaterMove, {});
-Sei.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Sei.DR
-);
 Sei.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Sei.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Bullet_Mount",{
@@ -4167,13 +4257,16 @@ const Omura = extend(UnitType, "Destructor_Omura", {
                 DeathBullet2.create(unit, T, X, Y, direction2 + 360/16*i + 360/16/2*j);
             }
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Omura.DR
+        );
     }
 });
 Omura.constructor = () => extend(UnitWaterMove, {});
-Omura.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Omura.DR
-);
 Omura.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Omura.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
@@ -4475,13 +4568,16 @@ const Retusa = extend(UnitType, "Destructor_Retusa", {
     DR: 0.1,
     update(unit){
         unit.healthMultiplier *= 1/(1-Retusa.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Retusa.DR
+        );
     }
 });
 Retusa.constructor = () => extend(UnitWaterMove, {});
-Retusa.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Retusa.DR
-);
 Retusa.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Retusa.weapons.add(
     extend(Weapon, "destructionmod-Repair_Beam_Weapon_Center", {
@@ -4642,13 +4738,16 @@ const Oxynoe = extend(UnitType, "Destructor_Oxynoe", {
     DR: 0.2,
     update(unit){
         unit.healthMultiplier *= 1/(1-Oxynoe.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Oxynoe.DR
+        );
     }
 });
 Oxynoe.constructor = () => extend(UnitWaterMove, {});
-Oxynoe.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Oxynoe.DR
-);
 Oxynoe.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oxynoe.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Plasma_Mount_Weapon", {
@@ -4745,13 +4844,16 @@ const Cyerce = extend(UnitType, "Destructor_Cyerce",{
     DR: 0.3,
     update(unit){
         unit.healthMultiplier *= 1/(1-Cyerce.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Cyerce.DR
+        );
     }
 });
 Cyerce.constructor = () => extend(UnitWaterMove, {});
-Cyerce.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Cyerce.DR
-);
 Cyerce.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Cyerce.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Repair_Beam_Weapon_Center", {
@@ -5001,13 +5103,16 @@ const Aegires = extend(UnitType, "Destructor_Aegires", {
     DR: 0.4,
     update(unit){
         unit.healthMultiplier *= 1/(1-Aegires.DR);
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Aegires.DR
+        );
     }
 });
 Aegires.constructor = () => extend(UnitWaterMove, {});
-Aegires.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Aegires.DR
-);
 Aegires.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Aegires.weapons.add(
     extend(PointDefenseWeapon, "destructionmod-Destructor_Point_Defense_Mount",{
@@ -5147,13 +5252,16 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
                 DeathBullet2.create(unit, T, X, Y, direction + 360/3*i);
             }
         }
+    },
+    setStats(){
+        this.super$setStats();
+        this.stats.addPercent(
+            extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
+            Navanax.DR
+        );
     }
 });
 Navanax.constructor = () => extend(UnitWaterMove, {});
-Navanax.stats.addPercent(
-    extend(Stat, "Damage Reduction",{localized(){return "Damage Reduction";}}),
-    Navanax.DR
-);
 Navanax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 let NavanaxLaserPos = [
     {x: 21, y: -29.25}, {x: -21, y: -29.25},
