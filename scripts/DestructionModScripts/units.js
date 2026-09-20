@@ -3735,7 +3735,7 @@ Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffe
 Oct.abilities.add(
     ForceFieldAbility(200,1000/60,25000,600,10,0),
     abilities.regen(1000),
-    abilities.rage(5)
+    abilities.rage(4)
 );
 
 //Destructor Risso

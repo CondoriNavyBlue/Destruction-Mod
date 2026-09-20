@@ -111,6 +111,19 @@ const Rage = (Multiplier)=>{
         },
         localized(){
             return "Rage";
+        },
+        addStats(t){
+            t.add("[gray]The lower a unit's Health, the higher its Attack, Armor, Damage Reduction, and Reload Speed.[white]").wrap().width(this.descriptionWidth);
+            t.row();
+            t.add("Max DamageMultiplier: [accent]x" + Multiplier);
+            t.row();
+            t.add("Max ArmorMultiplier: [accent]x" + Multiplier);
+            t.row();
+            t.add("Max HealthMultiplier: [accent]x" + Multiplier);
+            t.row();
+            t.add("Max ReloadMultiplier: [accent]x" + "2");
+            t.row()
+            t.add("[red]~Turn Rage into Power~");
         }
     });
 }
