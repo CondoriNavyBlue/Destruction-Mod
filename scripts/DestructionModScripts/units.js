@@ -5743,7 +5743,16 @@ const ReignSpawnEffect = extend(Effect,180, e =>{
         let y = px * Mathf.sinDeg(rotation) + py * Mathf.cosDeg(rotation);
         Fill.circle(e.x + x, e.y + y, 4);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const EclipseSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5769,7 +5778,16 @@ const EclipseSpawnEffect = extend(Effect,180, e =>{
         let angle = i * 360 / 8 + e.fout()*180;
         Lines.lineAngle(e.x + Angles.trnsx(angle, radius/R*8*10), e.y + Angles.trnsy(angle, radius/R*8*10), angle, radius/R*8*5);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const CorvusSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5800,7 +5818,16 @@ const CorvusSpawnEffect = extend(Effect,180, e =>{
         Deg2 = 360/5*(i+2) + offset;
         Lines.line(e.x + Mathf.cosDeg(Deg1)*radius, e.y + Mathf.sinDeg(Deg1)*radius, e.x + Mathf.cosDeg(Deg2)*radius, e.y + Mathf.sinDeg(Deg2)*radius);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const ToxopidSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5831,7 +5858,16 @@ const ToxopidSpawnEffect = extend(Effect,180, e =>{
         Lines.lineAngle(e.x, e.y, angle, C);
         Lines.circle(e.x + Angles.trnsx(angle, C+12), e.y + Angles.trnsy(angle, C+12), 12);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const OctSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5865,7 +5901,16 @@ const OctSpawnEffect = extend(Effect,180, e =>{
         let y = e.y + Angles.trnsy(a, shieldRadius);
         Fill.circle(x, y, 3);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const OmuraSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5900,7 +5945,16 @@ const OmuraSpawnEffect = extend(Effect,180, e =>{
         Y = e.y + Angles.trnsy(angle+90-15, radius);
         Lines.line(X, Y, X, Y - length*radius/R);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 const NavanaxSpawnEffect = extend(Effect,180, e =>{
     let R = 8*25;
@@ -5934,7 +5988,16 @@ const NavanaxSpawnEffect = extend(Effect,180, e =>{
         let y2 = e.y + Angles.trnsy(next, dashRadius);
         Lines.arc(e.x, e.y, dashRadius, 1/6, angle);
     }
-},{followParent: true});
+},{
+    followParent: true,
+    create(x, y, rotation, color, data){
+        if(!this.initialized){
+            this.initialized = true;
+            this.init();
+        }
+        this.add(x, y, rotation, color, data);
+    }
+});
 
 Events.on(UnitUnloadEvent, event => {
     let unit = event.unit;
