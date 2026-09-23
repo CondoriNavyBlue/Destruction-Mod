@@ -3081,7 +3081,7 @@ const OverdriveDiamond = extend(OverdriveProjector, "Overdrive_Diamond", {
     buildVisibility: BuildVisibility.shown,
     useTime: 300,
     itemCapacity: 100,
-    speedBoost: 2.5,
+    speedBoost: 2,
     range: 800*Math.sqrt(2)*8,
     size: 3,
     ambientSoundVolume: 0.3,
