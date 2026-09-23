@@ -113,7 +113,7 @@ const Rage = (Multiplier)=>{
             return "Rage";
         },
         addStats(t){
-            t.add("[gray]The lower a unit's Health, the higher its Attack, Armor, Damage Reduction, and Reload Speed.[white]").wrap().width(this.descriptionWidth);
+            t.add("[gray]The lower a unit's Health, the higher its Attack, Armor, Damage Reduction, and Reload Speed.").wrap().width(this.descriptionWidth);
             t.row();
             t.add("Max DamageMultiplier: [accent]x" + Multiplier);
             t.row();

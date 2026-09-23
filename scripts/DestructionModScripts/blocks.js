@@ -45,7 +45,7 @@ const DiamondOre = extend(OreBlock, "ore-Diamond", {
 //Sodium Wall
 const SodiumWall = extend(Wall, "Sodium_Wall", {
     localizedName: "Sodium Wall",
-    health: 450,
+    health: 600,
     size: 1,
     category: Category.defense,
     requirements: ItemStack.with(items.sodium,4),
@@ -55,7 +55,7 @@ const SodiumWall = extend(Wall, "Sodium_Wall", {
 //Large Sodium Wall
 const SodiumWallLarge = extend(Wall, "Sodium_Wall_Large", {
     localizedName: "Large Sodium Wall",
-    health: 1800,
+    health: 2400,
     size: 2,
     category: Category.defense,
     requirements: ItemStack.with(items.sodium,16),
@@ -65,7 +65,7 @@ const SodiumWallLarge = extend(Wall, "Sodium_Wall_Large", {
 //Iron Wall
 const IronWall = extend(Wall, "Iron_Wall", {
     localizedName: "Iron Wall",
-    health: 1000,
+    health: 1500,
     size: 1,
     armor: 10,
     absorbLasers: true,
@@ -79,7 +79,7 @@ const IronWall = extend(Wall, "Iron_Wall", {
 //Large Iron Wall
 const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
     localizedName: "Large Iron Wall",
-    health: 4000,
+    health: 6000,
     absorbLasers: true,
     chanceDeflect: 5,
     size: 2,
@@ -93,7 +93,7 @@ const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
 //Gold Wall
 const GoldWall = extend(Wall, "Gold_Wall", {
     localizedName: "Gold Wall",
-    health: 2000,
+    health: 3000,
     size: 1,
     absorbLasers: true,
     chanceDeflect: 2.5,
@@ -107,7 +107,7 @@ const GoldWall = extend(Wall, "Gold_Wall", {
 //Large Gold Wall
 const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
     localizedName: "Large Gold Wall",
-    health: 8000,
+    health: 12000,
     absorbLasers: true,
     chanceDeflect: 3,
     armor: 20,
@@ -121,7 +121,7 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
 //Diamond Wall
 const DiamondWall = extend(Wall, "Diamond_Wall", {
     localizedName: "Diamond Wall",
-    health: 3500,
+    health: 5000,
     size: 1,
     armor: 40,
     chanceDeflect: 15,
@@ -134,7 +134,7 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
 //Large Diamond Wall
 const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     localizedName: "Large Diamond Wall",
-    health: 14000,
+    health: 20000,
     chanceDeflect: 3,
     size: 2,
     armor: 40,
@@ -147,7 +147,7 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
 //Destruction Wall
 const DestructionWall = extend(Wall, "Destruction_Wall", {
     localizedName: "Destruction Wall",
-    health: 7000,
+    health: 7500,
     size: 1,
     absorbLasers: true,
     chanceDeflect: 40,
@@ -168,7 +168,7 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
 //Large Destruction Wall
 const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     localizedName: "Large Destruction Wall",
-    health: 28000,
+    health: 30000,
     size: 2,
     absorbLasers: true,
     chanceDeflect: 50,
@@ -192,7 +192,7 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
 const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
     localizedName: "Core: Destruction",
     unitType: units.Gamma,
-    health: 28000,
+    health: 50000,
     itemCapacity: 30000,
     size: 6,
     thrusterLength: 48/4,
@@ -209,8 +209,8 @@ const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
 //Destruction Container
 const DestructionContainer = extend(StorageBlock, "Destruction_Container", {
     localizedName: "Destruction Container",
-    health: 2500,
-    itemCapacity: 900,
+    health: 3000,
+    itemCapacity: 1200,
     size: 2,
     requirements: ItemStack.with(items.iron,200),
     category: Category.effect,
@@ -221,8 +221,8 @@ const DestructionContainer = extend(StorageBlock, "Destruction_Container", {
 //Destruction Vault
 const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
     localizedName: "Destruction Vault",
-    health: 4550,
-    itemCapacity: 2500,
+    health: 6000,
+    itemCapacity: 3600,
     size: 3,
     requirements: ItemStack.with(items.iron,250 , items.gold,500),
     category: Category.effect,
@@ -236,7 +236,7 @@ const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
 //Destruction Conveyor
 const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
     localizedName: "Destruction Conveyor",
-    health: 800,
+    health: 1000,
     speed: 0.2015,
     displayedSpeed: 24,
     category: Category.distribution,
@@ -248,7 +248,7 @@ const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
 //Destruction Armored Conveyor
 const DestructionArmoredConveyor = extend(ArmoredConveyor, "Destruction_Armored_Conveyor", {
     localizedName: "Destruction Armored Conveyor",
-    health: 1000,
+    health: 1200,
     speed: 0.2015,
     displayedSpeed: 24,
     category: Category.distribution,
@@ -265,7 +265,7 @@ const DestructionJunction = extend(Junction, "Destruction_Junction", {
     buildVisibility: BuildVisibility.shown,
     speed: 24,
     capacity: 12,
-    health: 850,
+    health: 1000,
     displayedSpeed: 30,
     buildCostMultiplier: 0.7662835249042145303
 });
@@ -283,7 +283,7 @@ const DestructionBridge = extend(ItemBridge, "Destruction_Bridge", {
     itemCapacity: 20,
     transportTime: 2,
     hasPower: false,
-    health: 770,
+    health: 800,
     buildCostMultiplier: 0.879765395894427982
 });
 
@@ -299,7 +299,7 @@ const DestructionPhaseBridge = extend(ItemBridge, "Destruction_Phase_Bridge", {
     transportTime: 1,
     pulse: true,
     hasPower: true,
-    health: 900,
+    health: 990,
     buildCostMultiplier: 40/77
 });
 DestructionPhaseBridge.consumePower(0.6);
@@ -315,7 +315,7 @@ const IronDrill = extend(Drill, "Iron_Drill", {
     size: 2,
     rotateSpeed: -3,
     drillTIme: 320,
-    health: 800,
+    health: 1200,
     buildVisibility: BuildVisibility.shown,
     buildCostMultiplier: 0.9242144177449167
 });
@@ -328,7 +328,7 @@ const GoldDrill = extend(Drill, "Gold_Drill", {
     requirements: ItemStack.with(Items.copper,45 , Items.silicon,20 , Items.graphite,20 , items.gold,30),
     tier: 4,
     size: 3,
-    health: 1200,
+    health: 2100,
     rotateSpeed: -5,
     drillTime: 200,
     updateEffect: Fx.pulverizeMedium,
@@ -349,7 +349,7 @@ const DiamondDrill = extend(Drill, "Diamond_Drill", {
     tier: 5,
     size: 4,
     drawRim: true,
-    health: 2910,
+    health: 3300,
     drillTime: 180,
     updateEffect: Fx.pulverizeRed,
     drillEffect: Fx.mineHuge,
@@ -373,7 +373,7 @@ const DestructionDrill = extend(Drill, "Destruction_Drill", {
     tier: 10,
     size: 4,
     drawRim: true,
-    health: 6440,
+    health: 6660,
     drillTime: 90,
     updateEffect: Fx.pulverizeRed,
     drillEffect: Fx.mineHuge,
@@ -398,7 +398,7 @@ const DestructionNode = extend(PowerNode, "Destruction_Node", {
     laserRange: 12,
     underBullets: true,
     crushFragile: true,
-    health: 600,
+    health: 800,
     requirements: ItemStack.with(items.iron,25 , items.sodiumBattery,8),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -415,7 +415,7 @@ const DestructionLargeNode = extend(PowerNode, "Destruction_Large_Node", {
     size: 2,
     maxNodes: 40,
     laserRange: 32,
-    health: 720,
+    health: 1000,
     requirements: ItemStack.with(items.gold,25 , Items.silicon,10 , items.sodiumBattery,20),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -431,7 +431,7 @@ const DestructionDiamondNode = extend(PowerNode, "Destruction_Diamond_Node", {
     size: 2,
     maxNodes: 4,
     laserRange: 75,
-    health: 1000,
+    health: 1100,
     requirements: ItemStack.with(items.diamond,20 , Items.silicon,30 , items.sodiumBattery,50),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -451,7 +451,7 @@ const SodiumStorageBattery = extend(Battery, "Sodium_Storage_Battery", {
     baseExplosiveness: 2,
     researchCostMultiplier: 2/3,
     buildCostMultiplier: 1.0114632501685771,
-    health: 300
+    health: 900
 });
 SodiumStorageBattery.consumePowerBuffered(25000);
 
@@ -465,7 +465,7 @@ const SodiumStorageBatteryLarge = extend(Battery, "Sodium_Storage_Battery_Large"
     baseExplosiveness: 8,
     researchCostMultiplier: 2/3,
     buildCostMultiplier: 6/35*2,
-    health: 1000
+    health: 2400
 });
 SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 
@@ -474,7 +474,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     localizedName: "High Density Thorium Reactor",
     explosionRadius: 30,
     explosionDamage: 12000,
-    health: 6200,
+    health: 8000,
     itemCapacity: 20,
     ambientSound: Sounds.loopThoriumReactor,
     ambientSoundVolume: 0.2,
@@ -539,7 +539,7 @@ HDTReactor.consumeItem(items.hdThorium);
 const NaExtractor = extend(GenericCrafter, "Sodium_Extractor", {
     localizedName: "Sodium Extractor",
     size: 2,
-    health: 330,
+    health: 450,
     hasPower: true,
     hasLiquids: true,
     hasItems: true,
@@ -578,7 +578,7 @@ NaExtractor.buildType = () => extend(GenericCrafter.GenericCrafterBuild, NaExtra
 const SSM = extend(Separator, "Sand_Sieve_Machine", {
     localizedName: "Sand Sieve Machine",
     size: 3,
-    health: 560,
+    health: 600,
     hasPower: true,
     hasItems: true,
     hasLiquid: false,
@@ -617,7 +617,7 @@ const HPHT = extend(GenericCrafter, "HPHT", {
     description: "The [red]heat [lightgray]should be kept high.\nKeep the amount of slag above 80% of capacity.",
     localizedName: "HPHT Synthesizer",
     size: 5,
-    health: 2400,
+    health: 2800,
     hasPower: true,
     hasLiquids: true,
     hasItems: true,
@@ -721,7 +721,7 @@ const IronMelter = extend(GenericCrafter, "Iron_Melter", {
     buildVisibility: BuildVisibility.shown,
     outputLiquid: new LiquidStack(Liquids.slag,0.5),
     buildCostMultiplier: 3/7*1.5,
-    health: 600
+    health: 650
 });
 IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
@@ -759,7 +759,7 @@ function toJavaUnitArray(jsArray) {
 //Destruction Factory
 const Factory = extend(UnitFactory, "Destruction_Factory", {
     localizedName: "Destruction Factory",
-    health: 1500,
+    health: 2250,
     size: 3,
     requirements: ItemStack.with(Items.copper,30 , Items.silicon,100 , items.iron,60),
     category: Category.units,
@@ -780,7 +780,7 @@ Factory.consumePower(120/60);
 //Destruction Additive Reconstructor
 const ReconstructorTo2 = extend(Reconstructor, "Destruction_Additive_Reconstructor",{
     localizedName: "Destruction Additive Reconstructor",
-    health: 3000,
+    health: 4500,
     size: 3,
     requirements: ItemStack.with(Items.copper,250 , Items.silicon,120 , items.iron,100, items.sodiumBattery,50),
     category: Category.units,
@@ -803,7 +803,7 @@ ReconstructorTo2.consumeItems(ItemStack.with(Items.silicon,50 , items.sodiumBatt
 //Destruction Multiplicative Reconstructor
 const ReconstructorTo3 = extend(Reconstructor, "Destruction_Multiplicative_Reconstructor",{
     localizedName: "Destruction Multiplicative Reconstructor",
-    health: 6000,
+    health: 9000,
     size: 5,
     requirements: ItemStack.with(Items.silicon,660 , items.gold,300 , items.sodiumBattery,400),
     category: Category.units,
@@ -826,7 +826,7 @@ ReconstructorTo3.consumeItems(ItemStack.with(Items.silicon,160 , items.sodiumBat
 //Destruction Exponential Reconstructor
 const ReconstructorTo4 = extend(Reconstructor, "Destruction_Exponential_Reconstructor",{
     localizedName: "Destruction Exponential Reconstructor",
-    health: 12000,
+    health: 18000,
     size: 7,
     requirements: ItemStack.with(items.iron,1800 , items.gold,1000 , items.sodiumBattery,800 , Items.silicon,1200, Items.plastanium, 700, Items.phaseFabric,800 ),
     category: Category.units,
@@ -851,7 +851,7 @@ ReconstructorTo4.consumeLiquid(Liquids.slag, 1);
 //Destruction Tetrative Reconstructor
 const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstructor",{
     localizedName: "Destruction Tetrative Reconstructor",
-    health: 24000,
+    health: 36000,
     size: 9,
     requirements: ItemStack.with(items.iron,3000 , items.gold,2000 , items.sodiumBattery,2000 , Items.silicon,4000, Items.plastanium, 1000, Items.phaseFabric,800 , Items.surgeAlloy,1200 , items.diamond,500),
     category: Category.units,
@@ -906,7 +906,7 @@ const Duo = extend(ItemTurret, "Destructor_Duo", {
     range: 200,
     shootCone: 15,
     ammoUseEffect: Fx.casing1,
-    health: 1375,
+    health: 1990,
     inaccuracy: 2,
     rotateSpeed: 12,
     coolantMultiplier: 10,
@@ -930,7 +930,7 @@ Duo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -952,7 +952,7 @@ Duo.ammo(
         pierceCap: 3,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -976,7 +976,7 @@ Duo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -999,7 +999,7 @@ Duo.ammo(
         armorMultiplier: 0.75,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1022,7 +1022,7 @@ Duo.ammo(
         statusDuration: 60*5,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1056,7 +1056,7 @@ const Scatter = extend(ItemTurret, "Destructor_Scatter", {
     rotateSpeed: 17.5,
     inaccuracy: 15,
     shootCone: 35,
-    health: 2000,
+    health: 2430,
     shootSound: Sounds.shootScatter,
     depositCooldown: 0.5,
     researchCostMultiplier: 1/3
@@ -1079,7 +1079,7 @@ Scatter.ammo(
         despawnEffect: Fx.hitBulletColor,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1095,7 +1095,7 @@ Scatter.ammo(
         splashDamageRadius: 26,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1118,7 +1118,7 @@ Scatter.ammo(
         fragBullets: 8,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         },
@@ -1137,7 +1137,7 @@ Scatter.ammo(
             pireceCap: 2,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1161,7 +1161,7 @@ Scatter.ammo(
         statusDuration: 300,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1182,7 +1182,7 @@ const Scorch = extend(ItemTurret, "Destructor_Scorch", {
     shootCone: 50,
     targetAir: false,
     ammoUseEffect: Fx.none,
-    health: 1410,
+    health: 2110,
     shootSound: Sounds.shootFlame,
     depositCooldown: 1,
     researchCostMultiplier: 1/3
@@ -1209,7 +1209,7 @@ Scorch.ammo(
         hittable: false,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1234,7 +1234,7 @@ Scorch.ammo(
         hittable: false,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1260,7 +1260,7 @@ Scorch.ammo(
         hittable: false,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1279,7 +1279,7 @@ const Hail = extend(ItemTurret, "Destructor_Hail", {
     range: 290,
     inaccuracy: 1.25,
     shootCone: 10,
-    health: 1630,
+    health: 2550,
     shootSound: Sounds.shootArtillerySmall,
     coolantMultiplier: 10,
     depositCooldown: 2,
@@ -1305,7 +1305,7 @@ Hail.ammo(
         despawnEffect: Fx.hitBulletColor,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1331,7 +1331,7 @@ Hail.ammo(
         trailWidth: 3,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1355,7 +1355,7 @@ Hail.ammo(
         trailEffect: Fx.incendTrail,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1380,7 +1380,7 @@ Hail.ammo(
         lightningDamage: 20,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1401,7 +1401,7 @@ const Wave = extend(LiquidTurret, "Destructor_Wave", {
     liquidCapacity: 20,
     shootEffect: Fx.shootLiquid,
     range: 180,
-    health: 1880,
+    health: 2100,
     researchCostMultiplier: 1/2
 });
 Wave.ammo(
@@ -1414,7 +1414,7 @@ Wave.ammo(
         lifetime: 190/8,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1426,7 +1426,7 @@ Wave.ammo(
         lifetime: 190/8,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1438,7 +1438,7 @@ Wave.ammo(
         lifetime: 190/8,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1451,7 +1451,7 @@ Wave.ammo(
         lifetime: 190/8,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1475,7 +1475,7 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
     smokeEffect: Fx.none,
     heatColor: Color.red,
     size: 2,
-    health: 2222,
+    health: 3500,
     targetAir: false,
     moveWhileCharging: false,
     accurateDelay: true,
@@ -1512,7 +1512,7 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
         ammoMultiplier: 1,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1535,7 +1535,7 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
     heatColor: Color.red,
     recoil: 1,
     size: 1,
-    health: 1111,
+    health: 2400,
     shootSound: Sounds.shootArc,
     shoot: extend(ShootPattern, {
         shots: 2
@@ -1557,7 +1557,7 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
         }),
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1578,8 +1578,8 @@ const Parallax = extend(TractorBeamTurret, "Destructor_Parallax", {
     force: 32,
     scaledForce: 12,
     range: 348,
-    damage: 2.5,
-    health: 1990,
+    damage: 5,
+    health: 3600,
     rotateSpeed: 14,
     researchCostMultiplier: 1/3
 });
@@ -1600,7 +1600,7 @@ const Swarmer = extend(ItemTurret, "Destructor_Swarmer", {
     reload: 30,
     inaccuracy: 10,
     size: 2,
-    health: 2800,
+    health: 5000,
     shootSound: Sounds.shootMissile,
     depositCooldown: 2.0,
     range: 320,
@@ -1625,7 +1625,7 @@ Swarmer.ammo(
         frontColor: Pal.blastAmmoFront,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1646,7 +1646,7 @@ Swarmer.ammo(
         status: StatusEffects.burning,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1668,7 +1668,7 @@ Swarmer.ammo(
         frontColor: Pal.surgeAmmoFront,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1689,7 +1689,7 @@ Swarmer.ammo(
         armorMultiplier: 0.5,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         },
@@ -1704,7 +1704,7 @@ Swarmer.ammo(
             buildingDamageMultiplier: 0.1,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1746,7 +1746,7 @@ const Salvo = extend(ItemTurret, "Destructor_Salvo", {
         shotDelay: 1.5
     }),
     ammoUseEffect: Fx.casing2,
-    health: 3400,
+    health: 4700,
     shootSounde: Sounds.shootSalvo,
     depositCooldown: 2,
     researchCostMultiplier: 1/3
@@ -1768,7 +1768,7 @@ Salvo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1790,7 +1790,7 @@ Salvo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1812,7 +1812,7 @@ Salvo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1836,7 +1836,7 @@ Salvo.ammo(
         pierceCap: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1859,7 +1859,7 @@ Salvo.ammo(
         smokeEffect: Fx.shootBigSmoke,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1882,7 +1882,7 @@ Salvo.ammo(
         smokeEffect: Fx.shootBigSmoke,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -1907,7 +1907,7 @@ Salvo.ammo(
         fragLifeMin: 0.3,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         },
@@ -1921,7 +1921,7 @@ Salvo.ammo(
             buildingDamageMultiplier: 0.2,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1935,8 +1935,8 @@ const DSegment = extend(PointDefenseTurret, "Destructor_Segment",{
     hasPower: true,
     size: 2,
     range: 240,
-    bulletDamage: 64,
-    health: 3725,
+    bulletDamage: 80,
+    health: 5550,
     reload: 1,
     shootLength: 10,
     requirements: ItemStack.with(Items.silicon,300 , Items.thorium,160 , Items.phaseFabric,150, items.gold,120 , items.sodiumBattery,280),
@@ -1966,7 +1966,7 @@ const Tsunami = extend(LiquidTurret, "Destructor_Tsunami", {
     liquidCapacity: 60,
     shootEffect: Fx.shootLiquid,
     range: 280,
-    health: 6000,
+    health: 6500,
     researchCostMultiplier: 1/2
 });
 Tsunami.consumePower(4);
@@ -1984,7 +1984,7 @@ Tsunami.ammo(
         knockback: 1.7,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2001,7 +2001,7 @@ Tsunami.ammo(
         damage: 5,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2018,7 +2018,7 @@ Tsunami.ammo(
         damage: 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2036,7 +2036,7 @@ Tsunami.ammo(
         layer: Layer.bullet - 2,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2058,7 +2058,7 @@ const Fuse = extend(ItemTurret, "Destructor_Fuse", {
         spread: 10
     }),
     size: 3,
-    health: 8000,
+    health: 12220,
     shootSound: Sounds.shootFuse,
     shootSoundVolume: 0.9,
     depositCooldown: 1,
@@ -2073,7 +2073,7 @@ Fuse.ammo(
         reloadMultiplier: 1.3,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2088,7 +2088,7 @@ Fuse.ammo(
         reloadMultiplier: 1.1,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2114,7 +2114,7 @@ Fuse.ammo(
         },{}),
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2140,7 +2140,7 @@ Fuse.ammo(
         },{}),
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2169,7 +2169,7 @@ const Ripple = extend(ItemTurret, "Destructor_Ripple", {
     shake: 2,
     range: 400,
     minRange: 50,
-    health: 7250,
+    health: 12400,
     depositCooldown: 2,
     shootSound: Sounds.shootRipple,
     researchCostMultiplier: 1/4
@@ -2195,7 +2195,7 @@ Ripple.ammo(
         lifeScaleRandMin: 0.92,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2224,7 +2224,7 @@ Ripple.ammo(
         lifeScaleRandMin: 0.92,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2252,7 +2252,7 @@ Ripple.ammo(
         lifeScaleRandMin: 0.92,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2278,7 +2278,7 @@ Ripple.ammo(
         frontColor: Pal.blastAmmoFront,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2306,7 +2306,7 @@ Ripple.ammo(
             buildingDamageMultiplier: 0.5,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2318,7 +2318,7 @@ Ripple.ammo(
         lifeScaleRandMin: 0.92,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2346,7 +2346,7 @@ Ripple.ammo(
         lightningLengthRand: 6,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2372,7 +2372,7 @@ Ripple.ammo(
         fragBullets: 6,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         },
@@ -2388,7 +2388,7 @@ Ripple.ammo(
             collidesAir: false,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2438,7 +2438,7 @@ const Cyclone = extend(ItemTurret, "Destructor_Cyclone", {
     inaccuracy: 6,
     shootCone: 30,
     shootSound: Sounds.shootCyclone,
-    health: 9900,
+    health: 13579,
     depositCooldown: 2,
     researchCostMultiplier: 1/3,
 });
@@ -2460,7 +2460,7 @@ Cyclone.ammo(
         despawnEffect: Fx.hitBulletColor,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2490,7 +2490,7 @@ Cyclone.ammo(
         despawnEffect: Fx.hitBulletColor,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2513,7 +2513,7 @@ Cyclone.ammo(
         despawnEffect: Fx.hitBulletColor,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2535,7 +2535,7 @@ Cyclone.ammo(
             pierce: true,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2553,7 +2553,7 @@ Cyclone.ammo(
         pierceCap: 3,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2580,7 +2580,7 @@ const Foreshadow = extend(ItemTurret, "Destructor_Foreshadow", {
     unitSort: UnitSorts.strongest,
     coolantMultiplier: 0.4,
     liquidCapacity: 60,
-    health: 16600,
+    health: 22220,
     depositCooldown: 2,
     range: 600,
     researchCostMultiplier: 1/4,
@@ -2676,7 +2676,7 @@ Foreshadow.ammo(
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2777,7 +2777,7 @@ Foreshadow.ammo(
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2803,7 +2803,7 @@ const Spectre = extend(ItemTurret, "Destructor_Spectre", {
     size: 4,
     shootCone: 24,
     shootSound: Sounds.shootSpectre,
-    health: 13500,
+    health: 24000,
     depositCooldown: 2,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.2820512820512822
@@ -2828,7 +2828,7 @@ Spectre.ammo(
         frontColor: Pal.thoriumAmmoFront,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2855,7 +2855,7 @@ Spectre.ammo(
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2892,7 +2892,7 @@ Spectre.ammo(
             }),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2907,7 +2907,7 @@ Spectre.ammo(
         status: StatusEffects.shocked,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
@@ -2936,7 +2936,7 @@ Spectre.ammo(
         armorMultiplier: 0,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         },
@@ -2951,7 +2951,7 @@ Spectre.ammo(
             pierce: true,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2990,12 +2990,12 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
         colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
-            if(entity instanceof Unit){
+            if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
             }
         }
     }),
-    health: 14200,
+    health: 23150,
     liquidCapacity: 60,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.5572858731924362
@@ -3009,18 +3009,18 @@ Meltdown.consumePower(24);
 const ForceDestruction = extend(ForceProjector, "Force_Destruction", {
     localizedName: "Force Destruction",
     phaseUseTime: 600,
-    health: 6000,
+    health: 10000,
     size: 3,
-    phaseRadiusBoost: 90.50966799187809,
-    phaseShieldBoost: 1700,
-    radius: 181.01933598375617,
-    shieldHealth: 5000,
+    phaseRadiusBoost: 90.51,
+    phaseShieldBoost: 4500,
+    radius: 181.02,
+    shieldHealth: 9500,
     sides: 4,
     shieldRotation: 360/4/2,
-    cooldownNormal: 4,
-    cooldownLiquid: 1.2,
-    cooldownBrokenBase: 2.380952380952381,
-    requirements: ItemStack.with(Items.lead,475 , Items.titanium,600 , Items.silicon,550 , items.diamond,150 , items.sodiumBattery,620),
+    cooldownNormal: 500/60,
+    cooldownLiquid: 1.25,
+    cooldownBrokenBase: 6+1/3,
+    requirements: ItemStack.with(Items.lead,475 , Items.titanium,600 , Items.silicon,550 , items.diamond,150 , items.sodiumBattery,600),
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
     shieldBreakEffect: extend(Effect, 40, e => {
@@ -3051,7 +3051,7 @@ ForceDestruction.buildType = () => extend(ForceProjector.ForceBuild, ForceDestru
         }
     }
 });
-ForceDestruction.itemConsumer = ForceDestruction.consumeItem(Items.phaseFabric,5).boost();
+ForceDestruction.itemConsumer = ForceDestruction.consumeItem(Items.phaseFabric,2).boost();
 ForceDestruction.consumePower(6);
 
 //Mend Destruction
@@ -3061,12 +3061,12 @@ const MendDestruction = extend(MendProjector, "Mend_Destruction", {
     category: Category.effect,
     buildVisibility: BuildVisibility.shown,
     size: 3,
-    reload: 300,
-    range: 160,
-    healPercent: 15,
-    phaseBoost: 15,
-    health: 3330,
-    phaseRangeBoost: 80,
+    reload: 200,
+    range: 140,
+    healPercent: 20,
+    phaseBoost: 20,
+    health: 6800,
+    phaseRangeBoost: 100,
     useTime: 300,
     researchCostMultiplier: 1/4
 });
@@ -3081,12 +3081,12 @@ const OverdriveDiamond = extend(OverdriveProjector, "Overdrive_Diamond", {
     buildVisibility: BuildVisibility.shown,
     useTime: 300,
     itemCapacity: 100,
-    speedBoost: 2,
+    speedBoost: 2.5,
     range: 800*Math.sqrt(2)*8,
     size: 3,
     ambientSoundVolume: 0.3,
     speedBoostPhase: 1,
-    health: 30000,
+    health: 100000,
     baseColor: Color.valueOf("00ffff"),
     phaseColor: Color.valueOf("80c8ff"),
     researchCostMultiplier: 10/55,

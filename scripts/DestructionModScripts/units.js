@@ -70,7 +70,7 @@ Gamma.weapons.add(
             splashDamageRadius: 24,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -133,7 +133,7 @@ Dagger.weapons.add(
             statusDuration: 8*60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -200,7 +200,7 @@ Mace.weapons.add(
             hittable: false,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -271,7 +271,7 @@ Fortress.weapons.add(
             hitSize: 8,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -293,7 +293,7 @@ Fortress.weapons.add(
                 statusDuration: 300,
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 },
@@ -315,7 +315,7 @@ Fortress.weapons.add(
                     statusDuration: 300,
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     },
@@ -337,7 +337,7 @@ Fortress.weapons.add(
                         statusDuration: 300,
                         hitEntity(b, entity, health){
                             this.super$hitEntity(b, entity, health);
-                            if(entity instanceof Unit){
+                            if(entity instanceof Unit || entity instanceof Building){
                                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             }
                         },
@@ -359,7 +359,7 @@ Fortress.weapons.add(
                             statusDuration: 300,
                             hitEntity(b, entity, health){
                                 this.super$hitEntity(b, entity, health);
-                                if(entity instanceof Unit){
+                                if(entity instanceof Unit || entity instanceof Building){
                                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 }
                             }
@@ -446,7 +446,7 @@ Scepter.weapons.add(
             bulletInterval: 3,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -458,7 +458,7 @@ Scepter.weapons.add(
                 hitEffect: Fx.hitLancerLow,
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 }
@@ -499,7 +499,7 @@ Scepter.weapons.add(
             statusDuration: 300,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -532,7 +532,7 @@ Scepter.weapons.add(
             hitEffect: Fx.hitScepterSecondary,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -564,7 +564,7 @@ Scepter.weapons.add(
             hitEffect: Fx.hitScepterSecondary,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -666,7 +666,7 @@ Reign.weapons.add(
             statusDuration: 300,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -684,7 +684,7 @@ Reign.weapons.add(
                 frontColor: Pal.blastAmmoFront,
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 }
@@ -754,7 +754,7 @@ Reign.weapons.add(
             ),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -833,7 +833,7 @@ Flare.weapons.add(
             statusDuration: 8*60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -921,7 +921,7 @@ Horizon.weapons.add(
             statusDuration: 60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1037,7 +1037,7 @@ Zenith.weapons.add(
                     weaveMag: 1,
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     }
@@ -1095,7 +1095,7 @@ Zenith.weapons.add(
                     weaveMag: 1,
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     }
@@ -1153,7 +1153,7 @@ Zenith.weapons.add(
                     weaveMag: 1,
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     }
@@ -1247,7 +1247,7 @@ Antumbra.weapons.add(
             statusDuration: 60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1274,7 +1274,7 @@ Antumbra.weapons.add(
             pierceCap: 2,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1376,7 +1376,7 @@ Eclipse.weapons.add(
         bullet: extend(FlakBulletType, 6.6, 180, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -1435,7 +1435,7 @@ Eclipse.weapons.add(
         bullet: extend(FlakBulletType, 6.6, 122, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -1499,7 +1499,7 @@ Eclipse.weapons.add(
         bullet: extend(ContinuousLaserBulletType,{
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -1592,6 +1592,8 @@ Eclipse.weapons.add(
             lightningDelay: 0,
             laserAbsorb: false,
             damage: 3800/12,
+            splashDamage: 80,
+            splashDamageRadius: 8*5,
             length:340,
             width: 5,
             lifetime: 180,
@@ -1676,7 +1678,7 @@ Nova.weapons.add(
             damage: 40,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1760,7 +1762,7 @@ Pulsar.weapons.add(
             }),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1845,7 +1847,7 @@ Quasar.weapons.add(
             lightningSpacing: 30,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -1927,7 +1929,7 @@ Vela.weapons.add(
         bullet: extend(ContinuousLaserBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -1969,7 +1971,7 @@ Vela.weapons.add(
         bullet: extend(PointBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -2144,7 +2146,7 @@ Corvus.weapons.add(
         bullet: extend(LaserBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -2260,7 +2262,7 @@ Corvus.weapons.add(
         bullet: extend(EmpBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -2390,7 +2392,7 @@ Crawler.weapons.add(
             collidesAir: true,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2462,7 +2464,7 @@ Atrax.weapons.add(
             collidesAir: false,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2536,7 +2538,7 @@ Spiroct.weapons.add(
             knockback: -1.24,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2561,7 +2563,7 @@ Spiroct.weapons.add(
             knockback: -0.65,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -2584,7 +2586,7 @@ Spiroct.weapons.add(
         bullet: extend(BasicBulletType,5,160,{
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -2720,7 +2722,7 @@ let ArkyidSap = extend(SapBulletType,{
     knockback: -1,
     hitEntity(b, entity, health){
         this.super$hitEntity(b, entity, health);
-        if(entity instanceof Unit){
+        if(entity instanceof Unit || entity instanceof Building){
             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
         }
     }
@@ -2766,7 +2768,7 @@ Arkyid.weapons.add(
         bullet: extend(ArtilleryBulletType,3,140,{
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -3003,7 +3005,7 @@ Toxopid.weapons.add(
                 }),
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 }
@@ -3016,7 +3018,7 @@ Toxopid.weapons.add(
             lightningLengthRand: 5,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3053,7 +3055,7 @@ Toxopid.weapons.add(
             statusDuration: 450,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3106,7 +3108,7 @@ Toxopid.weapons.add(
             hitSize: 50/Math.sqrt(2),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -3147,7 +3149,7 @@ Toxopid.weapons.add(
                 hitSize: 35/Math.sqrt(2),
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 },
@@ -3178,7 +3180,7 @@ Toxopid.weapons.add(
                     hitSize: 8,
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     }
@@ -3318,7 +3320,7 @@ Poly.weapons.add(
             healColor: Color.valueOf("ff80bd"),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3394,7 +3396,7 @@ Mega.weapons.add(
             lightningDamage: 22,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3426,7 +3428,7 @@ Mega.weapons.add(
             lightningDamage: 36,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3538,7 +3540,7 @@ Quad.weapons.add(
             splashDamageRadius: 112,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3598,7 +3600,7 @@ Quad.weapons.add(
             splashDamageRadius: 64,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3658,7 +3660,7 @@ Quad.weapons.add(
             splashDamageRadius: 160,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3790,7 +3792,7 @@ Risso.weapons.add(
             lifetime: 60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3823,7 +3825,7 @@ Risso.weapons.add(
             weaveMag: 2,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3893,7 +3895,7 @@ Minke.weapons.add(
             splashDamageRadius: 24,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -3926,7 +3928,7 @@ Minke.weapons.add(
             homingRange: 60,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4010,7 +4012,7 @@ Bryde.weapons.add(
             weaveMag: 1,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4055,7 +4057,7 @@ Bryde.weapons.add(
             pierceDamageFactor: 0.22,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4136,7 +4138,7 @@ Sei.weapons.add(
             pierceCap: 2,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4185,7 +4187,7 @@ Sei.weapons.add(
             weaveMag: 0,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4294,7 +4296,7 @@ Omura.weapons.add(
             hitSize: 6,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4323,7 +4325,7 @@ Omura.weapons.add(
             hitSize: 6,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4369,7 +4371,7 @@ Omura.weapons.add(
             statusDuration: 300,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4414,7 +4416,7 @@ Omura.weapons.add(
         bullet: extend(RailBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -4486,7 +4488,7 @@ Omura.weapons.add(
         bullet: extend(RailBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -4605,7 +4607,7 @@ Retusa.weapons.add(
             hitColor: Color.valueOf("789aff"),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4634,7 +4636,7 @@ Retusa.weapons.add(
             hitColor: Color.valueOf("ed655a"),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4699,7 +4701,7 @@ Retusa.weapons.add(
              splashDamageRadius: 32,
              hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4790,7 +4792,7 @@ Oxynoe.weapons.add(
             hittable: false,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4904,7 +4906,7 @@ Cyerce.weapons.add(
             }),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -4963,7 +4965,7 @@ Cyerce.weapons.add(
             trailLength: 29,
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -5011,7 +5013,7 @@ Cyerce.weapons.add(
                 trailLength: 29,
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 },
@@ -5058,7 +5060,7 @@ Cyerce.weapons.add(
                     }),
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     }
@@ -5170,7 +5172,7 @@ Aegires.weapons.add(
             }),
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             }
@@ -5290,7 +5292,7 @@ NavanaxLaserPos.forEach(pos => {
         bullet: extend(ContinuousLaserBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -5423,7 +5425,7 @@ Navanax.weapons.add(
         bullet: extend(FlakBulletType, 3, 300, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -5474,7 +5476,7 @@ Navanax.weapons.add(
             fragBullet: extend(FlakBulletType, 3, 200, {
                 hitEntity(b, entity, health){
                     this.super$hitEntity(b, entity, health);
-                    if(entity instanceof Unit){
+                    if(entity instanceof Unit || entity instanceof Building){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                     }
                 },
@@ -5525,7 +5527,7 @@ Navanax.weapons.add(
                 fragBullet: extend(MissileBulletType, 4, 100, {
                     hitEntity(b, entity, health){
                         this.super$hitEntity(b, entity, health);
-                        if(entity instanceof Unit){
+                        if(entity instanceof Unit || entity instanceof Building){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         }
                     },
@@ -5597,7 +5599,7 @@ Navanax.weapons.add(
         bullet: extend(EmpBulletType, {
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
-                if(entity instanceof Unit){
+                if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 }
             },
@@ -5683,6 +5685,193 @@ Navanax.abilities.add(
         effectColor: Color.valueOf("ed655a")
     })
 );
+
+//T5SpawnEffects
+const ReignSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("789aff"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri( e.x + Angles.trnsx(angle, radius),e.y + Angles.trnsy(angle, radius),6,50*radius/R,angle);
+    }
+
+    let scale = radius / R;
+    Fill.circle( e.x, e.y, 2*8 * scale);
+    Lines.stroke(3);
+    for(let i = 0; i < 3; i++){
+        let rotation = i * 60;
+        let orbitRadius = 20*8 * scale;
+        let orbitWidth = 8*8 * scale;
+        let prevX = 0;
+        let prevY = 0;
+        for(let j = 0; j <= 32; j++){
+            let t = j * 360 / 32;
+            let px = orbitRadius * Mathf.cosDeg(t);
+            let py = orbitWidth * Mathf.sinDeg(t);
+            let x = px * Mathf.cosDeg(rotation) - py * Mathf.sinDeg(rotation);
+            let y = px * Mathf.sinDeg(rotation) + py * Mathf.cosDeg(rotation);
+            x += e.x;
+            y += e.y;
+            if(j > 0){
+                Lines.line(prevX, prevY, x, y);
+            }
+            prevX = x;
+            prevY = y;
+        }
+    }
+
+    for(let i = 0; i < 3; i++){
+        let rotation = i * 60;
+        let angle = e.fin() * 720 + rotation;
+        let orbitRadius = 20*8 * scale;
+        let orbitWidth = 8*8 * scale;
+        let px = orbitRadius * Mathf.cosDeg(angle);
+        let py = orbitWidth * Mathf.sinDeg(angle);
+        let x = px * Mathf.cosDeg(rotation) - py * Mathf.sinDeg(rotation);
+        let y = px * Mathf.sinDeg(rotation) + py * Mathf.cosDeg(rotation);
+        Fill.circle(e.x + x, e.y + y, 4);
+    }
+},{followParent: true});
+
+const EclipseSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("ff8000"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 50*radius/R, angle);
+    }
+    Fill.circle(e.x, e.y, radius/R*8*2);
+    for(let i = 0; i < 8; ++i){
+        let angle = i * 360 / 8 + e.fout()*180;
+        Lines.lineAngle(e.x + Angles.trnsx(angle, radius/R*8*10), e.y + Angles.trnsy(angle, radius/R*8*10), angle, radius/R*8*5);
+    }
+},{followParent: true});
+
+const CorvusSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("d64cd4"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri( e.x + Angles.trnsx(angle, radius),e.y + Angles.trnsy(angle, radius),6,50*radius/R,angle);
+    }
+    for(let i = 0; i < 5; ++i){
+        let offset = e.fout()*360;
+        let Deg1 = 360/5*i + offset;
+        let Deg2 = 360/5*(i+2) + offset;
+        Lines.line(e.x + Mathf.cosDeg(Deg1)*radius, e.y + Mathf.sinDeg(Deg1)*radius, e.x + Mathf.cosDeg(Deg2)*radius, e.y + Mathf.sinDeg(Deg2)*radius);
+        offset = e.fout()*180;
+        Deg1 = 360/5*i + offset;
+        Deg2 = 360/5*(i+2) + offset;
+        Lines.line(e.x + Mathf.cosDeg(Deg1)*radius, e.y + Mathf.sinDeg(Deg1)*radius, e.x + Mathf.cosDeg(Deg2)*radius, e.y + Mathf.sinDeg(Deg2)*radius);
+    }
+},{followParent: true});
+
+const ToxopidSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Pal.sapBullet);
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri( e.x + Angles.trnsx(angle, radius),e.y + Angles.trnsy(angle, radius),6,50*radius/R,angle);
+    }
+    for(let i = 0; i < 4; ++i){
+        let angle = i * 360 / 4;
+        let S = radius/R*8*15+2.5*8*Math.abs(Mathf.sinDeg(e.fout()*540));
+        let C = radius/R*8*10+2.5*8*Math.abs(Mathf.cosDeg(e.fout()*540))
+        Lines.lineAngle(e.x, e.y, angle, S);
+        Lines.circle(e.x + Angles.trnsx(angle, S+16), e.y + Angles.trnsy(angle, S+16), 16);
+        angle += 360 / 8;
+        Lines.lineAngle(e.x, e.y, angle, C);
+        Lines.circle(e.x + Angles.trnsx(angle, C+12), e.y + Angles.trnsy(angle, C+12), 12);
+    }
+},{followParent: true});
+
+Events.on(UnitUnloadEvent, event => {
+    let unit = event.unit;
+    if(unit.type == Eclipse){
+        print("Spawned");
+        EclipseSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Reign){
+        print("Spawned");
+        ReignSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Corvus){
+        print("Spawned");
+        CorvusSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Toxopid){
+        print("Spawned");
+        ToxopidSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+});
+
+Events.on(UnitSpawnEvent, event => {
+    let unit = event.unit;
+    if(unit.type == Eclipse){
+        print("Spawned");
+        EclipseSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Reign){
+        print("Spawned");
+        ReignSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Corvus){
+        print("Spawned");
+        CorvusSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Toxopid){
+        print("Spawned");
+        ToxopidSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+});
 
 module.exports = {
     Dagger: Dagger,
