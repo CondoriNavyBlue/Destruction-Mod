@@ -5833,43 +5833,153 @@ const ToxopidSpawnEffect = extend(Effect,180, e =>{
     }
 },{followParent: true});
 
+const OctSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("ffffff"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 50*radius/R, angle);
+    }
+    let scale = radius / R;
+    let shieldRadius = 15*8 * scale;
+    Lines.stroke(3);
+    Lines.poly(e.x, e.y, 8, shieldRadius, 22.5);
+    Lines.poly(e.x, e.y, 8, 7*scale, 22.5);
+    let angle = e.fin() * 360;
+    shieldRadius += 8*2;
+    for(let i = 0; i < 4; i++){
+        let a = angle + i * 90;
+        let x = e.x + Angles.trnsx(a, shieldRadius);
+        let y = e.y + Angles.trnsy(a, shieldRadius);
+        Fill.circle(x, y, 3);
+    }
+},{followParent: true});
+
+const OmuraSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("ed655a"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 50*radius/R, angle);
+    }
+    for(let i = 0; i < 15; ++i){
+        let angle = i * -360 / 16 + 360*e.fin();
+        Lines.lineAngle(e.x, e.y, angle, radius/15*(i+1));
+    }
+    for(let i = 0; i < 3; ++i){
+        let angle = 15*i;
+        let length = i % 2 == 0 ? 8*5 : 10*8;
+        let X = e.x + Angles.trnsx(angle+270-15, radius);
+        let Y = e.y + Angles.trnsy(angle+270-15, radius);
+        Lines.line(X, Y, X, Y + length*radius/R);
+        X = e.x + Angles.trnsx(angle+90-15, radius);
+        Y = e.y + Angles.trnsy(angle+90-15, radius);
+        Lines.line(X, Y, X, Y - length*radius/R);
+    }
+},{followParent: true});
+
+const NavanaxSpawnEffect = extend(Effect,180, e =>{
+    let R = 8*25;
+    let radius;
+    if(e.fin() < 0.25){
+        radius = R * (e.fin() / 0.25);
+    }else if(e.fin() < 0.75){
+        radius = R;
+    }else{
+        radius = R * (1 - (e.fin() - 0.75) / 0.25);
+    }
+    Draw.color(Color.valueOf("b5d84a"));
+    Lines.stroke(3);
+    Lines.circle(e.x, e.y, radius);
+    for(let i = 0; i < 4; i++){
+        let angle = i * 360 / 4 + 360*e.fout();
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 100*radius/R, angle);
+        angle += 360 / 8;
+        Drawf.tri(e.x + Angles.trnsx(angle, radius), e.y + Angles.trnsy(angle, radius), 6, 50*radius/R, angle);
+    }
+    Lines.poly(e.x, e.y, 4, radius, 360*e.fin());
+    Lines.poly(e.x, e.y, 4, radius, 45 + 360*e.fin());
+    let dashRadius = radius / R * 8 * 15;
+    let rotation = e.fout() * 240;
+    for(let i = 0; i < 3; i++){
+        let angle = i * 120 + rotation;
+        let next = angle + 60;
+        let x1 = e.x + Angles.trnsx(angle, dashRadius);
+        let y1 = e.y + Angles.trnsy(angle, dashRadius);
+        let x2 = e.x + Angles.trnsx(next, dashRadius);
+        let y2 = e.y + Angles.trnsy(next, dashRadius);
+        Lines.arc(e.x, e.y, dashRadius, 1/6, angle);
+    }
+},{followParent: true});
+
 Events.on(UnitUnloadEvent, event => {
     let unit = event.unit;
     if(unit.type == Eclipse){
-        print("Spawned");
         EclipseSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
     if(unit.type == Reign){
-        print("Spawned");
         ReignSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
     if(unit.type == Corvus){
-        print("Spawned");
         CorvusSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
     if(unit.type == Toxopid){
-        print("Spawned");
         ToxopidSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Oct){
+        OctSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Omura){
+        OmuraSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Navanax){
+        NavanaxSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
 });
 
 Events.on(UnitSpawnEvent, event => {
     let unit = event.unit;
     if(unit.type == Eclipse){
-        print("Spawned");
         EclipseSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
     if(unit.type == Reign){
-        print("Spawned");
         ReignSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
     if(unit.type == Corvus){
-        print("Spawned");
         CorvusSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
-    if(unit.type == Toxopid){
-        print("Spawned");
-        ToxopidSpawnEffect.at(unit.x, unit.y, 0, unit);
+    if(unit.type == Oct){
+        OctSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Omura){
+        OmuraSpawnEffect.at(unit.x, unit.y, 0, unit);
+    }
+    if(unit.type == Navanax){
+        NavanaxSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
 });
 
