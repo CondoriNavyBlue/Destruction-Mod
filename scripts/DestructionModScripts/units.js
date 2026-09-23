@@ -4236,7 +4236,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
         const DeathBullet = unit.type.weapons.get(6).bullet.copy();
         DeathBullet.length = 300;
         DeathBullet.damage = 2700;
-        DeathBullet.pierceDamageFactor = 0.1;
+        DeathBullet.pierceDamageFactor = 0.05;
         DeathBullet.splashDamage = 1350*2/3;
         DeathBullet.splashDamageRadius = 32;
         DeathBullet.pointEffect = extend(Effect, 90, e => {
@@ -4421,8 +4421,8 @@ Omura.weapons.add(
                 }
             },
             length: 200,
-            damage: 1250,
-            pierceDamageFactor: 0,
+            damage: 1350,
+            pierceDamageFactor: 0.05,
             pointEffectSpace: 40,
             status: statusEffects.destructed,
             statusDuration: 450,
@@ -4493,7 +4493,7 @@ Omura.weapons.add(
                 }
             },
             length: 544,
-            damage: 1250,
+            damage: 1350,
             pierceDamageFactor: 0.1,
             pointEffectSpace: 44,
             smokeEffect: Fx.shootBig2,
