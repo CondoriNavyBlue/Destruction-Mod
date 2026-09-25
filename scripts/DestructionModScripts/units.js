@@ -2527,7 +2527,20 @@ Corvus.weapons.add(
                 Draw.color();
                 Fill.circle(e.x, e.y, 6 * e.fout());
                 Drawf.light(e.x, e.y, 96 * 1.6, Color.valueOf("ed655a"), e.fout());
-            }, {followParent: true, rotWithParent: true})
+            }, {followParent: true, rotWithParent: true}),
+            hitPowerEffect: extend(Effect, 40, e => {
+                Draw.color(Color.valueOf("ed655a"));
+                Lines.stroke(e.fout() * 1.6);
+                Angles.randLenVectors(e.id, 18, e.finpow() * 27, e.rotation, 360, (x, y) => {
+                    let ang = Mathf.angle(x, y);
+                    Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 6 + 1);
+                });
+            },{}),
+            applyEffect: extend(Effect, 11, e => {
+                Draw.color(Color.valueOf("ed655a"));
+                Lines.stroke(e.fout() * 2);
+                Lines.circle(e.x, e.y, 2 + e.finpow() * 7);
+            },{}),
         })
     })
 );
@@ -6141,7 +6154,20 @@ Navanax.weapons.add(
                 Draw.color();
                 Fill.circle(e.x, e.y, 6 * e.fout());
                 Drawf.light(e.x, e.y, 150 * 1.6, Color.valueOf("ed655a"), e.fout());
-            }, {followParent: true, rotWithParent: true})
+            }, {followParent: true, rotWithParent: true}),
+            hitPowerEffect: extend(Effect, 40, e => {
+                Draw.color(Color.valueOf("ed655a"));
+                Lines.stroke(e.fout() * 1.6);
+                Angles.randLenVectors(e.id, 18, e.finpow() * 27, e.rotation, 360, (x, y) => {
+                    let ang = Mathf.angle(x, y);
+                    Lines.lineAngle(e.x + x, e.y + y, ang, e.fout() * 6 + 1);
+                });
+            },{}),
+            applyEffect: extend(Effect, 11, e => {
+                Draw.color(Color.valueOf("ed655a"));
+                Lines.stroke(e.fout() * 2);
+                Lines.circle(e.x, e.y, 2 + e.finpow() * 7);
+            },{}),
         })
     })
 );
