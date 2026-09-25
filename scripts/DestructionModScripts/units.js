@@ -4361,7 +4361,7 @@ Bryde.weapons.add(
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
-        reload: 60,
+        reload: 80,
         cooldownTime: 50,
         mirror: false,
         x:0,
@@ -4395,7 +4395,7 @@ Bryde.weapons.add(
             pointEffect: Fx.railTrail,
             hitEffect: Fx.massiveExplosion,
             smokeEffect: Fx.shootBig2,
-            damage: 500,
+            damage: 600,
             pierceDamageFactor: 0.22,
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
