@@ -4376,7 +4376,7 @@ Bryde.weapons.add(
         ejectEffect: Fx.none,
         shoot: extend(ShootPattern, {
             shots: 3,
-            shotDelay: 10
+            shotDelay: 40/3
         }),
         bullet: extend(RailBulletType, {
             shootEffect: extend(Effect, 24, e => {
