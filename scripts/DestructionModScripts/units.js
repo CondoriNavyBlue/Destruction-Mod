@@ -4361,7 +4361,7 @@ Bryde.weapons.add(
         })
     }),
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
-        reload: 56.25,
+        reload: 60,
         cooldownTime: 50,
         mirror: false,
         x:0,
@@ -4376,7 +4376,7 @@ Bryde.weapons.add(
         ejectEffect: Fx.none,
         shoot: extend(ShootPattern, {
             shots: 3,
-            shotDelay: 12.5
+            shotDelay: 10
         }),
         bullet: extend(RailBulletType, {
             shootEffect: extend(Effect, 24, e => {
