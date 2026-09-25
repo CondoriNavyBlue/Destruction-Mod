@@ -71,7 +71,9 @@ Gamma.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -140,7 +142,9 @@ Dagger.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -213,7 +217,9 @@ Mace.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -290,7 +296,9 @@ Fortress.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -318,7 +326,9 @@ Fortress.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -346,7 +356,9 @@ Fortress.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -374,7 +386,9 @@ Fortress.weapons.add(
                         hitTile(b, build, x, y, initialHealth, direct){
                             this.super$hitTile(b, build, x, y, initialHealth, direct);
                             if(build != null){
-                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                if(build.team != b.team){
+                                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                }
                             }
                         },
                         hitEntity(b, entity, health){
@@ -402,7 +416,9 @@ Fortress.weapons.add(
                             hitTile(b, build, x, y, initialHealth, direct){
                                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                                 if(build != null){
-                                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                    if(build.team != b.team){
+                                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                    }
                                 }
                             },
                             hitEntity(b, entity, health){
@@ -495,7 +511,9 @@ Scepter.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -513,7 +531,9 @@ Scepter.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -560,7 +580,9 @@ Scepter.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -599,7 +621,9 @@ Scepter.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -637,7 +661,9 @@ Scepter.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -745,7 +771,9 @@ Reign.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -769,7 +797,9 @@ Reign.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -845,7 +875,9 @@ Reign.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -930,7 +962,9 @@ Flare.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1024,7 +1058,9 @@ Horizon.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1146,7 +1182,9 @@ Zenith.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -1210,7 +1248,9 @@ Zenith.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -1274,7 +1314,9 @@ Zenith.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -1374,7 +1416,9 @@ Antumbra.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1407,7 +1451,9 @@ Antumbra.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1515,7 +1561,9 @@ Eclipse.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1580,7 +1628,9 @@ Eclipse.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1650,7 +1700,9 @@ Eclipse.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1835,7 +1887,9 @@ Nova.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -1925,7 +1979,9 @@ Pulsar.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2016,7 +2072,9 @@ Quasar.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2104,7 +2162,9 @@ Vela.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2152,7 +2212,9 @@ Vela.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2333,7 +2395,9 @@ Corvus.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2455,7 +2519,9 @@ Corvus.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2604,7 +2670,9 @@ Crawler.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2682,7 +2750,9 @@ Atrax.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2762,7 +2832,9 @@ Spiroct.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2793,7 +2865,9 @@ Spiroct.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2822,7 +2896,9 @@ Spiroct.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -2964,7 +3040,9 @@ let ArkyidSap = extend(SapBulletType,{
     hitTile(b, build, x, y, initialHealth, direct){
         this.super$hitTile(b, build, x, y, initialHealth, direct);
         if(build != null){
-            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+            if(build.team != b.team){
+                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+            }
         }
     },
     hitEntity(b, entity, health){
@@ -3016,7 +3094,9 @@ Arkyid.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3259,7 +3339,9 @@ Toxopid.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -3278,7 +3360,9 @@ Toxopid.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3321,7 +3405,9 @@ Toxopid.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3380,7 +3466,9 @@ Toxopid.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3427,7 +3515,9 @@ Toxopid.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -3464,7 +3554,9 @@ Toxopid.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -3610,7 +3702,9 @@ Poly.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3692,7 +3786,9 @@ Mega.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3730,7 +3826,9 @@ Mega.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3848,7 +3946,9 @@ Quad.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3914,7 +4014,9 @@ Quad.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -3980,7 +4082,9 @@ Quad.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4118,7 +4222,9 @@ Risso.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4157,7 +4263,9 @@ Risso.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4233,7 +4341,9 @@ Minke.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4272,7 +4382,9 @@ Minke.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4362,7 +4474,9 @@ Bryde.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4413,7 +4527,9 @@ Bryde.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4500,7 +4616,9 @@ Sei.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4555,7 +4673,9 @@ Sei.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4670,7 +4790,9 @@ Omura.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4705,7 +4827,9 @@ Omura.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4757,7 +4881,9 @@ Omura.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4808,7 +4934,9 @@ Omura.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -4886,7 +5014,9 @@ Omura.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5011,7 +5141,9 @@ Retusa.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5046,7 +5178,9 @@ Retusa.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5115,10 +5249,12 @@ Retusa.weapons.add(
             splashDamage: 50,
             splashDamageRadius: 32,
             hitTile(b, build, x, y, initialHealth, direct){
-               this.super$hitTile(b, build, x, y, initialHealth, direct);
-               if(build != null){
-                   build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-               }
+                this.super$hitTile(b, build, x, y, initialHealth, direct);
+                if(build != null){
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
+                }
             },
             hitEntity(b, entity, health){
                 this.super$hitEntity(b, entity, health);
@@ -5214,7 +5350,9 @@ Oxynoe.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5334,7 +5472,9 @@ Cyerce.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5399,7 +5539,9 @@ Cyerce.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5453,7 +5595,9 @@ Cyerce.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -5506,7 +5650,9 @@ Cyerce.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -5624,7 +5770,9 @@ Aegires.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5750,7 +5898,9 @@ NavanaxLaserPos.forEach(pos => {
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5889,7 +6039,9 @@ Navanax.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
@@ -5946,7 +6098,9 @@ Navanax.weapons.add(
                 hitTile(b, build, x, y, initialHealth, direct){
                     this.super$hitTile(b, build, x, y, initialHealth, direct);
                     if(build != null){
-                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(build.team != b.team){
+                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        }
                     }
                 },
                 hitEntity(b, entity, health){
@@ -6003,7 +6157,9 @@ Navanax.weapons.add(
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
                         if(build != null){
-                            build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(build.team != b.team){
+                                build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            }
                         }
                     },
                     hitEntity(b, entity, health){
@@ -6081,7 +6237,9 @@ Navanax.weapons.add(
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
-                    build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(build.team != b.team){
+                        build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    }
                 }
             },
             hitEntity(b, entity, health){
