@@ -43,7 +43,7 @@ const Gamma = extend(UnitType, "Destructor_Gamma", {
 });
 Gamma.constructor = () => extend(UnitEntity, {});
 Gamma.aiController = () => extend(BuilderAI, {});
-Gamma.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Gamma.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Gamma.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Small_Mount_Weapon",{
         top: false,
@@ -73,6 +73,10 @@ Gamma.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -80,6 +84,9 @@ Gamma.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -116,7 +123,7 @@ const Dagger = extend(UnitType, "Destructor_Dagger", {
     }
 });
 Dagger.constructor = () => extend(MechUnit, {});
-Dagger.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Dagger.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Dagger.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Weapon",{
         reload: 20,
@@ -144,6 +151,10 @@ Dagger.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -151,6 +162,9 @@ Dagger.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -186,7 +200,7 @@ const Mace = extend(UnitType, "Destructor_Mace",{
     }
 });
 Mace.constructor = () => extend(MechUnit, {});
-Mace.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Mace.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mace.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Flamethrower", {
         top: false,
@@ -219,6 +233,10 @@ Mace.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -226,6 +244,9 @@ Mace.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -267,7 +288,7 @@ const Fortress = extend(UnitType, "Destructor_Fortress",{
     }
 });
 Fortress.constructor = () => extend(MechUnit, {});
-Fortress.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Fortress.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Fortress.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Artillery", {
         top: false,
@@ -298,6 +319,10 @@ Fortress.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -305,6 +330,9 @@ Fortress.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             fragBullets: 1,
@@ -328,6 +356,10 @@ Fortress.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -335,6 +367,9 @@ Fortress.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 },
                 fragBullets: 1,
@@ -358,6 +393,10 @@ Fortress.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -365,6 +404,9 @@ Fortress.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     },
                     fragBullets: 1,
@@ -388,6 +430,10 @@ Fortress.weapons.add(
                             if(build != null){
                                 if(build.team != b.team){
                                     build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                    build.healthChanged();
+                                    if(build.health <= 0){
+                                        build.killed();
+                                    }
                                 }
                             }
                         },
@@ -395,6 +441,9 @@ Fortress.weapons.add(
                             this.super$hitEntity(b, entity, health);
                             if(entity instanceof Unit){
                                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                if(entity.health <= 0 && !entity.dead){
+                                    entity.kill();
+                                }
                             }
                         },
                         fragBullets: 1,
@@ -418,6 +467,10 @@ Fortress.weapons.add(
                                 if(build != null){
                                     if(build.team != b.team){
                                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                        build.healthChanged();
+                                        if(build.health <= 0){
+                                            build.killed();
+                                        }
                                     }
                                 }
                             },
@@ -425,6 +478,9 @@ Fortress.weapons.add(
                                 this.super$hitEntity(b, entity, health);
                                 if(entity instanceof Unit){
                                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                    if(entity.health <= 0 && !entity.dead){
+                                        entity.kill();
+                                    }
                                 }
                             }
                         })
@@ -474,7 +530,7 @@ const Scepter = extend(UnitType, "Destructor_Scepter", {
     }
 });
 Scepter.constructor = () => extend(MechUnit, {});
-Scepter.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Scepter.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Scepter.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Scepter_Weapon",{
         top: false,
@@ -513,6 +569,10 @@ Scepter.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -520,6 +580,9 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             intervalBullet: extend(LightningBulletType,{
@@ -533,6 +596,10 @@ Scepter.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -540,6 +607,9 @@ Scepter.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 }
             })
@@ -582,6 +652,10 @@ Scepter.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -589,6 +663,9 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -623,6 +700,10 @@ Scepter.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -630,6 +711,9 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -663,6 +747,10 @@ Scepter.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -670,6 +758,9 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -731,7 +822,7 @@ const Reign = extend(UnitType, "Destructor_Reign", {
     }
 });
 Reign.constructor = () => extend(MechUnit, {});
-Reign.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Reign.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Reign.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Reign_Weapon",{
         top: false,
@@ -773,6 +864,10 @@ Reign.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -780,6 +875,9 @@ Reign.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             fragBullet: extend(BasicBulletType, 9, 100, {
@@ -799,6 +897,10 @@ Reign.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -806,6 +908,9 @@ Reign.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 }
             })
@@ -877,6 +982,10 @@ Reign.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -884,6 +993,9 @@ Reign.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -936,7 +1048,7 @@ const Flare = extend(UnitType, "Destructor_Flare", {
     }
 });
 Flare.constructor = () => extend(UnitEntity, {});
-Flare.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Flare.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Flare.weapons.add(
     extend(Weapon,{
         x: 0,
@@ -964,6 +1076,10 @@ Flare.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -971,6 +1087,9 @@ Flare.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1026,7 +1145,7 @@ const Horizon = extend(UnitType, "Destructor_Horizon", {
     }
 });
 Horizon.constructor = () => extend(UnitEntity, {});
-Horizon.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Horizon.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Horizon.weapons.add(
     extend(Weapon, {
         minShootVelocity: 0.8,
@@ -1060,6 +1179,10 @@ Horizon.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1067,6 +1190,9 @@ Horizon.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1113,7 +1239,7 @@ const Zenith = extend(UnitType, "Destructor_Zenith", {
     }
 });
 Zenith.constructor = () => extend(UnitEntity, {});
-Zenith.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Zenith.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Zenith.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Zenith_Missile",{
         reload: 30,
@@ -1184,6 +1310,10 @@ Zenith.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -1191,6 +1321,9 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     }
                 }),
@@ -1250,6 +1383,10 @@ Zenith.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -1257,6 +1394,9 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     }
                 }),
@@ -1316,6 +1456,10 @@ Zenith.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -1323,6 +1467,9 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     }
                 })
@@ -1373,7 +1520,7 @@ const Antumbra = extend(UnitType, "Destructor_Antumbra", {
     }
 });
 Antumbra.constructor = () => extend(UnitEntity, {});
-Antumbra.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Antumbra.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Antumbra.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Super_Missile_Mount",{
         x: 22,
@@ -1418,6 +1565,10 @@ Antumbra.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            Call.buildDestroyed(build.self());
+                        }
                     }
                 }
             },
@@ -1425,6 +1576,9 @@ Antumbra.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1453,6 +1607,10 @@ Antumbra.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1460,6 +1618,9 @@ Antumbra.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1544,7 +1705,7 @@ const Eclipse = extend(UnitType, "Destructor_Eclipse", {
     }
 });
 Eclipse.constructor = ()=> extend(UnitEntity,{});
-Eclipse.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Eclipse.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Eclipse.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Artillery",{
         x: 11,
@@ -1563,6 +1724,10 @@ Eclipse.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1570,6 +1735,9 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             shootEffect: Fx.shootBig,
@@ -1630,6 +1798,10 @@ Eclipse.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1637,6 +1809,9 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             shootEffect: Fx.shootBig,
@@ -1702,6 +1877,10 @@ Eclipse.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1709,6 +1888,9 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             applyDamage(b){
@@ -1867,7 +2049,7 @@ const Nova = extend(UnitType, "Destructor_Nova",{
     }
 });
 Nova.constructor = () => extend(MechUnit, {});
-Nova.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Nova.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Nova.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon",{
         top: false,
@@ -1889,6 +2071,10 @@ Nova.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1896,6 +2082,9 @@ Nova.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1939,7 +2128,7 @@ const Pulsar = extend(UnitType, "Destructor_Pulsar", {
     }
 });
 Pulsar.constructor = () => extend(MechUnit, {});
-Pulsar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Pulsar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Pulsar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Shotgun_Weapon",{
         top: false,
@@ -1981,6 +2170,10 @@ Pulsar.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -1988,6 +2181,9 @@ Pulsar.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2038,7 +2234,7 @@ const Quasar = extend(UnitType, "Destructor_Quasar",{
     }
 });
 Quasar.constructor = () => extend(MechUnit, {});
-Quasar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Quasar.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Quasar.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Beam_Weapon",{
         top: false,
@@ -2074,6 +2270,10 @@ Quasar.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2081,6 +2281,9 @@ Quasar.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2136,7 +2339,7 @@ const Vela = extend(UnitType, "Destructor_Vela", {
     }
 });
 Vela.constructor = () => extend(MechUnit, {});
-Vela.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Vela.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Vela.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Vela_Weapon",{
         mirror: false,
@@ -2164,6 +2367,10 @@ Vela.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2171,6 +2378,9 @@ Vela.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             damage: 2400/12,
@@ -2214,6 +2424,10 @@ Vela.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2221,6 +2435,9 @@ Vela.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             damage: 1000,
@@ -2366,7 +2583,7 @@ const Corvus = extend(UnitType, "Destructor_Corvus", {
     }
 });
 Corvus.constructor = () => extend(LegsUnit, {});
-Corvus.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Corvus.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Corvus.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Corvus_Weapon",{
         shootSound: Sounds.shootCorvus,
@@ -2397,6 +2614,10 @@ Corvus.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2404,6 +2625,9 @@ Corvus.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             init(b) {
@@ -2521,6 +2745,10 @@ Corvus.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2528,6 +2756,9 @@ Corvus.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             reflectable: false,
@@ -2644,7 +2875,7 @@ const Crawler = extend(UnitType, "Destructor_Crawler", {
 });
 Crawler.constructor = () => extend(MechUnit, {});
 Crawler.aiController = () => extend(SuicideAI, {});
-Crawler.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Crawler.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Crawler.weapons.add(
     extend(Weapon,{
         targetUnderBlocks: false,
@@ -2672,6 +2903,10 @@ Crawler.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2679,6 +2914,9 @@ Crawler.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2726,7 +2964,7 @@ const Atrax = extend(UnitType, "Destructor_Atrax", {
     }
 });
 Atrax.constructor = () => extend(LegsUnit, {});
-Atrax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Atrax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Atrax.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Atrax_Weapon", {
         top: false,
@@ -2752,6 +2990,10 @@ Atrax.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2759,6 +3001,9 @@ Atrax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2807,7 +3052,7 @@ const Spiroct = extend(UnitType, "Destructor_Spiroct",{
     }
 });
 Spiroct.constructor = () => extend(LegsUnit, {});
-Spiroct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Spiroct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Spiroct.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Spiroct_Weapon", {
         shootY: 4,
@@ -2834,6 +3079,10 @@ Spiroct.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2841,6 +3090,9 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2867,6 +3119,10 @@ Spiroct.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2874,6 +3130,9 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2898,6 +3157,10 @@ Spiroct.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -2905,6 +3168,9 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             shootEffect: new MultiEffect(
@@ -3026,7 +3292,7 @@ const Arkyid = extend(UnitType, "Destructor_Arkyid", {
     }
 });
 Arkyid.constructor = () => extend(LegsUnit, {});
-Arkyid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Arkyid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 let ArkyidSap = extend(SapBulletType,{
     sapStrength: 0.85,
     length: 85,
@@ -3042,6 +3308,10 @@ let ArkyidSap = extend(SapBulletType,{
         if(build != null){
             if(build.team != b.team){
                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                build.healthChanged();
+                if(build.health <= 0){
+                    build.killed();
+                }
             }
         }
     },
@@ -3049,6 +3319,9 @@ let ArkyidSap = extend(SapBulletType,{
         this.super$hitEntity(b, entity, health);
         if(entity instanceof Unit){
             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+            if(entity.health <= 0 && !entity.dead){
+                entity.kill();
+            }
         }
     }
 });
@@ -3096,6 +3369,10 @@ Arkyid.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3103,6 +3380,9 @@ Arkyid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             hitEffect: Fx.sapExplosion,
@@ -3220,7 +3500,7 @@ const Toxopid = extend(UnitType, "Destructor_Toxopid", {
     }
 });
 Toxopid.constructor = () => extend(LegsUnit, {});
-Toxopid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Toxopid.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Toxopid.weapons.add(
     extend(Weapon,{
         draw(unit, mount) {
@@ -3341,6 +3621,10 @@ Toxopid.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -3348,6 +3632,9 @@ Toxopid.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 }
             }),
@@ -3362,6 +3649,10 @@ Toxopid.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3369,6 +3660,9 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -3407,6 +3701,10 @@ Toxopid.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3414,6 +3712,9 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -3468,6 +3769,10 @@ Toxopid.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3475,6 +3780,9 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             fragLifeMin: 1,
@@ -3517,6 +3825,10 @@ Toxopid.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -3524,6 +3836,9 @@ Toxopid.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 },
                 fragLifeMin: 0.3,
@@ -3556,6 +3871,10 @@ Toxopid.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -3563,6 +3882,9 @@ Toxopid.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     }
                 })
@@ -3615,7 +3937,7 @@ const Mono = extend(UnitType, "Miner_Mono", {
 });
 Mono.constructor = () => extend(UnitEntity, {});
 Mono.aiController = () => extend(MinerAI, {});
-Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Mono.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mono.abilities.add(
     abilities.regen(62.5),
     abilities.rage(2)
@@ -3658,7 +3980,7 @@ const Poly = extend(UnitType, "Builder_Poly", {
     }
 });
 Poly.constructor = () => extend(UnitEntity, {});
-Poly.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Poly.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Poly.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Poly_Weapon",{
         top: false,
@@ -3704,6 +4026,10 @@ Poly.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3711,6 +4037,9 @@ Poly.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -3757,7 +4086,7 @@ const Mega = extend(UnitType, "Destructor_Mega",{
     }
 });
 Mega.constructor = () => extend(PayloadUnit, {});
-Mega.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Mega.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Mega.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Heal_Weapon_Mount",{
         shootSound: Sounds.shootLaser,
@@ -3788,6 +4117,10 @@ Mega.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3795,6 +4128,9 @@ Mega.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -3828,6 +4164,10 @@ Mega.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3835,6 +4175,9 @@ Mega.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -3889,7 +4232,7 @@ const Quad = extend(UnitType, "Destructor_Quad", {
     }
 })
 Quad.constructor = () => extend(PayloadUnit, {});
-Quad.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Quad.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Quad.weapons.add(
     extend(Weapon,{
         x: 0,
@@ -3948,6 +4291,10 @@ Quad.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -3955,6 +4302,9 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4016,6 +4366,10 @@ Quad.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4023,6 +4377,9 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4084,6 +4441,10 @@ Quad.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4091,6 +4452,9 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4162,7 +4526,7 @@ const Oct = extend(UnitType, "Athena_Oct", {
 });
 Oct.constructor = () => extend(PayloadUnit, {});
 Oct.aiController = () => extend(DefenderAI, {});
-Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Oct.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oct.abilities.add(
     ForceFieldAbility(200,1000/60,25000,600,10,0),
     abilities.regen(1000),
@@ -4203,7 +4567,7 @@ const Risso = extend(UnitType, "Destructor_Risso",{
     }
 });
 Risso.constructor = () => extend(UnitWaterMove, {});
-Risso.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Risso.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Risso.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
         reload: 10,
@@ -4224,6 +4588,10 @@ Risso.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4231,6 +4599,9 @@ Risso.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4265,6 +4636,10 @@ Risso.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4272,6 +4647,9 @@ Risso.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4319,7 +4697,7 @@ const Minke = extend(UnitType, "Destructor_Minke", {
     }
 });
 Minke.constructor = () => extend(UnitWaterMove, {});
-Minke.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Minke.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Minke.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Mount_Weapon",{
         reload: 8,
@@ -4343,6 +4721,10 @@ Minke.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4350,6 +4732,9 @@ Minke.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4384,6 +4769,10 @@ Minke.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4391,6 +4780,9 @@ Minke.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4438,7 +4830,7 @@ const Bryde = extend(UnitType, "Destructor_Bryde", {
     }
 });
 Bryde.constructor = () => extend(UnitWaterMove, {});
-Bryde.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Bryde.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Bryde.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Missile_Mount", {
         reload: 8,
@@ -4476,6 +4868,10 @@ Bryde.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4483,6 +4879,9 @@ Bryde.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4529,6 +4928,10 @@ Bryde.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4536,6 +4939,9 @@ Bryde.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4585,7 +4991,7 @@ const Sei = extend(UnitType, "Destructor_Sei",{
     }
 });
 Sei.constructor = () => extend(UnitWaterMove, {});
-Sei.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Sei.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Sei.weapons.add(
     extend(Weapon,"destructionmod-Destructor_Large_Bullet_Mount",{
         reload: 18,
@@ -4618,6 +5024,10 @@ Sei.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4625,6 +5035,9 @@ Sei.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4675,6 +5088,10 @@ Sei.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4682,6 +5099,9 @@ Sei.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4762,7 +5182,7 @@ const Omura = extend(UnitType, "Destructor_Omura", {
     }
 });
 Omura.constructor = () => extend(UnitWaterMove, {});
-Omura.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Omura.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Omura.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Large_Artillery", {
         y: -18,
@@ -4792,6 +5212,10 @@ Omura.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4799,6 +5223,9 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4829,6 +5256,10 @@ Omura.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4836,6 +5267,9 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4883,6 +5317,10 @@ Omura.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4890,6 +5328,9 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -4936,6 +5377,10 @@ Omura.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -4943,6 +5388,9 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             length: 200,
@@ -5016,6 +5464,10 @@ Omura.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5023,6 +5475,9 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             length: 544,
@@ -5113,7 +5568,7 @@ const Retusa = extend(UnitType, "Destructor_Retusa", {
     }
 });
 Retusa.constructor = () => extend(UnitWaterMove, {});
-Retusa.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Retusa.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Retusa.weapons.add(
     extend(Weapon, "destructionmod-Repair_Beam_Weapon_Center", {
         shootSound: Sounds.shootLaser,
@@ -5143,6 +5598,10 @@ Retusa.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5150,6 +5609,9 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5180,6 +5642,10 @@ Retusa.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5187,6 +5653,9 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5253,6 +5722,10 @@ Retusa.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5260,6 +5733,9 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5307,7 +5783,7 @@ const Oxynoe = extend(UnitType, "Destructor_Oxynoe", {
     }
 });
 Oxynoe.constructor = () => extend(UnitWaterMove, {});
-Oxynoe.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Oxynoe.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Oxynoe.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Plasma_Mount_Weapon", {
         reload: 5,
@@ -5352,6 +5828,10 @@ Oxynoe.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5359,6 +5839,9 @@ Oxynoe.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5421,7 +5904,7 @@ const Cyerce = extend(UnitType, "Destructor_Cyerce",{
     }
 });
 Cyerce.constructor = () => extend(UnitWaterMove, {});
-Cyerce.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Cyerce.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Cyerce.weapons.add(
     extend(Weapon, "destructionmod-Destructor_Repair_Beam_Weapon_Center", {
         x: 11,
@@ -5474,6 +5957,10 @@ Cyerce.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5481,6 +5968,9 @@ Cyerce.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5541,6 +6031,10 @@ Cyerce.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5548,6 +6042,9 @@ Cyerce.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             fragBullets: 3,
@@ -5597,6 +6094,10 @@ Cyerce.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -5604,6 +6105,9 @@ Cyerce.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 },
                 fragBullets: 8,
@@ -5652,6 +6156,10 @@ Cyerce.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -5659,6 +6167,9 @@ Cyerce.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     }
                 })
@@ -5712,7 +6223,7 @@ const Aegires = extend(UnitType, "Destructor_Aegires", {
     }
 });
 Aegires.constructor = () => extend(UnitWaterMove, {});
-Aegires.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Aegires.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 Aegires.weapons.add(
     extend(PointDefenseWeapon, "destructionmod-Destructor_Point_Defense_Mount",{
         x: 12.5,
@@ -5772,6 +6283,10 @@ Aegires.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5779,6 +6294,9 @@ Aegires.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -5869,7 +6387,7 @@ const Navanax = extend(UnitType, "Destructor_Navanax", {
     }
 });
 Navanax.constructor = () => extend(UnitWaterMove, {});
-Navanax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
+//Navanax.immunities.addAll(StatusEffects.burning , StatusEffects.freezing, StatusEffects.wet, StatusEffects.muddy, StatusEffects.melting, StatusEffects.sapped, StatusEffects.electrified, StatusEffects.sporeSlowed, StatusEffects.tarred, StatusEffects.overdrive, StatusEffects.shocked, StatusEffects.blasted, StatusEffects.corroded, statusEffects.miniElectrified);
 let NavanaxLaserPos = [
     {x: 21, y: -29.25}, {x: -21, y: -29.25},
     {x: 21, y: 12.5}, {x: -21, y: 12.5}
@@ -5900,6 +6418,10 @@ NavanaxLaserPos.forEach(pos => {
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -5907,6 +6429,9 @@ NavanaxLaserPos.forEach(pos => {
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             applyDamage(b){
@@ -6041,6 +6566,10 @@ Navanax.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -6048,6 +6577,9 @@ Navanax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             reflectable: false,
@@ -6100,6 +6632,10 @@ Navanax.weapons.add(
                     if(build != null){
                         if(build.team != b.team){
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            build.healthChanged();
+                            if(build.health <= 0){
+                                build.killed();
+                            }
                         }
                     }
                 },
@@ -6107,6 +6643,9 @@ Navanax.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        if(entity.health <= 0 && !entity.dead){
+                            entity.kill();
+                        }
                     }
                 },
                 reflectable: false,
@@ -6159,6 +6698,10 @@ Navanax.weapons.add(
                         if(build != null){
                             if(build.team != b.team){
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                                build.healthChanged();
+                                if(build.health <= 0){
+                                    build.killed();
+                                }
                             }
                         }
                     },
@@ -6166,6 +6709,9 @@ Navanax.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                            if(entity.health <= 0 && !entity.dead){
+                                entity.kill();
+                            }
                         }
                     },
                     reflectable: false,
@@ -6239,6 +6785,10 @@ Navanax.weapons.add(
                 if(build != null){
                     if(build.team != b.team){
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                        build.healthChanged();
+                        if(build.health <= 0){
+                            build.killed();
+                        }
                     }
                 }
             },
@@ -6246,6 +6796,9 @@ Navanax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             },
             reflectable: false,
@@ -6705,6 +7258,23 @@ Events.on(UnitSpawnEvent, event => {
     if(unit.type == Navanax){
         NavanaxSpawnEffect.at(unit.x, unit.y, 0, unit);
     }
+});
+
+Events.on(ContentInitEvent, () => {
+    let mod = Vars.mods.getMod("destructionmod");
+
+    Vars.content.units().each(unit => {
+        if(unit.minfo != null && unit.minfo.mod == mod){
+            Vars.content.statusEffects().each(status => {
+                if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 0 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0 || status.intervalDamageTime > 0 || status.intervalDamagePierce){
+                    if(status != statusEffects.destructed){
+                        if(!(status == StatusEffects.unmoving && unit.type == Corvus))
+                        unit.immunities.add(status);
+                    }
+                }
+            });
+        }
+    });
 });
 
 module.exports = {

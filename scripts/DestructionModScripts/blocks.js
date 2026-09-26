@@ -932,6 +932,9 @@ Duo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -954,6 +957,9 @@ Duo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -978,6 +984,9 @@ Duo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1001,6 +1010,9 @@ Duo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1024,6 +1036,9 @@ Duo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1081,6 +1096,9 @@ Scatter.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1097,6 +1115,9 @@ Scatter.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1120,6 +1141,9 @@ Scatter.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         },
         fragBullet: extend(BasicBulletType, 4, 12.5, {
@@ -1139,6 +1163,9 @@ Scatter.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1163,6 +1190,9 @@ Scatter.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1211,6 +1241,9 @@ Scorch.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1236,6 +1269,9 @@ Scorch.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1262,6 +1298,9 @@ Scorch.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1307,6 +1346,9 @@ Hail.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1333,6 +1375,9 @@ Hail.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1357,6 +1402,9 @@ Hail.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1382,6 +1430,9 @@ Hail.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1416,6 +1467,9 @@ Wave.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1428,6 +1482,9 @@ Wave.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1440,6 +1497,9 @@ Wave.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1453,6 +1513,9 @@ Wave.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1514,6 +1577,9 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -1559,6 +1625,9 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1627,6 +1696,9 @@ Swarmer.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1648,6 +1720,9 @@ Swarmer.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1670,6 +1745,9 @@ Swarmer.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1691,6 +1769,9 @@ Swarmer.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         },
         fragBullet: extend(BasicBulletType, 6, 64, {
@@ -1706,6 +1787,9 @@ Swarmer.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1770,6 +1854,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1792,6 +1879,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1814,6 +1904,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1838,6 +1931,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1861,6 +1957,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1884,6 +1983,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -1909,6 +2011,9 @@ Salvo.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         },
         fragBullet: extend(BasicBulletType, 6, 44, {
@@ -1923,6 +2028,9 @@ Salvo.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -1986,6 +2094,9 @@ Tsunami.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2003,6 +2114,9 @@ Tsunami.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2020,6 +2134,9 @@ Tsunami.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2038,6 +2155,9 @@ Tsunami.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -2075,6 +2195,9 @@ Fuse.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2090,6 +2213,9 @@ Fuse.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2116,6 +2242,9 @@ Fuse.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2142,6 +2271,9 @@ Fuse.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -2197,6 +2329,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2226,6 +2361,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2254,6 +2392,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2280,6 +2421,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2308,6 +2452,9 @@ Ripple.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         }),
@@ -2320,6 +2467,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2348,6 +2498,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2374,6 +2527,9 @@ Ripple.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         },
         fragBullet: extend(BasicBulletType, 5, 48, {
@@ -2390,6 +2546,9 @@ Ripple.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2462,6 +2621,9 @@ Cyclone.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2492,6 +2654,9 @@ Cyclone.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2515,6 +2680,9 @@ Cyclone.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2537,6 +2705,9 @@ Cyclone.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         }),
@@ -2555,6 +2726,9 @@ Cyclone.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -2678,6 +2852,9 @@ Foreshadow.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2779,6 +2956,9 @@ Foreshadow.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     })
@@ -2830,6 +3010,9 @@ Spectre.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2857,6 +3040,9 @@ Spectre.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2894,6 +3080,9 @@ Spectre.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         }),
@@ -2909,6 +3098,9 @@ Spectre.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),
@@ -2938,6 +3130,9 @@ Spectre.ammo(
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         },
         fragBullet: extend(BasicBulletType, 10, 100, {
@@ -2953,6 +3148,9 @@ Spectre.ammo(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit || entity instanceof Building){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                    if(entity.health <= 0 && !entity.dead){
+                        entity.kill();
+                    }
                 }
             }
         })
@@ -2992,6 +3190,9 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
+                if(entity.health <= 0 && !entity.dead){
+                    entity.kill();
+                }
             }
         }
     }),

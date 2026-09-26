@@ -22,6 +22,9 @@ const Destructed = extend(StatusEffect,"Destructed",{
         this.stats.addMultModifier(extend(Stat, "Speed Multiplier", {localized(){return "Speed Multiplier";}}), 0.5);
         this.stats.addMultModifier(extend(Stat, "Reload Multiplier", {localized(){return "Reload Multiplier";}}), 0.5);
         this.stats.add(extend(Stat, "Damage", {localized(){return "Damage";}}), 1000, StatUnit.perSecond);
+    },
+    onRemoved(unit){
+        unit.damage(10000);
     }
 });
 
