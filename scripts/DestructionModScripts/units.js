@@ -7262,11 +7262,10 @@ Events.on(UnitSpawnEvent, event => {
 
 Events.on(ContentInitEvent, () => {
     let mod = Vars.mods.getMod("destructionmod");
-
     Vars.content.units().each(unit => {
         if(unit.minfo != null && unit.minfo.mod == mod){
             Vars.content.statusEffects().each(status => {
-                if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 0 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0 || status.intervalDamageTime > 0 || status.intervalDamagePierce){
+                if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 1 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0 || status.intervalDamageTime > 0 || status.intervalDamagePierce){
                     if(status != statusEffects.destructed){
                         if(!(status == StatusEffects.unmoving && unit.type == Corvus))
                         unit.immunities.add(status);
