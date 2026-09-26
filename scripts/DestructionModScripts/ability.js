@@ -1,7 +1,16 @@
+const GlobalData = require("DestructionModScripts/GlobalData");
+
 const SelfRegenerationAbility = (RPS)=>{
     return extend(RegenAbility,{
         percentAmount: 0,
         amount: RPS/60,
+        update(unit){
+            this.super$update(unit);
+            let data = GlobalData.regentime;
+            if(data.get(unit) == null){
+                unit.heal(this.amount * Time.delta);
+            }
+        },
         draw(unit){
             this.super$draw(unit);
 

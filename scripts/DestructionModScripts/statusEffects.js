@@ -1,3 +1,5 @@
+const GlobalData = require("DestructionModScripts/GlobalData");
+
 const Destructed = extend(StatusEffect,"Destructed",{
     localizedName: "Destructed",
     color: Color.valueOf("ff0000"),
@@ -14,6 +16,7 @@ const Destructed = extend(StatusEffect,"Destructed",{
         unit.healthMultiplier *= 0.5;
         unit.damageMultiplier *= 0.5;
         unit.reloadMultiplier *= 0.5;
+        
     },
     setStats(){
         this.super$setStats();
@@ -22,6 +25,22 @@ const Destructed = extend(StatusEffect,"Destructed",{
         this.stats.addMultModifier(extend(Stat, "Speed Multiplier", {localized(){return "Speed Multiplier";}}), 0.5);
         this.stats.addMultModifier(extend(Stat, "Reload Multiplier", {localized(){return "Reload Multiplier";}}), 0.5);
         this.stats.add(extend(Stat, "Damage", {localized(){return "Damage";}}), 1000, StatUnit.perSecond);
+    },
+    applied(unit, time, ext){
+        this.super$applied(unit, time, ext);
+        let data = GlobalData.destructedtime;
+        if(data.get(unit) == null){
+            data.put(unit, Time.time);
+        }
+    },
+    onRemoved(unit){
+        let data = GlobalData.destructedtime;
+        if(data.get(unit) != null){
+            let time = (Time.time-data.get(unit))/60;
+            time = Math.max(Math.min(15,time), 0.001);
+            unit.health -= 100/3*time*(time+5);
+            data.remove(unit);
+        }
     }
 });
 
