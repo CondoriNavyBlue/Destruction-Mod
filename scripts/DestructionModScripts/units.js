@@ -84,9 +84,6 @@ Gamma.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -162,9 +159,6 @@ Dagger.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -244,9 +238,6 @@ Mace.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -330,9 +321,6 @@ Fortress.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             fragBullets: 1,
@@ -367,9 +355,6 @@ Fortress.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 },
                 fragBullets: 1,
@@ -404,9 +389,6 @@ Fortress.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     },
                     fragBullets: 1,
@@ -441,9 +423,6 @@ Fortress.weapons.add(
                             this.super$hitEntity(b, entity, health);
                             if(entity instanceof Unit){
                                 entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                                if(entity.health <= 0 && !entity.dead){
-                                    entity.kill();
-                                }
                             }
                         },
                         fragBullets: 1,
@@ -478,9 +457,6 @@ Fortress.weapons.add(
                                 this.super$hitEntity(b, entity, health);
                                 if(entity instanceof Unit){
                                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                                    if(entity.health <= 0 && !entity.dead){
-                                        entity.kill();
-                                    }
                                 }
                             }
                         })
@@ -580,9 +556,6 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             intervalBullet: extend(LightningBulletType,{
@@ -607,9 +580,6 @@ Scepter.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 }
             })
@@ -663,9 +633,6 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -711,9 +678,6 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -758,9 +722,6 @@ Scepter.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -875,9 +836,6 @@ Reign.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             fragBullet: extend(BasicBulletType, 9, 100, {
@@ -908,9 +866,6 @@ Reign.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 }
             })
@@ -993,9 +948,6 @@ Reign.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -1087,9 +1039,6 @@ Flare.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -1190,9 +1139,6 @@ Horizon.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -1321,9 +1267,6 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     }
                 }),
@@ -1394,9 +1337,6 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     }
                 }),
@@ -1467,9 +1407,6 @@ Zenith.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     }
                 })
@@ -1576,9 +1513,6 @@ Antumbra.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -1618,9 +1552,6 @@ Antumbra.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -1735,9 +1666,6 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             shootEffect: Fx.shootBig,
@@ -1809,9 +1737,6 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             shootEffect: Fx.shootBig,
@@ -1888,9 +1813,6 @@ Eclipse.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             applyDamage(b){
@@ -2082,9 +2004,6 @@ Nova.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -2181,9 +2100,6 @@ Pulsar.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -2281,9 +2197,6 @@ Quasar.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -2378,9 +2291,6 @@ Vela.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             damage: 2400/12,
@@ -2435,9 +2345,6 @@ Vela.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             damage: 1000,
@@ -2625,9 +2532,6 @@ Corvus.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             init(b) {
@@ -2756,9 +2660,6 @@ Corvus.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             reflectable: false,
@@ -2914,9 +2815,6 @@ Crawler.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3001,9 +2899,6 @@ Atrax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3090,9 +2985,6 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3130,9 +3022,6 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3168,9 +3057,6 @@ Spiroct.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             shootEffect: new MultiEffect(
@@ -3319,9 +3205,6 @@ let ArkyidSap = extend(SapBulletType,{
         this.super$hitEntity(b, entity, health);
         if(entity instanceof Unit){
             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-            if(entity.health <= 0 && !entity.dead){
-                entity.kill();
-            }
         }
     }
 });
@@ -3380,9 +3263,6 @@ Arkyid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             hitEffect: Fx.sapExplosion,
@@ -3632,9 +3512,6 @@ Toxopid.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 }
             }),
@@ -3660,9 +3537,6 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3712,9 +3586,6 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -3780,9 +3651,6 @@ Toxopid.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             fragLifeMin: 1,
@@ -3836,9 +3704,6 @@ Toxopid.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 },
                 fragLifeMin: 0.3,
@@ -3882,9 +3747,6 @@ Toxopid.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     }
                 })
@@ -4037,9 +3899,6 @@ Poly.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4128,9 +3987,6 @@ Mega.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4175,9 +4031,6 @@ Mega.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4302,9 +4155,6 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4377,9 +4227,6 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4452,9 +4299,6 @@ Quad.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4599,9 +4443,6 @@ Risso.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4647,9 +4488,6 @@ Risso.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4732,9 +4570,6 @@ Minke.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4780,9 +4615,6 @@ Minke.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4879,9 +4711,6 @@ Bryde.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -4939,9 +4768,6 @@ Bryde.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5035,9 +4861,6 @@ Sei.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5099,9 +4922,6 @@ Sei.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5223,9 +5043,6 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5267,9 +5084,6 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5328,9 +5142,6 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5388,9 +5199,6 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             length: 200,
@@ -5475,9 +5283,6 @@ Omura.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             length: 544,
@@ -5609,9 +5414,6 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5653,9 +5455,6 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5733,9 +5532,6 @@ Retusa.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5839,9 +5635,6 @@ Oxynoe.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -5968,9 +5761,6 @@ Cyerce.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -6042,9 +5832,6 @@ Cyerce.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             fragBullets: 3,
@@ -6105,9 +5892,6 @@ Cyerce.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 },
                 fragBullets: 8,
@@ -6167,9 +5951,6 @@ Cyerce.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     }
                 })
@@ -6294,9 +6075,6 @@ Aegires.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             }
         })
@@ -6429,9 +6207,6 @@ NavanaxLaserPos.forEach(pos => {
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             applyDamage(b){
@@ -6577,9 +6352,6 @@ Navanax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             reflectable: false,
@@ -6643,9 +6415,6 @@ Navanax.weapons.add(
                     this.super$hitEntity(b, entity, health);
                     if(entity instanceof Unit){
                         entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                        if(entity.health <= 0 && !entity.dead){
-                            entity.kill();
-                        }
                     }
                 },
                 reflectable: false,
@@ -6709,9 +6478,6 @@ Navanax.weapons.add(
                         this.super$hitEntity(b, entity, health);
                         if(entity instanceof Unit){
                             entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                            if(entity.health <= 0 && !entity.dead){
-                                entity.kill();
-                            }
                         }
                     },
                     reflectable: false,
@@ -6796,9 +6562,6 @@ Navanax.weapons.add(
                 this.super$hitEntity(b, entity, health);
                 if(entity instanceof Unit){
                     entity.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
-                    if(entity.health <= 0 && !entity.dead){
-                        entity.kill();
-                    }
                 }
             },
             reflectable: false,
