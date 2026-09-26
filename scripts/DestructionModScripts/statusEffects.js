@@ -24,7 +24,7 @@ const Destructed = extend(StatusEffect,"Destructed",{
         this.stats.add(extend(Stat, "Damage", {localized(){return "Damage";}}), 1000, StatUnit.perSecond);
     },
     onRemoved(unit){
-        unit.health -= (10000-unit.armor)/unit.healthMultiplier();
+        unit.health -= (10000-unit.armor)/unit.healthMultiplier;
     }
 });
 
