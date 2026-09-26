@@ -70,7 +70,7 @@ const addTechTree = (content, research) => {
 
     node.parent = parent;
 };
-
+/*This function is a modified version of “https://discord.com/channels/391020510269669376/653292618406690847/1061645243302285403,” which I had ChatGPT refine.*/
 
 const items = require("DestructionModScripts/items");
 const blocks = require("DestructionModScripts/blocks");
