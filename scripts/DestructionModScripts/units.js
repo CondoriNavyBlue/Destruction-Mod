@@ -75,7 +75,7 @@ Gamma.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -153,7 +153,7 @@ Dagger.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -235,7 +235,7 @@ Mace.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -321,7 +321,7 @@ Fortress.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -358,7 +358,7 @@ Fortress.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -395,7 +395,7 @@ Fortress.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -432,7 +432,7 @@ Fortress.weapons.add(
                                     build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                     build.healthChanged();
                                     if(build.health <= 0){
-                                        build.killed();
+                                        build.kill();
                                     }
                                 }
                             }
@@ -469,7 +469,7 @@ Fortress.weapons.add(
                                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                         build.healthChanged();
                                         if(build.health <= 0){
-                                            build.killed();
+                                            build.kill();
                                         }
                                     }
                                 }
@@ -571,7 +571,7 @@ Scepter.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -598,7 +598,7 @@ Scepter.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -654,7 +654,7 @@ Scepter.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -702,7 +702,7 @@ Scepter.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -749,7 +749,7 @@ Scepter.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -866,7 +866,7 @@ Reign.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -899,7 +899,7 @@ Reign.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -984,7 +984,7 @@ Reign.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1078,7 +1078,7 @@ Flare.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1181,7 +1181,7 @@ Horizon.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1312,7 +1312,7 @@ Zenith.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -1385,7 +1385,7 @@ Zenith.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -1458,7 +1458,7 @@ Zenith.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -1567,7 +1567,7 @@ Antumbra.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            Call.buildDestroyed(build.self());
+                            build.kill();
                         }
                     }
                 }
@@ -1609,7 +1609,7 @@ Antumbra.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1726,7 +1726,7 @@ Eclipse.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1800,7 +1800,7 @@ Eclipse.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -1879,7 +1879,7 @@ Eclipse.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2073,7 +2073,7 @@ Nova.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2172,7 +2172,7 @@ Pulsar.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2272,7 +2272,7 @@ Quasar.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2369,7 +2369,7 @@ Vela.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2426,7 +2426,7 @@ Vela.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2616,7 +2616,7 @@ Corvus.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2747,7 +2747,7 @@ Corvus.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2905,7 +2905,7 @@ Crawler.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -2992,7 +2992,7 @@ Atrax.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3081,7 +3081,7 @@ Spiroct.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3121,7 +3121,7 @@ Spiroct.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3159,7 +3159,7 @@ Spiroct.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3310,7 +3310,7 @@ let ArkyidSap = extend(SapBulletType,{
                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                 build.healthChanged();
                 if(build.health <= 0){
-                    build.killed();
+                    build.kill();
                 }
             }
         }
@@ -3371,7 +3371,7 @@ Arkyid.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3623,7 +3623,7 @@ Toxopid.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -3651,7 +3651,7 @@ Toxopid.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3703,7 +3703,7 @@ Toxopid.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3771,7 +3771,7 @@ Toxopid.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -3827,7 +3827,7 @@ Toxopid.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -3873,7 +3873,7 @@ Toxopid.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -4028,7 +4028,7 @@ Poly.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4119,7 +4119,7 @@ Mega.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4166,7 +4166,7 @@ Mega.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4293,7 +4293,7 @@ Quad.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4368,7 +4368,7 @@ Quad.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4443,7 +4443,7 @@ Quad.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4590,7 +4590,7 @@ Risso.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4638,7 +4638,7 @@ Risso.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4723,7 +4723,7 @@ Minke.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4771,7 +4771,7 @@ Minke.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4870,7 +4870,7 @@ Bryde.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -4930,7 +4930,7 @@ Bryde.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5026,7 +5026,7 @@ Sei.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5090,7 +5090,7 @@ Sei.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5214,7 +5214,7 @@ Omura.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5258,7 +5258,7 @@ Omura.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5319,7 +5319,7 @@ Omura.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5379,7 +5379,7 @@ Omura.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5466,7 +5466,7 @@ Omura.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5600,7 +5600,7 @@ Retusa.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5644,7 +5644,7 @@ Retusa.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5724,7 +5724,7 @@ Retusa.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5830,7 +5830,7 @@ Oxynoe.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -5959,7 +5959,7 @@ Cyerce.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -6033,7 +6033,7 @@ Cyerce.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -6096,7 +6096,7 @@ Cyerce.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -6158,7 +6158,7 @@ Cyerce.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -6285,7 +6285,7 @@ Aegires.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -6420,7 +6420,7 @@ NavanaxLaserPos.forEach(pos => {
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -6568,7 +6568,7 @@ Navanax.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
@@ -6634,7 +6634,7 @@ Navanax.weapons.add(
                             build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                             build.healthChanged();
                             if(build.health <= 0){
-                                build.killed();
+                                build.kill();
                             }
                         }
                     }
@@ -6700,7 +6700,7 @@ Navanax.weapons.add(
                                 build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                                 build.healthChanged();
                                 if(build.health <= 0){
-                                    build.killed();
+                                    build.kill();
                                 }
                             }
                         }
@@ -6787,7 +6787,7 @@ Navanax.weapons.add(
                         build.health -= Math.max(b.type.splashDamage, b.type.damage)/4 * b.damageMultiplier();
                         build.healthChanged();
                         if(build.health <= 0){
-                            build.killed();
+                            build.kill();
                         }
                     }
                 }
