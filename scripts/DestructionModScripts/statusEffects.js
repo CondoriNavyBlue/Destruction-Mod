@@ -29,13 +29,14 @@ const Destructed = extend(StatusEffect,"Destructed",{
     applied(unit, time, ext){
         this.super$applied(unit, time, ext);
         let data = GlobalData.destructedtime;
-        if(data.get(unit) == null){
+        if(data.get(unit) == null && unit != null){
+            unit.health -= 10000;
             data.put(unit, Time.time);
         }
     },
     onRemoved(unit){
         let data = GlobalData.destructedtime;
-        if(data.get(unit) != null){
+        if(data.get(unit) != null && unit != null){
             let time = (Time.time-data.get(unit))/60;
             time = Math.max(Math.min(15,time), 0.001);
             unit.health -= 100/3*time*(time+5);
