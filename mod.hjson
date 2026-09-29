@@ -4,4 +4,3 @@ description: Mod being created
 author: Condori
 version: 0.8.7
 minGameVersion: 160
-iosCompatible: true
