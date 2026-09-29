@@ -2,5 +2,6 @@ name: DestructionMod
 displayName: Destruction Mod
 description: Mod being created
 author: Condori
-version: 0.8.7
+version: 0.8.8
 minGameVersion: 160
+repo: https://github.com/CondoriNavyBlue/Destruction-Mod
