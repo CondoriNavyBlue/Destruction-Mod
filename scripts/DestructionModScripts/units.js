@@ -7028,10 +7028,17 @@ Events.on(ContentInitEvent, () => {
     Vars.content.units().each(unit => {
         if(unit.minfo != null && unit.minfo.mod == mod){
             Vars.content.statusEffects().each(status => {
-                if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 1 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0 || status.intervalDamageTime > 0 || status.intervalDamagePierce){
+                if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 1 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0){
                     if(status != statusEffects.destructed){
-                        if(!(status == StatusEffects.unmoving && unit.type == Corvus))
-                        unit.immunities.add(status);
+                        if(!(status == StatusEffects.unmoving && unit.type == Corvus)){
+                            unit.immunities.add(status);
+                        }
+                    }
+                }else{
+                    if( status.healthMultiplier == 1 && status.speedMultiplier == 1 && status.reloadMultiplier == 1 && status.buildSpeedMultiplier == 1 && !status.disarm && status.transitionDamage == 0 && status.damage == 0 && status.intervalDamage == 0){
+                        if(status != statusEffects.destructed){
+                            unit.immunities.add(status);
+                        }
                     }
                 }
             });
