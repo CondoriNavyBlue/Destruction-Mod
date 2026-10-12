@@ -7030,15 +7030,11 @@ Events.on(ContentInitEvent, () => {
             Vars.content.statusEffects().each(status => {
                 if(status.damageMultiplier < 1 || status.healthMultiplier < 1 || status.speedMultiplier < 1 || status.reloadMultiplier < 1 || status.buildSpeedMultiplier < 1 || status.disarm || status.transitionDamage > 0 || status.damage > 0 || status.intervalDamage > 0){
                     if(status != statusEffects.destructed){
-                        if(!(status == StatusEffects.unmoving && unit.type == Corvus)){
-                            unit.immunities.add(status);
-                        }
+                        unit.immunities.add(status);
                     }
-                }else{
-                    if( status.healthMultiplier == 1 && status.speedMultiplier == 1 && status.reloadMultiplier == 1 && status.buildSpeedMultiplier == 1 && !status.disarm && status.transitionDamage == 0 && status.damage == 0 && status.intervalDamage == 0){
-                        if(status != statusEffects.destructed){
-                            unit.immunities.add(status);
-                        }
+                }else if(status.healthMultiplier == 1 && status.speedMultiplier == 1 && status.reloadMultiplier == 1 && status.buildSpeedMultiplier == 1 && !status.disarm && status.transitionDamage == 0 && status.damage == 0 && status.intervalDamage == 0){
+                    if(status != statusEffects.destructed){
+                        unit.immunities.add(status);
                     }
                 }
             });
