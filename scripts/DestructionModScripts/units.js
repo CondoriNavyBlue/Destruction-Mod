@@ -5114,7 +5114,7 @@ Omura.weapons.add(
             drag: -0.003,
             hitSize: 12,
             keepVelocity: false,
-            splashDamage: 360,
+            splashDamage: 400,
             splashDamageRadius: 40,
             lifetime: 60,
             trailColor: Color.valueOf("d06b53"),
@@ -5202,7 +5202,7 @@ Omura.weapons.add(
                 }
             },
             length: 200,
-            damage: 1350,
+            damage: 1620,
             pierceDamageFactor: 0.05,
             pointEffectSpace: 40,
             status: statusEffects.destructed,
@@ -5286,7 +5286,7 @@ Omura.weapons.add(
                 }
             },
             length: 544,
-            damage: 1350,
+            damage: 1620,
             pierceDamageFactor: 0.1,
             pointEffectSpace: 44,
             smokeEffect: Fx.shootBig2,
