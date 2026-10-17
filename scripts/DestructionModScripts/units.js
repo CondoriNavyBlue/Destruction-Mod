@@ -4352,12 +4352,14 @@ const Oct = extend(UnitType, "Athena_Oct", {
         const Y = unit.y;
         const T = unit.team;
         for(let i = 0; i < 60; ++i){
-            DeathBullets.forEach(b => {
-                b.speed = 1+Math.random()*9;
-                b.drag = 0.033;
-                b.lifetime = 150-30+Math.random()*90;
+            Time.run(i/3,()=>{
+                DeathBullets.forEach(b => {
+                    b.speed = 1+Math.random()*9;
+                    b.drag = 0.033;
+                    b.lifetime = 150-30+Math.random()*60;
+                });
+                DeathBullets[Math.floor(Math.random()*3)].create(unit, T, X, Y, Math.random()*360);
             });
-            DeathBullets[Math.floor(Math.random()*3)].create(unit, T, X, Y, Math.random()*360);
         }
     },
     setStats(){
@@ -5202,7 +5204,7 @@ Omura.weapons.add(
                 }
             },
             length: 200,
-            damage: 1620,
+            damage: 1350,
             pierceDamageFactor: 0.05,
             pointEffectSpace: 40,
             status: statusEffects.destructed,
@@ -5286,7 +5288,7 @@ Omura.weapons.add(
                 }
             },
             length: 544,
-            damage: 1620,
+            damage: 1350,
             pierceDamageFactor: 0.1,
             pointEffectSpace: 44,
             smokeEffect: Fx.shootBig2,
