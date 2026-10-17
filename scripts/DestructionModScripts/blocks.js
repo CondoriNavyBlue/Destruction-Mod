@@ -65,9 +65,9 @@ const SodiumWallLarge = extend(Wall, "Sodium_Wall_Large", {
 //Iron Wall
 const IronWall = extend(Wall, "Iron_Wall", {
     localizedName: "Iron Wall",
-    health: 1500,
+    health: 2000,
     size: 1,
-    armor: 10,
+    armor: 50,
     absorbLasers: true,
     chanceDeflect: 5,
     category: Category.defense,
@@ -79,11 +79,11 @@ const IronWall = extend(Wall, "Iron_Wall", {
 //Large Iron Wall
 const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
     localizedName: "Large Iron Wall",
-    health: 6000,
+    health: 8000,
     absorbLasers: true,
     chanceDeflect: 5,
     size: 2,
-    armor: 10,
+    armor: 50,
     category: Category.defense,
     requirements: ItemStack.with(items.iron,32),
     buildVisibility: BuildVisibility.shown,
@@ -93,11 +93,11 @@ const IronWallLarge = extend(Wall, "Iron_Wall_Large", {
 //Gold Wall
 const GoldWall = extend(Wall, "Gold_Wall", {
     localizedName: "Gold Wall",
-    health: 3000,
+    health: 3750,
     size: 1,
     absorbLasers: true,
     chanceDeflect: 2.5,
-    armor: 20,
+    armor: 90,
     category: Category.defense,
     requirements: ItemStack.with(items.gold,8),
     buildVisibility: BuildVisibility.shown,
@@ -107,10 +107,10 @@ const GoldWall = extend(Wall, "Gold_Wall", {
 //Large Gold Wall
 const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
     localizedName: "Large Gold Wall",
-    health: 12000,
+    health: 15000,
     absorbLasers: true,
     chanceDeflect: 3,
-    armor: 20,
+    armor: 90,
     size: 2,
     category: Category.defense,
     requirements: ItemStack.with(items.gold,32),
@@ -121,9 +121,9 @@ const GoldWallLarge = extend(Wall, "Gold_Wall_Large", {
 //Diamond Wall
 const DiamondWall = extend(Wall, "Diamond_Wall", {
     localizedName: "Diamond Wall",
-    health: 5000,
+    health: 6250,
     size: 1,
-    armor: 40,
+    armor: 150,
     chanceDeflect: 15,
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,8),
@@ -134,10 +134,10 @@ const DiamondWall = extend(Wall, "Diamond_Wall", {
 //Large Diamond Wall
 const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
     localizedName: "Large Diamond Wall",
-    health: 20000,
+    health: 25000,
     chanceDeflect: 3,
     size: 2,
-    armor: 40,
+    armor: 150,
     category: Category.defense,
     requirements: ItemStack.with(items.diamond,32),
     buildVisibility: BuildVisibility.shown,
@@ -147,14 +147,14 @@ const DiamondWallLarge = extend(Wall, "Diamond_Wall_Large", {
 //Destruction Wall
 const DestructionWall = extend(Wall, "Destruction_Wall", {
     localizedName: "Destruction Wall",
-    health: 7500,
+    health: 10000,
     size: 1,
     absorbLasers: true,
     chanceDeflect: 40,
     lightningChance: 0.3,
     lightningDamage: 80,
     lightningLength: 24,
-    armor: 100,
+    armor: 250,
     insulated: true,
     lightningColor: Color.valueOf("ed655a"),
     flashHit: true,
@@ -168,14 +168,14 @@ const DestructionWall = extend(Wall, "Destruction_Wall", {
 //Large Destruction Wall
 const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
     localizedName: "Large Destruction Wall",
-    health: 30000,
+    health: 40000,
     size: 2,
     absorbLasers: true,
     chanceDeflect: 50,
     lightningChance: 0.3,
     lightningDamage: 100,
     lightningLength: 30,
-    armor: 100,
+    armor: 250,
     insulated: true,
     lightningColor: Color.valueOf("ed655a"),
     flashHit: true,
@@ -192,7 +192,7 @@ const DestructionWallLarge = extend(Wall, "Destruction_Wall_Large", {
 const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
     localizedName: "Core: Destruction",
     unitType: units.Gamma,
-    health: 50000,
+    health: 100000,
     itemCapacity: 30000,
     size: 6,
     thrusterLength: 48/4,
@@ -209,7 +209,7 @@ const CoreDestruction = extend(CoreBlock, "Core_Destruction", {
 //Destruction Container
 const DestructionContainer = extend(StorageBlock, "Destruction_Container", {
     localizedName: "Destruction Container",
-    health: 3000,
+    health: 5000,
     itemCapacity: 1200,
     size: 2,
     requirements: ItemStack.with(items.iron,200),
@@ -221,7 +221,7 @@ const DestructionContainer = extend(StorageBlock, "Destruction_Container", {
 //Destruction Vault
 const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
     localizedName: "Destruction Vault",
-    health: 6000,
+    health: 10000,
     itemCapacity: 3600,
     size: 3,
     requirements: ItemStack.with(items.iron,250 , items.gold,500),
@@ -236,7 +236,7 @@ const DestructionVault = extend(StorageBlock, "Destruction_Vault", {
 //Destruction Conveyor
 const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
     localizedName: "Destruction Conveyor",
-    health: 1000,
+    health: 1100,
     speed: 0.2015,
     displayedSpeed: 24,
     category: Category.distribution,
@@ -248,7 +248,7 @@ const DestructionConveyor = extend(Conveyor, "Destruction_Conveyor", {
 //Destruction Armored Conveyor
 const DestructionArmoredConveyor = extend(ArmoredConveyor, "Destruction_Armored_Conveyor", {
     localizedName: "Destruction Armored Conveyor",
-    health: 1200,
+    health: 1250,
     speed: 0.2015,
     displayedSpeed: 24,
     category: Category.distribution,
@@ -265,7 +265,7 @@ const DestructionJunction = extend(Junction, "Destruction_Junction", {
     buildVisibility: BuildVisibility.shown,
     speed: 24,
     capacity: 12,
-    health: 1000,
+    health: 1150,
     displayedSpeed: 30,
     buildCostMultiplier: 0.7662835249042145303
 });
@@ -283,7 +283,7 @@ const DestructionBridge = extend(ItemBridge, "Destruction_Bridge", {
     itemCapacity: 20,
     transportTime: 2,
     hasPower: false,
-    health: 800,
+    health: 1000,
     buildCostMultiplier: 0.879765395894427982
 });
 
@@ -299,7 +299,7 @@ const DestructionPhaseBridge = extend(ItemBridge, "Destruction_Phase_Bridge", {
     transportTime: 1,
     pulse: true,
     hasPower: true,
-    health: 990,
+    health: 1100,
     buildCostMultiplier: 40/77
 });
 DestructionPhaseBridge.consumePower(0.6);
@@ -315,7 +315,7 @@ const IronDrill = extend(Drill, "Iron_Drill", {
     size: 2,
     rotateSpeed: -3,
     drillTIme: 320,
-    health: 1200,
+    health: 1500,
     buildVisibility: BuildVisibility.shown,
     buildCostMultiplier: 0.9242144177449167
 });
@@ -328,7 +328,7 @@ const GoldDrill = extend(Drill, "Gold_Drill", {
     requirements: ItemStack.with(Items.copper,45 , Items.silicon,20 , Items.graphite,20 , items.gold,30),
     tier: 4,
     size: 3,
-    health: 2100,
+    health: 2200,
     rotateSpeed: -5,
     drillTime: 200,
     updateEffect: Fx.pulverizeMedium,
@@ -349,7 +349,7 @@ const DiamondDrill = extend(Drill, "Diamond_Drill", {
     tier: 5,
     size: 4,
     drawRim: true,
-    health: 3300,
+    health: 3500,
     drillTime: 180,
     updateEffect: Fx.pulverizeRed,
     drillEffect: Fx.mineHuge,
@@ -373,7 +373,7 @@ const DestructionDrill = extend(Drill, "Destruction_Drill", {
     tier: 10,
     size: 4,
     drawRim: true,
-    health: 6660,
+    health: 9500,
     drillTime: 90,
     updateEffect: Fx.pulverizeRed,
     drillEffect: Fx.mineHuge,
@@ -398,7 +398,7 @@ const DestructionNode = extend(PowerNode, "Destruction_Node", {
     laserRange: 12,
     underBullets: true,
     crushFragile: true,
-    health: 800,
+    health: 1200,
     requirements: ItemStack.with(items.iron,25 , items.sodiumBattery,8),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -415,7 +415,7 @@ const DestructionLargeNode = extend(PowerNode, "Destruction_Large_Node", {
     size: 2,
     maxNodes: 40,
     laserRange: 32,
-    health: 1000,
+    health: 1600,
     requirements: ItemStack.with(items.gold,25 , Items.silicon,10 , items.sodiumBattery,20),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -431,7 +431,7 @@ const DestructionDiamondNode = extend(PowerNode, "Destruction_Diamond_Node", {
     size: 2,
     maxNodes: 4,
     laserRange: 75,
-    health: 1100,
+    health: 2000,
     requirements: ItemStack.with(items.diamond,20 , Items.silicon,30 , items.sodiumBattery,50),
     category: Category.power,
     buildVisibility: BuildVisibility.shown,
@@ -451,7 +451,7 @@ const SodiumStorageBattery = extend(Battery, "Sodium_Storage_Battery", {
     baseExplosiveness: 2,
     researchCostMultiplier: 2/3,
     buildCostMultiplier: 1.0114632501685771,
-    health: 900
+    health: 1200
 });
 SodiumStorageBattery.consumePowerBuffered(25000);
 
@@ -465,7 +465,7 @@ const SodiumStorageBatteryLarge = extend(Battery, "Sodium_Storage_Battery_Large"
     baseExplosiveness: 8,
     researchCostMultiplier: 2/3,
     buildCostMultiplier: 6/35*2,
-    health: 2400
+    health: 3600
 });
 SodiumStorageBatteryLarge.consumePowerBuffered(250000);
 
@@ -474,7 +474,7 @@ const HDTReactor = extend(NuclearReactor, "High_Density_Thorium_Reactor", {
     localizedName: "High Density Thorium Reactor",
     explosionRadius: 30,
     explosionDamage: 12000,
-    health: 8000,
+    health: 10000,
     itemCapacity: 20,
     ambientSound: Sounds.loopThoriumReactor,
     ambientSoundVolume: 0.2,
@@ -539,7 +539,7 @@ HDTReactor.consumeItem(items.hdThorium);
 const NaExtractor = extend(GenericCrafter, "Sodium_Extractor", {
     localizedName: "Sodium Extractor",
     size: 2,
-    health: 450,
+    health: 600,
     hasPower: true,
     hasLiquids: true,
     hasItems: true,
@@ -578,7 +578,7 @@ NaExtractor.buildType = () => extend(GenericCrafter.GenericCrafterBuild, NaExtra
 const SSM = extend(Separator, "Sand_Sieve_Machine", {
     localizedName: "Sand Sieve Machine",
     size: 3,
-    health: 600,
+    health: 750,
     hasPower: true,
     hasItems: true,
     hasLiquid: false,
@@ -617,7 +617,7 @@ const HPHT = extend(GenericCrafter, "HPHT", {
     description: "The [red]heat [lightgray]should be kept high.\nKeep the amount of slag above 80% of capacity.",
     localizedName: "HPHT Synthesizer",
     size: 5,
-    health: 2800,
+    health: 5000,
     hasPower: true,
     hasLiquids: true,
     hasItems: true,
@@ -662,7 +662,7 @@ const ElectricHPHT = extend(GenericCrafter, "ElectricHPHT", {
     localizedName: "Electric HPHT",
     description: "generate heat with electricity\nMore convenient than HPHT synthesizer.\nBut uses a lot of electricity.",
     size: 3,
-    health: 2000,
+    health: 3500,
     hasPower: true,
     hasItems: true,
     itemCapacity: 40,
@@ -721,7 +721,7 @@ const IronMelter = extend(GenericCrafter, "Iron_Melter", {
     buildVisibility: BuildVisibility.shown,
     outputLiquid: new LiquidStack(Liquids.slag,0.5),
     buildCostMultiplier: 3/7*1.5,
-    health: 650
+    health: 500
 });
 IronMelter.consumePower(2);
 IronMelter.consumeItem(items.iron,1);
@@ -739,7 +739,7 @@ const ThoriumConcentrator = extend(GenericCrafter, "Thorium_Concentrator", {
     craftTime: 45,
     craftEffect: Fx.smeltsmoke,
     buildCostMultiplier: 0.25,
-    health: 1250,
+    health: 1300,
     outputItem: new ItemStack(items.hdThorium,1)
 });
 ThoriumConcentrator.consumeItem(Items.thorium,3);
@@ -759,7 +759,7 @@ function toJavaUnitArray(jsArray) {
 //Destruction Factory
 const Factory = extend(UnitFactory, "Destruction_Factory", {
     localizedName: "Destruction Factory",
-    health: 2250,
+    health: 3000,
     size: 3,
     requirements: ItemStack.with(Items.copper,30 , Items.silicon,100 , items.iron,60),
     category: Category.units,
@@ -780,7 +780,7 @@ Factory.consumePower(120/60);
 //Destruction Additive Reconstructor
 const ReconstructorTo2 = extend(Reconstructor, "Destruction_Additive_Reconstructor",{
     localizedName: "Destruction Additive Reconstructor",
-    health: 4500,
+    health: 6000,
     size: 3,
     requirements: ItemStack.with(Items.copper,250 , Items.silicon,120 , items.iron,100, items.sodiumBattery,50),
     category: Category.units,
@@ -803,7 +803,7 @@ ReconstructorTo2.consumeItems(ItemStack.with(Items.silicon,50 , items.sodiumBatt
 //Destruction Multiplicative Reconstructor
 const ReconstructorTo3 = extend(Reconstructor, "Destruction_Multiplicative_Reconstructor",{
     localizedName: "Destruction Multiplicative Reconstructor",
-    health: 9000,
+    health: 12000,
     size: 5,
     requirements: ItemStack.with(Items.silicon,660 , items.gold,300 , items.sodiumBattery,400),
     category: Category.units,
@@ -826,7 +826,7 @@ ReconstructorTo3.consumeItems(ItemStack.with(Items.silicon,160 , items.sodiumBat
 //Destruction Exponential Reconstructor
 const ReconstructorTo4 = extend(Reconstructor, "Destruction_Exponential_Reconstructor",{
     localizedName: "Destruction Exponential Reconstructor",
-    health: 18000,
+    health: 24000,
     size: 7,
     requirements: ItemStack.with(items.iron,1800 , items.gold,1000 , items.sodiumBattery,800 , Items.silicon,1200, Items.plastanium, 700, Items.phaseFabric,800 ),
     category: Category.units,
@@ -851,7 +851,7 @@ ReconstructorTo4.consumeLiquid(Liquids.slag, 1);
 //Destruction Tetrative Reconstructor
 const ReconstructorTo5 = extend(Reconstructor, "Destruction_Tetrative_Reconstructor",{
     localizedName: "Destruction Tetrative Reconstructor",
-    health: 36000,
+    health: 48000,
     size: 9,
     requirements: ItemStack.with(items.iron,3000 , items.gold,2000 , items.sodiumBattery,2000 , Items.silicon,4000, Items.plastanium, 1000, Items.phaseFabric,800 , Items.surgeAlloy,1200 , items.diamond,500),
     category: Category.units,
@@ -906,7 +906,7 @@ const Duo = extend(ItemTurret, "Destructor_Duo", {
     range: 200,
     shootCone: 15,
     ammoUseEffect: Fx.casing1,
-    health: 1990,
+    health: 2330,
     inaccuracy: 2,
     rotateSpeed: 12,
     coolantMultiplier: 10,
@@ -1071,7 +1071,7 @@ const Scatter = extend(ItemTurret, "Destructor_Scatter", {
     rotateSpeed: 17.5,
     inaccuracy: 15,
     shootCone: 35,
-    health: 2430,
+    health: 2750,
     shootSound: Sounds.shootScatter,
     depositCooldown: 0.5,
     researchCostMultiplier: 1/3
@@ -1212,7 +1212,7 @@ const Scorch = extend(ItemTurret, "Destructor_Scorch", {
     shootCone: 50,
     targetAir: false,
     ammoUseEffect: Fx.none,
-    health: 2110,
+    health: 2410,
     shootSound: Sounds.shootFlame,
     depositCooldown: 1,
     researchCostMultiplier: 1/3
@@ -1318,7 +1318,7 @@ const Hail = extend(ItemTurret, "Destructor_Hail", {
     range: 290,
     inaccuracy: 1.25,
     shootCone: 10,
-    health: 2550,
+    health: 2640,
     shootSound: Sounds.shootArtillerySmall,
     coolantMultiplier: 10,
     depositCooldown: 2,
@@ -1452,7 +1452,7 @@ const Wave = extend(LiquidTurret, "Destructor_Wave", {
     liquidCapacity: 20,
     shootEffect: Fx.shootLiquid,
     range: 180,
-    health: 2100,
+    health: 2300,
     researchCostMultiplier: 1/2
 });
 Wave.ammo(
@@ -1538,14 +1538,14 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
     smokeEffect: Fx.none,
     heatColor: Color.red,
     size: 2,
-    health: 3500,
+    health: 4500,
     targetAir: false,
     moveWhileCharging: false,
     accurateDelay: true,
     shootSound: Sounds.shootLancer,
     chargeSound: Sounds.chargeLancer,
     researchCostMultiplier: 1/2,
-    shootType: extend(LaserBulletType, 420,{
+    shootType: extend(LaserBulletType, 560,{
         colors: [Color.valueOf("f7f27966"), goldAmmoFront, Color.valueOf("ffffff")],
         chargeEffect: new MultiEffect(
             extend(Effect, 18, e => {
@@ -1573,6 +1573,13 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
         length: 230,
         width: 24,
         ammoMultiplier: 1,
+        lightningColor: Color.valueOf("ed655a"),
+        lightColor: Color.valueOf("ed655a"),
+        lightningLength: 4,
+        lightningDamage: 100,
+        lightningAngleRand: 40,
+        lightningLengthRand: 5,
+        lightningSpacing: 28,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
             if(entity instanceof Unit || entity instanceof Building){
@@ -1601,7 +1608,7 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
     heatColor: Color.red,
     recoil: 1,
     size: 1,
-    health: 2400,
+    health: 2500,
     shootSound: Sounds.shootArc,
     shoot: extend(ShootPattern, {
         shots: 2
@@ -1666,10 +1673,10 @@ const Swarmer = extend(ItemTurret, "Destructor_Swarmer", {
         shotDelay: 3
     }),
     shootY: 4.5,
-    reload: 30,
+    reload: 28,
     inaccuracy: 10,
     size: 2,
-    health: 5000,
+    health: 6000,
     shootSound: Sounds.shootMissile,
     depositCooldown: 2.0,
     range: 320,
@@ -1830,7 +1837,7 @@ const Salvo = extend(ItemTurret, "Destructor_Salvo", {
         shotDelay: 1.5
     }),
     ammoUseEffect: Fx.casing2,
-    health: 4700,
+    health: 4850,
     shootSounde: Sounds.shootSalvo,
     depositCooldown: 2,
     researchCostMultiplier: 1/3
@@ -2043,7 +2050,7 @@ const DSegment = extend(PointDefenseTurret, "Destructor_Segment",{
     hasPower: true,
     size: 2,
     range: 240,
-    bulletDamage: 80,
+    bulletDamage: 100,
     health: 5550,
     reload: 1,
     shootLength: 10,
@@ -2074,7 +2081,7 @@ const Tsunami = extend(LiquidTurret, "Destructor_Tsunami", {
     liquidCapacity: 60,
     shootEffect: Fx.shootLiquid,
     range: 280,
-    health: 6500,
+    health: 6710,
     researchCostMultiplier: 1/2
 });
 Tsunami.consumePower(4);
@@ -2178,7 +2185,7 @@ const Fuse = extend(ItemTurret, "Destructor_Fuse", {
         spread: 10
     }),
     size: 3,
-    health: 12220,
+    health: 14550,
     shootSound: Sounds.shootFuse,
     shootSoundVolume: 0.9,
     depositCooldown: 1,
@@ -2301,7 +2308,7 @@ const Ripple = extend(ItemTurret, "Destructor_Ripple", {
     shake: 2,
     range: 400,
     minRange: 50,
-    health: 12400,
+    health: 13600,
     depositCooldown: 2,
     shootSound: Sounds.shootRipple,
     researchCostMultiplier: 1/4
@@ -2597,7 +2604,7 @@ const Cyclone = extend(ItemTurret, "Destructor_Cyclone", {
     inaccuracy: 6,
     shootCone: 30,
     shootSound: Sounds.shootCyclone,
-    health: 13579,
+    health: 15397,
     depositCooldown: 2,
     researchCostMultiplier: 1/3,
 });
@@ -2754,7 +2761,7 @@ const Foreshadow = extend(ItemTurret, "Destructor_Foreshadow", {
     unitSort: UnitSorts.strongest,
     coolantMultiplier: 0.4,
     liquidCapacity: 60,
-    health: 22220,
+    health: 28880,
     depositCooldown: 2,
     range: 600,
     researchCostMultiplier: 1/4,
@@ -2983,7 +2990,7 @@ const Spectre = extend(ItemTurret, "Destructor_Spectre", {
     size: 4,
     shootCone: 24,
     shootSound: Sounds.shootSpectre,
-    health: 24000,
+    health: 32000,
     depositCooldown: 2,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.2820512820512822
@@ -3196,7 +3203,7 @@ const Meltdown = extend(LaserTurret, "Destructor_Meltdown", {
             }
         }
     }),
-    health: 23150,
+    health: 27700,
     liquidCapacity: 60,
     researchCostMultiplier: 1/4,
     buildCostMultiplier: 1.5572858731924362
@@ -3266,7 +3273,7 @@ const MendDestruction = extend(MendProjector, "Mend_Destruction", {
     range: 140,
     healPercent: 20,
     phaseBoost: 20,
-    health: 6800,
+    health: 10000,
     phaseRangeBoost: 100,
     useTime: 300,
     researchCostMultiplier: 1/4
