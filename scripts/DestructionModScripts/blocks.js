@@ -1529,10 +1529,10 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
     buildVisibility: BuildVisibility.shown,
     range: 220,
     shoot: extend(ShootPattern, {
-        firstShotDelay: 20
+        firstShotDelay: 10
     }),
     recoil: 2,
-    reload: 60,
+    reload: 45,
     shake: 2,
     shooteffect: Fx.lancerLaserShoot,
     smokeEffect: Fx.none,
@@ -1540,7 +1540,7 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
     size: 2,
     health: 4500,
     targetAir: false,
-    moveWhileCharging: false,
+    moveWhileCharging: true,
     accurateDelay: true,
     shootSound: Sounds.shootLancer,
     chargeSound: Sounds.chargeLancer,
@@ -1548,13 +1548,13 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
     shootType: extend(LaserBulletType, 560,{
         colors: [Color.valueOf("f7f27966"), goldAmmoFront, Color.valueOf("ffffff")],
         chargeEffect: new MultiEffect(
-            extend(Effect, 18, e => {
+            extend(Effect, 8, e => {
                 Draw.color(goldAmmoBack);
                 Angles.randLenVectors(e.id, 14, 1 + 20 * e.fout(), e.rotation, 120, (x, y) => {
                     Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fslope() * 3 + 1);
                 });
             },{}),
-            extend(Effect, 40, e=>{
+            extend(Effect, 20, e=>{
                 let margin = 1 - Mathf.curve(e.fin(), 0.9);
                 let fin = Math.min(margin, e.fin());
 
@@ -1604,7 +1604,14 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
     shootCone: 40,
     rotateSpeed: 10,
     range: 140,
-    shootEffect: Fx.lightningShoot,
+    shootEffect: extend(Effect, 12, e => {
+        Draw.color(Color.valueOf("ffffff"), Pal.heal, e.fin());
+        Lines.stroke(e.fout() * 1.2 + 0.5);
+
+        Angles.randLenVectors(e.id, 7, 25 * e.finpow(), e.rotation, 50, (x, y) => {
+            Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fin() * 5 + 2);
+        });
+    },{}),
     heatColor: Color.red,
     recoil: 1,
     size: 1,
@@ -1614,10 +1621,12 @@ const Arc = extend(PowerTurret, "Destructor_Arc", {
         shots: 2
     }),
     shootType: extend(LightningBulletType, {
-        damage: 50,
+        damage: 111,
         lightningLenght: 36,
         ammoMultiplier: 1,
         buildingDamageMultiplier: 0.5,
+        lightningColor: Pal.heal,
+        lightColor: Pal.heal,
         lightningType: extend(BulletType, 0.0001,0,{
             lifetime: Fx.lightning.lifetime,
             hiteffect: Fx.hitLancer,
@@ -2948,16 +2957,17 @@ Foreshadow.ammo(
             Drawf.light(e.x, e.y, 150, diamondAmmoBack, 0.9 * e.fout());
         },{}),
         pointEffectSpace: 20,
-        damage: 1350*2,
+        damage: 1350*3,
         pierceDamageFactor: 0.5,
         length: 640,
         hitShake: 6,
         ammoMultiplier: 1,
         status: statusEffects.destructed,
-        statusDuration: 200,
+        statusDuration: 180,
+        reloadMultiplier: 1/3,
         buildingDamageMultiplier: 0.2,
         armorMultiplier: 0,
-        splashDamage: 1350*2/3,
+        splashDamage: 1350*3/3,
         splashDamageRadius: 32,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
