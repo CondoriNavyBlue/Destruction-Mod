@@ -1575,10 +1575,10 @@ const Lancer = extend(PowerTurret, "Destructor_Lancer", {
         ammoMultiplier: 1,
         lightningColor: goldAmmoFront,
         lightColor: goldAmmoFront,
-        lightningLength: 4,
+        lightningLength: 3,
         lightningDamage: 100,
         lightningAngleRand: 40,
-        lightningLengthRand: 5,
+        lightningLengthRand: 4,
         lightningSpacing: 28,
         hitEntity(b, entity, health){
             this.super$hitEntity(b, entity, health);
