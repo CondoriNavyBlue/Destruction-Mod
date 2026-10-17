@@ -200,20 +200,20 @@ Mace.weapons.add(
         top: false,
         shootSound: Sounds.shootFlame,
         shootY: 2,
-        reload: 10,
+        reload: 8,
         recoil: 1,
         ejectEffect: Fx.none,
-        bullet: extend(BulletType, 5, 150, {
+        bullet: extend(BulletType, 8, 150, {
             hitSize: 7,
-            lifetime: 16,
+            lifetime: 100/8,
             pirce: true,
             pierceBuilding: true,
             pierceCap: 3,
             statusDuration: 300,
-            shootEffect: extend(Effect, 32, 80, e=>{
+            shootEffect: extend(Effect, 24, 80, e=>{
                 Draw.color(Color.valueOf("ff968a"), Color.valueOf("ed655a"), Color.gray, e.fin());
 
-                Angles.randLenVectors(e.id, 18, e.finpow() * 80, e.rotation, 10, (x, y) => {
+                Angles.randLenVectors(e.id, 18, e.finpow() * 100, e.rotation, 10, (x, y) => {
                     Fill.circle(e.x + x, e.y + y, 0.65 + e.fout() * 1.5);
                 });
             },{followParent:false}),
@@ -1912,7 +1912,7 @@ Eclipse.weapons.add(
             shootEffect: Fx.shockwave,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
             status: statusEffects.destructed,
-            statusDuration: 360,
+            statusDuration: 480,
             despawnEffect: Fx.smokeCloud,
             smokeEffect: Fx.none,
             incendChance: 0.1,
@@ -2601,7 +2601,7 @@ Corvus.weapons.add(
             sideWidth: 0,
             sideLength: 0,
             status: statusEffects.destructed,
-            statusDuration: 600,
+            statusDuration: 900,
             colors: [Color.valueOf("ed655a"),Color.valueOf("ff968a"),Color.valueOf("ffffff")],
             shootEffect: extend(Effect, 65, 100, e => {
                 Draw.color(Color.valueOf("ed655a"));
@@ -3569,7 +3569,7 @@ Toxopid.weapons.add(
             shootEffect: Fx.sparkShoot,
             smokeEffect: Fx.sparkShoot,
             status: statusEffects.destructed,
-            statusDuration: 450,
+            statusDuration: 300,
             hitTile(b, build, x, y, initialHealth, direct){
                 this.super$hitTile(b, build, x, y, initialHealth, direct);
                 if(build != null){
@@ -3729,7 +3729,7 @@ Toxopid.weapons.add(
                     lightRadius: 40,
                     lightOpacity: 0.6,
                     status: statusEffects.destructed,
-                    statusDuration: 180,
+                    statusDuration: 450,
                     hitSize: 8,
                     hitTile(b, build, x, y, initialHealth, direct){
                         this.super$hitTile(b, build, x, y, initialHealth, direct);
@@ -5206,7 +5206,7 @@ Omura.weapons.add(
             pierceDamageFactor: 0.05,
             pointEffectSpace: 40,
             status: statusEffects.destructed,
-            statusDuration: 450,
+            statusDuration: 300,
             shootEffect: extend(Effect, 24, e => {
                 e.scaled(10, b => {
                     Draw.color(Color.red, Color.lightGray, b.fin());
@@ -5291,7 +5291,7 @@ Omura.weapons.add(
             pointEffectSpace: 44,
             smokeEffect: Fx.shootBig2,
             status: statusEffects.destructed,
-            statusDuration: 450,
+            statusDuration: 600,
             shootEffect: extend(Effect, 24, e => {
                 e.scaled(10, b => {
                     Draw.color(Color.red, Color.lightGray, b.fin());
@@ -6312,7 +6312,7 @@ NavanaxLaserPos.forEach(pos => {
             incendAmount: 1,
             colors: [Color.valueOf("ed655a"), Color.valueOf("ff9999"), Color.white],
             status: statusEffects.destructed,
-            statusDuration: 600
+            statusDuration: 300
         })
     }));
 });
@@ -6597,7 +6597,7 @@ Navanax.weapons.add(
             hitSound: Sounds.explosionNavanax,
             sprite: "circle-bullet",
             status: statusEffects.destructed,
-            statusDuration: 300,
+            statusDuration: 600,
             trailEffect: extend(Effect, 16, e => {
                 Draw.color(Color.valueOf("ed655a"));
                 Drawf.tri(e.x, e.y, 4, 30 * e.fslope(), e.rotation + 90);
